@@ -1,0 +1,254 @@
+@import '../../scss/mixins.scss';
+
+.projectSlider{
+  border-top: 1px solid #DFE4E5;
+  .categories{
+    width: 100%;
+    height: 75px;
+    background-color: #FFF;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    ul{
+      width: 1260px;
+      margin: auto;
+      display: flex;
+      height: 100%;
+      position: relative;
+      li{
+        @include textStyle(14px,14px,#2F3748,normal);
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        &:first-child{
+          padding-left: 0;
+          position: relative;
+          color: #FFF;
+          &::before{
+            content: '';
+            width: calc((100vw - 1260px) / 2 + 100%);
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #048BA8;
+            z-index: 0;
+          }
+          a{
+            position: relative;
+          }
+        }
+        &:last-child{
+          flex-grow: 2;
+          justify-content: flex-end;
+          button.srchbtntoggle{
+            font-size: 15px;
+            background-color: transparent;
+          }
+          form.srchform{
+            position: absolute;
+            width: 100%;
+            height: 0px;
+            background-color: #F8FCFD;
+            z-index: 2;
+            top: 100%;
+            overflow: hidden;
+            input{
+              width: 100%;
+              height: 100%;
+              padding: 0 50px;
+              font-size: 16px;
+              color: #707070;
+              font-family: "BPG Mrgvlovani";
+              background-color: #F8FCFD;
+            }
+            button{
+              position: absolute;
+              right: 0;
+              top: 0;
+              height: 100%;
+              font-size: 15px;
+              background-color: transparent;
+              padding: 0 25px;
+            }
+            &.show{
+              height: 75px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .slider{
+    width: 100%;
+    height: calc(100vh - 325px);
+    background-color: #567556;
+    position: relative;
+    .sliderBackground{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.75;
+      &::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: linear-gradient(45deg, #4B566C,#2F3748);
+        opacity: 0.75;
+      }
+    }
+    .wrapper{
+      width: 1260px;
+      height: 100%;
+      margin: auto;
+      position: relative;
+      .text{
+          max-width: 50%;
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+          h2{
+            @include textStyle(35px,40px,#FFF,normal);
+            font-family: "BPG WEB 001 Caps";
+            &::after{
+              content: '';
+              width: 34%;
+              height: 3px;
+              background-color: #A5EB97;
+              display: block;
+              border-radius: 3px;
+              margin-top: 20px;
+            }
+          }
+          p{
+            font-family: "BPG Mrgvlovani";
+            margin-top: 40px;
+            @include textStyle(12px,18px,#D2D4D8,normal);
+          }
+          footer{
+            margin-top: 60px;
+            .daafinanse{
+              display: inline-block;
+              height: 60px;
+              border-radius: 30px;
+              @include textStyle(12px,60px,#D2D4D8,normal);
+              padding: 0 30px;
+              border: 1px solid #C6C6C6;
+              margin-right: 30px;
+              font-family: "BPG Mrgvlovani Caps 2010";
+            }
+            .targetCapital{
+              font-family: "BPG Mrgvlovani";
+              @include textStyle(12px,18px,#D2D4D8,normal);
+              .capital{
+                color: #A5EB97;
+              }
+            }
+          }
+      }
+    }
+    .progress{
+      width: 100%;
+      height: 5px;
+      background-color: #43B293;
+      position: absolute;
+      bottom: 0;
+      .bar{
+        height: 100%;
+        background-color: #048BA8;
+        position: relative;
+        // transition: 6s;
+        // transition-timing-function: linear;
+        // &.notransition{
+        //   transition: 0s!important;
+        // }
+        &::after{
+          content: '';
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          background-color: #048BA8;
+          position: absolute;
+          right: -8px;
+          top: -5.5px;
+        }
+      }
+    }
+  }
+  .thumbs{
+    width: 100%;
+    height: 150px;
+    background-color: #FFF;
+    box-shadow: 0  7px 19px rgba(0, 0, 0, 0.06);
+    .thumbsouter{
+      width: 1260px;
+      height: 100%;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .thumbsWrapper{
+        overflow: hidden;
+        width: 1100px;
+        ul{
+          li{
+            cursor: pointer;
+            float: left;
+            width: 300px;
+            height: 95px;
+            margin: 0 50px;
+            position: relative;
+            opacity: 0.5;
+            &:first-child{
+              margin-left: 0;
+            }
+            &.active, &:hover{
+              opacity: 1;
+            }
+            .img{
+              width: 160px;
+              height: 95px;
+              position: absolute;
+              left: 0;
+              background-repeat: no-repeat;
+              background-size: cover;
+              background-position: center;
+            }
+            h3{
+              position: relative;
+              @include textStyle(13px,21px,#2F3748,normal);
+              width: 200px;
+              margin-left: auto;
+              top: 10px;
+              padding: 5px 10px;
+              background-color: #FFF;
+            }
+          }
+        }
+      }
+      button{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #2F3748;
+        color: #FFF;
+        &.next{
+          display: none;
+          &.show{
+            display: inline-block;
+          }
+        }
+        &.prev{
+          display: none;
+          &.show{
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}

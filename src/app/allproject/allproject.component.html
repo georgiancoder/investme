@@ -1,0 +1,67 @@
+<div class="translations && projects">
+  <div class="pagination">
+    <div class="wrapper">
+      <h2>პროექტები</h2>
+      <ul>
+        <li><a routerLink="/">მთავარი</a></li>
+        <li>პროექტები</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="allproject">
+    <div class="sort">
+      დახარისხება:
+      <select [(ngModel)]="filters.sort" (change)="navigate()">
+        <option value="publish_date-desc">თარიღით კლებით</option>
+        <option value="publish_date-asc">თარიღით ზრდადობით</option>
+
+        <!-- <option value="raiting-desc">პოპულარობით კლებით</option>
+        <option value="raiting-asc">პოპულარობით ზრდადობით</option> -->
+      </select>
+    </div>
+    <div class="cont">
+      <div class="filter">
+        <h2>კატეგორიები</h2>
+        <ul class="categories">
+          <li *ngFor="let c of categories" [class]="(filters.category == c.id) ? 'active' : ''" (click)="selectCategory(c)">{{c.title}} <span class="badge">{{c.count}}</span> </li>
+        </ul>
+        <h2>ინტერესები</h2>
+        <ul class="intetests">
+          <li *ngFor="let interest of interests" [class]="interest.selected ? 'active' : ''" (click)="selectInterests(interest);">{{interest.title}}</li>
+        </ul>
+      </div>
+      <div class="projects">
+        <article class="project"  *ngFor="let project of projects">
+          <header>
+            <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
+              <div class="daysleft">
+                {{project.project.company_time - project.interval}}
+                <span *ngIf="translations">{{translations.day}}</span>
+              </div>
+              <img src="/assets/{{(project.check_for_fav != undefined && project.check_for_fav) ? 'heart-red.png' : 'heart-black.png'}}" *ngIf="project.check_for_fav != undefined" alt="add to favorite" class="favorite" (click)="toggleFavorite(project)">
+            </div>
+            <h3><a routerLink="/project/{{project.project.id}}">{{project.title}}</a></h3>
+            <p>{{project.min_description}}</p>
+          </header>
+          <footer>
+            <h4>{{project.category_title}}</h4>
+            <div class="moneyprogress">
+              <span class="currentmoney">{{project.money}} ₾</span>
+              <span class="targetCapital">{{project.project.capital}} ₾</span>
+              <div class="bar">
+                <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>
+              </div>
+            </div>
+          </footer>
+        </article>
+
+        <ul class="pagination" *ngIf="paginate.length > 1">
+          <li class="prev" (click)="prevPage()"><i class="fa fa-angle-left"></i></li>
+          <li *ngFor="let p of paginate" [class]="this.filters.page == p ? 'active' : ''" (click)="getPage(p)">{{p}}</li>
+          <li class="next" (click)="nextPage()"><i class="fa fa-angle-right"></i></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

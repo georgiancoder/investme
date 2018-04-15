@@ -1,0 +1,182 @@
+<p-growl [(value)]="msgs" life="3000"></p-growl>
+<div class="profile">
+  <h2>ჩემი პროფილი</h2>
+  <div class="forma" *ngIf="profileTranslations">
+    <div class="l">
+      <div class="profilepic" [style.backgroundImage]="'url(http://investme.testme.ge' + avatar + ')'" ></div>
+      <span class="info">JPG pr PNG. Max size 800K</span>
+      <p-fileUpload mode="basic" name="profilePic" customUpload="true" accept="image/*" auto="auto" (uploadHandler)="uploadProfilePic($event)" maxFileSize="1000000" chooseLabel="ატვირთე ახალი" styleClass="uploadProfilePic"></p-fileUpload>
+      <div class="socprofiles">
+        <h3>{{profileTranslations.social_profile}}</h3>
+        <ul>
+          <li><a href="" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+          <li><a href="" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+          <li><a href="" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="r">
+      <form class="maindata" [formGroup]="profileData" (ngSubmit)="editProfile(profileData.value)">
+        <h2><span>{{profileTranslations.main_info.split(' ')[0]}}</span> {{profileTranslations.main_info.split(' ')[1]}}</h2>
+        <div class="fgroup">
+          <div class="item">
+            <label>{{profileTranslations.name}}</label>
+            <input type="text" formControlName="name" value="{{name}}">
+            <div *ngIf="!profileData.controls['name'].valid && (profileData.controls['name'].dirty || profileData.controls['name'].touched)">
+              <div *ngIf="profileData.controls['name'].errors.required">
+                name is required
+              </div>
+              <div *ngIf="profileData.controls['name'].errors.maxlength">
+                name must be maximum 20 characters length
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.lastname}}</label>
+            <input type="text" formControlName="lastname" value="{{lastname}}">
+            <div *ngIf="!profileData.controls['lastname'].valid && (profileData.controls['lastname'].dirty || profileData.controls['lastname'].touched)">
+              <div *ngIf="profileData.controls['lastname'].errors.required">
+                lastname is required
+              </div>
+              <div *ngIf="profileData.controls['lastname'].errors.maxlength">
+                lastname must be maximum 20 characters length
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.livingCity}}</label>
+            <input type="text" formControlName="livingPlace" value="{{livingPlace}}">
+            <div *ngIf="!profileData.controls['livingPlace'].valid && (profileData.controls['livingPlace'].dirty || profileData.controls['livingPlace'].touched)">
+              <div *ngIf="profileData.controls['livingPlace'].errors.required">
+                livingPlace is required
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.birthDate}}</label>
+            <p-dropdown [options]="days" formControlName="day" value="1" name="day"></p-dropdown>
+            <p-dropdown [options]="months" formControlName="month" name="month"></p-dropdown>
+            <p-dropdown [options]="years" formControlName="year" name="year"></p-dropdown>
+          </div>
+        </div>
+        <h2><span>{{profileTranslations.social_info.split(' ')[0]}}</span> {{profileTranslations.social_info.split(' ')[1]}}</h2>
+        <div class="fgroup">
+          <div class="item">
+            <label>Facebook</label>
+            <input type="text" formControlName="facebook" value="{{facebook}}">
+          </div>
+          <div class="item">
+            <label>Twitter</label>
+            <input type="text" formControlName="twitter" value="{{twitter}}">
+          </div>
+          <div class="item">
+            <label>Instagram</label>
+            <input type="text" formControlName="instagram" value="{{instagram}}">
+          </div>
+        </div>
+        <h2><span>{{profileTranslations.account_info.split(' ')[0]}}</span> {{profileTranslations.account_info.split(' ')[1]}}</h2>
+        <div class="fgroup">
+          <div class="item">
+            <label>მომხმარებლის სახელი</label>
+            <input type="text" formControlName="username" value="{{username}}">
+            <div *ngIf="!profileData.controls['username'].valid && (profileData.controls['username'].dirty || profileData.controls['username'].touched)">
+              <div *ngIf="profileData.controls['username'].errors.required">
+                username is required
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.email}}</label>
+            <input type="text" formControlName="email" value="{{email}}">
+            <div *ngIf="!profileData.controls['email'].valid && (profileData.controls['email'].dirty || profileData.controls['email'].touched)">
+              <div *ngIf="profileData.controls['email'].errors.required">
+                email is required
+              </div>
+              <div *ngIf="profileData.controls['email'].errors.pattern">
+                email is not correct
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.phone}}</label>
+            <p-dropdown [options]="tellPrefixes" name="tellPrefixe" styleClass="prefix">
+                 <ng-template let-item pTemplate="selectedItem">
+                    <img src="assets/{{item.label}}.png" style="width:16px;vertical-align:middle" />
+                    <span style="vertical-align:middle">{{item.label}}</span>
+                </ng-template>
+                <ng-template let-prefix pTemplate="item">
+                    <div class="ui-helper-clearfix" style="position: relative;height:25px;">
+                    <img src="assets/{{prefix.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>
+                    <div style="font-size:14px;float:right;margin-top:4px">{{prefix.label}}</div> </div>
+                </ng-template>
+            </p-dropdown>
+            <input type="text" class="tell" formControlName="tell" value="tell">
+            <div *ngIf="!profileData.controls['tell'].valid && (profileData.controls['tell'].dirty || profileData.controls['tell'].touched)">
+              <div *ngIf="profileData.controls['tell'].errors.required">
+                tell is required
+              </div>
+              <div *ngIf="profileData.controls['tell'].errors.maxlength">
+                tell must be maximum 9 characters length
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.personalId}}</label>
+            <input type="text" formControlName="piradiN" value="{{piradiN}}">
+            <div *ngIf="!profileData.controls['piradiN'].valid && (profileData.controls['piradiN'].dirty || profileData.controls['piradiN'].touched)">
+              <div *ngIf="profileData.controls['piradiN'].errors.required">
+                piradiN is required
+              </div>
+              <div *ngIf="profileData.controls['piradiN'].errors.pattern">
+                piradiN is not correct
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" [class]="!profileData.valid ? 'disabled' : ''">{{profileTranslations.save}}</button>
+      </form>
+      <form class="changepass" [formGroup]="changePass" (ngSubmit)="changePassword(changePass.value)">
+        <h2><span>{{profileTranslations.change_pass.split(' ')[0]}}</span> {{profileTranslations.change_pass.split(' ')[1]}}</h2>
+        <div class="fgroup">
+          <div class="item">
+            <label>{{profileTranslations.old_pass}}</label>
+            <input type="password" formControlName="old_password">
+            <div *ngIf="!changePass.controls['old_password'].valid && (changePass.controls['old_password'].dirty || changePass.controls['old_password'].touched)">
+              <div *ngIf="changePass.controls['old_password'].errors.required">
+                oldpassword is required
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.new_pass}}</label>
+            <input type="password" formControlName="password">
+            <div *ngIf="!changePass.controls['password'].valid && (changePass.controls['password'].dirty || changePass.controls['password'].touched)">
+              <div *ngIf="changePass.controls['password'].errors.required">
+                password is required
+              </div>
+              <div *ngIf="changePass.controls['password'].errors.minlength">
+                password must be at least 5 characters length
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label>{{profileTranslations.repeat_pass}}</label>
+            <input type="password" formControlName="password_confirmation">
+            <div *ngIf="!changePass.controls['password_confirmation'].valid && (changePass.controls['password_confirmation'].dirty || changePass.controls['password_confirmation'].touched)">
+              <div *ngIf="changePass.controls['password_confirmation'].errors.required">
+                password is required
+              </div>
+              <div *ngIf="changePass.controls['password_confirmation'].errors.minlength">
+                password must be at least 5 characters length
+              </div>
+              <div *ngIf="changePass.controls['password_confirmation'].errors.notEquivalent">
+                Password Mismatch
+              </div>
+            </div>
+          </div>
+        </div>
+        <button type="submit" [class]="!changePass.valid ? 'disabled' : ''">{{profileTranslations.change_pass}}</button>
+      </form>
+    </div>
+  </div>
+</div>

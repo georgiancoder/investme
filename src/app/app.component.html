@@ -1,20 +1,268 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
+  <div class="wrapper">
+    <ul class="l">
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
+    </ul>
+    <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
+    <div class="r">
+      <div class="auth">
+        <div (click)="regDropdown()">
+          {{authorized && user ? user.name : header.translations.auth}}
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </div>
+        <div *ngIf="authorized && user" class="usermenuwrapper">
+          <div class="usermenu" [style.height]="dropDownHeight + 'px'">
+            <ul>
+              <li><a routerLink="profile">{{header.translations.profile}}</a></li>
+              <li>{{header.translations.favorite}}</li>
+              <li>{{header.translations.add_project}}</li>
+              <li (click)="logOut()" class="logout"><img src="/assets/logout.png" alt=""> {{header.translations.logout}}</li>
+            </ul>
+          </div>
+        </div>
+        <div *ngIf="!authorized && !user">
+          <div class="dropdownContainer" [style.height]="dropDownHeight + 'px'">
+            <div class="dropdown">
 
+              <div [hidden]="authorized && user">
+                <form class="authorizationForm" [formGroup]="logForm" *ngIf="!regAuth"  (ngSubmit)="logIn(logForm.value,$event)">
+                  <div class="art">
+
+                  </div>
+                  <div class="content">
+                      <a href="" class="fbauth"><i class="fa fa-facebook-f"></i> {{header.translations.auth}}</a>
+                      <div class="or"><span>{{header.translations.or}}</span></div>
+                    <div class="inputwrapper user">
+                      <input type="text" placeholder="{{header.translations.email}}" formControlName="username">
+                    </div>
+                    <div class="inputwrapper pass">
+                      <input type="password" placeholder="{{header.translations.password}}" formControlName="password">
+                    </div>
+                    <div class="lgnbtn">
+                      <span class="restore">{{header.translations.recover_pass}}</span>
+                      <input type="submit" value="შესვლა">
+                    </div>
+                    <div class="footer">
+                      {{header.translations.not_account}} <a class="registerbtn" (click)="regAuth = !regAuth"> {{header.translations.register}}</a>
+                    </div>
+                  </div>
+                </form>
+                <form class="registrationForm" *ngIf="regAuth" [formGroup]="regForm" (ngSubmit)="register(regForm.value,$event)">
+                  <div class="art">
+
+                  </div>
+                  <div class="content">
+                    <a href="" class="fbauth"><i class="fa fa-facebook-f"></i> {{header.translations.registration}}</a>
+                    <div class="or"><span>{{header.translations.or}}</span></div>
+                    <div class="inputwrapper user">
+                      <input type="text" placeholder="სახელი" formControlName="name">
+                      <div *ngIf="!regForm.controls['name'].valid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)">
+                        <div *ngIf="regForm.controls['name'].errors.required">
+                          name is required
+                        </div>
+                        <div *ngIf="regForm.controls['name'].errors.maxlength">
+                          name must be maximum 20 characters length
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inputwrapper lastname">
+                      <input type="text" placeholder="გვარი" formControlName="lastname">
+                      <div *ngIf="!regForm.controls['lastname'].valid && (regForm.controls['lastname'].dirty || regForm.controls['lastname'].touched)">
+                        <div *ngIf="regForm.controls['lastname'].errors.required">
+                          lastname is required
+                        </div>
+                        <div *ngIf="regForm.controls['lastname'].errors.maxlength">
+                          lastname must be maximum 20 characters length
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inputwrapper email">
+                      <input type="text" placeholder="ელ.ფოსტა" formControlName="email">
+                      <div *ngIf="!regForm.controls['email'].valid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)">
+                        <div *ngIf="regForm.controls['email'].errors.required">
+                          email is required
+                        </div>
+                        <div *ngIf="regForm.controls['email'].errors.pattern">
+                          email is not correct
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inputwrapper password">
+                      <input type="password" placeholder="პაროლი" formControlName="password">
+                      <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)">
+                        <div *ngIf="regForm.controls['password'].errors.required">
+                          password is required
+                        </div>
+                        <div *ngIf="regForm.controls['password'].errors.minlength">
+                          password must be at least 5 characters length
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inputwrapper password">
+                      <input type="password" placeholder="გაიმეორეთ პაროლი" minLength="3" formControlName="password_confirmation">
+                      <div *ngIf="!regForm.controls['password_confirmation'].valid && (regForm.controls['password_confirmation'].dirty || regForm.controls['password_confirmation'].touched)">
+                        <div *ngIf="regForm.controls['password_confirmation'].errors.required">
+                          password is required
+                        </div>
+                        <div *ngIf="regForm.controls['password_confirmation'].errors.minlength">
+                          password must be at least 5 characters length
+                        </div>
+                        <div *ngIf="regForm.controls['password_confirmation'].errors.notEquivalent">
+                          Password Mismatch
+                        </div>
+                      </div>
+                    </div>
+                    <div class="lgnbtn">
+                      <span></span>
+                      <input type="submit" [disabled]="!regForm.valid" value="რეგისტრაცია">
+                    </div>
+                    <div class="footer">
+                      უკვე გაქვთ შექმნილი ანგარიში? <a class="registerbtn" (click)="regAuth = !regAuth"> ავტორიზაცია</a>
+                    </div>
+                  </div>
+                  <!-- <input type="button" class="auth" value="{{header.translations.auth}}" (click)="regCurrHeight = 0; logCurrHeight = logFormHeight; dropDownHeight = logFormHeight;">
+                  <div class="reg">
+                    <a class="fbreg">{{header.translations.registration}}</a>
+                    <div class="or">
+                      <span>{{header.translations.or}}</span>
+                    </div>
+                    <input type="text" placeholder="სახელი" formControlName="name">
+                    <div *ngIf="!regForm.controls['name'].valid && (regForm.controls['name'].dirty || regForm.controls['name'].touched)">
+                      <div *ngIf="regForm.controls['name'].errors.required">
+                        name is required
+                      </div>
+                      <div *ngIf="regForm.controls['name'].errors.maxlength">
+                        name must be maximum 20 characters length
+                      </div>
+                    </div>
+                    <input type="text" placeholder="გვარი" formControlName="lastname">
+                    <div *ngIf="!regForm.controls['lastname'].valid && (regForm.controls['lastname'].dirty || regForm.controls['lastname'].touched)">
+                      <div *ngIf="regForm.controls['lastname'].errors.required">
+                        lastname is required
+                      </div>
+                      <div *ngIf="regForm.controls['lastname'].errors.maxlength">
+                        lastname must be maximum 20 characters length
+                      </div>
+                    </div>
+                    <input type="text" placeholder="ელ.ფოსტა" formControlName="email">
+                    <div *ngIf="!regForm.controls['email'].valid && (regForm.controls['email'].dirty || regForm.controls['email'].touched)">
+                      <div *ngIf="regForm.controls['email'].errors.required">
+                        email is required
+                      </div>
+                      <div *ngIf="regForm.controls['email'].errors.pattern">
+                        email is not correct
+                      </div>
+                    </div>
+                    <input type="password" placeholder="პაროლი" formControlName="password">
+                    <div *ngIf="!regForm.controls['password'].valid && (regForm.controls['password'].dirty || regForm.controls['password'].touched)">
+                      <div *ngIf="regForm.controls['password'].errors.required">
+                        password is required
+                      </div>
+                      <div *ngIf="regForm.controls['password'].errors.minlength">
+                        password must be at least 5 characters length
+                      </div>
+                    </div>
+                    <input type="password" placeholder="გაიმეორეთ პაროლი" minLength="3" formControlName="password_confirmation">
+                    <div *ngIf="!regForm.controls['password_confirmation'].valid && (regForm.controls['password_confirmation'].dirty || regForm.controls['password_confirmation'].touched)">
+                      <div *ngIf="regForm.controls['password_confirmation'].errors.required">
+                        password is required
+                      </div>
+                      <div *ngIf="regForm.controls['password_confirmation'].errors.minlength">
+                        password must be at least 5 characters length
+                      </div>
+                      <div *ngIf="regForm.controls['password_confirmation'].errors.notEquivalent">
+                        Password Mismatch
+                      </div>
+                    </div>
+                    <input type="submit" [disabled]="!regForm.valid" value="რეგისტრაცია">
+                  </div> -->
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lang">
+        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a> / <a (click)="changeLang('ru')" [class]="(lang == 'ru') ? 'active' : ''">Rus</a>
+      </div>
+    </div>
+  </div>
+</header>
+<header class="userheader" *ngIf="header && authorized && user && (currentPage == '/profile' || currentPage == '/favorite' || currentPage == '/supported' || currentPage == '/myprojects' || currentPage == '/addProject' || currentPage.search('editproject') > -1)">
+  <div class="left">
+    <a routerLink="/" class="logo"><img src="/assets/logo.png" alt="logo"></a>
+    <ul>
+      <li>
+        <img src="/assets/supported.png" alt="">
+        {{header.translations.supported}}
+      </li>
+      <li>
+        <a routerLink="/favorite">
+          <img src="/assets/favoriteprojects.png" alt="">
+          {{header.translations.favorite}}
+        </a>
+      </li>
+      <li>
+        <a routerLink="/myprojects">
+        <img src="/assets/myprojects.png" alt="">
+        {{header.translations.my_project}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <a routerLink="/addProject" class="addProject">{{header.translations.add_project}}</a>
+    <div class="user" (click)="usermenuDropDown()">
+      <div class="profilepic" [style.backgroundImage]="'url(http://investme.testme.ge' + user.avatar + ')'"></div>
+      <h4 (click)="usermenuDropDown()">{{user.name}} <i class="fa fa-angle-down"></i></h4>
+      <div class="usermenu" [style.height]="dropDownHeight + 'px'">
+        <ul>
+          <li><a routerLink="profile">{{header.translations.profile}}</a></li>
+          <li>{{header.translations.favorite}}</li>
+          <li><a routerLink="addProject">{{header.translations.add_project}}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div (click)="logOut()" class="logout"><img src="/assets/logout.png" alt="logout"></div>
+  </div>
+</header>
+<router-outlet></router-outlet>
+
+<section class="partners" *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
+  <app-partners [partners]="footer.partners"></app-partners>
+</section>
+<footer *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
+  <div class="wrapper">
+    <section class="soc">
+      <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
+      <ul>
+        <li><a href="{{footer.contact.facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a href="{{footer.contact.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a href="{{footer.contact.linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li><a href="{{footer.contact.google}}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+      </ul>
+    </section>
+    <section class="menu">
+      <ul>
+        <li><a href="">{{footer.translations.about}}</a></li>
+        <li><a href="">{{footer.translations.media_about}}</a></li>
+        <li><a href="">{{footer.translations.events}}</a></li>
+        <li><a href="">{{footer.translations.blog}}</a></li>
+        <li><a href="">{{footer.translations.contact}}</a></li>
+      </ul>
+      <ul>
+        <li><a href="">{{footer.translations.faq}}</a></li>
+        <li><a href="">{{footer.translations.policy}}</a></li>
+        <li><a href="">{{footer.translations.rules}}</a></li>
+      </ul>
+      <ul>
+        <li *ngFor="let cat of footer.categories">{{cat.title}}</li>
+      </ul>
+    </section>
+  </div>
+  <div class="copy">
+    <span>&copy;2017, {{footer.translations.copyright}}</span>
+    <a href="https://smartweb.ge/" target="_blank"><img src="/assets/sw.png" alt=""></a>
+  </div>
+</footer>

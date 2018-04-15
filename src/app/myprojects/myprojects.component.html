@@ -1,0 +1,33 @@
+<div class="myprojects" *ngIf="translation && myprojects">
+  <h2>{{translation.myProjects}} <span class="badge">{{myprojects.length}}</span> </h2>
+
+  <section class="content" *ngIf="myprojects.length > 0">
+      <article class="project" *ngFor="let project of myprojects" (click)="editProject(project.project.id)">
+        <header>
+          <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
+            <div class="daysleft">
+              {{project.project.company_time - project.interval}}
+              <span>{{translation.day}}</span>
+            </div>
+          </div>
+          <h3>{{project.title}}</h3>
+          <p>{{project.min_description}}</p>
+        </header>
+        <footer>
+          <h4>{{project.category_title}}</h4>
+          <div class="moneyprogress">
+            <span class="currentmoney">{{project.money}} ₾</span>
+            <span class="targetCapital">{{project.project.capital}} ₾</span>
+            <div class="bar">
+              <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>
+            </div>
+          </div>
+        </footer>
+      </article>
+  </section>
+  <section class="content" *ngIf="myprojects.length == 0">
+    ;(<br>
+    თქვენ არ გაქვთ პროექტები
+    <a routerLink="/addproject"></a>
+  </section>
+</div>

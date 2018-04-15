@@ -1,0 +1,582 @@
+.addProject{
+  width: 1270px;
+  margin: auto;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  h2{
+    font-size: 17px;
+    color: #424A5A;
+    font-family: "BPG Mrgvlovani Caps 2010";
+  }
+  .steps{
+    margin-top: 50px;
+    background-color: #FFF;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.11);
+    .tabs{
+      display: flex;
+      height: 100px;
+      border: 1px solid #F4F7F8;
+      border-radius: 4px;
+      overflow: hidden;
+      .tab{
+        display: flex;
+        height: 100%;
+        padding: 0 20px;
+        flex: 1;
+        border-right: 1px solid #F4F7F8;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 13px;
+        color: #2F3748;
+        font-family: "BPG Mrgvlovani Caps 2010";
+        cursor: pointer;
+        .checker{
+          width: 24px;
+          height: 24px;
+          border: 2px solid #DFE3E9;
+          border-radius: 50%;
+          margin-right: 20px;
+        }
+        span{
+          display: block;
+          width: calc(100% - 50px);
+        }
+        &.active{
+          background-color: #F4F7F8;
+          color: #2F3748;
+          .checker{
+            border: 2px solid #74BA43;
+          }
+        }
+      }
+    }
+    .projectlangs{
+      display: flex;
+      margin-top: 30px;
+      li{
+        height: 30px;
+        padding: 0 25px;
+        border: 1px solid #F4F7F8;
+        display: flex;
+        align-items: center;
+        font-size: 12px;
+        color: #1A4C71;
+        font-family: "BPG Mrgvlovani Caps 2010";
+        cursor: pointer;
+        &.active{
+          background-color: #1A4C71;
+          color: #FFF;
+        }
+        &:first-child{
+          border-radius: 4px 0 0 4px;
+          border-right: none;
+        }
+        &:last-child{
+          border-left: none;
+          border-radius: 0 4px 4px 0;
+        }
+      }
+    }
+    .step{
+      margin-top: 60px;
+      form.about{
+        display: flex;
+        & .info{
+          width: calc(100% - 370px);
+          padding-right: 70px;
+          label{
+            width: calc(100% - 630px);
+            font-size: 12px;
+            color: #2F3748;
+            font-family: "BPG Mrgvlovani Caps 2010";
+          }
+          .fgroup{
+            padding-bottom: 50px;
+            &::after{
+              content: '';
+              width: 250px;
+              height: 1px;
+              background-color: #DFE3E9;
+              display: block;
+              margin: auto;
+              margin-top: 50px;
+            }
+            .row{
+              margin-bottom: 45px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              &.checkbox{
+                align-items: flex-start;
+                .inputwrapper{
+                  flex-direction: column;
+                  align-items: flex-start;
+                  padding-left: 10px;
+                }
+              }
+              .inputwrapper{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 630px;
+                position: relative;
+                padding-right: 30px;
+                .categories{
+                  margin-bottom: 17px;
+                  input[type=radio]{
+                    display: none;
+                    &+label{
+                      cursor: pointer;
+                      font-family: "BPG Mrgvlovani";
+                      color: #798088;
+                      &::before{
+                        content: '';
+                        width: 16px;
+                        height: 16px;
+                        border: 2px solid #D3D3D3;
+                        border-radius: 3px;
+                        margin-right: 20px;
+                        display: inline-block;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                      }
+                    }
+                    &:checked+label::before{
+                      border: 5px solid #74BA43;
+                    }
+                  }
+                }
+                input, select{
+                  width: 100%;
+                  height: 60px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 0 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                }
+                textarea{
+                  width: 100%;
+                  height: 168px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                }
+                span.info{
+                  width: 20px;
+                  margin-left: 10px;
+                  position: absolute;
+                  right: 0;
+                  padding: 0;
+                }
+                span.smallinfo{
+                  position: absolute;
+                  top: calc(100% + 10px);
+                  right: 30px;
+                  font-size: 10px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                }
+                .innerGroup{
+                  width: 100%;
+                  position: relative;
+                }
+              }
+            }
+          }
+          .interests{
+            .inputwrapper{
+              input{
+                display: block;
+                width: 100%;
+                height: 60px;
+                border: 1px solid #DFE3E9;
+                border-radius: 4px;
+                padding: 0 30px;
+                margin-top: 30px;
+                font-size: 12px;
+                color: #888F97;
+                font-family: "BPG Mrgvlovani";
+              }
+            }
+          }
+        }
+        .mainFoto{
+          width: 370px;
+          height: 340px;
+          border: 1px solid #DFE3E9;
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          position: relative;
+          .delete{
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: -15px;
+            top: -15px;
+            background-color: #FFF;
+            box-shadow: 0 0 15px rgba(0,0,0,0.11);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+          }
+        }
+      }
+      & > .files{
+          section{
+            margin-bottom: 30px;
+            h2{
+              font-size: 13px;
+              color: #070707;
+            }
+            input[type=file]{
+              display: none;
+            }
+            .documents{
+              margin: 20px 0;
+              li{
+                margin-right: 10px;
+                height: 50px;
+                border-radius: 30px;
+                border: 1px solid #D9D9D9;
+                display: inline-flex;
+                align-items: center;
+                padding: 0 30px;
+                font-size: 12px;
+                color: #707070;
+                font-family: "BPG Mrgvlovani";
+                position: relative;
+                .delete{
+                  position: absolute;
+                  top: -15px;
+                  right: -15px;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.11);
+                  background-color: #FFF;
+                  text-align: center;
+                  line-height: 30px;
+                  cursor: pointer;
+                }
+              }
+            }
+            .documentsUploadforms{
+              li{
+                margin-bottom: 20px;
+                label{
+                  height: 60px;
+                  width: 220px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  display: inline-flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  font-size: 12px;
+                  color: #888F97;
+                  font-family: "BPG Mrgvlovani";
+                  padding: 0 30px;
+                  cursor: pointer;
+                  img{
+                    width: 16px;
+                  }
+                }
+                input[type=text]{
+                  width: 265px;
+                  height: 60px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  margin-left: 10px;
+                  padding: 0 30px;
+                  font-family: "BPG Mrgvlovani";
+                  font-size: 12px;
+                }
+                button[type=button]{
+                  height: 60px;
+                  padding: 0 15px;
+                  background-color: #798088;
+                  border-radius: 4px;
+                  color: #FFF;
+                  font-family: "BPG Mrgvlovani";
+                  font-size: 13px;
+                }
+              }
+            }
+            .fototitles{
+              display: flex;
+              flex-wrap: wrap;
+              li{
+                img{
+                  width: 100px;
+                  height: 100px;
+                  object-fit: cover;
+                }
+                input[type=text]{
+                  border: 1px solid #DFE3E9;
+                  height: 50px;
+                  display: block;
+                }
+              }
+            }
+            .fotosUploadForm{
+              display: flex;
+              flex-wrap: wrap;
+              li{
+                width: 100px;
+                height: 100px;
+                border-radius: 4px;
+                border: 1px solid #DFE3E9;
+                margin-right: 10px;
+                margin-bottom: 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+                position: relative;
+                .delete{
+                  width: 30px;
+                  height: 30px;
+                  line-height: 30px;
+                  text-align: center;
+                  background-color: #FFF;
+                  border-radius: 50%;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.11);
+                  position: absolute;
+                  top: -15px;
+                  right: -15px;
+                  cursor: pointer;
+                }
+                input[type=file]{
+                  display: none;
+                }
+                label{
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100%;
+                  flex-direction: column;
+                  font-size: 11px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                  cursor: pointer;
+                  img{
+                    width: 16px;
+                  }
+                }
+              }
+            }
+            .videos{
+              li{
+                position: relative;
+                width: 100px;
+                height: 100px;
+                border-radius: 4px;
+                img{
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+                }
+                .delete{
+                  position: absolute;
+                  top: -15px;
+                  right: -15px;
+                  width: 30px;
+                  height: 30px;
+                  border-radius: 50%;
+                  background-color: #FFF;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.11);
+                  line-height: 30px;
+                  text-align: center;
+                  cursor: pointer;
+                }
+              }
+            }
+            .videoUploadForm{
+              li{
+                margin-bottom: 40px;
+                input[type=text]{
+                  width: 420px;
+                  height: 60px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  display: block;
+                  padding: 0 40px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                  margin-bottom: 20px;
+                }
+              }
+            }
+          }
+      }
+      & > .jildoebi{
+        .jildo{
+          li{
+            h3{
+              font-size: 13px;
+              color: #1A4C71;
+              font-family: "BPG Mrgvlovani Caps 2010";
+            }
+            .row{
+              display: flex;
+              margin-bottom: 30px;
+              label{
+                width: 130px;
+                padding-right: 50px;
+                padding-top: 20px;
+                font-size: 12px;
+                color: #2F3748;
+                font-family: "BPG Mrgvlovani Caps 2010";
+              }
+              .inputwrapper{
+                width: 600px;
+                display: flex;
+                input[type=text], select{
+                  width: 100%;
+                  height: 60px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 0 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                }
+                textarea{
+                  width: 100%;
+                  height: 165px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                  resize: none;
+                }
+              }
+            }
+          }
+        }
+      }
+      & > .team{
+        ul{
+          li{
+            h3{
+              font-size: 13px;
+              color: #1A4C71;
+              font-family: "BPG Mrgvlovani Caps 2010";
+            }
+            .row{
+              display: flex;
+              margin-bottom: 30px;
+              label{
+                width: 130px;
+                padding-right: 50px;
+                padding-top: 20px;
+                font-size: 12px;
+                color: #2F3748;
+                font-family: "BPG Mrgvlovani Caps 2010";
+              }
+              .inputwrapper{
+                width: 600px;
+                display: flex;
+                input[type=text], select{
+                  width: 100%;
+                  height: 60px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 0 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                }
+                textarea{
+                  width: 100%;
+                  height: 165px;
+                  border: 1px solid #DFE3E9;
+                  border-radius: 4px;
+                  padding: 30px;
+                  font-size: 12px;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                  resize: none;
+                }
+              }
+              .memberfoto{
+                width: 100px;
+                height: 100px;
+                border-radius: 4px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  button.save{
+    height: 50px;
+    border-radius: 4px;
+    background-color: #798088;
+    color: #FFF;
+    font-size: 12px;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    padding: 0 20px;
+    display: block;
+    margin-top: 40px;
+    &.disabled{
+      opacity: 0.5;
+    }
+  }
+  button.nextstep{
+    margin-top: 30px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 4px;
+    background-color: #74BA43;
+    font-size: 12px;
+    color: #FFF;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    i{
+      margin-left: 30px;
+    }
+    &.disabled{
+      opacity: 0.5;
+    }
+  }
+  button.more{
+    background-color: transparent;
+    color: #048BA8;
+    display: inline;
+    font-size: 11px;
+    font-family: "BPG Mrgvlovani";
+  }
+  button.prevstep{
+    height: 50px;
+    margin-right: 20px;
+    background-color: #DFE3E9;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #6A6B6E;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    padding: 0 20px;
+    padding-right: 50px;
+    i{
+      margin-right: 30px;
+    }
+  }
+}

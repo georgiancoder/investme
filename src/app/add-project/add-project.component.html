@@ -1,0 +1,261 @@
+<div class="addProject" *ngIf="projectData">
+  <h2>{{projectData.translations.addproject}}</h2>
+  <div class="steps">
+    <ul class="tabs">
+      <li [class]="stepIndex == i ? 'tab active' : 'tab'" *ngFor="let tab of steps; let i = index" (click)="selectStep(tab)">
+        <div class="checker"></div>
+        <span>{{tab.title}}</span>
+      </li>
+    </ul>
+    <ul class="projectlangs" *ngIf="stepIndex != 4 && stepIndex != 5">
+      <li [class]="projectLang=='ka' ? 'active' : ''" (click)="projectLang='ka'">ka</li>
+      <li [class]="projectLang=='en' ? 'active' : ''" (click)="projectLang='en'">en</li>
+      <li [class]="projectLang=='ru' ? 'active' : ''" (click)="projectLang='ru'">ru</li>
+    </ul>
+    <div class="step" *ngIf="stepIndex == 0">
+      <form class="about">
+        <div class="info">
+          <div class="fgroup">
+            <div class="row">
+              <label>{{projectData.translations.title}}</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="firstStep[projectLang].title" name="title">
+                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="smallinfo">მაქსიმუმ 140 სიმბოლო</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>{{projectData.translations.minDescription}}</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="firstStep[projectLang].smalldesc" name="smalldesc">
+                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="smallinfo">მაქსიმუმ 2500 სიმბოლო</span>
+              </div>
+            </div>
+            <div class="row">
+              <label>{{projectData.translations.fullDescription}}</label>
+              <div class="inputwrapper">
+                <textarea [(ngModel)]="firstStep[projectLang].longdesc" name="longdesc"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="fgroup">
+            <div class="row">
+              <label>{{projectData.translations.capital}}</label>
+              <div class="inputwrapper">
+                <div class="innerGroup">
+                  <input type="text" name="capital" [(ngModel)]="firstStep.capital">
+                </div>
+                <span class="info"><img src="assets/info.png" alt=""> </span>
+              </div>
+            </div>
+            <div class="row">
+              <label>{{projectData.translations.companyTime}}</label>
+              <div class="inputwrapper">
+                <select [(ngModel)]="firstStep.campainTime" name="campainTime">
+                  <option value="{{ct.value}}" selected *ngFor="let ct of firstStep[projectLang].campainTimes">{{ct.label}}</option>
+                </select>
+                <span class="info"><img src="assets/info.png" alt=""> </span>
+              </div>
+            </div>
+            <div class="row checkbox">
+              <label>{{projectData.translations.categories}}</label>
+              <div class="inputwrapper">
+                <!-- <p-checkbox name="groupname" name="category" value="{{c.value}}" [(ngModel)]="firstStep[projectLang].category" label="{{c.label}}" *ngFor="let c of firstStep[projectLang].categoriebi" ></p-checkbox> -->
+                <p-radioButton name="groupname" value="{{c.value}}" label="{{c.label}}" [(ngModel)]="firstStep.category" *ngFor="let c of firstStep[projectLang].categoriebi"></p-radioButton>
+              </div>
+            </div>
+          </div>
+          <div class="interests">
+            <label>{{projectData.translations.interests}}</label>
+            <div class="inputwrapper">
+              <p-multiSelect [options]="firstStep[projectLang].interests" [(ngModel)]="firstStep.interest" name="firstStep.interest" [panelStyle]="{minWidth:'12em'}">
+                  <ng-template let-interesi let-i="index" pTemplate="item">
+                      {{i}}
+                      <div style="font-size:14px;float:right;margin-top:4px">{{interesi.label}}</div>
+                  </ng-template>
+              </p-multiSelect>
+            </div>
+          </div>
+          <button type="submit" [class]="'save'" (click)="addMainInfo()">{{projectData.translations.save}}</button>
+          <button type="submit" [class]="'nextstep'" (click)="addMainInfo(); stepIndex=1;">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+        </div>
+        <div class="mainFoto" [style.backgroundImage]="'url('+firstStep.projectMainPic+')'">
+          <div *ngIf="firstStep.projectMainPic == ''">
+            <p-fileUpload mode="basic" name="mainPic" customUpload="true" accept="image/*" auto="auto" (uploadHandler)="uploadMainPic($event)" maxFileSize="1000000" chooseLabel="{{projectData.translations.main_photo}}" styleClass="uploadMainPic"></p-fileUpload>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="step" *ngIf="stepIndex == 1">
+      <div class="files">
+        <section>
+          <h2>{{projectData.translations.documents}}</h2>
+          <ul class="documents">
+            <li *ngFor="let file of secondStep[projectLang].uploadedDocuments; let i = index">{{file.text}}</li>
+          </ul>
+          <ul class="documentsUploadforms">
+            <li *ngFor="let file of secondStep[projectLang].documents; let i = index">
+              <input type="file"  id="document{{i}}" [disabled]="file.uploaded" (change)="documentChange($event ,i);"> <label for="document{{i}}">{{projectData.translations.chooseFile}} <img src="/assets/upload-to-cloud.png" alt=""> </label>
+              <input type="text" [disabled]="file.uploaded" placeholder="ფაილის დასახელება" [(ngModel)]="file.text">
+            </li>
+          </ul>
+          <button type="button" [class]="'more'" (click)="addNewDocumentForm()"><i class="fa fa-plus"></i> {{projectData.translations.moreFile}}</button>
+        </section>
+        <section>
+          <h2>{{projectData.translations.photoes}}</h2>
+          <input type="file" id="foto{{i}}" (change)="step2PhotoUploadChange($event ,i)" multiple><label for="foto{{i}}">
+            <img src="/assets/upload-to-cloud.png" alt="">
+            {{projectData.translations.upload}}
+          </label>
+          <ul class="fototitles">
+            <li *ngFor="let foto of secondStep[projectLang].fotos; let i = index">
+              <img src="{{foto.file}}" width="100">
+              <input type="text" [(ngModel)]="secondStep[projectLang].fotos[i].title">
+            </li>
+          </ul>
+          <ul class="fotosUploadForm">
+            <li *ngFor="let foto of secondStep.fotos; let i = index" [style.backgroundImage]="'url('+foto.file+')'">
+
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>{{projectData.translations.video}}</h2>
+          <ul class="videos">
+            <li></li>
+          </ul>
+          <ul class="videoUploadForm">
+            <li *ngFor="let video of secondStep[projectLang].videos; let i = index">
+              <input type="text" placeholder="{{projectData.translations.videoLink}}" [(ngModel)]="video.link">
+              <input type="text" placeholder="{{projectData.translations.VideoTitle}}" [(ngModel)]="video.name">
+            </li>
+          </ul>
+          <button type="button" [class]="'more'" (click)="addVideos()"><i class="fa fa-plus"></i> {{projectData.translations.moreVideo}}</button>
+        </section>
+        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1"><i class="fa fa-angle-left"></i> {{projectData.translations.previousStep}}</button>
+        <button type="button" [class]="'nextstep'" (click)="addDocuments()">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+      </div>
+    </div>
+    <div class="step" *ngIf="stepIndex == 2">
+      <div class="jildoebi">
+        <ul class="jildo">
+          <li *ngFor="let jildo of jildoebi[projectLang]; let i = index">
+            <h3>ჯილდო {{i + 1}}</h3>
+            <div class="row">
+              <label>სათაური</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="jildo.title">
+              </div>
+            </div>
+            <div class="row">
+              <label>ჯილდოს აღწერა</label>
+              <div class="inputwrapper">
+                <textarea [(ngModel)]="jildo.desc"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <label>თანხა</label>
+              <div class="inputwrapper">
+                <select [(ngModel)]="jildoebi.money">
+                  <option value="10-50">10 დან 50 ლარამდე</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <label>მიწოდების თარიღი</label>
+              <div class="inputwrapper">
+                <select [(ngModel)]="jildoebi.date.month">
+                  <option value="">აირჩიეთ თვე</option>
+                  <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
+                </select>
+                <select [(ngModel)]="jildoebi.date.year">
+                  <option value="">აირჩიეთ წელი</option>
+                  <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
+                </select>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
+      </div>
+      <button type="button" [class]="'prevstep'"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+      <button type="button" [class]="'nextstep'" (click)="addAwards()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+    </div>
+    <div class="step" *ngIf="stepIndex == 3">
+      <div class="team">
+        <ul>
+          <li *ngFor="let member of team[projectLang]; let i = index;">
+            <h3>გუნდის წევრი {{i}}</h3>
+            <div class="row">
+              <label>სახელი, გვარი</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="member.fullname">
+              </div>
+            </div>
+            <div class="row">
+              <label>ელ.ფოსტა</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="member.email">
+              </div>
+            </div>
+            <div class="row">
+              <label>როლი</label>
+              <div class="inputwrapper">
+                <input type="text" [(ngModel)]="member.role">
+              </div>
+            </div>
+            <div class="row">
+              <label>ინფორმაცია</label>
+              <div class="inputwrapper">
+                <textarea [(ngModel)]="member.information"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <label>ფოტო</label>
+              <div class="inputwrapper">
+                <input type="file" id="memberfoto{{i}}" (change)="uploadMemberPhoto($event ,i);"><label for="memberfoto{{i}}">აირჩიეთ ფოტო</label>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="more" (click)="moreMember()">მეტი გუნდის წევრი</button>
+        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+      </div>
+    </div>
+    <div class="step" *ngIf="stepIndex == 4">
+      <div class="finances">
+        <div class="l">
+          <table>
+            <tr>
+              <td>სასურველი კაპიტალი:</td>
+              <td>{{finansebi.targetCapital}}</td>
+            </tr>
+            <tr>
+              <td>პროგნოზი</td>
+              <td>{{finansebi.prognos}}</td>
+            </tr>
+            <tr>
+              <td>თანხა</td>
+              <td>{{finansebi.amount}}</td>
+            </tr>
+          </table>
+          <input type="text" placeholder="ჩაწერეთ ანგარიშის ნომერი" [(ngModel)]="finansebi.acountNumber">
+        </div>
+        <div class="desc">
+
+        </div>
+        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+        <button type="button" [class]="'nextstep'" (click)="addFinances()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+      </div>
+
+    </div>
+    <div class="step" *ngIf="stepIndex == 5">
+      <div class="pay">
+        <input type="radio" name="pay" id="onlinepayment" (click)="sendPayment('online')" ><label for="onlinepayment">ონლაინ გადახდა</label>
+        <input type="radio" name="pay" id="paybybank" (click)="sendPayment('bank')"><label for="paybybank">საბანკო გადარიცხვა</label>
+      </div>
+    </div>
+  </div>
+</div>

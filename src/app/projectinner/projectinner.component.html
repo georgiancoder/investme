@@ -1,0 +1,128 @@
+<section class="projectInner">
+  <div class="pagination">
+    <div class="wrapper">
+      <h2>პროექტები</h2>
+      <ul>
+        <li><a routerLink="/">მთავარი</a></li>
+        <li>პროექტები</li>
+      </ul>
+    </div>
+  </div>
+
+  <article class="content" *ngIf="project">
+    <div class="gallery">
+      <div class="main" [style.backgroundImage]="'url('+media[0].image+')'">
+      </div>
+      <div class="thumbs">
+        <div class="thumbswrapper">
+          <ul [style.width]="media.length * 95 + 'px  '" [style.marginLeft]="thumbsSliderPosition + 'px'">
+            <li *ngFor="let m of media" [class]="m == thumbsSliderCurItem ? 'active' : ''" [style.backgroundImage]="'url('+m.image+')'"></li>
+          </ul>
+        </div>
+        <div class="arrows">
+          <button type="button"></button>
+          <button type="button"></button>
+        </div>
+      </div>
+
+    </div>
+    <div class="basicinfo">
+      <header>
+        <div class="categorie">
+          {{project.category.title}}
+        </div>
+        <h2>{{project.detail[0].title}}</h2>
+        <div class="author">
+          ავტორი: <span>{{project.user[0].name}}</span>
+        </div>
+      </header>
+      <footer>
+        <div class="moneyprogress">
+          <span class="currentmoney">{{project.money}} ₾</span>
+          <span class="targetCapital">{{project.project.capital}} ₾</span>
+          <div class="bar">
+            <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>
+          </div>
+        </div>
+        <div class="support">
+          დარჩენილი თანხა: {{project.project.capital - project.money}}
+          <button type="button" *ngIf="isAuthenticated" name="button">მხარდაჭერა</button>
+        </div>
+        <div class="soc">
+        </div>
+      </footer>
+    </div>
+    <div class="infotabs">
+      <ul class="tabs">
+        <li [class]="tabindex == 0 ? 'active' : ''" (click)="tabindex = 0">პროექტის შესახებ</li>
+        <li [class]="tabindex == 1 ? 'active' : ''" (click)="tabindex = 1">ფაილები</li>
+        <li [class]="tabindex == 2 ? 'active' : ''" (click)="tabindex = 2">გუნდის წევრები</li>
+        <li [class]="tabindex == 3 ? 'active' : ''" (click)="tabindex = 3">ჯილდოები</li>
+      </ul>
+      <div class="tab" *ngIf="tabindex == 0">
+        <div class="about">
+          <h2>{{project.detail[0].title}}</h2>
+          <div class="text">
+            {{project.detail[0].full_description}}
+          </div>
+        </div>
+      </div>
+      <div class="tab" *ngIf="tabindex == 1">
+        <div class="files">
+          <h2>დოკუმენტები</h2>
+          <ul class="documents">
+            <li *ngFor="let file of documents">
+                {{file.title}}
+
+                <img src="{{file.ico}}" alt="">
+            </li>
+          </ul>
+          <h2>მედია ფაილები</h2>
+          <ul class="media">
+            <li *ngFor="let m of media; let i = index;" [style.backgroundImage]="'url('+m.image+')'">
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab" *ngIf="tabindex == 2">
+        <div class="team">
+          <ul>
+            <li *ngFor="let member of project.teamDetail">
+              <div class="img" [style.backgroundImage]="'url('+siteUrl + member.image+')'">
+              </div>
+              <h3>{{member.name}}</h3>
+              <h5>{{member.role}}</h5>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="tab" *ngIf="tabindex == 3">
+        <div class="awards">
+          <ul>
+            <li *ngFor="let award of project.awardDetail">
+              <div class="desc">
+                <h2>{{award.title}}</h2>
+                <div class="text">
+                  {{award.description}}
+                </div>
+              </div>
+              <div class="info">
+                <div class="amount">
+                  {{award.amount}}
+                </div>
+                <div class="time">
+                  მიწოდების დრო
+                  <span>{{award.deliver_date}}</span>
+                </div>
+                <div *ngIf="isAuthenticated">
+                  <button type="button">მხარდაჭერა</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</section>

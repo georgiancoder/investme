@@ -1,0 +1,55 @@
+<section class="projectSlider">
+  <div class="categories">
+    <ul>
+      <li><a routerLink="/allproject">ყველა პროექტი</a></li>
+      <li><a>ახალი პროექტი</a></li>
+      <li><a>პოპულარული პროექტები</a></li>
+      <li><a>რჩეულები</a></li>
+      <li>
+        <button type="button" class="srchbtntoggle" (click)="srchbtntgl = !srchbtntgl"><i class="fa fa-search" aria-hidden="true" *ngIf="!srchbtntgl"></i> <i class="fa fa-times" *ngIf="srchbtntgl"></i></button>
+        <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">
+          <input type="text" placeholder="ძიება ...">
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </li>
+    </ul>
+  </div>
+
+  <div class="slider">
+    <div class="sliderBackground" [style.background-image]="'url(' + siteUrl + currentProject.project.image + ')'"></div>
+    <div class="wrapper">
+      <article class="text">
+        <h2>{{currentProject.title}}</h2>
+        <p>{{currentProject.desc}}</p>
+        <footer>
+          <a href="" class="daafinanse">დააფინანსე პროექტი</a>
+          <span class="targetCapital">საჭირო თანხა: <span class="capital">{{currentProject.project.capital}}</span></span>
+        </footer>
+      </article>
+
+      <div class="progress"><div class="bar" [style.width]="progress +'%'"></div></div>
+    </div>
+  </div>
+
+  <div class="thumbs">
+    <div class="thumbsouter">
+      <div class="thumbsWrapper">
+        <ul [style.margin-left]="slideWidth + 'px'" [style.width]="thumbsWidth + 'px'">
+          <li *ngFor="let project of projects; let i = index" (click)="selectProject(project, i)" [class]="i == activeSlide ? 'active' : ''">
+            <div class="img" [style.background-image]="'url(' + siteUrl + project.project.image + ')'"></div>
+            <h3>{{project.title}}</h3>
+          </li>
+        </ul>
+      </div>
+      <div class="buttons">
+        <button [class]="prevBtnShowHide" (click)="prevSlide()">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button [class]="nextBtnShowHide" (click)="nextSlide()">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+</section>

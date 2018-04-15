@@ -1,0 +1,34 @@
+<div *ngIf="mainpagecontent">
+  <app-project-slider [projects]="mainpagecontent.projects"></app-project-slider>
+</div>
+
+<div class="categories" *ngIf="mainpagecontent">
+    <ul>
+      <li *ngFor="let categorie of mainpagecontent.categories">
+        <img src="http://investme.testme.ge{{categorie.image}}" alt="{{categorie.title}}">
+        {{categorie.title}}
+      </li>
+    </ul>
+</div>
+
+
+<section class="projectinfo">
+  <ul>
+    <li>
+      <h4>მხარდამჭერები</h4>
+      <h3>0</h3>
+    </li>
+    <li>
+      <h4>სულ პროექტები</h4>
+      <h3>0</h3>
+    </li>
+    <li>
+      <h4>წარმატებული პროექტები</h4>
+      <h3>0</h3>
+    </li>
+    <li>
+      <h4>გადარიცხული თანხა</h4>
+      <h3>0</h3>
+    </li>
+  </ul>
+</section>

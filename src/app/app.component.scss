@@ -1,0 +1,493 @@
+@import '../scss/mixins.scss';
+
+@mixin usermenu($top, $marginTop){
+  .usermenu{
+    z-index: 4;
+    position: absolute;
+    top: $top;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: $marginTop;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    font-size: 13px;
+    overflow: hidden;
+    ul{
+      background-color: #FFF;
+      border: 1px solid #DFE4E5;
+      border-radius: 0 0 5px 5px;
+      padding: 0 12px;
+      position: relative;
+      margin-top: 8px;
+      &::before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 4px 4px 4px;
+        border-color: transparent transparent #dfe4e5 transparent;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      li{
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        border-bottom: 1px solid #EBEBEB;
+        white-space: nowrap;
+        &:last-child{
+          border: none;
+        }
+        &.logout{
+          justify-content: center;
+          img{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+header{
+  background-color: #FFF;
+  font-family: "BPG Mrgvlovani";
+  .wrapper{
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .logo{
+      img{
+        width: 185px;
+      }
+    }
+    .l{
+      width: calc(50% - 92px);
+      height: 52px;
+
+      li{
+        float: left;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 40px;
+        @include textStyle(13px, 13px, #2F3748, normal);
+        i{
+          margin-right: 10px;
+        }
+        &:first-child{
+          padding-left: 0;
+          border-right: 1px solid #DFE4E5;
+        }
+      }
+    }
+    .r{
+      width: calc(50% - 92px);
+      display: flex;
+      justify-content: flex-end;
+      .auth{
+        user-select: none;
+        cursor: pointer;
+        @include textStyle(13px,13px,#2F3748,normal);
+        i.fa-user{
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background-color: #048BA8;
+          border: 1px solid #FFF;
+          box-shadow: 0 0 6px rgba(0,0,0,0.1);
+          line-height: 45px;
+          text-align: center;
+          color: #FFF;
+          margin-left: 15px;
+        }
+        .dropdownContainer{
+          width: 100%;
+          position: absolute;
+          overflow: hidden;
+          left: 0;
+          margin-top: 27.5px;
+          z-index: 5;
+          background-color: #FFF;
+          // &::before{
+          //   content: '';
+          //   position: absolute;
+          //   top: 0;
+          //   right: 55px;
+          //   height: 0;
+          //   width: 0;
+          //   border-bottom: 8px solid #289174;
+          //   border-left: 5px solid transparent;
+          //   border-right: 5px solid transparent;
+          // }
+          .dropdown{
+            height: 100%;
+            width: 100%;
+            background-color: #FFF;
+            cursor: default;
+            position: relative;
+            box-shadow: 0 11px 22px rgba(0,0,0,0.06) inset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            form{
+              overflow: hidden;
+              &.authorizationForm, &.registrationForm{
+                width: 1087px;
+                display: flex;
+                .art{
+                  width: 550px;
+                  height: 520px;
+                  background-image: url("../assets/bg.png");
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover;
+                }
+                .content{
+                  width: calc(100% - 550px);
+                  padding-left: 180px;
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  align-items: space-between;
+                  .fbauth{
+                    position: relative;
+                    height: 70px;
+                    border: 5px solid #DFE4E5;
+                    border-radius: 39px;
+                    width: 100%;
+                    background-color: #315B9E;
+                    @include textStyle(13px,18px,#FFF,normal);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: "BPG Mrgvlovani Caps 2010";
+                    i{
+                      position: absolute;
+                      left: 65px;
+                    }
+                  }
+                  .or{
+                    width: 260px;
+                    margin: 45px auto;
+                    text-align: center;
+                    border-top: 1px solid #E6E6E6;
+                    font-family: "BPG Mrgvlovani Caps 2010";
+                    span{
+                      background-color: #FFF;
+                      padding: 0 15px;
+                      @include textStyle(11px,15px,#B2B2B2,normal);
+                      display: inline-block;
+                      transform: translateY(-50%);
+                    }
+                  }
+                  .inputwrapper{
+                    position: relative;
+                    margin-bottom: 20px;
+                    input{
+                      width: 100%;
+                      height: 66px;
+                      border: 1px solid #DFE4E5;
+                      border-radius: 4px;
+                      padding: 0 27px;
+                      font-family: "BPG Mrgvlovani";
+                      @include textStyle(12px,16px,#2F3748,normal);
+                      &::placeholder{
+                        @include textStyle(12px,16px,#2F3748,normal);
+                      }
+                    }
+                  }
+                  .lgnbtn{
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    input{
+                      height: 50px;
+                      background-color: #289174;
+                      border-radius: 4px;
+                      @include textStyle(13px,18px,#FFF,normal);
+                      padding: 0 25px;
+                      font-family: "BPG Mrgvlovani Caps 2010";
+                    }
+                    .restore{
+                      @include textStyle(12px,18px,#888888,normal);
+                    }
+                  }
+                  .footer{
+                    margin-top: 50px;
+                    @include textStyle(12px,16px,#2F3748,normal);
+                    a{
+                      color: #02748D;
+                      font-family: "BPG Mrgvlovani Caps 2010";
+                      text-decoration: underline;
+                      cursor: pointer;
+                    }
+                  }
+                }
+              }
+              &.registrationForm{
+                .auth{
+                  width: 100%;
+                  height: 75px;
+                  background-color: #FFFFFF;
+                  @include textStyle(13px,13px,#2F3748,normal);
+                }
+                .reg{
+                  background-color: #DFE4E5;
+                  padding: 30px 20px;
+                  a.fbreg{
+                    display: block;
+                    height: 45px;
+                    background-color: #315B9E;
+                    border-radius: 3px;
+                    text-align: center;
+                    @include textStyle(13px,45px,#FFF,normal);
+                  }
+                  .or{
+                    margin: 30px 0;
+                    height: 0;
+                    border-top: 1px solid #D0D0D0;
+                    text-align: center;
+                    span{
+                      @include textStyle(11px,15px,#B2B2B2,normal);
+                      padding: 0 15px;
+                      position: relative;
+                      top: -7px;
+                      background-color: #DFE4E5;
+                    }
+                  }
+                  input[type=text],input[type=password]{
+                    width: 100%;
+                    height: 50px;
+                    border-radius: 4px;
+                    background-color: #FFF;
+                    border: 1px solid #DFE4E5;
+                    padding: 0 20px;
+                    margin-bottom: 15px;
+                    @include textStyle(12px,12px,#2F3748,normal);
+                    &::placeholder{
+                      @include textStyle(12px,18px,#2F3748,normal);
+                    }
+                  }
+                  input[type=submit]{
+                    margin-top: 15px;
+                    width: 100%;
+                    height: 48px;
+                    background-color: #289174;
+                    @include textStyle(13px,15px,#FFF,normal);
+                    border-radius: 4px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .usermenuwrapper{
+          position: relative;
+          @include usermenu(initial, 19px);
+        }
+      }
+      .lang{
+        padding-left: 65px;
+        display: flex;
+        align-items: center;
+        @include textStyle(13px,13px,#95989A,normal);
+        a{
+          margin: 0 5px;
+          cursor: pointer;
+          &.active, &:hover{
+            color: #2F3748;
+          }
+        }
+      }
+    }
+  }
+  &.userheader{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    border-bottom: 1px solid #F2F2F2;
+    .left{
+      display: flex;
+      align-items: center;
+      .logo{
+        width: 256px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #1A4C71;
+        img{
+          width: 160px;
+        }
+      }
+      ul{
+        display: flex;
+        padding-left: 30px;
+        li{
+          margin: 0 30px;
+          font-size: 12px;
+          color: #1A4C71;
+          font-family: "BPG Mrgvlovani Caps 2010";
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          img{
+            display: block;
+            margin: auto;
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+    .right{
+      display: flex;
+      align-items: center;
+      a.addProject{
+        display: block;
+        margin-right: 50px;
+        height: 50px;
+        background-color: #74BA43;
+        border-radius: 4px;
+        line-height: 50px;
+        color: #FFF;
+        font-size: 12px;
+        font-family: "BPG Mrgvlovani Caps 2010";
+        padding: 0 25px;
+      }
+      .user{
+        height: 100%;
+        border-left: 1px solid #EDEDED;
+        border-right: 1px solid #EDEDED;
+        padding: 0 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        .profilepic{
+          width: 45px;
+          height: 45px;
+          background-color: #EDEDED;
+          border-radius: 50%;
+          border: 1px solid #FFF;
+          box-shadow: 0 0 6px rgba(0,0,0,0.1);
+          margin-right: 15px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+        }
+        h4{
+          font-size: 13px;
+          color: #2F3748;
+          i{
+            color: #B2B2B2;
+            margin-left: 5px;
+          }
+        }
+        @include usermenu(100%, 0);
+      }
+      .logout{
+        width: 160px;
+        padding-left: 35px;
+        cursor: pointer;
+        img{
+          width: 23px;
+        }
+      }
+    }
+  }
+}
+.partners{
+  width: 100%;
+  height: 130px;
+  background-color: #048BA8;
+  box-shadow: 0 -10px 36px rgba(0,0,0,0.2);
+}
+footer{
+  background-color: #FFF;
+  padding-top: 90px;
+  .wrapper{
+    width: 1160px;
+    padding-bottom: 20px;
+    margin: auto;
+    display: flex;
+    .logo{
+      img{
+        width: 185px;
+      }
+    }
+    section{
+      display: flex;
+      font-family: "BPG Mrgvlovani Caps 2010";
+      &.soc{
+        width: 420px;
+        flex-direction: column;
+        ul{
+          display: flex;
+          margin-top: 50px;
+          li{
+            color: #2F3748;
+            font-size: 12px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid #C6C6C6;
+            margin: 0 10px;
+            a{
+              display: block;
+              text-align: center;
+              line-height: 50px;
+            }
+            &:first-child{
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      &.menu{
+        justify-content: space-between;
+        flex-grow: 2;
+        ul{
+          @include textStyle(13px,35px,#2F3748,normal);
+          &:first-child{
+            margin-left: 0;
+          }
+          li{
+            a{
+              &:hover{
+                color: #289174;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .copy{
+    width: 1160px;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #C6C6C6;
+    font-family: "BPG WEB 001";
+    @include textStyle(13px,18px,#2F3748,normal);
+  }
+}
+
+
+@media (max-width: 1480px){
+  header{
+    .wrapper{
+        width: 100%;
+    }
+  }
+}

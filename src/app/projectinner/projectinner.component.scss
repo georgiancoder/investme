@@ -1,0 +1,287 @@
+@import '../../scss/mixins.scss';
+
+.projectInner {
+  padding-bottom: 60px;
+	.pagination {
+    width: 100%;
+    height: 80px;
+    background-color: #FFF;
+    border-top: 1px solid #DFE4E5;
+		.wrapper {
+      width: 1270px;
+      margin: auto;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+			h2 {
+
+			}
+
+			ul {
+
+				li {
+
+					a {
+
+					}
+				}
+			}
+		}
+	}
+
+	.content {
+    width: 1270px;
+    background-color: #FFF;
+    margin: auto;
+    padding: 40px;
+    margin-top: 65px;
+    border-radius: 4px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.11);
+    display: flex;
+    flex-wrap: wrap;
+		.gallery {
+      width: 520px;
+			.main {
+        width: 100%;
+        height: 450px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+			}
+			.thumbs {
+        width: 100%;
+        height: 75px;
+        margin-top: 10px;
+        display: flex;
+        .thumbswrapper{
+          width: 460px;
+          height: 100%;
+          overflow: hidden;
+          ul{
+            height: 100%;
+            display: flex;
+            li {
+              width: 85px;
+              height: 75px;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              opacity: 0.5;
+              cursor: pointer;
+              margin-right: 10px;
+              &.active, &:hover{
+                opacity: 1;
+              }
+    				}
+          }
+        }
+        .arrows{
+          width: calc(100% - 460px);
+          button{
+
+          }
+        }
+			}
+		}
+
+		.basicinfo {
+      padding-left: 25px;
+      padding-top: 15px;
+      width: calc(100% - 520px);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+			header {
+
+				.categorie {
+          height: 40px;
+          border-radius: 5px;
+          background-color: #798088;
+          color: #FFFFFF;
+          font-size: 12px;
+          font-family: "BPG Mrgvlovani";
+          display: inline-block;
+          line-height: 40px;
+          padding: 0 15px;
+				}
+
+				h2 {
+          font-size: 21px;
+          color: #2F3748;
+          font-family: "BPG Mrgvlovani Caps 2010";
+          margin-top: 25px;
+				}
+
+				.author {
+          margin-top: 20px;
+          font-size: 12px;
+          color: #888888;
+          font-family: "BPG Mrgvlovani";
+					span {
+            color: #070707;
+					}
+				}
+			}
+
+			footer {
+
+				.moneyprogress {
+          font-family: "BPG Mrgvlovani";
+          display: flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+					.currentmoney {
+            font-size: 15px;
+            color: #070707;
+
+					}
+
+					.targetCapital {
+            font-size: 12px;
+            color: #888888;
+					}
+
+					.bar {
+            margin-top: 13px;
+            width: 100%;
+            height: 13px;
+            background-color: #DFE3E9;
+            border-radius: 27px;
+            overflow: hidden;
+						.progress {
+              height: 100%;
+              border-radius: 27px;
+              background-color: #74BA43;
+						}
+					}
+				}
+
+				.support {
+          margin-top: 50px;
+          text-align: right;
+          font-size: 13px;
+          color: #707070;
+          font-family: "BPG Mrgvlovani";
+					button {
+            margin-left: 40px;
+            vertical-align: middle;
+            height: 60px;
+            background-color: #048BA8;
+            color: #FFF;
+            border-radius: 5px;
+            border-bottom: 1px solid #037E98;
+            font-size: 13px;
+            font-family: "BPG Mrgvlovani Caps 2010";
+            padding: 0 50px;
+					}
+				}
+
+				.soc {
+
+				}
+			}
+		}
+
+		.infotabs {
+      margin-top: 75px;
+      width: 100%;
+			.tabs {
+        border-bottom: 1px solid #D9D9D9;
+        display: flex;
+				li {
+          cursor: pointer;
+          margin: 0 50px;
+          height: 40px;
+          line-height: 40px;
+          font-size: 16px;
+          color: #888888;
+          font-family: "BPG Mrgvlovani Caps 2010";
+          &:first-child{
+            margin-left: 0;
+          }
+          &:last-child{
+            margin-right: 0;
+          }
+          &.active{
+            color: #070707;
+            &::after{
+              content: '';
+              width: 80px;
+              height: 3px;
+              background-color: #048BA8;
+              border-radius: 3px;
+              display: block;
+              margin: auto;
+              margin-top: -1.5px;
+            }
+          }
+				}
+			}
+
+			.tab {
+        padding-top: 70px;
+				.about {
+
+					h2 {
+            font-size: 17px;
+            color: #505050;
+            font-family: "BPG Mrgvlovani Caps 2010";
+					}
+
+					.text {
+            margin-top: 45px;
+            font-size: 12px;
+            color: #707070;
+            font-family: "BPG Mrgvlovani";
+					}
+				}
+			}
+      .files {
+
+      	h2 {
+          font-size: 13px;
+          color: #070707;
+          font-family: 'BPG Mrgvlovani Caps 2010';
+          margin-bottom: 30px;
+      	}
+
+      	.documents {
+          display: flex;
+          flex-wrap: wrap;
+          margin-bottom: 25px;
+      		li {
+            height: 50px;
+            border-radius: 30px;
+            border: 1px solid #D9D9D9;
+            padding: 0 25px;
+            margin-right: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            img{
+              border-left: 1px solid #D9D9D9;
+              padding-left: 20px;
+              margin-left: 60px;
+            }
+      		}
+      	}
+
+      	.media {
+          margin-top: 40px;
+          display: flex;
+          flex-wrap: wrap;
+      		li {
+            width: 70px;
+            height: 70px;
+            @include marginCounter(1270px,70px,15);
+            cursor: pointer;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+      		}
+      	}
+      }
+		}
+	}
+}
