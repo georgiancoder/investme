@@ -26,11 +26,9 @@ export class ProjectinnerComponent implements OnInit {
 
   tabindex = 0;
 
-  thumbsSliderCurItem: any;
-
-  thumbsSliderPosition = 0;
-
   documents = [];
+1
+
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{
       console.log(res);
@@ -48,7 +46,6 @@ export class ProjectinnerComponent implements OnInit {
         this.media.push(image);
       }
     });
-
     this.project.videoDetail.forEach(video=>{
       if(video.link && video.link.length > 0){
         video.type = 'video';
@@ -62,8 +59,6 @@ export class ProjectinnerComponent implements OnInit {
         this.media.push(video);
       }
     });
-
-    this.thumbsSliderCurItem = this.media[0];
   }
 
   getDocuments(){
@@ -71,20 +66,21 @@ export class ProjectinnerComponent implements OnInit {
       if(doc.file && doc.file.length > 0){
         var patt=/\.[0-9a-z]{1,5}$/i;
         var ext = doc.file.match(patt)[0];
+        console.log(ext);
         switch(ext){
-          case 'doc':
+          case '.doc':
           doc.ico = '/assets/doc.png';
           break;
-          case 'docx':
+          case '.docx':
           doc.ico = '/assets/doc.png';
           break;
-          case 'pdf':
+          case '.pdf':
           doc.ico = '/assets/pdf.png';
           break;
-          case 'xls':
+          case '.xls':
           doc.ico = '/assets/xls.png';
           break;
-          case 'xlsx':
+          case '.xlsx':
           doc.ico = '/assets/xls.png';
           break;
           default:

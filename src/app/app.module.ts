@@ -16,6 +16,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { PaginatorModule } from 'primeng/paginator';
 import { ShareButtonModule } from '@ngx-share/button';
+import { YoutubeModule } from 'angularx-youtube';
+
 
 import { AppComponent } from './app.component';
 import { AddProjectComponent } from './add-project/add-project.component';
@@ -28,7 +30,6 @@ import { AllprojectComponent } from './allproject/allproject.component';
 import { EditprojectComponent } from './editproject/editproject.component';
 import { FavoriteprojectsComponent } from './favoriteprojects/favoriteprojects.component';
 import { ProjectinnerComponent } from './projectinner/projectinner.component';
-
 import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 
@@ -43,6 +44,8 @@ import { LangsService } from './services/langs.service';
 import { ProfileService } from './services/profile.service';
 import { AddProjectService } from './services/add-project.service';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
+import { ThumbsSliderComponent } from './thumbs-slider/thumbs-slider.component';
+import { SafePipe } from './safe.pipe';
 
 const routes: Routes = [
 {
@@ -96,7 +99,9 @@ const routes: Routes = [
     AllprojectComponent,
     EditprojectComponent,
     FavoriteprojectsComponent,
-    ProjectinnerComponent
+    ProjectinnerComponent,
+    ThumbsSliderComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -117,7 +122,8 @@ const routes: Routes = [
     MultiSelectModule,
     RadioButtonModule,
     PaginatorModule,
-    ShareButtonModule.forRoot()
+    ShareButtonModule.forRoot(),
+    YoutubeModule
   ],
   providers: [
     ProjectService,
@@ -129,7 +135,6 @@ const routes: Routes = [
     LangsService,
     AuthGuard,
     ProfileService,
-    AddProjectService
   ],
   bootstrap: [AppComponent]
 })

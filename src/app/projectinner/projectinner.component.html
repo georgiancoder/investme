@@ -10,22 +10,7 @@
   </div>
 
   <article class="content" *ngIf="project">
-    <div class="gallery">
-      <div class="main" [style.backgroundImage]="'url('+media[0].image+')'">
-      </div>
-      <div class="thumbs">
-        <div class="thumbswrapper">
-          <ul [style.width]="media.length * 95 + 'px  '" [style.marginLeft]="thumbsSliderPosition + 'px'">
-            <li *ngFor="let m of media" [class]="m == thumbsSliderCurItem ? 'active' : ''" [style.backgroundImage]="'url('+m.image+')'"></li>
-          </ul>
-        </div>
-        <div class="arrows">
-          <button type="button"></button>
-          <button type="button"></button>
-        </div>
-      </div>
-
-    </div>
+    <app-thumbs-slider [media]="media"></app-thumbs-slider>
     <div class="basicinfo">
       <header>
         <div class="categorie">
@@ -72,7 +57,7 @@
           <h2>დოკუმენტები</h2>
           <ul class="documents">
             <li *ngFor="let file of documents">
-                {{file.title}}
+                <a href="{{siteUrl + file.file}}" target="_blank" download>{{file.title}}</a>
 
                 <img src="{{file.ico}}" alt="">
             </li>
