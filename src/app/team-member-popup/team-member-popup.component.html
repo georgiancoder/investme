@@ -1,3 +1,14 @@
 <div class="popupWrapper" *ngIf="openPopup">
-	<div class="popup">{{teamMember | json}}</div>	
+	<div class="popup">
+		 <span class="close" (click)="closePopup()"><i class="fa fa-times"></i></span>
+		 <div class="member">
+		 	<div class="pic" [style.backgroundImage]="'url('+ siteUrl + teamMember.image + ')'">
+		 	</div>
+			<h3>{{teamMember.name}}</h3>
+			<h4>{{teamMember.role}}</h4>
+		 </div>
+		 <div class="desc">
+			 {{teamMember.description}}
+		 </div>
+	</div>
 </div>
