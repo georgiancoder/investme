@@ -52,11 +52,11 @@ export class ThumbsSliderComponent implements OnInit, OnDestroy {
     }
 
     onChange(event): void {
-        console.log(event)
         if(event.data == 1){
           clearInterval(this.interval);
         }
         else if(event.data == 2){
+          this.playMode = false;
           this.interval = setInterval(()=>{
             this.next();
           },this.slideTime);
@@ -78,7 +78,6 @@ export class ThumbsSliderComponent implements OnInit, OnDestroy {
   selectSlide(i){
     this.slideCounter = i;
     this.currentSlide = this.media[i];
-    alert(i)
   }
 
   playVideo(){

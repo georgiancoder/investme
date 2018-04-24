@@ -1,10 +1,10 @@
 <div class="gallery">
   <div class="main" [style.backgroundImage]="'url('+media[slideCounter].image+')'">
-    <div class="play" *ngIf="currentSlide.type == 'video'" (click)="playVideo()">
+    <div class="play" *ngIf="currentSlide.type == 'video' && !playMode" (click)="playVideo()">
       <i class="fa fa-caret-right"></i>
     </div>
     <youtube-component
-    *ngIf="currentSlide.type == 'video'"
+    *ngIf="playMode"
     [videoId]="currentSlide.link"
     (ready)="onReady($event)"
     (change)="onChange($event)"

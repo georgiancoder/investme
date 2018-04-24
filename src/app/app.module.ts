@@ -46,6 +46,7 @@ import { AddProjectService } from './services/add-project.service';
 import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { ThumbsSliderComponent } from './thumbs-slider/thumbs-slider.component';
 import { SafePipe } from './safe.pipe';
+import { TeamMemberPopupComponent } from './team-member-popup/team-member-popup.component';
 
 const routes: Routes = [
 {
@@ -101,7 +102,8 @@ const routes: Routes = [
     FavoriteprojectsComponent,
     ProjectinnerComponent,
     ThumbsSliderComponent,
-    SafePipe
+    SafePipe,
+    TeamMemberPopupComponent
   ],
   imports: [
     BrowserModule,

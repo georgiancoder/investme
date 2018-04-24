@@ -12,6 +12,10 @@ import  * as $  from 'jquery';
 })
 export class ProjectinnerComponent implements OnInit {
 
+  openPopup:boolean = false;
+
+  teamMember:any;
+
   isAuthenticated: boolean = false;
 
   projectId: number;
@@ -27,7 +31,6 @@ export class ProjectinnerComponent implements OnInit {
   tabindex = 0;
 
   documents = [];
-1
 
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{
@@ -59,6 +62,15 @@ export class ProjectinnerComponent implements OnInit {
         this.media.push(video);
       }
     });
+  }
+
+  closePopup(close){
+    this.openPopup = false;
+  }
+
+  memberPopup(member){
+    this.openPopup = true;
+    this.teamMember = member;
   }
 
   getDocuments(){

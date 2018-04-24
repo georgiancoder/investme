@@ -72,7 +72,7 @@
       <div class="tab" *ngIf="tabindex == 2">
         <div class="team">
           <ul>
-            <li *ngFor="let member of project.teamDetail">
+            <li *ngFor="let member of project.teamDetail" (click)="memberPopup(member)">
               <div class="img" [style.backgroundImage]="'url('+siteUrl + member.image+')'">
               </div>
               <h3>{{member.name}}</h3>
@@ -111,3 +111,6 @@
   </article>
 
 </section>
+
+
+<app-team-member-popup [openPopup]="openPopup" [teamMember]="teamMember" (close)="closePopup($event)"></app-team-member-popup>
