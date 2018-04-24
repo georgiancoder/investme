@@ -2,9 +2,9 @@
   <div class="categories">
     <ul>
       <li><a routerLink="/allproject">ყველა პროექტი</a></li>
-      <li><a>ახალი პროექტი</a></li>
-      <li><a>პოპულარული პროექტები</a></li>
-      <li><a>რჩეულები</a></li>
+      <li (click)="getByCategorie('new')">ახალი პროექტი</li>
+      <li (click)="getByCategorie('popular')">პოპულარული პროექტები</li>
+      <li (click)="getByCategorie('favorite')">რჩეულები</li>
       <li>
         <button type="button" class="srchbtntoggle" (click)="srchbtntgl = !srchbtntgl"><i class="fa fa-search" aria-hidden="true" *ngIf="!srchbtntgl"></i> <i class="fa fa-times" *ngIf="srchbtntgl"></i></button>
         <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">

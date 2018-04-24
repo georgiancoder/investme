@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import  * as $  from 'jquery';
+import { LangsService } from '../services/langs.service';
 
 
 import { NgxCarousel } from 'ngx-carousel';
@@ -13,6 +14,8 @@ import { NgxCarousel } from 'ngx-carousel';
 export class ProjectSliderComponent implements OnInit {
 
   siteUrl = "http://investme.testme.ge";
+
+  lang: string = '';
 
   @Input() projects: any;
 
@@ -30,7 +33,7 @@ export class ProjectSliderComponent implements OnInit {
   progressPrev: number = 0;
   progressInt: any;
 
-  constructor(private projectservice: ProjectService) { }
+  constructor(private projectservice: ProjectService, private langsservice: LangsService) { }
 
   nextSlide(): void{
     if( (this.projects.length - Math.abs(this.slideWidth / 300)) > 3 ){
@@ -46,6 +49,17 @@ export class ProjectSliderComponent implements OnInit {
     this.currentProject = project;
     this.activeSlide = index;
     this.progress = this.activeSlide / (this.projects.length-1) * 100;
+  }
+
+  getByCategorie(categorie){
+    switch(categorie){
+      case 'new': 
+      break;
+      case 'popular':
+      break;
+      case 'favorite':
+      break;
+    }
   }
 
   prevSlide(): void{
@@ -84,7 +98,7 @@ export class ProjectSliderComponent implements OnInit {
 
 
   ngOnInit() {
-
+    this.lang = this.langsservice.getLang();
     this.currentProject = this.projects[0];
     this.nextBtnShowHide = (this.projects.length - Math.abs(this.slideWidth / 400)) > 5 ? 'next show' : 'next';
     this.prevBtnShowHide = this.slideWidth < 0 ? 'prev show' : 'prev';
@@ -93,6 +107,11 @@ export class ProjectSliderComponent implements OnInit {
     this.sliderInt = setInterval(() => {
       this.slider();
     },this.sliderInterval);
+
+    document.addEventListener('langchanged',(e)=>{
+      this.lang = this.langsservice.getLang();
+
+    });
 
     $().ready(function(){
 
