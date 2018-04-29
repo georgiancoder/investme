@@ -101,12 +101,12 @@
             <label>{{profileTranslations.phone}}</label>
             <p-dropdown [options]="tellPrefixes" name="tellPrefixe" styleClass="prefix">
                  <ng-template let-item pTemplate="selectedItem">
-                    <img src="assets/{{item.label}}.png" style="width:16px;vertical-align:middle" />
+                    <img src="/investme/assets/{{item.label}}.png" style="width:16px;vertical-align:middle" />
                     <span style="vertical-align:middle">{{item.label}}</span>
                 </ng-template>
                 <ng-template let-prefix pTemplate="item">
                     <div class="ui-helper-clearfix" style="position: relative;height:25px;">
-                    <img src="assets/{{prefix.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>
+                    <img src="/investme/assets/{{prefix.label}}.png" style="width:24px;position:absolute;top:1px;left:5px"/>
                     <div style="font-size:14px;float:right;margin-top:4px">{{prefix.label}}</div> </div>
                 </ng-template>
             </p-dropdown>

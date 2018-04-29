@@ -4,7 +4,7 @@
       <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
       <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
     </ul>
-    <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
+    <a routerLink="/" class="logo"><img src="/investme/assets/logo.png"></a>
     <div class="r">
       <div class="auth">
         <div (click)="regDropdown()">
@@ -17,7 +17,7 @@
               <li><a routerLink="profile">{{header.translations.profile}}</a></li>
               <li>{{header.translations.favorite}}</li>
               <li>{{header.translations.add_project}}</li>
-              <li (click)="logOut()" class="logout"><img src="/assets/logout.png" alt=""> {{header.translations.logout}}</li>
+              <li (click)="logOut()" class="logout"><img src="/investme/assets/logout.png" alt=""> {{header.translations.logout}}</li>
             </ul>
           </div>
         </div>
@@ -191,21 +191,21 @@
 </header>
 <header class="userheader" *ngIf="header && authorized && user && (currentPage == '/profile' || currentPage == '/favorite' || currentPage == '/supported' || currentPage == '/myprojects' || currentPage == '/addProject' || currentPage.search('editproject') > -1)">
   <div class="left">
-    <a routerLink="/" class="logo"><img src="/assets/logo.png" alt="logo"></a>
+    <a routerLink="/" class="logo"><img src="/investme/assets/logo.png" alt="logo"></a>
     <ul>
       <li>
-        <img src="/assets/supported.png" alt="">
+        <img src="/investme/assets/supported.png" alt="">
         {{header.translations.supported}}
       </li>
       <li>
         <a routerLink="/favorite">
-          <img src="/assets/favoriteprojects.png" alt="">
+          <img src="/investme/assets/favoriteprojects.png" alt="">
           {{header.translations.favorite}}
         </a>
       </li>
       <li>
         <a routerLink="/myprojects">
-        <img src="/assets/myprojects.png" alt="">
+        <img src="/investme/assets/myprojects.png" alt="">
         {{header.translations.my_project}}
         </a>
       </li>
@@ -224,7 +224,7 @@
         </ul>
       </div>
     </div>
-    <div (click)="logOut()" class="logout"><img src="/assets/logout.png" alt="logout"></div>
+    <div (click)="logOut()" class="logout"><img src="/investme/assets/logout.png" alt="logout"></div>
   </div>
 </header>
 <router-outlet></router-outlet>
@@ -235,7 +235,7 @@
 <footer *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <section class="soc">
-      <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
+      <a routerLink="/" class="logo"><img src="/investme/assets/logo.png"></a>
       <ul>
         <li><a href="{{footer.contact.facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
         <li><a href="{{footer.contact.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -245,14 +245,14 @@
     </section>
     <section class="menu">
       <ul>
-        <li><a href="">{{footer.translations.about}}</a></li>
-        <li><a href="">{{footer.translations.media_about}}</a></li>
+        <li><a routerLink="about">{{footer.translations.about}}</a></li>
+        <li><a routerLink="media">{{footer.translations.media_about}}</a></li>
         <li><a href="">{{footer.translations.events}}</a></li>
         <li><a href="">{{footer.translations.blog}}</a></li>
-        <li><a href="">{{footer.translations.contact}}</a></li>
+        <li><a routerLink="contact">{{footer.translations.contact}}</a></li>
       </ul>
       <ul>
-        <li><a href="">{{footer.translations.faq}}</a></li>
+        <li><a routerLink="faq">{{footer.translations.faq}}</a></li>
         <li><a href="">{{footer.translations.policy}}</a></li>
         <li><a href="">{{footer.translations.rules}}</a></li>
       </ul>
@@ -263,6 +263,6 @@
   </div>
   <div class="copy">
     <span>&copy;2017, {{footer.translations.copyright}}</span>
-    <a href="https://smartweb.ge/" target="_blank"><img src="/assets/sw.png" alt=""></a>
+    <a href="https://smartweb.ge/" target="_blank"><img src="/investme/assets/sw.png" alt=""></a>
   </div>
 </footer>

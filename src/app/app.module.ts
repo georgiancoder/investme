@@ -47,6 +47,13 @@ import { AuthGuardService as AuthGuard } from './services/auth-guard.service';
 import { ThumbsSliderComponent } from './thumbs-slider/thumbs-slider.component';
 import { SafePipe } from './safe.pipe';
 import { TeamMemberPopupComponent } from './team-member-popup/team-member-popup.component';
+import { AboutComponent } from './about/about.component';
+import { FaqComponent } from './faq/faq.component';
+import { FaqPopupComponent } from './faq-popup/faq-popup.component';
+import { ContactComponent } from './contact/contact.component';
+import { MediaComponent } from './media/media.component';
+import { MediaInnerComponent } from './media-inner/media-inner.component';
+
 
 const routes: Routes = [
 {
@@ -85,6 +92,26 @@ const routes: Routes = [
 {
   path: 'project/:id',
   component: ProjectinnerComponent
+},
+{
+  path: 'about',
+  component: AboutComponent
+},
+{
+  path: 'faq',
+  component: FaqComponent
+},
+{
+  path: 'contact',
+  component: ContactComponent
+},
+{
+  path: 'media',
+  component: MediaComponent
+},
+{
+  path: 'media/:id',
+  component: MediaInnerComponent
 }
 ];
 
@@ -103,7 +130,13 @@ const routes: Routes = [
     ProjectinnerComponent,
     ThumbsSliderComponent,
     SafePipe,
-    TeamMemberPopupComponent
+    TeamMemberPopupComponent,
+    AboutComponent,
+    FaqComponent,
+    FaqPopupComponent,
+    ContactComponent,
+    MediaComponent,
+    MediaInnerComponent
   ],
   imports: [
     BrowserModule,

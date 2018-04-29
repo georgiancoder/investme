@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MainService } from '../services/main.service';
 import { LangsService } from '../services/langs.service';
+import { Router, ActivatedRoute, Params} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  constructor(private mainservice: MainService, private langsservice: LangsService) { }
+  constructor(private mainservice: MainService, private langsservice: LangsService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();
