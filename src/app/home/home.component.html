@@ -1,5 +1,5 @@
 <div *ngIf="mainpagecontent">
-  <app-project-slider [projects]="mainpagecontent.projects"></app-project-slider>
+  <app-project-slider [projects]="projects" (result)="getFilteredProjects($event)"></app-project-slider>
 </div>
 
 <div class="categories" *ngIf="mainpagecontent">

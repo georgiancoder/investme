@@ -39,6 +39,20 @@ export class ProjectService {
     }
   }
 
+  getPopularProjects(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("http://investme.testme.ge/api/ratingProject",{
+      headers: headers
+    });
+  }
+
+  getNewProjects(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("http://investme.testme.ge/api/newProject",{
+      headers: headers
+    });
+  }
+
   filterProjects(lng, post){
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();

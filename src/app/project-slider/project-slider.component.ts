@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectService } from '../services/project.service';
 import  * as $  from 'jquery';
 import { LangsService } from '../services/langs.service';
@@ -18,6 +18,8 @@ export class ProjectSliderComponent implements OnInit {
   lang: string = '';
 
   @Input() projects: any;
+
+  @Output() result = new EventEmitter();
 
   sliderInterval: number = 6000;
   srchbtntgl: boolean = false;
@@ -51,15 +53,18 @@ export class ProjectSliderComponent implements OnInit {
     this.progress = this.activeSlide / (this.projects.length-1) * 100;
   }
 
-  getByCategorie(categorie){
-    switch(categorie){
-      case 'new': 
-      break;
-      case 'popular':
-      break;
-      case 'favorite':
-      break;
-    }
+  getNewProjects(){
+    this.projectservice.getNewProjects(this.lang).subscribe(projects =>{
+      this.result.emit(projects.projects);
+      this.currentProject = projects.projects[0];
+    })
+  }
+
+  getPopularProjects(){
+    this.projectservice.getPopularProjects(this.lang).subscribe(projects =>{
+      this.result.emit(projects.projects);
+      this.currentProject = projects.projects[0];
+    })
   }
 
   prevSlide(): void{
@@ -98,6 +103,8 @@ export class ProjectSliderComponent implements OnInit {
 
 
   ngOnInit() {
+
+    console.log(this.projects);
     this.lang = this.langsservice.getLang();
     this.currentProject = this.projects[0];
     this.nextBtnShowHide = (this.projects.length - Math.abs(this.slideWidth / 400)) > 5 ? 'next show' : 'next';

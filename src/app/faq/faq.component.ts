@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { TextPagesService } from '../services/text-pages.service';
+import { LangsService } from '../services/langs.service';
 
 @Component({
   selector: 'app-faq',
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  lang:string;
+
+  faqContent:string;
+
+  faq(){
+    this.textPagesService.faq(this.lang).subscribe(content=>{
+      this.faqContent = content;
+    });
+  }
+
+  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   ngOnInit() {
+    this.lang = this.langsservice.getLang();
+    this.faq();
+    document.addEventListener('langchanged',(e)=>{
+      this.lang = this.langsservice.getLang();
+      this.faq();
+    });
   }
 
 }

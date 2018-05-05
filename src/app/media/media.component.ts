@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MediaService } from '../services/media.service';
+import { LangsService } from '../services/langs.service';
 
 @Component({
   selector: 'app-media',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MediaComponent implements OnInit {
 
-  constructor() { }
+  siteUrl:string = "http://investme.testme.ge";
+
+  lang:string;
+
+  medias:any;
+
+  constructor(private langsservice: LangsService, private mediaService: MediaService) { }
+
+  getMediaList(){
+    this.mediaService.getMediaList(this.lang).subscribe(medias=>{
+        this.medias = medias;
+    });
+  }
 
   ngOnInit() {
+    this.lang = this.langsservice.getLang();
+    this.getMediaList();
+    document.addEventListener('langchanged',(e)=>{
+      this.lang = this.langsservice.getLang();
+      this.getMediaList();
+    });
   }
 
 }

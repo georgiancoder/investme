@@ -1,3 +1,25 @@
-<p>
-  media works!
-</p>
+<div class="media" *ngIf="medias">
+  <div class="breadcrumb">
+    <div class="wrapper">
+      <h2>media</h2>
+      <ul>
+        <li><a routerLink="/">მთავარი</a></li>
+        <li>პროექტები</li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="media" *ngFor="let media of medias.media">
+      <div class="img" [style.background-image]="'url(' + siteUrl + media.media.image + ')'"></div>
+      <h2>{{media.detail.title}}</h2>
+      <div class="desc">
+        {{media.detail.min_description}}
+      </div>
+      <footer>
+        <time>{{media.date}}</time>
+        <a routerLink="/media/{{media.media.id}}">detalurad</a>
+      </footer>
+    </div>
+  </div>
+
+</div>

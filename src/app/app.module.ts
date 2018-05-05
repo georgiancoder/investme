@@ -53,6 +53,10 @@ import { FaqPopupComponent } from './faq-popup/faq-popup.component';
 import { ContactComponent } from './contact/contact.component';
 import { MediaComponent } from './media/media.component';
 import { MediaInnerComponent } from './media-inner/media-inner.component';
+import { TextPagesService } from './services/text-pages.service';
+import { PrivacyComponent } from './privacy/privacy.component';
+import { RulesComponent } from './rules/rules.component';
+import { MediaService } from  './services/media.service';
 
 
 const routes: Routes = [
@@ -112,6 +116,14 @@ const routes: Routes = [
 {
   path: 'media/:id',
   component: MediaInnerComponent
+},
+{
+  path: 'privacy',
+  component: PrivacyComponent
+},
+{
+  path: 'rules',
+  component: RulesComponent
 }
 ];
 
@@ -136,7 +148,9 @@ const routes: Routes = [
     FaqPopupComponent,
     ContactComponent,
     MediaComponent,
-    MediaInnerComponent
+    MediaInnerComponent,
+    PrivacyComponent,
+    RulesComponent
   ],
   imports: [
     BrowserModule,
@@ -170,6 +184,8 @@ const routes: Routes = [
     LangsService,
     AuthGuard,
     ProfileService,
+    TextPagesService,
+    MediaService
   ],
   bootstrap: [AppComponent]
 })

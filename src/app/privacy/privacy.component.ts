@@ -3,19 +3,19 @@ import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-privacy',
+  templateUrl: './privacy.component.html',
+  styleUrls: ['./privacy.component.scss']
 })
-export class ContactComponent implements OnInit {
+export class PrivacyComponent implements OnInit {
 
   lang:string;
 
-  contactContent:string;
+  privacyContent:string;
 
-  contact(){
-    this.textPagesService.contact(this.lang).subscribe(content=>{
-      this.contactContent = content;
+  privacy(){
+    this.textPagesService.privacy(this.lang).subscribe(content=>{
+      this.privacyContent = content;
     });
   }
 
@@ -23,10 +23,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();
-    this.contact();
+    this.privacy();
     document.addEventListener('langchanged',(e)=>{
       this.lang = this.langsservice.getLang();
-      this.contact();
+      this.privacy();
     });
   }
 

@@ -11,10 +11,20 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 export class HomeComponent implements OnInit {
 
   lang: string = '';
-  mainpagecontent: any[];
+  mainpagecontent: any;
+
+  projects: any;
 
   getMainPage(): void{
-    this.mainservice.getMainPage(this.lang).subscribe(maincontent => {this.mainpagecontent = maincontent; console.log(maincontent); });
+    this.mainservice.getMainPage(this.lang).subscribe(maincontent => {
+      this.mainpagecontent = maincontent;
+      console.log(maincontent);
+      this.projects = this.mainpagecontent.projects;
+    });
+  }
+
+  getFilteredProjects(projects){
+    this.projects = projects;
   }
 
 
