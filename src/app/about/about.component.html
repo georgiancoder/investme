@@ -1,2 +1,8 @@
-<div *ngIf="aboutContent" [innerHTML]="aboutContent.about">
+<div class="about">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont" *ngIf="aboutContent" [innerHTML]="aboutContent.about">
+  </div>
+  <div class="clear">
+
+  </div>
 </div>

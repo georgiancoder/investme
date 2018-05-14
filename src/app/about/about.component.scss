@@ -1,0 +1,21 @@
+.cont{
+  width: 1270px;
+  margin: auto;
+  padding: 80px 0;
+  img{
+    min-width: 250px;
+    max-width: 500px;
+    float: left;
+    margin-right: 60px;
+    &:nth-child(even){
+      margin-right: 0;
+      margin-left: 60px;
+      float: right;
+    }
+  }
+}
+
+.clear{
+  margin-bottom: 80px;
+  clear: both;
+}

@@ -57,6 +57,7 @@ import { TextPagesService } from './services/text-pages.service';
 import { PrivacyComponent } from './privacy/privacy.component';
 import { RulesComponent } from './rules/rules.component';
 import { MediaService } from  './services/media.service';
+import { BreadCrumbsComponent } from './widgets/breadcrumbs/breadcrumbs.component';
 
 
 const routes: Routes = [
@@ -150,7 +151,8 @@ const routes: Routes = [
     MediaComponent,
     MediaInnerComponent,
     PrivacyComponent,
-    RulesComponent
+    RulesComponent,
+    BreadCrumbsComponent
   ],
   imports: [
     BrowserModule,
