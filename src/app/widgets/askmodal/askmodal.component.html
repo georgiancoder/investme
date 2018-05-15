@@ -1,0 +1,17 @@
+<div class="modal" *ngIf="!hidden" (click)="hide()">
+  <div class="cont">
+    <header>
+      კითხვის დასმა
+
+      <i class="fa fa-times" (click)="hide()"></i>
+    </header>
+    <div class="body" (click)="stoppropagation($event)">
+      <form>
+        <input type="text" placeholder="თქვენი სახელი">
+        <input type="text" placeholder="ელ.ფოსტა">
+        <textarea placeholder="დაწერეთ კითხვა"></textarea>
+        <button type="button">გაგზავნა</button>
+      </form>
+    </div>
+  </div>
+</div>

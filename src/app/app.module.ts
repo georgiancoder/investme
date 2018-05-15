@@ -58,7 +58,7 @@ import { PrivacyComponent } from './privacy/privacy.component';
 import { RulesComponent } from './rules/rules.component';
 import { MediaService } from  './services/media.service';
 import { BreadCrumbsComponent } from './widgets/breadcrumbs/breadcrumbs.component';
-
+import { AskmodalComponent } from './widgets/askmodal/askmodal.component';
 
 const routes: Routes = [
 {
@@ -152,7 +152,8 @@ const routes: Routes = [
     MediaInnerComponent,
     PrivacyComponent,
     RulesComponent,
-    BreadCrumbsComponent
+    BreadCrumbsComponent,
+    AskmodalComponent
   ],
   imports: [
     BrowserModule,

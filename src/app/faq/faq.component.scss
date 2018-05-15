@@ -1,0 +1,43 @@
+.faq{
+  .cont{
+    padding: 80px 0;
+    width: 1270px;
+    margin: auto;
+    .ask{
+      display: block;
+      margin-left: auto;
+      height: 50px;
+      border-radius: 4px;
+      background-color: #289174;
+      font-size: 13px;
+      color: #FFF;
+      font-family: "BPG Mrgvlovani Caps 2010";
+      padding: 0 40px;
+      border-bottom: 2px solid #1E8468;
+    }
+    ul{
+      margin-top: 40px;
+      li{
+        width: 100%;
+        background-color: #FFF;
+        border-radius: 4px;
+        border: 1px solid #DFE4E5;
+        .header{
+          height: 80px;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 50px;
+          cursor: pointer;
+          i{
+            color: #CCCCCC;
+          }
+        }
+        .body{
+          padding: 20px 40px;
+        }
+      }
+    }
+  }
+}

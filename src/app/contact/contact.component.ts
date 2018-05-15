@@ -11,6 +11,8 @@ export class ContactComponent implements OnInit {
 
   lang:string;
 
+  breadcrumbs: object;
+
   contactContent:string;
 
   contact(){
@@ -28,6 +30,11 @@ export class ContactComponent implements OnInit {
       this.lang = this.langsservice.getLang();
       this.contact();
     });
+
+    this.breadcrumbs = {
+      page: 'კონტაქტი',
+      home: 'მთავარი'
+    }
   }
 
 }

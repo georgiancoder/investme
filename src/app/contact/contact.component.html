@@ -1,1 +1,36 @@
-{{contactContent | json}}
+<div class="contact" *ngIf="contactContent">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont">
+    <h2>დაგვიტოვეთ <span>შეტყობინება</span></h2>
+    <form>
+      <div class="row">
+        <input type="text" placeholder="სახელი">
+        <input type="text" placeholder="ელ.ფოსტა">
+      </div>
+      <div class="row">
+        <input type="text" placeholder="ტელეფონის ნომერი">
+        <input type="text" placeholder="თემის სათაური">
+      </div>
+      <textarea placeholder="შეტყობინება"></textarea>
+
+      <button type="button">გაგზავნა</button>
+    </form>
+    <div class="info">
+      <p>{{contactContent.detail.address}}</p>
+      <ul>
+        <li>
+          <div class="ico">
+            <img src="/assets/mail.png" alt="">
+          </div>
+          {{contactContent.contact.email}}
+        </li>
+        <li>
+          <div class="ico">
+            <img src="/assets/phone.png" alt="">
+          </div>
+          {{contactContent.contact.phone}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

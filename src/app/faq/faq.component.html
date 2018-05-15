@@ -1,1 +1,18 @@
-{{faqContent | json}}
+<div class="faq">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont">
+    <button type="button" class="ask" (click)="openModal()">დასვი კითხვა</button>
+    <ul *ngIf="faqContent">
+      <li *ngFor="let q of faqContent.faq" (click)="q.opened = !q.opened">
+        <div class="header">
+          {{q.question}}
+          <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="body" [innerHTML]="q.answer" *ngIf="q.opened">
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<askmodal></askmodal>
