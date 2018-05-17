@@ -1,3 +1,14 @@
 <div class="" *ngIf="media">
-  {{media | json}}
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont">
+    <div class="image"  [style.background-image]="'url(' + siteUrl + media.media.media.image + ')'"></div>
+    <div class="desc">
+      <header>
+        <h3>{{media.media.detail.title}}</h3>
+        <time><img src="/assets/calendar.png" width="15" alt=""> {{media.media.date}}</time>
+      </header>
+      <div class="body" [innerHTML]="media.media.detail.full_description">
+      </div>
+    </div>
+  </div>
 </div>

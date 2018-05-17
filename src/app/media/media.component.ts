@@ -15,6 +15,8 @@ export class MediaComponent implements OnInit {
 
   medias:any;
 
+  breadcrumbs: object;
+
   constructor(private langsservice: LangsService, private mediaService: MediaService) { }
 
   getMediaList(){
@@ -30,6 +32,11 @@ export class MediaComponent implements OnInit {
       this.lang = this.langsservice.getLang();
       this.getMediaList();
     });
+
+    this.breadcrumbs = {
+      page: 'მედია ჩვენ შესახებ',
+      home: 'მთავარი'
+    }
   }
 
 }

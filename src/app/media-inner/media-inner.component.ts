@@ -15,6 +15,8 @@ export class MediaInnerComponent implements OnInit {
   lang:string;
   media:any;
 
+  breadcrumbs: object;
+
   getMedia(){
     this.mediaService.getMedia(this.lang,this.id).subscribe(media=>{
       this.media = media;
@@ -33,6 +35,11 @@ export class MediaInnerComponent implements OnInit {
         this.lang = this.langsservice.getLang();
         this.getMedia();
       });
+
+      this.breadcrumbs = {
+        page: 'მედია ჩვენ შესახებ',
+        home: 'მთავარი'
+      }
   }
 
 }
