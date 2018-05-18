@@ -13,6 +13,10 @@ export class RulesComponent implements OnInit {
 
   rulesContent:string;
 
+  breadcrumbs: object;
+
+  sidemenu: any;
+
   rules(){
     this.textPagesService.rules(this.lang).subscribe(content=>{
       this.rulesContent = content;
@@ -28,6 +32,21 @@ export class RulesComponent implements OnInit {
       this.lang = this.langsservice.getLang();
       this.rules();
     });
+
+    this.breadcrumbs = {
+      page: 'სარგებლობის წესები და პირობები',
+      home: 'მთავარი'
+    }
+
+    this.sidemenu = [{
+      title: 'უსაფრთხოების პოლიტიკა',
+      link: '/privacy',
+      active: false
+    },{
+      title: 'სარგებლობის წესები და პირობები',
+      link: '/rules',
+      active: true
+    }];
   }
 
 }

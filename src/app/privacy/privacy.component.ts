@@ -11,7 +11,11 @@ export class PrivacyComponent implements OnInit {
 
   lang:string;
 
+  breadcrumbs: object;
+
   privacyContent:string;
+
+  sidemenu: any;
 
   privacy(){
     this.textPagesService.privacy(this.lang).subscribe(content=>{
@@ -28,6 +32,21 @@ export class PrivacyComponent implements OnInit {
       this.lang = this.langsservice.getLang();
       this.privacy();
     });
+
+    this.breadcrumbs = {
+      page: 'უსაფრთხოების პოლიტიკა',
+      home: 'მთავარი'
+    }
+
+    this.sidemenu = [{
+      title: 'უსაფრთხოების პოლიტიკა',
+      link: '/privacy',
+      active: true
+    },{
+      title: 'სარგებლობის წესები და პირობები',
+      link: '/rules',
+      active: false
+    }];
   }
 
 }

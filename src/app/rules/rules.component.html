@@ -1,2 +1,10 @@
-<div *ngIf="rulesContent" [innerHTML]="rulesContent.rule">
+<div *ngIf="rulesContent">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont" >
+    <div class="sidebar">
+      <sidemenu [data]="sidemenu"></sidemenu>
+    </div>
+    <section [innerHTML]="rulesContent.rule">
+    </section>
+  </div>
 </div>
