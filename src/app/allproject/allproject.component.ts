@@ -15,6 +15,8 @@ export class AllprojectComponent implements OnInit {
   siteUrl = 'http://investme.testme.ge';
   translations: any;
 
+  breadcrumbs: object;
+
   hasquery: boolean;
 
   paginate = [];
@@ -196,6 +198,11 @@ export class AllprojectComponent implements OnInit {
         console.log();
         this.navigate();
       }
+
+    this.breadcrumbs = {
+      page: 'პროექტები',
+      home: 'მთავარი'
+    }
 
   }
 

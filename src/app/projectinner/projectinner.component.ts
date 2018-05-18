@@ -16,6 +16,8 @@ export class ProjectinnerComponent implements OnInit {
 
   teamMember:any;
 
+  breadcrumbs: object;
+
   isAuthenticated: boolean = false;
 
   projectId: number;
@@ -116,6 +118,12 @@ export class ProjectinnerComponent implements OnInit {
         this.siteLang = this.langservice.getLang();
         this.getProject();
       });
+
+
+    this.breadcrumbs = {
+      page: 'პროექტები',
+      home: 'მთავარი'
+    }
   }
 
 }
