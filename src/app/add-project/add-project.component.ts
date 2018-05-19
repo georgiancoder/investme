@@ -11,7 +11,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractC
 })
 export class AddProjectComponent implements OnInit {
 
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
 
   siteLang: string;
 

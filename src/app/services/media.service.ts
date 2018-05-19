@@ -10,14 +10,14 @@ export class MediaService {
 
   getMediaList(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/medias",{
+    return this.http.get<any>("https://back.investme.ge/api/medias",{
       headers: headers
     });
   }
 
   getMedia(lng,id){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/medias/"+id,{
+    return this.http.get<any>("https://back.investme.ge/api/medias/"+id,{
       headers: headers
     });
   }

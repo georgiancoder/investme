@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 export class MediaInnerComponent implements OnInit {
 
   id: number;
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
   lang:string;
   media:any;
 

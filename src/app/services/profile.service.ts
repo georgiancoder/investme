@@ -14,7 +14,7 @@ export class ProfileService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-      return this.http.post<any>("http://investme.testme.ge/api/profile/uploadImage",{image: reader.result, type: file.type},{
+      return this.http.post<any>("https://back.investme.ge/api/profile/uploadImage",{image: reader.result, type: file.type},{
         headers: headers
       }).subscribe(user => {
         cb(user);
@@ -27,7 +27,7 @@ export class ProfileService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-      return this.http.post<any>("http://investme.testme.ge/api/profile/changePassword",post,{
+      return this.http.post<any>("https://back.investme.ge/api/profile/changePassword",post,{
         headers: headers
       });
     }
@@ -37,14 +37,14 @@ export class ProfileService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-      return this.http.post<any>("http://investme.testme.ge/api/profile",post,{
+      return this.http.post<any>("https://back.investme.ge/api/profile",post,{
         headers: headers
       });
     }
   }
 
   getTranslations(){
-    return this.http.get<any>("http://investme.testme.ge/api/profile");
+    return this.http.get<any>("https://back.investme.ge/api/profile");
   }
 
   constructor(private auth: AuthService, private http: HttpClient) { }

@@ -11,7 +11,7 @@ export class ProjectService {
   getMyProjects(lng){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/profile/myprojects",{
+    return this.http.get<any>("https://back.investme.ge/api/profile/myprojects",{
       headers: headers
     });
   }
@@ -19,7 +19,7 @@ export class ProjectService {
   getFavoriteProjects(lng){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/favorite",{
+    return this.http.get<any>("https://back.investme.ge/api/favorite",{
       headers: headers
     });
   }
@@ -28,12 +28,12 @@ export class ProjectService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
-      return this.http.get<any>("http://investme.testme.ge/api/projects?page="+page,{
+      return this.http.get<any>("https://back.investme.ge/api/projects?page="+page,{
         headers: headers
       });
     }else{
       const headers = new HttpHeaders({'X-App-Locale': lng});
-      return this.http.get<any>("http://investme.testme.ge/api/projects?page="+page,{
+      return this.http.get<any>("https://back.investme.ge/api/projects?page="+page,{
         headers: headers
       });
     }
@@ -41,14 +41,14 @@ export class ProjectService {
 
   getPopularProjects(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/ratingProject",{
+    return this.http.get<any>("https://back.investme.ge/api/ratingProject",{
       headers: headers
     });
   }
 
   getNewProjects(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/newProject",{
+    return this.http.get<any>("https://back.investme.ge/api/newProject",{
       headers: headers
     });
   }
@@ -57,12 +57,12 @@ export class ProjectService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
-      return this.http.post<any>("http://investme.testme.ge/api/filter",post,{
+      return this.http.post<any>("https://back.investme.ge/api/filter",post,{
         headers: headers
       });
     }else{
       const headers = new HttpHeaders({'X-App-Locale': lng});
-      return this.http.post<any>("http://investme.testme.ge/api/filter",post,{
+      return this.http.post<any>("https://back.investme.ge/api/filter",post,{
         headers: headers
       });
     }
@@ -70,7 +70,7 @@ export class ProjectService {
 
   getProject(id,lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/projects/"+ id,{
+    return this.http.get<any>("https://back.investme.ge/api/projects/"+ id,{
       headers: headers
     });
   }
@@ -78,7 +78,7 @@ export class ProjectService {
   getProjectData(id){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.get<any>("http://investme.testme.ge/api/editproject?id="+id,{
+    return this.http.get<any>("https://back.investme.ge/api/editproject?id="+id,{
       headers: headers
     });
   }
@@ -86,7 +86,7 @@ export class ProjectService {
   editFirstStep(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateFirstStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateFirstStep",post,{
       headers: headers
     });
   }
@@ -94,7 +94,7 @@ export class ProjectService {
   editSecondStep(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateSecondStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateSecondStep",post,{
       headers: headers
     });
   }
@@ -102,7 +102,7 @@ export class ProjectService {
   editThirdStep(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateThirdStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateThirdStep",post,{
       headers: headers
     });
   }
@@ -110,7 +110,7 @@ export class ProjectService {
   editFouthStep(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateFourthStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateFourthStep",post,{
       headers: headers
     });
   }
@@ -118,7 +118,7 @@ export class ProjectService {
   editFifthStep(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateFivethStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateFivethStep",post,{
       headers: headers
     });
   }
@@ -126,7 +126,7 @@ export class ProjectService {
   deleteFile(id){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateSecondStep/deleteFile",{id: id},{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateSecondStep/deleteFile",{id: id},{
       headers: headers
     });
   }
@@ -134,7 +134,7 @@ export class ProjectService {
   deletePhoto(id){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateSecondStep/deletePhoto",{id: id},{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateSecondStep/deletePhoto",{id: id},{
       headers: headers
     });
   }
@@ -142,7 +142,7 @@ export class ProjectService {
   deleteVideo(id){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateSecondStep/deleteVideo",{id: id},{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateSecondStep/deleteVideo",{id: id},{
       headers: headers
     });
   }
@@ -150,7 +150,7 @@ export class ProjectService {
   deleteAward(obj){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateThirdStep/deleteAward",{id: obj},{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateThirdStep/deleteAward",{id: obj},{
       headers: headers
     });
   }
@@ -158,7 +158,7 @@ export class ProjectService {
   deleteMember(obj){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/editproject/updateFourthStep/deleteMember",obj,{
+    return this.http.post<any>("https://back.investme.ge/api/editproject/updateFourthStep/deleteMember",obj,{
       headers: headers
     });
   }
@@ -166,7 +166,7 @@ export class ProjectService {
   addToFavorite(projectId){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/favorite",{project_id: projectId},{
+    return this.http.post<any>("https://back.investme.ge/api/favorite",{project_id: projectId},{
       headers: headers
     });
   }
@@ -174,7 +174,7 @@ export class ProjectService {
   removeFromFavorite(projectId){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/favorite/deleteFavorite",{project_id: projectId},{
+    return this.http.post<any>("https://back.investme.ge/api/favorite/deleteFavorite",{project_id: projectId},{
       headers: headers
     });
   }

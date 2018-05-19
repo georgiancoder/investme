@@ -13,7 +13,7 @@ export class EditprojectComponent implements OnInit {
 
   projectId: number;
 
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
 
   siteLang: string;
 

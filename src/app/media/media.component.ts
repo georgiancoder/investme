@@ -11,7 +11,7 @@ import {log} from "util";
 })
 export class MediaComponent implements OnInit {
 
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
 
   lang: string;
 

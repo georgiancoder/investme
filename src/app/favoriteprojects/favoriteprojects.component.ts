@@ -11,7 +11,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 })
 export class FavoriteprojectsComponent implements OnInit {
 
-  siteUrl = "http://investme.testme.ge";
+  siteUrl = "https://back.investme.ge";
 
   siteLang: string;
 

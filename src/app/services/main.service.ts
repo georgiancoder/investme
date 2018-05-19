@@ -9,7 +9,7 @@ export class MainService {
 
   getMainPage(lng): Observable<any>{
 
-    return this.http.get<any>("http://investme.testme.ge/api",{
+    return this.http.get<any>("https://back.investme.ge/api",{
       headers: {
         'X-App-Locale': lng
       }

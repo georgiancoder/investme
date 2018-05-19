@@ -30,7 +30,7 @@ export class AddProjectService {
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();
       const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
-      return this.http.get<any>("http://investme.testme.ge/api/addproject",{
+      return this.http.get<any>("https://back.investme.ge/api/addproject",{
         headers: headers,
       });
     }
@@ -39,7 +39,7 @@ export class AddProjectService {
   addMainInfo(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeFirstStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeFirstStep",post,{
       headers: headers
     });
   }
@@ -47,7 +47,7 @@ export class AddProjectService {
   uploadDocuments(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeSecondStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeSecondStep",post,{
       headers: headers
     });
   }
@@ -55,7 +55,7 @@ export class AddProjectService {
   addAwards(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeThirdStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeThirdStep",post,{
       headers: headers
     });
   }
@@ -63,7 +63,7 @@ export class AddProjectService {
   sendPayment(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeSixethStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeSixethStep",post,{
       headers: headers
     });
   }
@@ -71,7 +71,7 @@ export class AddProjectService {
   addMember(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeFourthStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeFourthStep",post,{
       headers: headers
     });
   }
@@ -79,7 +79,7 @@ export class AddProjectService {
   addFinances(post){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-    return this.http.post<any>("http://investme.testme.ge/api/addproject/storeFivethStep",post,{
+    return this.http.post<any>("https://back.investme.ge/api/addproject/storeFivethStep",post,{
       headers: headers
     });
   }
@@ -91,7 +91,7 @@ export class AddProjectService {
       if(this.auth.isAuthenticated()){
         let authToken = this.auth.getToken();
         const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-        return this.http.post<any>("http://investme.testme.ge/api/addproject/uploadImage",{image: reader.result, type: file.type},{
+        return this.http.post<any>("https://back.investme.ge/api/addproject/uploadImage",{image: reader.result, type: file.type},{
           headers: headers
         }).subscribe(user => {
           cb(user);

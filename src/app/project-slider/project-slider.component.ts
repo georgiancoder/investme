@@ -13,7 +13,7 @@ import { NgxCarousel } from 'ngx-carousel';
 })
 export class ProjectSliderComponent implements OnInit {
 
-  siteUrl = "http://investme.testme.ge";
+  siteUrl = "https://back.investme.ge";
 
   lang: string = '';
 

@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HeaderService {
 
   getHeader(lng): Observable<any>{
-    return this.http.get<any>('http://investme.testme.ge/api/header',{
+    return this.http.get<any>('https://back.investme.ge/api/header',{
       headers: {
         'X-App-Locale': lng,
       }

@@ -10,35 +10,35 @@ export class TextPagesService {
 
   about(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/about",{
+    return this.http.get<any>("https://back.investme.ge/api/about",{
       headers: headers
     });
   }
 
   privacy(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/privacy",{
+    return this.http.get<any>("https://back.investme.ge/api/privacy",{
       headers: headers
     });
   }
 
   rules(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/rule",{
+    return this.http.get<any>("https://back.investme.ge/api/rule",{
       headers: headers
     });
   }
 
   contact(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/contact",{
+    return this.http.get<any>("https://back.investme.ge/api/contact",{
       headers: headers
     });
   }
 
   faq(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("http://investme.testme.ge/api/faq",{
+    return this.http.get<any>("https://back.investme.ge/api/faq",{
       headers: headers
     });
   }

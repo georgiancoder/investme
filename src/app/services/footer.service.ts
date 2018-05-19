@@ -9,7 +9,7 @@ export class FooterService {
 
 
   getFooter(lng): Observable<any>{
-    return this.http.get<any>("http://investme.testme.ge/api/footer",{
+    return this.http.get<any>("https://back.investme.ge/api/footer",{
       headers: {
         'X-App-Locale': lng,
       }

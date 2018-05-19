@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 })
 export class MyprojectsComponent implements OnInit {
 
-  siteUrl = "http://investme.testme.ge";
+  siteUrl = "https://back.investme.ge";
 
   siteLang: string;
 

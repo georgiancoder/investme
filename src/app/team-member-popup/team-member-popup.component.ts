@@ -12,7 +12,7 @@ export class TeamMemberPopupComponent implements OnInit {
 
 	@Output() close = new EventEmitter<boolean>();
 
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
 
 	closePopup(){
 		this.close.emit(true);

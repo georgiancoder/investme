@@ -22,7 +22,7 @@ export class ProjectinnerComponent implements OnInit {
 
   projectId: number;
 
-  siteUrl: string = "http://investme.testme.ge";
+  siteUrl: string = "https://back.investme.ge";
 
   media = [];
 

@@ -30,7 +30,7 @@
                 {{project.project.company_time - project.interval}}
                 <span *ngIf="translations">{{translations.day}}</span>
               </div>
-              <img src="/investme/assets/{{(project.check_for_fav != undefined && project.check_for_fav) ? 'heart-red.png' : 'heart-black.png'}}" *ngIf="project.check_for_fav != undefined" alt="add to favorite" class="favorite" (click)="toggleFavorite(project)">
+              <img src="/assets/{{(project.check_for_fav != undefined && project.check_for_fav) ? 'heart-red.png' : 'heart-black.png'}}" *ngIf="project.check_for_fav != undefined" alt="add to favorite" class="favorite" (click)="toggleFavorite(project)">
             </div>
             <h3><a routerLink="/project/{{project.project.id}}">{{project.title}}</a></h3>
             <p>{{project.min_description}}</p>

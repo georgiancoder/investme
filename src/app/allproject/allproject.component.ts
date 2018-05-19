@@ -12,7 +12,7 @@ import  * as $  from 'jquery';
 export class AllprojectComponent implements OnInit {
 
   siteLang: any;
-  siteUrl = 'http://investme.testme.ge';
+  siteUrl = 'https://back.investme.ge';
   translations: any;
 
   breadcrumbs: object;

@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class AskService {
 
   ask(data): Observable<any>{
-    return this.http.post('http://investme.testme.ge/api/addQuest',data);
+    return this.http.post('https://back.investme.ge/api/addQuest',data);
   }
   constructor(private http: HttpClient){}
 }

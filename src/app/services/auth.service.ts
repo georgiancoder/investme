@@ -43,7 +43,7 @@ export class AuthService {
     }
 
     logOut(){
-      return this.http.post<any>("http://investme.testme.ge/api/logout",{});
+      return this.http.post<any>("https://back.investme.ge/api/logout",{});
     }
 
     isAuthenticated(){
@@ -57,7 +57,7 @@ export class AuthService {
        if(this.isAuthenticated()){
          let authToken = this.getToken();
          const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
-         this.http.get<any>("http://investme.testme.ge/api/user",{
+         this.http.get<any>("https://back.investme.ge/api/user",{
            headers: headers
          }).subscribe(user => {
            localStorage.removeItem('user');
@@ -76,11 +76,11 @@ export class AuthService {
      }
 
   registration(post): Observable<any>{
-    return this.http.post<any>("http://investme.testme.ge/api/register",post);
+    return this.http.post<any>("https://back.investme.ge/api/register",post);
   }
 
   logIn(post): Observable<any>{
-    return this.http.post<any>("http://investme.testme.ge/oauth/token",post);
+    return this.http.post<any>("https://back.investme.ge/oauth/token",post);
   }
 
 
