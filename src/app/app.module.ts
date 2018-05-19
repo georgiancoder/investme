@@ -36,6 +36,7 @@ import { NgxCarouselModule } from 'ngx-carousel';
 import 'hammerjs';
 
 //services
+import { AskService } from "./services/ask.service";
 import { ProjectService } from './services/project.service';
 import { CategorieService } from './services/categorie.service';
 import { FooterService } from './services/footer.service';
@@ -195,7 +196,9 @@ const routes: Routes = [
     AuthGuard,
     ProfileService,
     TextPagesService,
-    MediaService
+    MediaService,
+    AddProjectService,
+    AskService
   ],
   bootstrap: [AppComponent]
 })

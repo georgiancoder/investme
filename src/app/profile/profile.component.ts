@@ -30,13 +30,14 @@ export class ProfileComponent implements OnInit {
   name: string = '';
   lastname: string = '';
   livingPlace: string = '';
-  username: string = '';
   email: string = '';
   tell: string = '';
   piradiN: number;
   facebook: string = '';
   twitter: string = '';
   instagram: string = '';
+  youtube: string = '';
+  vkontakte: string = '';
 
   day: number = 1;
   month: number = 0;
@@ -98,7 +99,7 @@ export class ProfileComponent implements OnInit {
         form.controls['password_confirmation'].setErrors({notEquivalent: true});
     }
     return valid;
-  }
+  };
 
   changePassword(post):void{
     this.profileservice.changePassword(post).subscribe(res => {
@@ -145,13 +146,14 @@ export class ProfileComponent implements OnInit {
       'name': [null, Validators.compose([Validators.required, Validators.maxLength(32),Validators.pattern(/^([^0-9]*)$/)])],
       'lastname': [null, Validators.compose([Validators.required, Validators.maxLength(48),Validators.pattern(/^([^0-9]*)$/)])],
       'livingPlace': [null, Validators.compose([Validators.required])],
-      'username': [null, Validators.compose([Validators.required,Validators.maxLength(32)])],
       'email': [null, Validators.compose([Validators.required,Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)])],
       'tell': [null, Validators.compose([Validators.required, Validators.maxLength(9),Validators.pattern(/^\d+$/)])],
       'piradiN': [null, Validators.compose([Validators.minLength(11),Validators.maxLength(11),Validators.required,Validators.pattern(/^(0|[0-9][0-9]*)$/)])],
       'facebook': new FormControl('facebook'),
       'twitter': new FormControl('twitter'),
       'instagram': new FormControl('instagram'),
+      'youtube': new FormControl('youtube'),
+      'vkontakte': new FormControl('vkontakte'),
       'day': new FormControl('day'),
       'month': new FormControl('month'),
       'year': new FormControl('year')
@@ -176,13 +178,14 @@ export class ProfileComponent implements OnInit {
       this.name = user.name;
       this.lastname = user.lastname;
       this.livingPlace = user.livingCity;
-      this.username = user.username;
       this.piradiN = user.personalId;
       this.tell = user.phone;
       this.email = user.email;
       this.facebook = user.facebook;
       this.twitter = user.twitter;
       this.instagram = user.instagram;
+      this.youtube = user.youtube;
+      this.vkontakte = user.vkontakte;
       if(user.birthDate){
         this.day = user.birthDate.split('/')[0];
         this.month = user.birthDate.split('/')[1];
@@ -192,22 +195,24 @@ export class ProfileComponent implements OnInit {
         this.month = 1;
         this.year = 2010;
       }
-      this.profileData.setValue({
-        name: user.name,
-        lastname: user.lastname,
-        livingPlace: user.livingCity,
-        username: user.username,
-        tell: user.phone,
-        email: user.email,
-        piradiN: user.personalId,
-        facebook: user.facebook,
-        twitter: user.twitter,
-        instagram: user.instagram,
-        day: this.day,
-        month:this.month,
-        year: this.year
-      });
+
+      this.profileData.controls['name'].setValue(user.name);
+      this.profileData.controls['lastname'].setValue(user.lastname);
+      this.profileData.controls['livingPlace'].setValue(user.livingCity);
+      this.profileData.controls['tell'].setValue(user.phone);
+      this.profileData.controls['email'].setValue(user.email);
+      this.profileData.controls['piradiN'].setValue(user.piradiN);
+      this.profileData.controls['facebook'].setValue(user.facebook);
+      this.profileData.controls['twitter'].setValue(user.twitter);
+      this.profileData.controls['instagram'].setValue(user.instagram);
+      this.profileData.controls['youtube'].setValue(user.youtube);
+      this.profileData.controls['vkontakte'].setValue(user.vkontakte);
+      this.profileData.controls['day'].setValue(user.day);
+      this.profileData.controls['month'].setValue(user.month);
+      this.profileData.controls['year'].setValue(user.year);
     }
+
+    console.log(user)
 
     this.getTranslations();
     document.addEventListener('langchanged',(e)=>{

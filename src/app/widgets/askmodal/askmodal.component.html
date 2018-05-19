@@ -6,11 +6,11 @@
       <i class="fa fa-times" (click)="hide()"></i>
     </header>
     <div class="body" (click)="stoppropagation($event)">
-      <form>
-        <input type="text" placeholder="თქვენი სახელი">
-        <input type="text" placeholder="ელ.ფოსტა">
-        <textarea placeholder="დაწერეთ კითხვა"></textarea>
-        <button type="button">გაგზავნა</button>
+      <form [formGroup]="askdata" (ngSubmit)="ask(askdata.value)">
+        <input type="text" placeholder="თქვენი სახელი" formControlName="name">
+        <input type="text" placeholder="ელ.ფოსტა" formControlName="email">
+        <textarea placeholder="დაწერეთ კითხვა" formControlName="message"></textarea>
+        <button type="submit">გაგზავნა</button>
       </form>
     </div>
   </div>

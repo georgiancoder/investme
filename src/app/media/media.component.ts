@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {MediaService} from '../services/media.service';
 import {LangsService} from '../services/langs.service';
 import {Router, ActivatedRoute, Params} from "@angular/router";
+import {log} from "util";
 
 @Component({
   selector: 'app-media',
@@ -31,6 +32,7 @@ export class MediaComponent implements OnInit {
   getMediaList() {
     this.mediaService.getMediaList(this.lang).subscribe(medias => {
       this.medias = medias;
+      console.log(this.medias)
     });
   }
 

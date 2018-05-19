@@ -1,7 +1,7 @@
 <div class="media" *ngIf="medias">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="content">
-    <div class="media" *ngFor="let media of medias.media | paginate: { itemsPerPage: 10, currentPage: p, totalItems: 20 }">
+    <div class="media" *ngFor="let media of medias.media | paginate: { itemsPerPage: 10, currentPage: p, totalItems: medias.media.count }">
       <div class="img" [style.background-image]="'url(' + siteUrl + media.media.image + ')'"></div>
       <div class="">
         <h2>{{media.detail.title}}</h2>

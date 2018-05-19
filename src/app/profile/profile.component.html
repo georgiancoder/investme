@@ -9,9 +9,11 @@
       <div class="socprofiles">
         <h3>{{profileTranslations.social_profile}}</h3>
         <ul>
-          <li><a href="" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-          <li><a href="" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
-          <li><a href="" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+          <li><a href="{{facebook}}" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+          <li><a href="{{twitter}}" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+          <li><a href="{{instagram}}" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+          <li><a href="{{youtube}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a></li>
+          <li><a href="{{vkontakte}}" target="_blank"><i class="fa fa-vk"></i> Vkontakte</a></li>
         </ul>
       </div>
     </div>
@@ -73,18 +75,17 @@
             <label>Instagram</label>
             <input type="text" formControlName="instagram" value="{{instagram}}">
           </div>
+          <div class="item">
+            <label>Youtube</label>
+            <input type="text" formControlName="youtube" value="{{youtube}}">
+          </div>
+          <div class="item">
+            <label>Vkontakte</label>
+            <input type="text" formControlName="vkontakte" value="{{vkontakte}}">
+          </div>
         </div>
         <h2><span>{{profileTranslations.account_info.split(' ')[0]}}</span> {{profileTranslations.account_info.split(' ')[1]}}</h2>
         <div class="fgroup">
-          <div class="item">
-            <label>მომხმარებლის სახელი</label>
-            <input type="text" formControlName="username" value="{{username}}">
-            <div *ngIf="!profileData.controls['username'].valid && (profileData.controls['username'].dirty || profileData.controls['username'].touched)">
-              <div *ngIf="profileData.controls['username'].errors.required">
-                username is required
-              </div>
-            </div>
-          </div>
           <div class="item">
             <label>{{profileTranslations.email}}</label>
             <input type="text" formControlName="email" value="{{email}}">
