@@ -17,6 +17,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { PaginatorModule } from 'primeng/paginator';
 import { ShareButtonModule } from '@ngx-share/button';
 import { YoutubeModule } from 'angularx-youtube';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { EditprojectComponent } from './editproject/editproject.component';
 import { FavoriteprojectsComponent } from './favoriteprojects/favoriteprojects.component';
 import { ProjectinnerComponent } from './projectinner/projectinner.component';
 import { NgxCarouselModule } from 'ngx-carousel';
+
 import 'hammerjs';
 
 //services
@@ -177,7 +179,8 @@ const routes: Routes = [
     RadioButtonModule,
     PaginatorModule,
     ShareButtonModule.forRoot(),
-    YoutubeModule
+    YoutubeModule,
+    NgxPaginationModule
   ],
   providers: [
     ProjectService,

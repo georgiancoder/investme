@@ -311,3 +311,83 @@ body{
   color: #798088;
   font-family: "BPG Mrgvlovani";
 }
+
+.ngx-pagination{
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "BPG Mrgvlovani";
+}
+
+.ngx-pagination li{
+  position: relative;
+  width: 44px!important;
+  height: 44px!important;
+  display: inline-flex!important;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 15px!important;
+  margin: 0 10px;
+}
+.ngx-pagination li a:hover{
+  background-color: transparent!important;
+}
+
+.ngx-pagination li.current{
+  -webkit-border-radius: 4px!important;
+  -moz-border-radius: 4px!important;
+  border-radius: 4px!important;
+  background-color: #02748D;
+  border: 1px solid #D0D0D0;
+}
+
+.pagination-previous, .pagination-next{
+  background-color: #FFF!important;
+  border: 1px solid #D0D0D0;
+  -webkit-border-radius: 4px!important;
+  -moz-border-radius: 4px!important;
+  border-radius: 4px!important;
+  border-right: 1px solid #D0D0D0!important
+}
+
+.pagination-previous{
+  margin-right: 15px!important;
+}
+.ngx-pagination .pagination-next a::after, .ngx-pagination .pagination-next.disabled::after{
+  display: none!important;
+  margin: 0!important;
+  font-family: "fontawesome"!important;
+}
+.ngx-pagination .pagination-previous a::before{
+  display: none!important;
+  margin: 0!important;
+  font-family: "fontawesome"!important;
+}
+
+.pagination-next::before{
+  content: ''!important;
+  font-family: "fontawesome"!important;
+}
+
+.pagination-previous::before{
+  content: ''!important;
+  font-family: "fontawesome"!important;
+  margin: 0!important;
+}
+
+.pagination-previous a, .pagination-next a{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-next{
+  margin-left: 15px!important;
+}
+
+
