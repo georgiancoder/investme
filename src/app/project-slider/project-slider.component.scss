@@ -151,6 +151,18 @@
             }
           }
       }
+      .rgoli{
+        position: absolute;
+        width: 185px;
+        height: 185px;
+        right: 185px;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+      }
     }
     .progress{
       width: 100%;
