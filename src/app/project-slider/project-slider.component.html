@@ -32,7 +32,7 @@
         </footer>
       </article>
       <div class="rgoli">
-        <app-rgoli [percent]="75"></app-rgoli>
+        <app-rgoli [percent]="currentProject.money / currentProject.project.capital * 100"></app-rgoli>
       </div>
       <div class="progress">
         <div class="bar" [style.width]="progress +'%'"></div>
