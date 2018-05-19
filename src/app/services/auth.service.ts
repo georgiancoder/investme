@@ -53,7 +53,7 @@ export class AuthService {
         return false;
      }
 
-     setAuthenticatedUser(){
+     setAuthenticatedUser(cb){
        if(this.isAuthenticated()){
          let authToken = this.getToken();
          const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
@@ -62,6 +62,7 @@ export class AuthService {
          }).subscribe(user => {
            localStorage.removeItem('user');
            localStorage.setItem('user',JSON.stringify(user));
+           cb();
          });
        }
      }

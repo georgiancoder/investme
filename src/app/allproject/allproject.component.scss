@@ -39,8 +39,16 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    font-size: 14px;
+    color:#2F3748;
+    font-family: "BPG Mrgvlovani Caps 2010";
 		select {
-      display: inline-block;
+      display: block;
+      height: 20px;
+      margin-left: 45px;
+      font-size: 12px;
+      color: #95989A;
+      font-family: "BPG Mrgvlovani";
 		}
 	}
 

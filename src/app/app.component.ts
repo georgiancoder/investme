@@ -106,12 +106,13 @@ export class AppComponent  {
     this.authservice.logIn(post).subscribe(res => {
       this.authservice.setToken(res.access_token,res.expires_in + Date.now());
       this.authorized = this.authservice.isAuthenticated();
-      this.authservice.setAuthenticatedUser();
-      setTimeout(() => {
-        this.user = this.authservice.getAuthenticatedUser();
-        this.dropDownHeight = 0;
-        $("body").css({position: "static", width: '100%', overflow: "visible"});
-      },500);
+      this.authservice.setAuthenticatedUser(()=>{
+        setTimeout(() => {
+          this.user = this.authservice.getAuthenticatedUser();
+          this.dropDownHeight = 0;
+          $("body").css({position: "static", width: '100%', overflow: "visible"});
+        },500);
+      });
     });
   }
 
