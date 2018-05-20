@@ -201,7 +201,7 @@ export class ProfileComponent implements OnInit {
       this.profileData.controls['livingPlace'].setValue(user.livingCity);
       this.profileData.controls['tell'].setValue(user.phone);
       this.profileData.controls['email'].setValue(user.email);
-      this.profileData.controls['piradiN'].setValue(user.piradiN);
+      this.profileData.controls['piradiN'].setValue(user.personalId);
       this.profileData.controls['facebook'].setValue(user.facebook);
       this.profileData.controls['twitter'].setValue(user.twitter);
       this.profileData.controls['instagram'].setValue(user.instagram);
@@ -212,7 +212,6 @@ export class ProfileComponent implements OnInit {
       this.profileData.controls['year'].setValue(user.year);
     }
 
-    console.log(user)
 
     this.getTranslations();
     document.addEventListener('langchanged',(e)=>{

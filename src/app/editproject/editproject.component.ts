@@ -183,10 +183,10 @@ export class EditprojectComponent implements OnInit {
     console.log(this.fourthStep);
   }
   getFifthStepData(){
-    this.fifthStep["targetCapital"] = this.projectData.finance[0].wanted_capital;
-    this.fifthStep["prognos"] = this.projectData.finance[0].prognos;
-    this.fifthStep["amount"] = this.projectData.finance[0].amount;
-    this.fifthStep["acountNumber"] = this.projectData.finance[0].bank_number;
+    this.fifthStep["targetCapital"] = this.projectData.project.capital;
+    // this.fifthStep["prognos"] = this.projectData.finance[0].prognos;
+    // this.fifthStep["amount"] = this.projectData.finance[0].amount;
+    // this.fifthStep["acountNumber"] = this.projectData.finance[0].bank_number;
     this.fifthStep["project_id"] = this.projectId;
   }
 
@@ -245,12 +245,11 @@ export class EditprojectComponent implements OnInit {
 
   updateFirstStep(){
     this.firstStep["project_id"] = this.projectId;
-    console.log(this.firstStep);
     this.ProjectService.editFirstStep(this.firstStep).subscribe(res=>{
-      console.log(res);
       if(res && res.status){
         this.projectData.project.image = res.image;
       }
+      this.stepIndex = 1;
     });
   }
   updateSecondStep(){
@@ -269,7 +268,6 @@ export class EditprojectComponent implements OnInit {
         this.secondStep["ka"].videos = [{link: '', title: ''}];
         this.secondStep["en"].videos = [{link: '', title: ''}];
         this.secondStep["ru"].videos = [{link: '', title: ''}];
-        console.log(res);
 
         res.documents.forEach(data=>{
           if(data.file && data.file.length > 0)
@@ -286,34 +284,66 @@ export class EditprojectComponent implements OnInit {
           }
         });
       }
+      this.stepIndex = 2;
     });
   }
   updateThirdStep(){
+    let haserrors = false;
     this.thirdStep["ka"].forEach((data,i)=>{
+      data.errors = [];
       data.amount = this.thirdStep['amount'][i];
       data.month = this.thirdStep["deliver_date"][i].month;
       data.year = this.thirdStep["deliver_date"][i].year;
+      if(data.month.length == 0){
+        data.errors.push('month required');
+        haserrors = true;
+      }
+      if(data.year.length == 0){
+        data.errors.push('year required');
+        haserrors = true;
+      }
     });
     this.thirdStep["en"].forEach((data,i)=>{
+      data.errors = [];
       data.amount = this.thirdStep['amount'][i];
       data.month = this.thirdStep["deliver_date"][i].month;
       data.year = this.thirdStep["deliver_date"][i].year;
+      if(data.month.length == 0){
+        data.errors.push('month required');
+        haserrors = true;
+      }
+      if(data.year.length == 0){
+        data.errors.push('year required');
+        haserrors = true;
+      }
     });
     this.thirdStep["ru"].forEach((data,i)=>{
+      data.errors = [];
       data.amount = this.thirdStep['amount'][i];
       data.month = this.thirdStep["deliver_date"][i].month;
       data.year = this.thirdStep["deliver_date"][i].year;
+      if(data.month.length == 0){
+        data.errors.push('month required');
+        haserrors = true;
+      }
+      if(data.year.length == 0){
+        data.errors.push('year required');
+        haserrors = true;
+      }
     });
     this.thirdStep["project_id"] = this.projectId;
-    console.log(this.thirdStep);
-    this.ProjectService.editThirdStep(this.thirdStep).subscribe(res=>{
-        console.log(res);
 
-    });
+    if(!haserrors){
+      this.ProjectService.editThirdStep(this.thirdStep).subscribe(res=>{
+        console.log(res);
+        this.stepIndex = 3;
+      });
+    }else{
+      console.log('errrooorr');
+    }
   }
   updateFourthStep(){
     this.fourthStep["project_id"] = this.projectId;
-    console.log(this.fourthStep);
     this.ProjectService.editFouthStep(this.fourthStep).subscribe(res=>{
       console.log(res);
       if(res && res.status){
@@ -327,12 +357,14 @@ export class EditprojectComponent implements OnInit {
             this.fourthStep["photoes"].push({file: data.image, imageType: ''});
         });
       }
+      this.stepIndex = 4;
     });
   }
   updateFifthStep(){
     console.log(this.fifthStep);
     this.ProjectService.editFifthStep(this.fifthStep).subscribe(res=>{
       console.log(res);
+      this.stepIndex = 5;
     });
   }
 

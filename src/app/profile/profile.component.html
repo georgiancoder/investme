@@ -114,10 +114,10 @@
             <input type="text" class="tell" formControlName="tell" value="tell">
             <div *ngIf="!profileData.controls['tell'].valid && (profileData.controls['tell'].dirty || profileData.controls['tell'].touched)">
               <div *ngIf="profileData.controls['tell'].errors.required">
-                tell is required
+                phone number is required
               </div>
               <div *ngIf="profileData.controls['tell'].errors.maxlength">
-                tell must be maximum 9 characters length
+                phone number must be maximum 9 characters length
               </div>
             </div>
           </div>
@@ -126,10 +126,10 @@
             <input type="text" formControlName="piradiN" value="{{piradiN}}">
             <div *ngIf="!profileData.controls['piradiN'].valid && (profileData.controls['piradiN'].dirty || profileData.controls['piradiN'].touched)">
               <div *ngIf="profileData.controls['piradiN'].errors.required">
-                piradiN is required
+                private number is required
               </div>
               <div *ngIf="profileData.controls['piradiN'].errors.pattern">
-                piradiN is not correct
+                private number is not correct
               </div>
             </div>
           </div>

@@ -168,29 +168,33 @@
             <div class="row">
               <label>თანხა</label>
               <div class="inputwrapper">
-                <select [(ngModel)]="thirdStep.amount[i]">
-                  <option value="10-50">10 დან 50 ლარამდე</option>
-                </select>
+                <input type="text" [(ngModel)]="thirdStep.amount[i]">
               </div>
             </div>
             <div class="row">
               <label>მიწოდების თარიღი</label>
               <div class="inputwrapper">
-                <select [(ngModel)]="thirdStep.deliver_date[i].month">
-                  <option value="">აირჩიეთ თვე</option>
-                  <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
-                </select>
-                <select [(ngModel)]="thirdStep.deliver_date[i].year">
-                  <option value="">აირჩიეთ წელი</option>
-                  <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
-                </select>
+                <div>
+                  <select [(ngModel)]="thirdStep.deliver_date[i].month">
+                    <option value="">აირჩიეთ თვე</option>
+                    <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
+                  </select>
+                  <div *ngIf="thirdStep.deliver_date[i].month.length == 0">თვის არჩევა სავალდებულოა</div>
+                </div>
+                <div>
+                  <select [(ngModel)]="thirdStep.deliver_date[i].year">
+                    <option value="">აირჩიეთ წელი</option>
+                    <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
+                  </select>
+                  <div *ngIf="thirdStep.deliver_date[i].year.length == 0">წლის არჩევა სავალდებულოა</div>
+                </div>
               </div>
             </div>
           </li>
         </ul>
         <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
       </div>
-      <button type="button" [class]="'prevstep'"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+      <button type="button" [class]="'prevstep'" (click)="stepIndex = 1"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
       <button type="button" [class]="'nextstep'" (click)="updateThirdStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
     </div>
     <div class="step" *ngIf="stepIndex == 3">

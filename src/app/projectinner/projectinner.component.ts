@@ -12,6 +12,7 @@ import  * as $  from 'jquery';
 })
 export class ProjectinnerComponent implements OnInit {
 
+
   openPopup:boolean = false;
 
   teamMember:any;
@@ -32,6 +33,8 @@ export class ProjectinnerComponent implements OnInit {
 
   tabindex = 0;
 
+
+
   documents = [];
 
   getProject(){
@@ -44,6 +47,11 @@ export class ProjectinnerComponent implements OnInit {
   }
 
   getMedia(){
+    let mainimg = {
+      type: 'image',
+      image: this.siteUrl + this.project.project.image
+    };
+    this.media.push(mainimg);
     this.project.imageDetail.forEach(image=>{
       if(image.image && image.image.length > 0){
         image.type = 'image';
@@ -112,6 +120,8 @@ export class ProjectinnerComponent implements OnInit {
     this.activatedRoute.params.subscribe((params: Params) => {
         this.projectId = params["id"];
       });
+
+
       this.siteLang = this.langservice.getLang();
       this.getProject();
       document.addEventListener('langchanged',()=>{
@@ -119,6 +129,13 @@ export class ProjectinnerComponent implements OnInit {
         this.getProject();
       });
 
+    this.activatedRoute.queryParams.subscribe(param=>{
+      if(param['support']){
+        this.tabindex = 3;
+
+        $('html, body').animate({scrollTop: 900},1000);
+      }
+    });
 
     this.breadcrumbs = {
       page: 'პროექტები',

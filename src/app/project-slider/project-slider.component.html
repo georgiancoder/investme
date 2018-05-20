@@ -26,7 +26,7 @@
         <h2>{{currentProject.title}}</h2>
         <p>{{currentProject.desc}}</p>
         <footer>
-          <a routerLink="/project/{{currentProject.project.id}}" class="daafinanse">დააფინანსე პროექტი</a>
+          <a routerLink="/project/{{currentProject.project.id}}" [queryParams]="{support:true}" class="daafinanse">დააფინანსე პროექტი</a>
           <span class="targetCapital">საჭირო თანხა: <span
             class="capital">{{currentProject.project.capital}}</span></span>
         </footer>

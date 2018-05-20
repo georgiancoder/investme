@@ -120,10 +120,10 @@ export class AddProjectComponent implements OnInit {
     hash: null,
     project_id: null,
     money: '',
-    date: {
+    date: [{
       month: '',
       year: ''
-    },
+    }],
     ka: [{
       title: '',
       desc: '',
@@ -279,7 +279,6 @@ export class AddProjectComponent implements OnInit {
     if(this.secondStep["ru"].fotos.length == 0){
       this.secondStep["ru"].fotos = [{title: ''}];
     }
-    console.log(this.secondStep);
     this.addprojectservice.uploadDocuments(this.secondStep).subscribe(res=>{
       console.log(res);
       if(res && res.status){
@@ -315,7 +314,6 @@ export class AddProjectComponent implements OnInit {
             }
         });
 
-        console.log(this.secondStep);
 
         newSecondStep["ka"].fotos = [];
         newSecondStep["en"].fotos = [];
@@ -338,16 +336,26 @@ export class AddProjectComponent implements OnInit {
   // third step functions
 
   addAwards(){
-    this.jildoebi["project_id"] = this.projectId;
-    this.jildoebi["hash"] = this.hash;
-    console.log(this.jildoebi);
-    this.addprojectservice.addAwards(this.jildoebi).subscribe(res=>{
-      console.log(res);
-      if(res && res.status){
-        this.addprojectservice.saveProjectStep('jildoebi',this.jildoebi);
-        this.stepIndex++;
+    let haserrors = false;
+    this.jildoebi['date'].forEach((d)=>{
+      if(d.month.length == 0 || d.year.length == 0){
+        haserrors = true;
       }
     });
+    this.jildoebi["project_id"] = this.projectId;
+    this.jildoebi["hash"] = this.hash;
+    if(!haserrors){
+      this.addprojectservice.addAwards(this.jildoebi).subscribe(res=>{
+        console.log(res);
+        if(res && res.status){
+          this.addprojectservice.saveProjectStep('jildoebi',this.jildoebi);
+          this.stepIndex++;
+        }
+      });
+    } else {
+      console.log('error while adding award')
+    }
+
   }
 
   moreAward(){
