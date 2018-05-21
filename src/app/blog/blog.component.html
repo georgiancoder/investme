@@ -1,0 +1,6 @@
+<div class="blog" *ngIf="blogs">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="content">
+    <app-blogwidget [data]="blogs.blog" type="blog" [totalItems]="1"></app-blogwidget>
+  </div>
+</div>
