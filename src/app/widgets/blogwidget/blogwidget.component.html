@@ -1,0 +1,18 @@
+<div class="media"
+     *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalItems }">
+  <div class="img" [style.background-image]="'url(' + siteUrl + item[type].image + ')'"></div>
+  <div class="">
+    <h2>{{item.detail.title}}</h2>
+    <div class="desc">
+      {{item.detail.min_description}}
+    </div>
+  </div>
+  <footer>
+    <time><img src="/assets/calendar.png" width="15" alt=""> {{item.date}}</time>
+    <a routerLink="/{{type}}/{{item[type].id}}">დეტალურად <i class="fa fa-angle-right"></i></a>
+  </footer>
+</div>
+<div class="pagination">
+  <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
+</div>
+
