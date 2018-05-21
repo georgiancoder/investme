@@ -16,6 +16,9 @@ export class BloginnerComponent implements OnInit {
   lang:string;
   blog:any;
 
+  //change remote
+
+
   breadcrumbs: object;
 
   getBlog(){
