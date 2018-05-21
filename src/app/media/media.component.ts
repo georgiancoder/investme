@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {MediaService} from '../services/media.service';
 import {LangsService} from '../services/langs.service';
 import {Router, ActivatedRoute, Params} from "@angular/router";
-import {log} from "util";
 
 @Component({
   selector: 'app-media',
@@ -15,12 +14,6 @@ export class MediaComponent implements OnInit {
 
   lang: string;
 
-  p: number = 1;
-
-  pageChanged(event) {
-    this.p = event;
-    this.router.navigate(['media'],{queryParams: {page: this.p}});
-  }
 
   medias: any;
 
@@ -49,9 +42,7 @@ export class MediaComponent implements OnInit {
       home: 'მთავარი'
     }
 
-    this.activatedRoute.queryParams.subscribe((params: Params) => {
-      this.p = (params['page']) ? params['page'] : 1;
-    });
+
   }
 
 }

@@ -1,22 +1,6 @@
 <div class="media" *ngIf="medias">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="content">
-    <div class="media" *ngFor="let media of medias.media | paginate: { itemsPerPage: 10, currentPage: p, totalItems: medias.media.count }">
-      <div class="img" [style.background-image]="'url(' + siteUrl + media.media.image + ')'"></div>
-      <div class="">
-        <h2>{{media.detail.title}}</h2>
-        <div class="desc">
-          {{media.detail.min_description}}
-        </div>
-      </div>
-      <footer>
-        <time><img src="/assets/calendar.png" width="15" alt=""> {{media.date}}</time>
-        <a routerLink="/media/{{media.media.id}}">დეტალურად <i class="fa fa-angle-right"></i></a>
-      </footer>
-    </div>
-    <div class="pagination">
-      <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
-    </div>
+    <app-blogwidget [data]="medias.media" [totalItems]="medias.count" type="media"></app-blogwidget>
   </div>
-
 </div>
