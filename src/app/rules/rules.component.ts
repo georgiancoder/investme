@@ -36,7 +36,7 @@ export class RulesComponent implements OnInit {
     this.breadcrumbs = {
       page: 'სარგებლობის წესები და პირობები',
       home: 'მთავარი'
-    }
+    };
 
     this.sidemenu = [{
       title: 'უსაფრთხოების პოლიტიკა',

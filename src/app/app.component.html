@@ -1,8 +1,8 @@
 <header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <ul class="l">
-      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="pages/addproject">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="pages/investproject">{{header.translations.finans_project}}</a></li>
     </ul>
     <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
     <div class="r">
@@ -253,8 +253,8 @@
       </ul>
       <ul>
         <li><a routerLink="faq">{{footer.translations.faq}}</a></li>
-        <li><a routerLink="privacy">{{footer.translations.policy}}</a></li>
-        <li><a routerLink="rules">{{footer.translations.rules}}</a></li>
+        <li><a routerLink="pages/privacy">{{footer.translations.policy}}</a></li>
+        <li><a routerLink="pages/rules">{{footer.translations.rules}}</a></li>
       </ul>
       <ul>
         <li *ngFor="let cat of footer.categories">{{cat.title}}</li>

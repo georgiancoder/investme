@@ -43,6 +43,13 @@ export class TextPagesService {
     });
   }
 
+  getPageData(page,lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/" + page,{
+      headers: headers
+    });
+  }
+
 
 
 
