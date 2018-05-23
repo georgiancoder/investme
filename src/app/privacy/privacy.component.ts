@@ -11,6 +11,8 @@ export class PrivacyComponent implements OnInit {
 
   lang:string;
 
+  content:any;
+
   titles: string[];
 
   headings: any[];
@@ -30,6 +32,8 @@ export class PrivacyComponent implements OnInit {
           this.titles.push(tag.match(/>(.*)</)[1]);
         });
       }
+
+      this.content = this.textPagesService.markHeadings(this.privacyContent.policy);
     });
   }
 
