@@ -1,5 +1,5 @@
 <ul *ngIf="data">
-  <li *ngFor="let item of data" [class]="item.active ? 'active' : ''">
-    <a routerLink="{{item.link}}">{{item.title}}</a>
+  <li *ngFor="let item of data; let i = index;" [class]="item.active ? 'active' : ''">
+    <a href="#{{i}}">{{item}}</a>
   </li>
 </ul>

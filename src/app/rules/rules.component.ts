@@ -11,7 +11,11 @@ export class RulesComponent implements OnInit {
 
   lang:string;
 
-  rulesContent:string;
+  titles: string[];
+
+  headings: any[];
+
+  rulesContent:any;
 
   breadcrumbs: object;
 
@@ -20,6 +24,14 @@ export class RulesComponent implements OnInit {
   rules(){
     this.textPagesService.rules(this.lang).subscribe(content=>{
       this.rulesContent = content;
+      this.headings = this.textPagesService.getPageTitles(this.rulesContent.rule);
+      if(this.headings){
+        this.headings.forEach(tag=>{
+          this.titles.push(tag.match(/>(.*)</)[1]);
+        });
+      }
+
+      this.rulesContent.rule = this.textPagesService.markHeadings(this.rulesContent.rule);
     });
   }
 
@@ -38,15 +50,6 @@ export class RulesComponent implements OnInit {
       home: 'მთავარი'
     };
 
-    this.sidemenu = [{
-      title: 'უსაფრთხოების პოლიტიკა',
-      link: '/privacy',
-      active: false
-    },{
-      title: 'სარგებლობის წესები და პირობები',
-      link: '/rules',
-      active: true
-    }];
   }
 
 }
