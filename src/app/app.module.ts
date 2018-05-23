@@ -75,6 +75,7 @@ import { EntrepreneurshipPageComponent } from './entrepreneurship-page/entrepren
 import { BusinesPageComponent } from './busines-page/busines-page.component';
 import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-page/social-entrepreneurship-page.component';
 import { SocialActicityPageComponent } from './social-acticity-page/social-acticity-page.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 const routes: Routes = [
   {
@@ -213,7 +214,8 @@ const routes: Routes = [
     EntrepreneurshipPageComponent,
     BusinesPageComponent,
     SocialEntrepreneurshipPageComponent,
-    SocialActicityPageComponent
+    SocialActicityPageComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

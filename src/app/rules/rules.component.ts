@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
 
+
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
@@ -11,9 +12,11 @@ export class RulesComponent implements OnInit {
 
   lang:string;
 
-  titles: string[];
+  titles: string[] = [];
 
   headings: any[];
+
+  content: string;
 
   rulesContent:any;
 
@@ -31,7 +34,7 @@ export class RulesComponent implements OnInit {
         });
       }
 
-      this.rulesContent.rule = this.textPagesService.markHeadings(this.rulesContent.rule);
+      this.content = this.textPagesService.markHeadings(this.rulesContent.rule);
     });
   }
 
