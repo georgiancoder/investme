@@ -1,0 +1,709 @@
+header {
+  background-color: #FFF;
+  font-family: "BPG Mrgvlovani"; }
+  header .wrapper {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center; }
+    header .wrapper .logo img {
+      width: 185px; }
+    header .wrapper .l {
+      width: calc(50% - 92px);
+      height: 52px; }
+      header .wrapper .l li {
+        float: left;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0 40px;
+        font-size: 13px;
+        line-height: 13px;
+        color: #2F3748;
+        font-weight: normal; }
+        header .wrapper .l li i {
+          margin-right: 10px; }
+        header .wrapper .l li:first-child {
+          padding-left: 0;
+          border-right: 1px solid #DFE4E5; }
+        header .wrapper .l li:nth-child(2) .fa.fa-heart {
+          color: #DFB63E; }
+    header .wrapper .r {
+      width: calc(50% - 92px);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; }
+      header .wrapper .r .auth {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        cursor: pointer;
+        font-size: 13px;
+        line-height: 13px;
+        color: #2F3748;
+        font-weight: normal; }
+        header .wrapper .r .auth i.fa-user {
+          width: 45px;
+          height: 45px;
+          border-radius: 50%;
+          background-color: #0A3E60;
+          border: 1px solid #FFF;
+          -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          line-height: 45px;
+          text-align: center;
+          color: #FFF;
+          margin-left: 15px; }
+        header .wrapper .r .auth .dropdownContainer {
+          width: 100%;
+          position: absolute;
+          overflow: hidden;
+          left: 0;
+          margin-top: 27.5px;
+          z-index: 5;
+          background-color: #FFF; }
+          header .wrapper .r .auth .dropdownContainer .dropdown {
+            height: 100%;
+            width: 100%;
+            background-color: #FFF;
+            cursor: default;
+            position: relative;
+            -webkit-box-shadow: 0 11px 22px rgba(0, 0, 0, 0.06) inset;
+            box-shadow: 0 11px 22px rgba(0, 0, 0, 0.06) inset;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center; }
+            header .wrapper .r .auth .dropdownContainer .dropdown form {
+              overflow: hidden; }
+              header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm {
+                width: 1087px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .art, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .art {
+                  display: none;
+                  width: 550px;
+                  height: 520px;
+                  background-image: url("../assets/bg.png");
+                  background-repeat: no-repeat;
+                  background-position: center;
+                  background-size: cover; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content {
+                  width: calc(43.5%);
+                  padding-left: 0px;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                  flex-direction: column;
+                  -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                  justify-content: center;
+                  -webkit-box-align: space-between;
+                  -ms-flex-align: space-between;
+                  align-items: space-between; }
+                  header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .fbauth, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .fbauth {
+                    position: relative;
+                    height: 70px;
+                    border: 5px solid #DFE4E5;
+                    border-radius: 39px;
+                    width: 100%;
+                    background-color: #315B9E;
+                    font-size: 13px;
+                    line-height: 18px;
+                    color: #FFF;
+                    font-weight: normal;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    font-family: "BPG Mrgvlovani Caps 2010"; }
+                    header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .fbauth i, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .fbauth i {
+                      position: absolute;
+                      left: 65px; }
+                  header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .or, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .or {
+                    width: 260px;
+                    margin: 45px auto;
+                    text-align: center;
+                    border-top: 1px solid #E6E6E6;
+                    font-family: "BPG Mrgvlovani Caps 2010"; }
+                    header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .or span, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .or span {
+                      background-color: #FFF;
+                      padding: 0 15px;
+                      font-size: 11px;
+                      line-height: 15px;
+                      color: #B2B2B2;
+                      font-weight: normal;
+                      display: inline-block;
+                      -webkit-transform: translateY(-50%);
+                      -ms-transform: translateY(-50%);
+                      transform: translateY(-50%); }
+                  header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper {
+                    position: relative;
+                    margin-bottom: 20px; }
+                    header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper input, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper input {
+                      width: 100%;
+                      height: 66px;
+                      border: 1px solid #DFE4E5;
+                      border-radius: 4px;
+                      padding: 0 27px;
+                      font-family: "BPG Mrgvlovani";
+                      font-size: 12px;
+                      line-height: 16px;
+                      color: #2F3748;
+                      font-weight: normal; }
+                      header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper input::-webkit-input-placeholder, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper input::-webkit-input-placeholder {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #2F3748;
+                        font-weight: normal; }
+                      header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper input:-ms-input-placeholder, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper input:-ms-input-placeholder {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #2F3748;
+                        font-weight: normal; }
+                      header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper input::-ms-input-placeholder, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper input::-ms-input-placeholder {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #2F3748;
+                        font-weight: normal; }
+                      header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm .content .inputwrapper input::placeholder, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm .content .inputwrapper input::placeholder {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #2F3748;
+                        font-weight: normal; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm.user::before, header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm.lastname::before, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm.user::before, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm.lastname::before {
+                  font-family: 'FontAwesome';
+                  color: #2F3748;
+                  position: absolute;
+                  right: 20px;
+                  top: calc(50% - 12px);
+                  content: "\f007";
+                  font-size: 24px; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm.pass::before, header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm.password::before, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm.pass::before, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm.password::before {
+                  font-family: 'FontAwesome';
+                  color: #2F3748;
+                  position: absolute;
+                  right: 20px;
+                  top: calc(50% - 12px);
+                  content: "\f023";
+                  font-size: 24px; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form.authorizationForm.email::before, header .wrapper .r .auth .dropdownContainer .dropdown form.registrationForm.email::before {
+                  font-family: 'FontAwesome';
+                  color: #14547E;
+                  position: absolute;
+                  right: 20px;
+                  top: calc(50% - 12px);
+                  content: "\f0e0";
+                  font-size: 24px; }
+              header .wrapper .r .auth .dropdownContainer .dropdown form .lgnbtn {
+                margin-top: 20px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
+                justify-content: space-between;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form .lgnbtn input {
+                  height: 50px;
+                  background-color: #289174;
+                  border-radius: 4px;
+                  font-size: 13px;
+                  line-height: 18px;
+                  color: #FFF;
+                  font-weight: normal;
+                  padding: 0 25px;
+                  font-family: "BPG Mrgvlovani Caps 2010"; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form .lgnbtn .restore {
+                  font-size: 12px;
+                  line-height: 18px;
+                  color: #888888;
+                  font-weight: normal; }
+              header .wrapper .r .auth .dropdownContainer .dropdown form .footer {
+                margin-top: 50px;
+                font-size: 12px;
+                line-height: 16px;
+                color: #2F3748;
+                font-weight: normal; }
+                header .wrapper .r .auth .dropdownContainer .dropdown form .footer a {
+                  color: #02748D;
+                  font-family: "BPG Mrgvlovani Caps 2010";
+                  text-decoration: underline;
+                  cursor: pointer; }
+          header .wrapper .r .auth .dropdownContainer.registrationForm .auth {
+            width: 100%;
+            height: 75px;
+            background-color: #FFFFFF;
+            font-size: 13px;
+            line-height: 13px;
+            color: #2F3748;
+            font-weight: normal; }
+          header .wrapper .r .auth .dropdownContainer.registrationForm .reg {
+            background-color: #DFE4E5;
+            padding: 30px 20px; }
+            header .wrapper .r .auth .dropdownContainer.registrationForm .reg a.fbreg {
+              display: block;
+              height: 45px;
+              background-color: #315B9E;
+              border-radius: 3px;
+              text-align: center;
+              font-size: 13px;
+              line-height: 45px;
+              color: #FFF;
+              font-weight: normal; }
+            header .wrapper .r .auth .dropdownContainer.registrationForm .reg .or {
+              margin: 30px 0;
+              height: 0;
+              border-top: 1px solid #D0D0D0;
+              text-align: center; }
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg .or span {
+                font-size: 11px;
+                line-height: 15px;
+                color: #B2B2B2;
+                font-weight: normal;
+                padding: 0 15px;
+                position: relative;
+                top: -7px;
+                background-color: #DFE4E5; }
+            header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=text],
+            header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=password] {
+              width: 100%;
+              height: 50px;
+              border-radius: 4px;
+              background-color: #FFF;
+              border: 1px solid #DFE4E5;
+              padding: 0 20px;
+              margin-bottom: 15px;
+              font-size: 12px;
+              line-height: 12px;
+              color: #2F3748;
+              font-weight: normal; }
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=text]::-webkit-input-placeholder,
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=password]::-webkit-input-placeholder {
+                font-size: 12px;
+                line-height: 18px;
+                color: #2F3748;
+                font-weight: normal; }
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=text]:-ms-input-placeholder,
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=password]:-ms-input-placeholder {
+                font-size: 12px;
+                line-height: 18px;
+                color: #2F3748;
+                font-weight: normal; }
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=text]::-ms-input-placeholder,
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=password]::-ms-input-placeholder {
+                font-size: 12px;
+                line-height: 18px;
+                color: #2F3748;
+                font-weight: normal; }
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=text]::placeholder,
+              header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=password]::placeholder {
+                font-size: 12px;
+                line-height: 18px;
+                color: #2F3748;
+                font-weight: normal; }
+            header .wrapper .r .auth .dropdownContainer.registrationForm .reg input[type=submit] {
+              margin-top: 15px;
+              width: 100%;
+              height: 48px;
+              background-color: #289174;
+              font-size: 13px;
+              line-height: 15px;
+              color: #FFF;
+              font-weight: normal;
+              border-radius: 4px; }
+    header .wrapper .usermenuwrapper {
+      position: relative; }
+      header .wrapper .usermenuwrapper .usermenu {
+        z-index: 4;
+        position: absolute;
+        top: initial;
+        left: 50%;
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        transform: translateX(-50%);
+        margin-top: 19px;
+        font-family: "BPG Mrgvlovani Caps 2010";
+        font-size: 13px;
+        overflow: hidden; }
+        header .wrapper .usermenuwrapper .usermenu ul {
+          background-color: #FFF;
+          border: 1px solid #DFE4E5;
+          border-radius: 0 0 5px 5px;
+          padding: 0 12px;
+          position: relative;
+          margin-top: 8px; }
+          header .wrapper .usermenuwrapper .usermenu ul::before {
+            content: '';
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 4px 4px 4px;
+            border-color: transparent transparent #dfe4e5 transparent;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+          header .wrapper .usermenuwrapper .usermenu ul li {
+            height: 50px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 0 10px;
+            border-bottom: 1px solid #EBEBEB;
+            white-space: nowrap; }
+            header .wrapper .usermenuwrapper .usermenu ul li:last-child {
+              border: none; }
+            header .wrapper .usermenuwrapper .usermenu ul li.logout {
+              -webkit-box-pack: center;
+              -ms-flex-pack: center;
+              justify-content: center; }
+              header .wrapper .usermenuwrapper .usermenu ul li.logout img {
+                margin-right: 10px; }
+  header .lang {
+    padding-left: 65px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 13px;
+    line-height: 13px;
+    color: #95989A;
+    font-weight: normal; }
+    header .lang a {
+      margin: 0 5px;
+      cursor: pointer; }
+      header .lang a.active, header .lang a:hover {
+        color: #2F3748; }
+  header.userheader {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 90px;
+    border-bottom: 1px solid #F2F2F2; }
+    header.userheader .left {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      header.userheader .left .logo {
+        width: 256px;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background-color: #1A4C71; }
+        header.userheader .left .logo img {
+          width: 160px; }
+      header.userheader .left ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        padding-left: 30px; }
+        header.userheader .left ul li {
+          margin: 0 30px;
+          font-size: 12px;
+          color: #1A4C71;
+          font-family: "BPG Mrgvlovani Caps 2010";
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end; }
+          header.userheader .left ul li img {
+            display: block;
+            margin: auto;
+            margin-bottom: 10px; }
+    header.userheader .right {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center; }
+      header.userheader .right a.addProject {
+        display: block;
+        margin-right: 50px;
+        height: 50px;
+        background-color: #74BA43;
+        border-radius: 4px;
+        line-height: 50px;
+        color: #FFF;
+        font-size: 12px;
+        font-family: "BPG Mrgvlovani Caps 2010";
+        padding: 0 25px; }
+      header.userheader .right .user {
+        height: 100%;
+        border-left: 1px solid #EDEDED;
+        border-right: 1px solid #EDEDED;
+        padding: 0 45px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer; }
+        header.userheader .right .user .profilepic {
+          width: 45px;
+          height: 45px;
+          background-color: #EDEDED;
+          border-radius: 50%;
+          border: 1px solid #FFF;
+          -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+          margin-right: 15px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover; }
+        header.userheader .right .user h4 {
+          font-size: 13px;
+          color: #2F3748; }
+          header.userheader .right .user h4 i {
+            color: #B2B2B2;
+            margin-left: 5px; }
+        header.userheader .right .user .usermenu {
+          z-index: 4;
+          position: absolute;
+          top: 100%;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+          margin-top: 0;
+          font-family: "BPG Mrgvlovani Caps 2010";
+          font-size: 13px;
+          overflow: hidden; }
+          header.userheader .right .user .usermenu ul {
+            background-color: #FFF;
+            border: 1px solid #DFE4E5;
+            border-radius: 0 0 5px 5px;
+            padding: 0 12px;
+            position: relative;
+            margin-top: 8px; }
+            header.userheader .right .user .usermenu ul::before {
+              content: '';
+              width: 0;
+              height: 0;
+              border-style: solid;
+              border-width: 0 4px 4px 4px;
+              border-color: transparent transparent #dfe4e5 transparent;
+              position: absolute;
+              bottom: 100%;
+              left: 50%;
+              -webkit-transform: translateX(-50%);
+              -ms-transform: translateX(-50%);
+              transform: translateX(-50%); }
+            header.userheader .right .user .usermenu ul li {
+              height: 50px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center;
+              padding: 0 10px;
+              border-bottom: 1px solid #EBEBEB;
+              white-space: nowrap; }
+              header.userheader .right .user .usermenu ul li:last-child {
+                border: none; }
+              header.userheader .right .user .usermenu ul li.logout {
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center; }
+                header.userheader .right .user .usermenu ul li.logout img {
+                  margin-right: 10px; }
+      header.userheader .right .logout {
+        width: 160px;
+        padding-left: 35px;
+        cursor: pointer; }
+        header.userheader .right .logout img {
+          width: 23px; }
+  header .partners {
+    width: 100%;
+    height: 130px;
+    background-color: #0A3E60;
+    -webkit-box-shadow: 0 -10px 36px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -10px 36px rgba(0, 0, 0, 0.2); }
+  header footer {
+    background-color: #FFF;
+    padding-top: 90px; }
+    header footer .wrapper {
+      width: 1160px;
+      padding-bottom: 20px;
+      margin: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+      header footer .wrapper .logo img {
+        width: 185px; }
+      header footer .wrapper section {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        font-family: "BPG Mrgvlovani Caps 2010"; }
+        header footer .wrapper section.soc {
+          width: 420px;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column; }
+          header footer .wrapper section.soc ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin-top: 50px; }
+            header footer .wrapper section.soc ul li {
+              color: #2F3748;
+              font-size: 12px;
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              border: 1px solid #C6C6C6;
+              margin: 0 10px; }
+              header footer .wrapper section.soc ul li a {
+                display: block;
+                text-align: center;
+                line-height: 50px; }
+              header footer .wrapper section.soc ul li:first-child {
+                margin-left: 0; }
+              header footer .wrapper section.soc ul li:hover:first-child {
+                background-color: #3b5999;
+                -webkit-transition: 0.7s;
+                -o-transition: 0.7s;
+                transition: 0.7s; }
+                header footer .wrapper section.soc ul li:hover:first-child i {
+                  -webkit-transition: 0.1s;
+                  -o-transition: 0.1s;
+                  transition: 0.1s;
+                  color: white; }
+              header footer .wrapper section.soc ul li:hover:nth-child(2) {
+                background-color: #55acee;
+                -webkit-transition: 0.7s;
+                -o-transition: 0.7s;
+                transition: 0.7s; }
+                header footer .wrapper section.soc ul li:hover:nth-child(2) i {
+                  -webkit-transition: 0.1s;
+                  -o-transition: 0.1s;
+                  transition: 0.1s;
+                  color: white; }
+              header footer .wrapper section.soc ul li:hover:nth-child(3) {
+                background-color: #0077B5;
+                -webkit-transition: 0.7s;
+                -o-transition: 0.7s;
+                transition: 0.7s; }
+                header footer .wrapper section.soc ul li:hover:nth-child(3) i {
+                  -webkit-transition: 0.1s;
+                  -o-transition: 0.1s;
+                  transition: 0.1s;
+                  color: white; }
+              header footer .wrapper section.soc ul li:hover:nth-child(4) {
+                background-color: #dd4b39;
+                -webkit-transition: 0.7s;
+                -o-transition: 0.7s;
+                transition: 0.7s; }
+                header footer .wrapper section.soc ul li:hover:nth-child(4) i {
+                  -webkit-transition: 0.1s;
+                  -o-transition: 0.1s;
+                  transition: 0.1s;
+                  color: white; }
+        header footer .wrapper section.menu {
+          -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+          justify-content: space-between;
+          -webkit-box-flex: 2;
+          -ms-flex-positive: 2;
+          flex-grow: 2; }
+          header footer .wrapper section.menu ul {
+            font-size: 13px;
+            line-height: 35px;
+            color: #2F3748;
+            font-weight: normal; }
+            header footer .wrapper section.menu ul:first-child {
+              margin-left: 0; }
+            header footer .wrapper section.menu ul li a:hover {
+              color: #0A3E60; }
+    header footer .copy {
+      width: 1160px;
+      height: 70px;
+      margin: auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      border-top: 1px solid #C6C6C6;
+      font-family: "BPG WEB 001";
+      font-size: 13px;
+      line-height: 18px;
+      color: #2F3748;
+      font-weight: normal; }
+  @media (max-width: 1480px) {
+    header header .wrapper {
+      width: 100%; } }
