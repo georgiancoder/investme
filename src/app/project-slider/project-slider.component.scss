@@ -30,7 +30,7 @@
             position: absolute;
             right: 0;
             top: 0;
-            background-color: #048BA8;
+            background-color:#0A3E60;
             z-index: 0;
           }
           a{
@@ -167,12 +167,12 @@
     .progress{
       width: 100%;
       height: 5px;
-      background-color: #43B293;
+      background-color: #DFB63E;
       position: absolute;
       bottom: 0;
       .bar{
         height: 100%;
-        background-color: #048BA8;
+        background-color:#0A3E60;
         position: relative;
         // transition: 6s;
         // transition-timing-function: linear;
@@ -184,7 +184,7 @@
           width: 16px;
           height: 16px;
           border-radius: 50%;
-          background-color: #048BA8;
+          background-color:#0A3E60;
           position: absolute;
           right: -8px;
           top: -5.5px;
