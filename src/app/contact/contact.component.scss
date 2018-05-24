@@ -12,19 +12,19 @@
       width: 100%;
       color: #070707;
       font-family: "BPG Mrgvlovani Caps 2010";
-	span {
+  span {
     color: #888888;
-	}
+  }
 }
 
 form {
   width: 660px;
   margin-top: 60px;
-	.row {
+  .row {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
-		input {
+    input {
       width:  322px;
       height: 54px;
       background-color: #FFF;
@@ -34,10 +34,10 @@ form {
       font-size: 12px;
       color: #707070;
       font-family: "BPG Mrgvlovani";
-		}
-	}
+    }
+  }
 
-	textarea {
+  textarea {
     width: 100%;
     height: 125px;
     background-color: #FFF;
@@ -48,9 +48,9 @@ form {
     color: #707070;
     font-family: "BPG Mrgvlovani";
     resize: none;
-	}
+  }
 
-	button {
+  button {
     display: block;
     height: 50px;
     background-color: #289174;
@@ -58,10 +58,10 @@ form {
     font-size: 13px;
     font-family: "BPG Mrgvlovani Caps 2010";
     border-radius: 4px;
-    border-bottom: 2px solid #1E8468;
+    border-bottom: 2px solid #14547E;
     padding: 0 50px;
     margin-top: 50px;
-	}
+  }
 }
 
 .info {
@@ -71,16 +71,16 @@ form {
   border-radius: 14px;
   box-shadow: 0 7px 30px rgba(0,0,0,0.11);
   padding: 40px 35px;
-	p {
+  p {
     font-size: 12px;
     color: #707070;
     font-family: "BPG Mrgvlovani";
-	}
+  }
 
-	ul {
+  ul {
     margin-top: 50px;
 
-		li {
+    li {
       display: flex;
       height: 60px;
       align-items: center;
@@ -91,19 +91,19 @@ form {
       &:last-child{
         margin-bottom: 0;
       }
-			.ico {
+      .ico {
         display: flex;
         align-items: center;
         width: 45px;
         height: 100%;
         margin-right: 25px;
           border-right: 1px solid #DBDBDB;
-				img {
+        img {
 
-				}
-			}
-		}
-	}
+        }
+      }
+    }
+  }
 }
   }
 }
