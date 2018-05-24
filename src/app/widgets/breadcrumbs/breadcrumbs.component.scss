@@ -13,12 +13,13 @@
     justify-content: space-between;
 		h2 {
       font-size: 17px;
-      color: #424A5A;
+      color: #0A3E60;
       font-family: "BPG Mrgvlovani Caps 2010";
-		}
 
+		}
 		ul {
       display: flex;
+
 			li {
         font-size: 13px;
         margin: 0 15px;
@@ -26,7 +27,7 @@
         font-family: "BPG Mrgvlovani";
         &:last-child{
           margin-right: 0;
-          color: #02748D;
+          color: #0A3E60;
         }
 			}
 		}
