@@ -36,6 +36,7 @@ import {NgxCarouselModule} from 'ngx-carousel';
 import 'hammerjs';
 
 //services
+import { EventsService } from "./services/events.service";
 import {BlogService} from "./services/blog.service";
 import {AskService} from "./services/ask.service";
 import {ProjectService} from './services/project.service';
@@ -76,6 +77,8 @@ import { BusinesPageComponent } from './busines-page/busines-page.component';
 import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-page/social-entrepreneurship-page.component';
 import { SocialActicityPageComponent } from './social-acticity-page/social-acticity-page.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { EventsComponent } from './events/events.component';
+import { EventsInnnerComponent } from './events-innner/events-innner.component';
 
 const routes: Routes = [
   {
@@ -174,8 +177,12 @@ const routes: Routes = [
   {
     path: 'pages/rules',
     component: RulesComponent
+  },
+  {
+    path: 'events',
+    component: EventsComponent
   }
-];
+  ];
 
 @NgModule({
   declarations: [
@@ -215,7 +222,9 @@ const routes: Routes = [
     BusinesPageComponent,
     SocialEntrepreneurshipPageComponent,
     SocialActicityPageComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    EventsComponent,
+    EventsInnnerComponent
   ],
   imports: [
     BrowserModule,
@@ -254,7 +263,8 @@ const routes: Routes = [
     MediaService,
     AddProjectService,
     AskService,
-    BlogService
+    BlogService,
+    EventsService
   ],
   bootstrap: [AppComponent]
 })

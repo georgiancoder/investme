@@ -1,0 +1,6 @@
+<div class="events" *ngIf="events">
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="content">
+    <app-blogwidget [data]="medias.media" [totalItems]="medias.count" type="media"></app-blogwidget>
+  </div>
+</div>
