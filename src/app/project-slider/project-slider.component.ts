@@ -9,7 +9,7 @@ import { NgxCarousel } from 'ngx-carousel';
 @Component({
   selector: 'app-project-slider',
   templateUrl: './project-slider.component.html',
-  styleUrls: ['./project-slider.component.scss']
+  styleUrls: ['./project-slider.component.scss','./project-slider.responsive.scss']
 })
 export class ProjectSliderComponent implements OnInit {
 

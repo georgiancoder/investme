@@ -7,7 +7,7 @@ import { AskmodalComponent } from '../widgets/askmodal/askmodal.component';
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss']
+  styleUrls: ['./faq.component.scss','./faq.responsive.scss']
 })
 export class FaqComponent implements OnInit {
 

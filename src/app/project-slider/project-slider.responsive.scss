@@ -1,0 +1,303 @@
+@media (max-width: 1480px){
+	.projectSlider{
+		.categories{
+			ul{
+				width: 85%;
+				li{
+					&:first-child::before{
+						width: calc((100vw - 100%) / 2 + 100%);
+					}
+				}
+			}
+		}
+
+		.slider{
+			.wrapper{
+				width: 85%;
+			}
+		}
+
+		.thumbs{
+			.thumbsouter{
+				width: 85%;
+			}
+		}
+	}
+}
+
+@media (max-width: 1320px){
+	.projectSlider{
+		.categories{
+			ul{
+				li{
+					font-size: 13px;
+					line-height: 13px;
+				}
+			}
+		}
+		.thumbs{
+			.thumbsouter{
+				.thumbsWrapper{
+					width: 100%;
+				}
+			}
+		}	
+	}
+
+}
+
+
+
+@media only screen and (max-width: 1610px){}
+
+@media only screen and (max-width: 1440px){}
+
+@media only screen and (max-width: 1366px){}
+
+@media only screen and (max-width: 1280px){
+	.projectSlider{
+		.categories{
+			ul{
+				li{
+					font-size: 12px;
+					line-height: 12px;
+				}
+			}
+		}
+		.slider{
+			.wrapper{
+				.rgoli{
+					right: 8%;
+				}
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 1140px){
+	.projectSlider{
+		.slider{
+			.wrapper{
+				.text{
+					h2{
+						font-size: 30px;
+						line-height: 35px;
+					}
+					p{
+						font-size: 11px;
+	    				line-height: 17px;
+					}
+					footer{
+						a.daafinanse{
+							height: 50px;
+	    					line-height: 50px;
+	    					font-size: 11px;
+						}
+						.targetCapital{
+							font-size: 11px;
+	    					line-height: 17px;
+						}
+					}
+				}
+			
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 960px){
+	.projectSlider{
+		.categories{
+			ul{
+				li{
+					font-size: 11px;
+					line-height: 11px;
+					white-space: nowrap;
+				}
+			}
+		}
+		.slider{
+			.wrapper{
+				.text{
+					h2{
+						font-size: 25px;
+						line-height: 30px;
+					}
+					p{
+						font-size: 10px;
+	    				line-height: 16px;
+					}
+					footer{
+						a.daafinanse{
+							height: 45px;
+	    					line-height: 45px;
+	    					font-size: 10px;
+						}
+						.targetCapital{
+							font-size: 10px;
+	    					line-height: 16px;
+						}
+					}
+				}
+			
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 840px){
+	.projectSlider{
+		.categories{
+			ul{
+				li{
+					font-size: 10px;
+					line-height: 10px;
+					white-space: unset;
+				}
+			}
+		}
+		.slider{
+			.wrapper{
+				.text{
+					max-width: 100%;
+					top: 35%;
+    				-webkit-transform: translateY(-35%);
+    				transform: translateY(-35%);
+					h2{
+						font-size: 20px;
+						line-height: 25px;
+					}
+					p{
+						font-size: 10px;
+	    				line-height: 16px;
+					}
+					footer{
+						display: flex;
+						flex-direction: column-reverse;
+						align-items: flex-end;
+						a.daafinanse{
+							height: 40px;
+	    					line-height: 40px;
+	    					font-size: 10px;
+	    					margin-top:20px;
+						}
+						.targetCapital{
+							font-size: 10px;
+	    					line-height: 16px;
+	    					position: relative;
+							left: -10%;
+						}
+					}
+				}
+				.rgoli{
+					display: inline-block;
+					float: left;
+				    position: unset;
+				    margin-top: 15%;
+				}
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 720px){
+	.projectSlider{
+		.categories{
+			ul{
+				li{
+					&:nth-child(2){
+						justify-content: flex-start;
+					}
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5){
+						display:none;
+					}
+				}
+			}
+		}
+		.slider{
+			.wrapper{
+				.text{
+					    display: flex;
+    					flex-direction: column;
+					.rgoli-responsive{
+						position: unset;
+						display: inline-block;
+						transform: none;
+					    margin-top: 20px;
+					    margin-bottom: 20px;
+					    align-self: center;
+					}
+					p{
+					display: none;
+					}
+					footer{
+						margin-top: 0px;
+						align-items: center;
+						span.targetCapital{
+							left: -2%;
+						}
+					}
+				}
+				.rgoli{
+					display: none;
+					
+				}
+
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.projectSlider{
+		.slider{
+			.wrapper{
+				.text{
+					footer{
+						span.targetCapital{
+							left: -2.5%;
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 480px){
+	.projectSlider{
+		.slider{
+			.wrapper{
+				.text{
+					footer{
+						span.targetCapital{
+							left: -3%;
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 400px){}
+
+@media only screen and (max-width: 360px){
+	.projectSlider{
+		.slider{
+			.wrapper{
+				.text{
+					footer{
+						span.targetCapital{
+							left: -4.5%;
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+@media only screen and (max-width: 320px){}

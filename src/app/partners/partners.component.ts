@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 @Component({
   selector: 'app-partners',
   templateUrl: './partners.component.html',
-  styleUrls: ['./partners.component.scss']
+  styleUrls: ['./partners.component.scss','./partners.responsive.scss']
 })
 export class PartnersComponent implements OnInit {
   thumbsWidth: any;

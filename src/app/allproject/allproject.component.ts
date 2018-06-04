@@ -7,7 +7,7 @@ import  * as $  from 'jquery';
 @Component({
   selector: 'app-allproject',
   templateUrl: './allproject.component.html',
-  styleUrls: ['./allproject.component.scss']
+  styleUrls: ['./allproject.component.scss','./allproject.responsive.scss']
 })
 export class AllprojectComponent implements OnInit {
 

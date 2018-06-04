@@ -5,7 +5,7 @@ import { AskService } from "../../services/ask.service";
 @Component({
   selector: 'askmodal',
   templateUrl: 'askmodal.component.html',
-  styleUrls: ['askmodal.component.scss']
+  styleUrls: ['askmodal.component.scss','askmodal.responsive.scss']
 })
 export class AskmodalComponent {
   hidden: boolean = true;

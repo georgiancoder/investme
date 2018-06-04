@@ -36,7 +36,6 @@ import {NgxCarouselModule} from 'ngx-carousel';
 import 'hammerjs';
 
 //services
-import { EventsService } from "./services/events.service";
 import {BlogService} from "./services/blog.service";
 import {AskService} from "./services/ask.service";
 import {ProjectService} from './services/project.service';
@@ -70,15 +69,6 @@ import {BlogwidgetComponent} from './widgets/blogwidget/blogwidget.component';
 import {BlogwidgetinnerComponent} from './widgets/blogwidgetinner/blogwidgetinner.component';
 import {BlogComponent} from "./blog/blog.component";
 import {BloginnerComponent} from './bloginner/bloginner.component';
-import { AddProjectPageComponent } from './add-project-page/add-project-page.component';
-import { InvestProjectComponent } from './invest-project/invest-project.component';
-import { EntrepreneurshipPageComponent } from './entrepreneurship-page/entrepreneurship-page.component';
-import { BusinesPageComponent } from './busines-page/busines-page.component';
-import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-page/social-entrepreneurship-page.component';
-import { SocialActicityPageComponent } from './social-acticity-page/social-acticity-page.component';
-import { SafeHtmlPipe } from './safe-html.pipe';
-import { EventsComponent } from './events/events.component';
-import { EventsInnnerComponent } from './events-innner/events-innner.component';
 
 const routes: Routes = [
   {
@@ -139,50 +129,22 @@ const routes: Routes = [
     component: MediaInnerComponent
   },
   {
+    path: 'privacy',
+    component: PrivacyComponent
+  },
+  {
+    path: 'rules',
+    component: RulesComponent
+  },
+  {
     path: 'blog',
     component: BlogComponent
   },
   {
     path: 'blog/:id',
     component: BloginnerComponent
-  },
-  {
-    path: 'pages/addproject',
-    component: AddProjectPageComponent
-  },
-  {
-    path: 'pages/investproject',
-    component: InvestProjectComponent
-  },
-  {
-    path: 'pages/entrepreneurship',
-    component: EntrepreneurshipPageComponent
-  },
-  {
-    path: 'pages/creativebusiness',
-    component: BusinesPageComponent
-  },
-  {
-    path: 'pages/socialentrepreneurship',
-    component: SocialEntrepreneurshipPageComponent
-  },
-  {
-    path: 'pages/socialactivity',
-    component: SocialActicityPageComponent
-  },
-  {
-    path: 'pages/privacy',
-    component: PrivacyComponent
-  },
-  {
-    path: 'pages/rules',
-    component: RulesComponent
-  },
-  {
-    path: 'events',
-    component: EventsComponent
   }
-  ];
+];
 
 @NgModule({
   declarations: [
@@ -215,16 +177,7 @@ const routes: Routes = [
     BlogwidgetComponent,
     BlogwidgetinnerComponent,
     BlogComponent,
-    BloginnerComponent,
-    AddProjectPageComponent,
-    InvestProjectComponent,
-    EntrepreneurshipPageComponent,
-    BusinesPageComponent,
-    SocialEntrepreneurshipPageComponent,
-    SocialActicityPageComponent,
-    SafeHtmlPipe,
-    EventsComponent,
-    EventsInnnerComponent
+    BloginnerComponent
   ],
   imports: [
     BrowserModule,
@@ -263,8 +216,7 @@ const routes: Routes = [
     MediaService,
     AddProjectService,
     AskService,
-    BlogService,
-    EventsService
+    BlogService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,10 +1,10 @@
 <header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <ul class="l">
-      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="pages/addproject">{{header.translations.add_project}}</a></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="pages/investproject">{{header.translations.finans_project}}</a></li>
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
     </ul>
-    <a routerLink="/" class="logo"><img src="/assets/logo.png"></a>
+    <a routerLink="/" class="logo"><img src="../assets/logo.svg"></a>
     <div class="r">
       <div class="auth">
         <div (click)="regDropdown()">
@@ -247,14 +247,14 @@
       <ul>
         <li><a routerLink="about">{{footer.translations.about}}</a></li>
         <li><a routerLink="media">{{footer.translations.media_about}}</a></li>
-        <li><a routerLink="events">{{footer.translations.events}}</a></li>
+        <li><a href="">{{footer.translations.events}}</a></li>
         <li><a routerLink="blog">{{footer.translations.blog}}</a></li>
         <li><a routerLink="contact">{{footer.translations.contact}}</a></li>
       </ul>
       <ul>
         <li><a routerLink="faq">{{footer.translations.faq}}</a></li>
-        <li><a routerLink="pages/privacy">{{footer.translations.policy}}</a></li>
-        <li><a routerLink="pages/rules">{{footer.translations.rules}}</a></li>
+        <li><a routerLink="privacy">{{footer.translations.policy}}</a></li>
+        <li><a routerLink="rules">{{footer.translations.rules}}</a></li>
       </ul>
       <ul>
         <li *ngFor="let cat of footer.categories">{{cat.title}}</li>

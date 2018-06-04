@@ -24,6 +24,9 @@
     <div class="wrapper">
       <article class="text">
         <h2>{{currentProject.title}}</h2>
+        <div class="rgoli-responsive">
+            <app-rgoli [percent]="currentProject.money / currentProject.project.capital * 100"></app-rgoli>
+        </div>
         <p>{{currentProject.desc}}</p>
         <footer>
           <a routerLink="/project/{{currentProject.project.id}}" [queryParams]="{support:true}" class="daafinanse">დააფინანსე პროექტი</a>

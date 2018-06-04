@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss','./responsive.scss']
 })
 export class HomeComponent implements OnInit {
 

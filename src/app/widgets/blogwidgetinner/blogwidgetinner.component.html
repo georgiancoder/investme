@@ -9,3 +9,14 @@
     </div>
   </div>
 </div>
+<div class="cont-responsive">
+  	<div class="desc">
+	    <header>
+	    <div class="image"  [style.background-image]="'url(' + siteUrl + data[type][type].image + ')'"></div>
+	      <h3>{{data[type].detail.title}}</h3>
+	      <time><img src="/assets/calendar.png" width="15" alt=""> {{data[type].date}}</time>
+	    </header>
+	    <div class="body" [innerHTML]="data[type].detail.full_description"></div>
+  	</div>
+</div>
+

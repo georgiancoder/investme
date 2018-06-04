@@ -1,10 +1,10 @@
-<div *ngIf="content">
+<div *ngIf="privacyContent">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="cont" >
     <div class="sidebar">
-      <sidemenu [data]="titles"></sidemenu>
+      <sidemenu [data]="sidemenu"></sidemenu>
     </div>
-    <section [innerHTML]="content | safeHtml">
+    <section [innerHTML]="privacyContent.policy">
     </section>
   </div>
 </div>

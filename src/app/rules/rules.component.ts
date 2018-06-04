@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
 
-
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
@@ -12,13 +11,7 @@ export class RulesComponent implements OnInit {
 
   lang:string;
 
-  titles: string[] = [];
-
-  headings: any[];
-
-  content: string;
-
-  rulesContent:any;
+  rulesContent:string;
 
   breadcrumbs: object;
 
@@ -27,14 +20,6 @@ export class RulesComponent implements OnInit {
   rules(){
     this.textPagesService.rules(this.lang).subscribe(content=>{
       this.rulesContent = content;
-      this.headings = this.textPagesService.getPageTitles(this.rulesContent.rule);
-      if(this.headings){
-        this.headings.forEach(tag=>{
-          this.titles.push(tag.match(/>(.*)</)[1]);
-        });
-      }
-
-      this.content = this.textPagesService.markHeadings(this.rulesContent.rule);
     });
   }
 
@@ -51,8 +36,17 @@ export class RulesComponent implements OnInit {
     this.breadcrumbs = {
       page: 'სარგებლობის წესები და პირობები',
       home: 'მთავარი'
-    };
+    }
 
+    this.sidemenu = [{
+      title: 'უსაფრთხოების პოლიტიკა',
+      link: '/privacy',
+      active: false
+    },{
+      title: 'სარგებლობის წესები და პირობები',
+      link: '/rules',
+      active: true
+    }];
   }
 
 }

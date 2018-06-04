@@ -11,29 +11,15 @@ export class PrivacyComponent implements OnInit {
 
   lang:string;
 
-  content:any;
-
-  titles: string[];
-
-  headings: any[];
-
   breadcrumbs: object;
 
-  privacyContent:any;
+  privacyContent:string;
 
   sidemenu: any;
 
   privacy(){
     this.textPagesService.privacy(this.lang).subscribe(content=>{
       this.privacyContent = content;
-      this.headings = this.textPagesService.getPageTitles(this.privacyContent.policy);
-      if(this.headings){
-        this.headings.forEach(tag=>{
-          this.titles.push(tag.match(/>(.*)</)[1]);
-        });
-      }
-
-      this.content = this.textPagesService.markHeadings(this.privacyContent.policy);
     });
   }
 
@@ -52,6 +38,15 @@ export class PrivacyComponent implements OnInit {
       home: 'მთავარი'
     }
 
+    this.sidemenu = [{
+      title: 'უსაფრთხოების პოლიტიკა',
+      link: '/privacy',
+      active: true
+    },{
+      title: 'სარგებლობის წესები და პირობები',
+      link: '/rules',
+      active: false
+    }];
   }
 
 }

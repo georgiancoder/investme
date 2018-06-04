@@ -1,0 +1,94 @@
+@media (max-width: 1480px){}
+
+@media (max-width: 1320px){}
+
+
+
+@media only screen and (max-width: 1610px){}
+
+@media only screen and (max-width: 1440px){}
+
+@media only screen and (max-width: 1366px){}
+
+@media only screen and (max-width: 1280px){
+	.contact{
+		.cont{
+			width: 90%;
+		}
+	}
+}
+
+@media only screen and (max-width: 1140px){
+	.contact{
+		.cont{
+			flex-direction: column;
+			align-items: center;
+			h2{
+				order: 2;
+				width: 660px;
+			}
+        	form {
+        		order: 3;
+        		width: 660px; 
+        	}
+        	.info {
+        		order: 1;
+        		margin-top:0px;
+        		margin-bottom: 50px;
+        		width: 500px;
+        	}
+		}
+	}
+}
+
+@media only screen and (max-width: 960px){}
+
+@media only screen and (max-width: 840px){}
+
+@media only screen and (max-width: 720px){
+	.contact{
+		.cont{
+			h2{
+				width: 90%;
+			}
+        	form {
+        		width: 90%; 
+        	}
+        	.info {
+        		width: 75%;
+        	}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.contact{
+		.cont{
+			h2{
+				width: 100%;
+			}
+        	form {
+        		width:100%;
+        		.row{
+        			flex-direction: column;
+        			margin-bottom: 0px;
+        			input{
+        				width: 100%;
+        				margin-bottom: 20px
+        			}
+        		}
+        	}
+        	.info {
+        		width: 100%;
+        	}
+		}
+	}
+}
+
+@media only screen and (max-width: 480px){}
+
+@media only screen and (max-width: 400px){}
+
+@media only screen and (max-width: 360px){}
+
+@media only screen and (max-width: 320px){}

@@ -43,30 +43,6 @@ export class TextPagesService {
     });
   }
 
-  getPageData(page,lng){
-    const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("https://back.investme.ge/api/" + page,{
-      headers: headers
-    });
-  }
-
-  getPageTitles(data){
-    let regex = /<h[0-6]\b[^>]*>(.*?)<\/h[0-6]>/gi;
-    return data.match(regex);
-  }
-
-  markHeadings(data){
-    let counter = 0;
-    let regex = /<h[0-6]+(>|.*?[^?]>)/gi;
-     let newdata = data.replace(regex, function(match, p1, p2) {
-      match = `${match.substr(0,match.length-1)} id="heading${counter}">`;
-      counter++;
-      return match;
-    });
-
-     return newdata;
-  }
-
 
 
 

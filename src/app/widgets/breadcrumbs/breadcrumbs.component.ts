@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 @Component({
   selector: 'breadcrumbs',
   templateUrl: 'breadcrumbs.component.html',
-  styleUrls: ['breadcrumbs.component.scss']
+  styleUrls: ['breadcrumbs.component.scss','breadcrumbs.responsive.scss']
 })
 
 export class BreadCrumbsComponent{

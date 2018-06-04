@@ -4,7 +4,7 @@ import {Router, ActivatedRoute, Params} from "@angular/router";
 @Component({
   selector: 'app-blogwidget',
   templateUrl: './blogwidget.component.html',
-  styleUrls: ['./blogwidget.component.scss']
+  styleUrls: ['./blogwidget.component.scss','./blogwidget.responsive.scss']
 })
 export class BlogwidgetComponent implements OnInit {
 
