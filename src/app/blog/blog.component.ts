@@ -6,7 +6,7 @@ import {Router, ActivatedRoute, Params} from "@angular/router";
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  styleUrls: ['./blog.component.scss','./blog.responsive.scss']
 })
 export class BlogComponent implements OnInit {
 

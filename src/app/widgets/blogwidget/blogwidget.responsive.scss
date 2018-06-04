@@ -49,6 +49,19 @@
 @media only screen and (max-width: 600px){
 	.media{
 		width: 100%;
+		footer{
+			time{
+				img{
+					margin-right: 5px;
+				}
+			}
+			a{
+				i{
+					margin-left: 5px;
+				}
+			}
+		}
+
 	}
 }
 

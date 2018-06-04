@@ -62,7 +62,16 @@
 				}
 			}
 			.filter{
-				display: none;
+				position: absolute;
+			    left:-270px;
+			    background-color: #DFE4E5;
+			    z-index: 1;
+			    padding: 20px;
+			    transition: 1s;
+			    width: 270px;
+			}
+			.filterBtn-container{
+				display: flex;
 			}
 		}
 	}
@@ -70,7 +79,18 @@
 
 @media only screen and (max-width: 480px){}
 
-@media only screen and (max-width: 400px){}
+@media only screen and (max-width: 400px){
+	.allproject{
+		.sort{
+			display: flex;
+			flex-direction: column;
+			select{
+				margin-left: 0px;
+				margin-top: 5px;
+			}
+		}
+	}
+}
 
 @media only screen and (max-width: 360px){}
 

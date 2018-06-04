@@ -22,6 +22,11 @@
           <li *ngFor="let interest of interests" [class]="interest.selected ? 'active' : ''" (click)="selectInterests(interest);">{{interest.title}}</li>
         </ul>
       </div>
+      <div (click)="changeFilterClass()" class="filterBtn-container closed">
+        <button  id="filterBtn">
+          ფილტრი
+        </button>
+      </div>
       <div class="projects">
         <article class="project"  *ngFor="let project of projects">
           <header>

@@ -35,6 +35,22 @@ export class AllprojectComponent implements OnInit {
     sort: "publish_date-desc"
   }
 
+  changeFilterClass(){
+    var filtBtnCont = $(".filterBtn-container");
+    var filtCont = $(".filter");
+
+    if(filtBtnCont.hasClass("closed")){
+        filtCont.css("left","0px");
+        filtBtnCont.css("left","270px");
+        filtBtnCont.removeClass("closed");
+    }
+    else {
+        filtCont.css("left","-270px");
+        filtBtnCont.css("left","0px");
+        filtBtnCont.addClass("closed");
+    }
+  }
+
   getAllProject(){
     this.ProjectService.getAllProject(this.siteLang, this.filters["page"]).subscribe(res=>{
       console.log(res);
@@ -61,6 +77,7 @@ export class AllprojectComponent implements OnInit {
       });
     });
   }
+
 
   prevPage(){
     if(this.filters["page"] > 1){
