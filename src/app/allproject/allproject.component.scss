@@ -15,7 +15,7 @@
     justify-content: space-between;
 		h2 {
       font-size: 17px;
-      color: #424A5A;
+      color: red!important;
       font-family: "BPG Mrgvlovani Caps 2010";
 		}
 
@@ -24,12 +24,14 @@
 			li {
         margin: 0 30px;
         &:last-child{
+          color: #0A3E60;
           margin-right: 0;
         }
 			}
 		}
 	}
 }
+
 
 .allproject {
   width: 1270px;
@@ -69,7 +71,7 @@
           content: '';
           width: 40px;
           height: 2px;
-          background-color: #02748D;
+          background-color: #0A3E60;
           display: block;
         }
 			}
@@ -95,7 +97,7 @@
 					}
           &.active{
             .badge{
-              background-color: #02748D;
+              background-color: #0A3E60;
               color: #FFF;
             }
           }
@@ -119,7 +121,7 @@
           font-family: "BPG Mrgvlovani";
           cursor: pointer;
           &.active{
-            background-color: #02748D;
+            background-color: #0A3E60;
             color: #FFF;
           }
 				}
@@ -150,7 +152,7 @@
           margin-right: 10px;
           &.active{
             border: 1px solid #D0D0D0;
-            background-color: #02748D;
+            background-color: #0A3E60;
             border-radius: 4px;
             color: #FFF;
           }
