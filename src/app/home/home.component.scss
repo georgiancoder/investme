@@ -1,82 +1,82 @@
 @import '../../scss/mixins.scss';
 
-.categories {
-    width: 1260px;
-    margin: auto;
-    margin-top: 90px;
+.categories{
+  width: 1260px;
+  margin: auto;
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h2{
+    @include textStyle(25px,25px,#2F3748,normal);
+    position: relative;
+    padding: 0 5px;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    &::after{
+      content: '';
+      width: 100%;
+      height: 9px;
+      background-color: #A5EB97;
+      display: block;
+      margin-top: -3px;
+      margin-left: -5px;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+  ul{
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    h2 {
-        @include textStyle(25px, 25px, #2F3748, normal);
-        position: relative;
-        padding: 0 5px;
-        font-family: "BPG Mrgvlovani Caps 2010";
-        &::after {
-            content: '';
-            width: 100%;
-            height: 9px;
-            background-color: #A5EB97;
-            display: block;
-            margin-top: -3px;
-            margin-left: -5px;
-            position: absolute;
-            z-index: -1;
-        }
+    justify-content: space-around;
+    align-items: flex-end;
+    li{
+      img{
+        display: block;
+        margin: auto;
+        margin-bottom: 40px;
+      }
+      font-family: "BPG Mrgvlovani Caps 2010";
     }
-    ul {
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        li {
-            img {
-                display: block;
-                margin: auto;
-                margin-bottom: 40px;
-            }
-            font-family: "BPG Mrgvlovani Caps 2010";
-        }
-    }
+  }
 }
 
-.projectinfo {
-    width: 1260px;
-    height: 194px;
-    margin: auto;
-    margin-top: 95px;
-    margin-bottom: 110px;
-    background-color: #FFF;
-    border-radius: 5px;
-    border: 1px solid #DFE4E5;
-    box-shadow: 0 8px 19px rgba(0, 0, 0, 0.1);
-    ul {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        li {
-            height: 135px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            border-right: 1px solid #DFE4E5;
-            &:last-child {
-                border: 0;
-            }
-            h4 {
-                @include textStyle(13px, 18px, #2F3748, normal);
-                text-align: center;
-                margin-bottom: 20px;
-                font-family: "BPG WEB 001";
-            }
-            h3 {
-                @include textStyle(30px, 30px, #0A3E60, normal);
-                text-align: center;
-                font-family: "BPG WEB 001";
-            }
-        }
-    }
+.projectinfo{
+   width: 1260px;
+   height: 194px;
+   margin: auto;
+   margin-top: 95px;
+   margin-bottom: 110px;
+   background-color: #FFF;
+   border-radius: 5px;
+   border: 1px solid #DFE4E5;
+   box-shadow: 0 8px 19px rgba(0,0,0,0.1);
+   ul{
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     li{
+       height: 135px;
+       flex-grow: 1;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       border-right: 1px solid #DFE4E5;
+       &:last-child{
+         border: 0;
+       }
+       h4{
+         @include textStyle(13px,18px,#2F3748,normal);
+         text-align: center;
+         margin-bottom: 20px;
+         font-family: "BPG WEB 001";
+       }
+       h3{
+         @include textStyle(30px,30px,#0A3E60,normal);
+         text-align: center;
+         font-family: "BPG WEB 001";
+       }
+     }
+   }
 }
