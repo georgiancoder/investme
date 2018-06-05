@@ -204,14 +204,53 @@
 	.projectSlider{
 		.categories{
 			ul{
+				width: 100%;
 				li{
+					font-size: 13px;
+					&:nth-child(1){
+						width: 30%;
+						padding-left: 5%;
+						line-height:1;
+					}
 					&:nth-child(2){
 						justify-content: flex-start;
+						position: relative;
+						width:70%;
 					}
 					&:nth-child(3),
 					&:nth-child(4),
-					&:nth-child(5){
+					&:nth-child(5),
+					&:nth-child(6){
 						display:none;
+					}
+				}
+				.categoriesDropCont{
+					font-size:13px;
+					display: flex;
+				    width: 70%;
+				    align-items: center;
+				    padding-left: 20px;
+				    position: relative;
+				    i{
+				    	    font-size: 25px;
+						    margin-left: 30px;
+						    color: #CCCCCC;
+				    }
+				    .DropContent{
+				    	display: none;
+						position: absolute;
+					    top: 75px;
+					    left: 0px;
+					    background: white;
+					    width: 100%;
+					    flex-direction: column;
+					    justify-content: space-evenly;
+					    z-index: 2;
+					    max-height: 0px;
+					    padding-left: 5%;
+					    div{
+					    	color: #656F83;
+					    }
 					}
 				}
 			}

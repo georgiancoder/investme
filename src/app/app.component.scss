@@ -1,5 +1,7 @@
 @import '../scss/mixins.scss';
-
+.respMenuActive{
+  right:0px!important;
+}
 @mixin usermenu($top, $marginTop){
   .usermenu{
     z-index: 4;
@@ -62,6 +64,9 @@ header{
     justify-content: space-between;
     align-items: center;
     .logo{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
       img{
         width: 185px;
       }
@@ -356,6 +361,9 @@ header{
           }
         }
       }
+      .responsiveMenu-container{
+        display:none;
+      }
     }
   }
   &.userheader{
@@ -449,6 +457,101 @@ header{
         cursor: pointer;
         img{
           width: 23px;
+        }
+      }
+    }
+  }
+  .respoMenu-container{
+    display:flex;
+    position: fixed;
+    top: 0px;
+    right: -75%;
+    height: 100%;
+    width: 75%;
+    background-color: #0A3E60;
+    z-index: 99;
+    transition: 0.7s;
+    flex-direction: column;
+    align-items: center;
+    .respLang{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin-top: 40px;
+      .respLangContent{
+        width: 50%;
+        display: flex;
+        justify-content: space-around;
+        color: #3b80a2;
+        a{
+          margin: 0 5px;
+          cursor: pointer;
+          &.active, &:hover{
+            color: #FFFFFF;
+          }
+        }
+      }
+      .CloseBtn{
+          color: #FFFFFF;
+          position: relative;
+
+          div:nth-child(1){
+            width: 3px;
+            height: 30px;
+            background: white;
+            transform: rotate(45deg);
+            position: absolute;
+          }
+          div:nth-child(2){
+            width: 3px;
+            height: 30px;
+            background: white;
+            transform: rotate(-45deg);
+          }
+        }
+    }
+    .respoL{
+      width: 85%;
+      margin-top: 50px;
+      height: 110px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      font-family: "BPG Mrgvlovani";
+       li{
+        i,
+        a{
+          color:#FFFFFF;
+        }
+       }
+    }
+    .sSearch{
+      width: 85%;
+      margin-top: 50px;
+      div{
+        background-color: #0b2c42;
+        padding: 20px;
+        border-radius: 5px;
+        form{
+          display: flex;
+          justify-content: space-between;
+          input{
+            width:90%;
+            background: transparent;
+            color: white;
+            &::placeholder{
+              color: #8dbcd4;
+            }
+          }
+          button{
+            width: 10%;
+            background: transparent;
+            outline: none;
+            i{
+              color:white;
+            }
+          }
         }
       }
     }

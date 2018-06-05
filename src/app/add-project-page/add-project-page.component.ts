@@ -14,7 +14,7 @@ export class AddProjectPageComponent implements OnInit {
   pageData:any;
   pageCont(){
     this.textPagesService.getPageData('addprojects',this.lang).subscribe(data=>{
-      this.pageData = data;
+      //this.pageData = data;
       console.log(data);
     });
   }

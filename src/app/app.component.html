@@ -8,7 +8,7 @@
     <div class="r">
       <div class="auth">
         <div (click)="regDropdown()">
-          {{authorized && user ? user.name : header.translations.auth}}
+          <span id="regName">{{authorized && user ? user.name : header.translations.auth}}</span>
           <i class="fa fa-user" aria-hidden="true"></i>
         </div>
         <div *ngIf="authorized && user" class="usermenuwrapper">
@@ -185,6 +185,34 @@
       </div>
       <div class="lang">
         <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a> / <a (click)="changeLang('ru')" [class]="(lang == 'ru') ? 'active' : ''">Rus</a>
+      </div>
+      <div (click)="respoMenu()" class="responsiveMenu-container">
+        <div class="menuSlide"></div>
+        <div class="menuSlide"></div>
+        <div class="menuSlide"></div>
+      </div>
+    </div>
+  </div>
+  <div class="respoMenu-container">
+    <div class="respLang">
+        <div class="respLangContent">
+        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a> / <a (click)="changeLang('ru')" [class]="(lang == 'ru') ? 'active' : ''">Rus</a>
+        </div>
+        <div (click)="closeRespoMenu()" class="CloseBtn">
+          <div></div>
+          <div></div>
+        </div>
+    </div>
+    <ul class="respoL">
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
+    </ul>
+    <div class="sSearch">
+      <div>
+        <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">
+          <input type="text" placeholder="რას ვეძებთ?">
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
       </div>
     </div>
   </div>

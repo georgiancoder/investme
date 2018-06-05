@@ -2,6 +2,14 @@
   <div class="categories">
     <ul>
       <li><a routerLink="/allproject">ყველა პროექტი</a></li>
+      <div class="categoriesDropCont">
+          <div (click)="getNewProjects()">ახალი პროექტი</div>
+          <i (click)="dropDown()" class="fa">&#xf107;</i>
+          <div class="DropContent">
+            <div  class="respo-nav" (click)="getPopularProjects()">პოპულარული პროექტები</div>
+            <div class="respo-nav" > რჩეულები </div>
+          </div>
+        </div>
       <li (click)="getNewProjects()">ახალი პროექტი</li>
       <li (click)="getPopularProjects()">პოპულარული პროექტები</li>
       <li>რჩეულები</li>

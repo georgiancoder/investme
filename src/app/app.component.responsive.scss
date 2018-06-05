@@ -170,7 +170,6 @@
 		.wrapper {
 			ul.l{
 				flex-direction: column;
-				border-right: 1px solid #DFE4E5;
 				li{
 					padding-left: 0px;
 					&:first-child{
@@ -240,19 +239,37 @@
 			}
 			div.r{
 				display: flex;
-    			flex-direction: column;
-    			align-items: flex-end;
+    			flex-direction: row;
+    			align-items: center;
     			.auth{
     				div{
     					.fa.fa-user{
     						width: 40px;
     						height: 40px;
     						line-height: 40px;
+    						margin-left: 0px;
     					}
+    					span{
+    							display:none;
+    						}
     				}
     			}
     			.lang{
 	    			display: none;
+    			}
+    			.responsiveMenu-container{
+    				display: block;
+    				margin-left: 15%;
+    				.menuSlide{
+    					width: 25px;
+					    height: 2px;
+					    background: #2F3748;
+					    &:nth-child(2){
+					    	margin-top: 5px;
+					    	margin-bottom: 5px;
+					    	margin-left: -7px;
+					    }
+    				}
     			}
 			}
 		}
@@ -343,12 +360,49 @@
 					}
 				}
 			}
+			.logo{
+				img{
+					width: 160px;
+				}
+			}
+		}
+		.respoMenu-container{
+			width: 80%;
+			right: -80%;
+			.respLang{
+				a{
+					font-size: 13px;
+				}
+				.CloseBtn{
+					div{
+						height: 25px!important;
+					}
+				}
+			}
+			.respoL{
+				li{
+					i,
+					a{
+						font-size: 14px;
+					}
+				}
+			}
 		}
 	}
 }
 
 @media only screen and (max-width: 400px){}
 
-@media only screen and (max-width: 360px){}
+@media only screen and (max-width: 360px){
+	header{
+		.wrapper{
+			.logo{
+				img{
+					width: 150px;
+				}
+			}
+		}
+	}
+}
 
 @media only screen and (max-width: 320px){}

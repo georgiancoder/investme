@@ -128,6 +128,13 @@ export class ProjectSliderComponent implements OnInit {
 
   }
 
+
+  dropDown(): void{
+    var cont = $(".DropContent");
+    cont.toggleClass("dropActive");
+  }
+
+
   ngAfterViewInit(){
 
   }

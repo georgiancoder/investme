@@ -195,6 +195,15 @@ export class AppComponent  {
 
   }
 
+  respoMenu(){
+    var item = $(".respoMenu-container");
+    item.addClass("respMenuActive");
+  }
+  closeRespoMenu(){
+    var item = $(".respoMenu-container");
+    item.removeClass("respMenuActive");
+  }
+
   ngAfterViewInit() {
 
   }
