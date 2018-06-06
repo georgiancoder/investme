@@ -8,7 +8,7 @@ import  * as $  from 'jquery';
 @Component({
   selector: 'app-projectinner',
   templateUrl: './projectinner.component.html',
-  styleUrls: ['./projectinner.component.scss']
+  styleUrls: ['./projectinner.component.scss','./projectinner.responsive.scss']
 })
 export class ProjectinnerComponent implements OnInit {
 

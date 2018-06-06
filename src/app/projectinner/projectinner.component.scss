@@ -1,5 +1,4 @@
 @import '../../scss/mixins.scss';
-
 .projectInner {
   padding-bottom: 60px;
 	.pagination {
@@ -41,6 +40,10 @@
     display: flex;
     flex-wrap: wrap;
 
+    .resp{
+      display:none!important;
+    }
+
 		.basicinfo {
       padding-left: 25px;
       padding-top: 15px;
@@ -81,9 +84,13 @@
 			}
 
 			footer {
-
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content:space-between;
 				.moneyprogress {
           font-family: "BPG Mrgvlovani";
+          width: 100%;
           display: flex;
           justify-content: space-between;
           flex-wrap: wrap;
@@ -108,13 +115,15 @@
 						.progress {
               height: 100%;
               border-radius: 27px;
-              background-color: #74BA43;
+              background-color: #0A3E60;
 						}
 					}
 				}
 
 				.support {
+          width: 100%;
           margin-top: 50px;
+          margin-bottom: 50px;
           text-align: right;
           font-size: 13px;
           color: #707070;
@@ -123,18 +132,80 @@
             margin-left: 40px;
             vertical-align: middle;
             height: 60px;
-            background-color: #048BA8;
+            background-color: #14547E;
             color: #FFF;
             border-radius: 5px;
-            border-bottom: 1px solid #037E98;
+            border-bottom: 1px solid #0A3E60;
             font-size: 13px;
             font-family: "BPG Mrgvlovani Caps 2010";
             padding: 0 50px;
 					}
 				}
-
-				.soc {
-
+        .Soc{
+          display: flex;
+          align-items:center;
+          width: 25%;
+          .fbLike{
+            margin-right: 20%;
+            a{
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              width:55px;
+              height:55px;
+              background-color:#DFE3E9;
+              border-radius: 50%;
+              i{
+                font-family: FontAwesome;
+                color: #14547E;
+              }
+            }
+          }
+          .share{
+            a{
+              display:flex;
+              align-items:center;
+              justify-content:center;
+              width:55px;
+              height:55px;
+              background-color:#DFE3E9;
+              border-radius: 50%;
+              i{
+                font-family: FontAwesome;
+                color: #14547E;
+              }
+            }
+            
+          }
+        }
+				.copyLink {
+          width: 60%;
+          display: flex;
+          justify-content: space-between;
+          background-color: #DFE3E9;
+          border-radius:25px;
+          height:40px;
+          margin-top:7.5px;
+          .copyBtn{
+            font-family: FontAwesome;
+            background-color: #798088;
+            font-size: 12px;
+            color: white;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+          }
+          input{
+            background-color: transparent;
+            width: 70%;
+            margin-left:5%;
+          }
 				}
 			}
 		}
@@ -165,7 +236,7 @@
               content: '';
               width: 80px;
               height: 3px;
-              background-color: #048BA8;
+              background-color: #14547E;
               border-radius: 3px;
               display: block;
               margin: auto;
@@ -234,6 +305,7 @@
               background-repeat: no-repeat;
               background-position: center;
               background-size: cover;
+              margin-bottom:15px;
         		}
         	}
         }
@@ -249,6 +321,7 @@
               font-family: "BPG Mrgvlovani Caps 2010";
               text-align: center;
               @include marginCounter(1190px,215px,5);
+              margin-bottom:25px;
               .img{
                 width: 100%;
                 height: 200px;
@@ -338,7 +411,7 @@
                   width: 100%;
                   height: 60px;
                   color: #FFF;
-                  background-color: #048BA8;
+                  background-color: #14547E;
                   border-radius: 5px;
                   font-size: 12px;
                   font-family: "BPG Mrgvlovani Caps 2010";

@@ -1,9 +1,20 @@
 <section class="projectInner">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <article class="content" *ngIf="project">
+    <div class="basicinfo resp">
+      <header>
+        <div class="categorie">
+          {{project.category.title}}
+        </div>
+        <h2>{{project.detail[0].title}}</h2>
+        <div class="author">
+          ავტორი: <span>{{project.user[0].name}}</span>
+        </div>
+      </header>
+    </div>
     <app-thumbs-slider [media]="media"></app-thumbs-slider>
     <div class="basicinfo">
-      <header>
+      <header class="main-header">
         <div class="categorie">
           {{project.category.title}}
         </div>
@@ -24,10 +35,20 @@
           დარჩენილი თანხა: {{project.project.capital - project.money}}
           <button type="button" *ngIf="isAuthenticated" name="button">მხარდაჭერა</button>
         </div>
-        <div class="soc">
+        <div class="Soc">
+          <div class="fbLike">
+            <a href="#"><i class="fas fa-thumbs-up"></i></a>
+          </div>
+          <div class="share">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//investme.testme.ge/api/shareFb/{{projectId}}"><i class="fas fa-share-alt"></i></a>
+          </div>
+        </div>
+        <div class="copyLink">
+          <input type="text" value="ramelinki" name="">
+          <div class="copyBtn" name="Click to copy link">კოპირება</div>
         </div>
       </footer>
-      <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//investme.testme.ge/api/shareFb/{{projectId}}">Share on Facebook</a>
+      
     </div>
     <div class="infotabs">
       <ul class="tabs">

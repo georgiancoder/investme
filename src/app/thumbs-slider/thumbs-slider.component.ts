@@ -5,7 +5,7 @@ import { YoutubeComponent } from 'angularx-youtube';
 @Component({
   selector: 'app-thumbs-slider',
   templateUrl: './thumbs-slider.component.html',
-  styleUrls: ['./thumbs-slider.component.scss']
+  styleUrls: ['./thumbs-slider.component.scss','./thumbs-slider.responsive.scss']
 })
 export class ThumbsSliderComponent implements OnInit, OnDestroy {
   @Input() media: any;

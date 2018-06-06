@@ -11,26 +11,257 @@
 @media only screen and (max-width: 1366px){}
 
 @media only screen and (max-width: 1280px){
-	article.content{
-		width:90%;
+	.projectInner{
+		article.content{
+			width:80%;
+			.infotabs{
+				.tab{
+					.files{
+						.documents{
+							flex-direction: column;
+							li{
+								width:40%;
+								margin-bottom:20px;
+							}
+						}
+					}
+					.team{
+						ul{
+							display:flex;
+							justify-content:space-around;
+							li{
+    							margin-right: 0px;
+							}
+						}
+					}
+				}
+			}
+			.resp{
+      			display:unset!important;
+      			margin-bottom: 30px;
+    		}
+			header.main-header{
+				display: none!important;
+			}
+			.basicinfo{
+				width: 100%;
+	    		padding-left: 0px;
+	    		footer{
+	    			.moneyprogress{
+	    				margin-top: 20px;
+    					margin-bottom: 30px;
+	    			}
+	    		}
+			}
+			.copyLink{
+				margin-top:30px;
+			}
+			app-thumbs-slider{
+				width: 100%;
+			}		
+		}
 	}
 }
 
-@media only screen and (max-width: 1140px){}
+@media only screen and (max-width: 1140px){
+	.projectInner{
+		article.content{
+			width:90%;
+			.infotabs{
+				.tabs{
+					li{
+						font-size:14px;
+					}
+				}
+			}
+		}
+	}
+}
 
-@media only screen and (max-width: 960px){}
+@media only screen and (max-width: 960px){
+	.projectInner{
+		article.content{
+			.infotabs{
+				.tabs{
+					flex-wrap:wrap;
+					li{
+						width:50%;
+						margin: 0px;
+						margin-bottom:10px;
+						text-align:center;
+					}
+				}
+			}
+		}
+	}
+}
 
 @media only screen and (max-width: 840px){}
 
 @media only screen and (max-width: 720px){
+	.projectInner{
+		article.content{
+			padding:15px;
+			.basicinfo{
+				header{
+					.categorie{
+						font-size:10px;
+					}
+					h2{
+						font-size:16px;
+					}
+				}
+				footer{
+					.moneyprogress{
+						order:1;
+					}
+					.Soc{
+						order:2;
+						.fbLike{
+							a{
+								width:48px;
+								height:48px;
+							}
+						}
+						.share{
+							a{
+								width:48px;
+								height:48px;
+							}
+						}
+					}
+					.support{
+						display: flex;
+					    align-items: flex-end;
+					    flex-direction: column;
+					    order:3;
+					    width: 60%;
+					    margin-top: 40px;
+					    button{
+					    	width:200px;
+					    	margin-left:0px;
+					    	margin-top:10px;
+					    }
+					}
+					.copyLink{					
+					    order: 4;
+					    width: 100%;
+					}
+				}
+			}
+			.infotabs{
+				.tab{
+					.files{
+						.documents{
+							li{
+								width:60%;
+							}
+						}
+					}
+					.awards{
+						ul{
+							li{
+							    display: flex;
+							    flex-direction: column;
+							    align-items: center;
+							    .desc{
+							    	width:100%;
+							    	h2{
+							    		width:100%;
+							    	}
+							    }
+							    .info{
+							    	width: calc(100% - 60px);
+							    }
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
 }
-@media only screen and (max-width: 600px){}
+
+@media only screen and (max-width: 600px){
+	.projectInner{
+		article.content{
+			.infotabs{
+				.tab{
+					.files{
+						.documents{
+							li{
+								width:70%;
+							}
+						}
+					}
+				}
+			}		
+		}
+	}
+}
 
 @media only screen and (max-width: 480px){
+	.projectInner{
+		article.content{
+			.basicinfo{
+				footer{
+					.Soc{
+						width:20%;
+						flex-direction: column;
+					    align-items: flex-start;
+					    justify-content: center;
+						.fbLike{
+							a{
+							    margin-right: 0px;
+							    margin-bottom: 5px;
+							}
+						}
+					}
+					.support{
+						width:80%;
+					}
+				}
+			}
+			.infotabs{
+				.tab{
+					.files{
+						.documents{
+							li{
+								width:80%;
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
 }
 
-@media only screen and (max-width: 400px){}
-
+@media only screen and (max-width: 400px){
+	.projectInner{
+		article.content{
+			.infotabs{
+				.tabs{
+					li{
+						font-size:12px;
+						&:first-child{
+							white-space:nowrap;
+						}
+					}
+				}
+				.tab{
+					.files{
+						.documents{
+							li{
+								width:100%;
+							}
+						}
+					}
+				}
+			}	
+		}
+	}
+}
 @media only screen and (max-width: 360px){}
 
 @media only screen and (max-width: 320px){}
