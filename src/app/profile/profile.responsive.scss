@@ -1,0 +1,153 @@
+@media (max-width: 1480px){}
+
+@media (max-width: 1320px){}
+
+
+
+@media only screen and (max-width: 1610px){}
+
+@media only screen and (max-width: 1440px){}
+
+@media only screen and (max-width: 1366px){}
+
+@media only screen and (max-width: 1280px){
+    .profile{
+        width: 90%;
+        .forma{
+            justify-content:space-between;
+            .l{
+                width: 30%;
+            }
+            .r{
+                display: flex;
+                flex-direction: column;
+                width: 60%;
+                justify-content: center;
+                form{
+                    display:flex;
+                    flex-direction:column;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1140px){}
+
+@media only screen and (max-width: 960px){
+    .profile{
+        .forma{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .l{
+                display:flex;
+                flex-direction:column;
+                width: 50%;
+                padding: 20px;
+                .profilepic{
+                    float:left;
+                }
+                .info{
+                    margin-top:10px;
+                }
+            }
+            .r{
+                padding-left:0px;
+                .maindata{
+                    .fgroup{
+                        .item{
+                            width:100%;
+                            &:nth-child(odd){
+                                padding-right:0px;
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+                .changepass{
+                    .fgroup{
+                        .item{
+                            width:100%;
+                            &:nth-child(odd){
+                                padding-right:0px;
+                                width:100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 840px){}
+
+@media only screen and (max-width: 720px){
+    .profile{
+        .forma{
+            .l{
+                width:70%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 620px){
+    .profile{
+        .forma{
+            .r{
+                width:90%;
+            }
+            .l{
+                width:100%;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 600px){}
+@media only screen and (max-width: 560px){
+    .profile{
+        .forma{
+            padding:20px;
+            .r{
+                width:100%;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .profile{
+        .forma{
+            .r{
+                .maindata{
+                    .fgroup{
+                        &:nth-child(2){
+                            .item{
+                                &:last-of-type{
+                                    display:flex;
+                                    justify-content: space-around;
+                                }
+                            }
+                        }
+                    }
+                } 
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 400px){}
+
+@media only screen and (max-width: 360px){
+    .profile{
+        .forma{
+            .l{
+                padding-left:0px;
+                padding-right:0px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 320px){}

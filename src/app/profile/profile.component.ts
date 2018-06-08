@@ -11,7 +11,7 @@ import { MessageService } from 'primeng/components/common/messageservice';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  styleUrls: ['./profile.component.scss','./profile.responsive.scss']
 })
 
 export class ProfileComponent implements OnInit {

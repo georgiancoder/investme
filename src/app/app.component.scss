@@ -381,13 +381,16 @@ header{
         align-items: center;
         justify-content: center;
         background-color: #1A4C71;
-        img{
+        svg{
           width: 160px;
+          .st0{fill:#FFFFFF;}
+          .st1{fill:#DFB63E;}
         }
       }
       ul{
         display: flex;
         padding-left: 30px;
+        align-items: center;
         li{
           margin: 0 30px;
           font-size: 12px;
