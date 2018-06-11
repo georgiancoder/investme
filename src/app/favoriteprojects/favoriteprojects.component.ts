@@ -7,7 +7,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 @Component({
   selector: 'app-favoriteprojects',
   templateUrl: './favoriteprojects.component.html',
-  styleUrls: ['./favoriteprojects.component.scss']
+  styleUrls: ['./favoriteprojects.component.scss','./favoriteprojects.responsive.scss']
 })
 export class FavoriteprojectsComponent implements OnInit {
 

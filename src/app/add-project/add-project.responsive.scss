@@ -1,0 +1,209 @@
+@media (max-width: 1480px){}
+
+@media (max-width: 1320px){}
+
+@media only screen and (max-width: 1610px){}
+
+@media only screen and (max-width: 1440px){}
+
+@media only screen and (max-width: 1366px){}
+
+@media only screen and (max-width: 1280px){
+  .addProject{
+    width:90%;
+    .steps{
+      .step{
+        form.about{
+          .info{
+            .fgroup{
+              .row{
+                .inputwrapper{
+                    width:80%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px){
+  .addProject{
+    .steps{
+      .tabs{
+        flex-wrap:wrap;
+        height:unset;
+        .tab{
+          flex:unset;
+          width:33.33%;
+          padding-top:20px;
+          padding-bottom:20px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1140px){
+  .addProject{
+    .steps{ 
+        .step{
+          form.about{
+            flex-direction: column-reverse;
+            align-items: center;
+            .mainFoto{ 
+              margin-bottom: 50px;
+              height: 100px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: none;
+              box-shadow: 0px 0px 15px -5px black;
+              div{
+                width: 90%;
+                display: flex;
+                justify-content: center;
+              }
+            }
+            .info{
+              padding-right:0px;
+              width:75%;
+            }
+          }
+        }
+    }
+  }
+}
+@media only screen and (max-width: 960px){}
+
+@media only screen and (max-width: 840px){
+  .addProject{
+    .steps{ 
+        .step{
+          form.about{
+            .info{
+              width:90%;
+            }
+          }
+        }
+    }
+  }
+}
+@media only screen and (max-width: 768px){}
+
+@media only screen and (max-width: 720px){
+.addProject{
+    .steps{
+      .tabs{
+        .tab{
+          width:50%;
+        }
+      }
+      .projectlangs{
+        justify-content:center;
+      }
+      .step{
+          form.about{
+            .info{
+              width:100%;
+            }
+          }
+        }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px){
+  .addProject{
+    .steps{
+      .step{
+        form.about{
+          .info{
+            .fgroup{
+              .row{
+                justify-content:space-between;
+                flex-wrap:wrap;
+                label{
+                  width:50%;
+                  padding-left:10px;
+                }
+                .infoResp{
+                  display:block;
+                  width:50%;
+                  padding-right:10px;
+                  text-align:right;
+                }
+                .info{
+                  display:none;
+                }
+                .inputwrapper{
+                  width:100%;
+                  padding-right:0px;
+                  margin-top:10px;
+                  span.smallinfo{
+                    right:10px;
+                  }
+                  p-radiobutton{
+                    margin-bottom:10px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 480px){
+  .addProject{
+    .steps{
+      padding-left: 10px;
+      padding-right: 10px;
+      .tabs{
+        .tab{
+          width:100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .addProject{
+    .steps{
+      .step{
+        form.about{
+          .mainFoto{
+            width:270px;
+          }
+        }
+        .info{
+          .interests{
+            display:flex;
+            flex-wrap:wrap;
+            label{
+              width:50%!important;
+              padding-left:10px;
+            }
+            .infoResp{
+              display:block;
+                width:50%;
+                text-align:right;
+                padding-right:10px;
+            }
+            .inputwrapper{
+                padding-left:10px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px){}
+
+@media only screen and (max-width: 320px){}

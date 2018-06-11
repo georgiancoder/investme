@@ -5,6 +5,8 @@
   margin: auto;
   margin-top: 60px;
 	h2 {
+    display: flex;
+    align-items:center;
     font-size: 17px;
     color: #424A5A;
     font-family: "BPG Mrgvlovani Caps 2010";
@@ -30,4 +32,27 @@
     flex-wrap: wrap;
 		@include project(1180px,4);
 	}
+  .noProject{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    #smile{
+      @include textStyle(50px,1,#888888, bold);
+      margin-bottom:50px;
+    }
+    #noProjectText{
+      font-size: 15px;
+      color: #707070;
+      font-family: "BPG Mrgvlovani";
+      margin-bottom: 70px;
+    }
+    a{
+      font-size:13px;
+      font-family: "BPG Mrgvlovani";
+      background-color:#048BA8;
+      color:#FFFFFF;
+      padding:25px;
+      border-radius: 2px;
+    }
+  }
 }

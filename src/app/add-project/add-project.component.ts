@@ -7,7 +7,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractC
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss']
+  styleUrls: ['./add-project.component.scss','./add-project.responsive.scss']
 })
 export class AddProjectComponent implements OnInit {
 

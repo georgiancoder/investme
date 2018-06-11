@@ -1,0 +1,86 @@
+@import '../../scss/mixins.scss';
+
+@media (max-width: 1480px){}
+
+@media (max-width: 1320px){}
+
+@media only screen and (max-width: 1610px){}
+
+@media only screen and (max-width: 1440px){}
+
+@media only screen and (max-width: 1366px){}
+
+@media only screen and (max-width: 1280px){
+  .myprojects{
+     width:90%;
+     .content{
+      padding-left: 150px;
+      padding-right: 150px;
+      display:flex;
+      justify-content:space-between;
+    } 
+  }
+}
+
+@media only screen and (max-width: 1140px){
+  .myprojects{
+     .content{
+      padding-left: 100px;
+      padding-right: 100px;
+    } 
+  }
+}
+
+@media only screen and (max-width: 960px){}
+@media only screen and (max-width: 880px){
+  .myprojects{
+     .content{
+      padding-left: 7.5%;
+      padding-right: 7.5%;
+    } 
+  }
+}
+@media only screen and (max-width: 840px){}
+@media only screen and (max-width: 780px){
+  .myprojects{
+     .content{
+      padding-left: 4%;
+      padding-right: 4%;
+    } 
+  }
+}
+@media only screen and (max-width: 768px){}
+
+@media only screen and (max-width: 720px){
+.myprojects{
+  h2{
+    display:flex;
+    justify-content:space-between;
+  }
+  .content{
+    flex-direction:column;
+    align-items:center;
+    padding:25px;
+    .project{
+      margin-right:0px;
+      width:270px;
+    }
+  }
+     .noProject{
+        padding:30px;
+        #noProjectText{
+           font-size: 13px;
+        }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px){}
+
+@media only screen and (max-width: 480px){}
+
+@media only screen and (max-width: 400px){}
+
+@media only screen and (max-width: 360px){}
+
+@media only screen and (max-width: 320px){}

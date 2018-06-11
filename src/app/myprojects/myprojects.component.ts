@@ -6,7 +6,7 @@ import { Router, ActivatedRoute, Params} from "@angular/router";
 @Component({
   selector: 'app-myprojects',
   templateUrl: './myprojects.component.html',
-  styleUrls: ['./myprojects.component.scss']
+  styleUrls: ['./myprojects.component.scss','./myprojects.responsive.scss']
 })
 export class MyprojectsComponent implements OnInit {
 

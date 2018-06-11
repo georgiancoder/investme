@@ -25,9 +25,9 @@
         </footer>
       </article>
   </section>
-  <section class="content" *ngIf="myprojects.length == 0">
-    ;(<br>
-    თქვენ არ გაქვთ პროექტები
-    <a routerLink="/addproject"></a>
+  <section class="content noProject" *ngIf="myprojects.length == 0">
+    <span id="smile">;(</span>
+    <span id="noProjectText">თქვენ არ გაქვთ პროექტები</span>
+    <a routerLink="/addProject" href="#/addProject">დაამატე პროექტი</a>
   </section>
 </div>

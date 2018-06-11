@@ -18,6 +18,7 @@
           <div class="fgroup">
             <div class="row">
               <label>{{projectData.translations.title}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="firstStep[projectLang].title" name="title">
                 <span class="info"><img src="assets/info.png" alt=""> </span>
@@ -26,6 +27,7 @@
             </div>
             <div class="row">
               <label>{{projectData.translations.minDescription}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="firstStep[projectLang].smalldesc" name="smalldesc">
                 <span class="info"><img src="assets/info.png" alt=""> </span>
@@ -42,6 +44,7 @@
           <div class="fgroup">
             <div class="row">
               <label>{{projectData.translations.capital}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <div class="innerGroup">
                   <input type="text" name="capital" [(ngModel)]="firstStep.capital">
@@ -51,6 +54,7 @@
             </div>
             <div class="row">
               <label>{{projectData.translations.companyTime}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <select [(ngModel)]="firstStep.campainTime" name="campainTime">
                   <option value="{{ct.value}}" selected *ngFor="let ct of firstStep[projectLang].campainTimes">{{ct.label}}</option>
@@ -60,6 +64,7 @@
             </div>
             <div class="row checkbox">
               <label>{{projectData.translations.categories}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <!-- <p-checkbox name="groupname" name="category" value="{{c.value}}" [(ngModel)]="firstStep[projectLang].category" label="{{c.label}}" *ngFor="let c of firstStep[projectLang].categoriebi" ></p-checkbox> -->
                 <p-radioButton name="groupname" value="{{c.value}}" label="{{c.label}}" [(ngModel)]="firstStep.category" *ngFor="let c of firstStep[projectLang].categoriebi"></p-radioButton>
@@ -68,6 +73,7 @@
           </div>
           <div class="interests">
             <label>{{projectData.translations.interests}}</label>
+            <span class="infoResp"><img src="assets/info.png" alt=""> </span>
             <div class="inputwrapper">
               <p-multiSelect [options]="firstStep[projectLang].interests" [(ngModel)]="firstStep.interest" name="firstStep.interest" [panelStyle]="{minWidth:'12em'}">
                   <ng-template let-interesi let-i="index" pTemplate="item">
