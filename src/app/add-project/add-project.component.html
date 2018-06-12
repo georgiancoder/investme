@@ -150,24 +150,28 @@
             <h3>ჯილდო {{i + 1}}</h3>
             <div class="row">
               <label>სათაური</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="jildo.title">
               </div>
             </div>
             <div class="row">
               <label>ჯილდოს აღწერა</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <textarea [(ngModel)]="jildo.desc"></textarea>
               </div>
             </div>
             <div class="row">
               <label>თანხა</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="jildoebi.money">
               </div>
             </div>
             <div class="row">
               <label>მიწოდების თარიღი</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <div>
                   <select [(ngModel)]="jildoebi.date[i].month">

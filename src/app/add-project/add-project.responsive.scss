@@ -83,6 +83,8 @@
   .addProject{
     .steps{ 
         .step{
+          display:flex;
+          flex-direction:column;
           form.about{
             .info{
               width:90%;
@@ -99,6 +101,46 @@
                 }
               }
             }
+          }
+          .jildoebi{
+            ul.jildo{
+              li{
+                .row{
+                  display: flex;
+                  flex-wrap: wrap;
+                  label{         
+                    width: 80%;
+                    padding-right: 0px;
+                    padding-left: 10px;
+                    padding-top: 0px;
+                    display:flex;
+                    align-items:center;
+                  }
+                  .infoResp{
+                    width:20%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    padding-right: 10px;
+                  }
+                  .inputwrapper{
+                    margin-top:5px;
+                    width:100%;
+                  }
+                }
+              }
+            }
+          }
+          .prevstep{
+            order:3;
+            width:inherit;
+            align-self:flex-start;
+          }
+          .nextstep{
+            order:2;
+            width:inherit;
+            margin-bottom:20px;
+            align-self:flex-end;
           }
         }
     }
@@ -279,6 +321,24 @@
             }
             .inputwrapper{
                 padding-left:10px;
+            }
+          }
+        }
+        .jildoebi{
+          ul.jildo{
+            li{
+              .row{
+                &:last-of-type{
+                  .inputwrapper{
+                    & > div{
+                      width:49%;
+                      select{
+                        padding:0 2px;
+                      }
+                    }
+                  }
+                }                
+              }
             }
           }
         }
