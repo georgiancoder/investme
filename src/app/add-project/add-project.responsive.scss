@@ -75,7 +75,9 @@
     }
   }
 }
-@media only screen and (max-width: 960px){}
+@media only screen and (max-width: 960px){
+
+}
 
 @media only screen and (max-width: 840px){
   .addProject{
@@ -84,6 +86,18 @@
           form.about{
             .info{
               width:90%;
+            }
+          }
+          .files{
+            section:nth-child(2){
+              ul.fototitles{             
+                display: flex;
+                justify-content: space-between;
+                li{
+                  margin-right: 0px;
+                  width:45%;
+                }
+              }
             }
           }
         }
@@ -107,6 +121,17 @@
           form.about{
             .info{
               width:100%;
+            }
+          }
+          .files{
+            section:nth-child(1){
+              .documentsUploadforms{
+                li{
+                  .document0{
+                    width:200px;
+                  }
+                }
+              }
             }
           }
         }
@@ -146,6 +171,64 @@
                   }
                   p-radiobutton{
                     margin-bottom:10px;
+                  }
+                }
+              }
+            }
+            .interests{
+              display:flex;
+              flex-wrap:wrap;
+              label{  
+                width: 50%;
+                padding-left: 10px;
+              }
+              .infoResp{
+                width: 50%;
+                text-align: right;
+                padding-right: 10px;
+              }
+            }
+          }
+        }
+        .files{
+          section{
+            &:nth-child(1){
+              .documentsUploadforms{
+                li{
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+                  input[type="text"]{
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    width: 240px;
+                  }
+                }
+              }
+            }
+            &:nth-child(2){
+              ul.fototitles{
+                flex-direction:column;
+                align-items:center;
+                li{
+                  width: 100%;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  img{
+                    margin-bottom:10px;
+                  }
+                }
+              }
+            }
+            &:nth-child(3){
+              h2{
+                margin-bottom:20px;
+              }
+              ul.videoUploadForm{
+                li{
+                  input[type="text"]{
+                    width:100%;
                   }
                 }
               }
