@@ -207,24 +207,28 @@
             <h3>გუნდის წევრი {{i}}</h3>
             <div class="row">
               <label>სახელი, გვარი</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.fullname">
               </div>
             </div>
             <div class="row">
               <label>ელ.ფოსტა</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.email">
               </div>
             </div>
             <div class="row">
               <label>როლი</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.role">
               </div>
             </div>
             <div class="row">
               <label>ინფორმაცია</label>
+              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <textarea [(ngModel)]="member.information"></textarea>
               </div>
@@ -232,12 +236,13 @@
             <div class="row">
               <label>ფოტო</label>
               <div class="inputwrapper">
-                <input type="file" id="memberfoto{{i}}" (change)="uploadMemberPhoto($event ,i);"><label for="memberfoto{{i}}">აირჩიეთ ფოტო</label>
+                <input type="file" id="memberfoto{{i}}" (change)="uploadMemberPhoto($event ,i);"><label for="memberfoto{{i}}"> <img src="/assets/upload-to-cloud.png" alt="">აირჩიეთ ფოტო</label>
+
               </div>
             </div>
           </li>
+          <button type="button" class="more" (click)="moreMember()">მეტი გუნდის წევრი</button>
         </ul>
-        <button type="button" class="more" (click)="moreMember()">მეტი გუნდის წევრი</button>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
         <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
       </div>
