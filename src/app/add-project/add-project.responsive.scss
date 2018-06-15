@@ -179,6 +179,38 @@
               padding-left:0px;
             }
           }
+          .pay{
+            display: flex;
+            flex-direction: column;
+            .checkPay{
+              width: unset;
+              margin-right: unset;
+              div{
+                &:first-child{
+                  width:250px;
+                  margin-bottom:20px;
+                }
+                &.payInfoResp{
+                  display:block;
+                  color: #798088;
+                  font-family: "BPG Mrgvlovani";
+                  font-size: 12px;
+                  border:none;
+                  padding-left:0px;
+                }
+                &:last-of-type{
+                  width:250px;
+                  margin-top:20px;
+                }
+              }
+            }
+            .payInfo{
+              display:none;
+            }
+            .prevstep{
+              margin-top:0px;
+            }
+          }
           .prevstep{
             order:3;
             width:inherit;

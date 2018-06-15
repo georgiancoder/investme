@@ -476,8 +476,7 @@ export class AddProjectComponent implements OnInit {
       this.addprojectservice.removeProjectStep('finances');
     });
   }
-
-
+  
   getData(){
 
     this.addprojectservice.getData(this.siteLang).subscribe(data => {

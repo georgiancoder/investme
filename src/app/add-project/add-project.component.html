@@ -281,8 +281,34 @@
     </div>
     <div class="step" *ngIf="stepIndex == 5">
       <div class="pay">
-        <input type="radio" name="pay" id="onlinepayment" (click)="sendPayment('online')" ><label for="onlinepayment">ონლაინ გადახდა</label>
-        <input type="radio" name="pay" id="paybybank" (click)="sendPayment('bank')"><label for="paybybank">საბანკო გადარიცხვა</label>
+        <div class="checkPay">
+          <div>
+            <input type="radio" name="pay" id="onlinepayment" (click)="sendPayment('online')" ><label for="onlinepayment">ონლაინ გადახდა</label>
+          </div>
+          <div class="payInfoResp">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </div>
+
+          <div>
+            <input type="radio" name="pay" id="paybybank" (click)="sendPayment('bank')"><label for="paybybank">საბანკო გადარიცხვა</label>
+          </div>
+        </div>
+        <div class="payInfo">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </div>
+
+        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>  
       </div>
     </div>
   </div>
