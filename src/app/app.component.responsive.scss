@@ -12,6 +12,16 @@
 	}
 }
 
+@media (max-width: 1400px){
+	header.userheader{
+		.right{
+			.addProject:first-child{
+				display:none;
+			}
+		}
+	}
+}
+
 @media (max-width: 1320px){
 	header{
 		.wrapper{
@@ -130,6 +140,37 @@
 	}
 }
 
+@media only screen and (max-width: 1150px){
+	header.userheader{
+		flex-wrap:wrap;
+		height:180px;
+		.left{
+			height:50%;
+			ul{
+				display:none;
+			}
+		}
+		.bottom{
+			width: 100%;
+		    border-top: 1px solid #F2F2F2;
+		    height: 50%;
+		    display: flex;
+		    justify-content: center;
+		    .right{
+		    	a{
+		    		display:block;
+		    	}
+		    }
+		    .left{
+		    	height:100%;
+		    	ul{
+		    		display:flex;
+		    		padding-left:0px;
+		    	}
+		    }
+		}
+	}
+}
 @media only screen and (max-width: 1140px){
 	footer{
 
@@ -225,7 +266,19 @@
 }
 
 @media only screen and (max-width: 840px){}
-
+@media only screen and (max-width: 768px){
+	header.userheader{
+		.bottom{
+			.right{
+				display:none;
+			}
+			.left{
+				width:100%;
+				justify-content:center;
+			}
+		}
+	}
+}
 @media only screen and (max-width: 720px){
 	header{
 		.wrapper {
@@ -315,6 +368,29 @@
 	}
 }
 
+@media only screen and (max-width: 640px){
+	header.userheader{
+		.left{
+			.logo{
+				width:180px;
+				svg{
+					width:120px;
+				}
+			}
+		}
+		.right{
+			.user{
+				border-left:0px;
+				h4{
+					display:none;
+				}
+			}
+			.logout{
+				width:90px;
+			}
+		}
+	}
+}
 @media only screen and (max-width: 600px){
 	header{
 		.wrapper {
@@ -342,6 +418,23 @@
 	}
 }
 
+@media only screen and (max-width: 485px){
+	header.userheader{
+		.bottom{
+			.left{
+				ul{
+					width:100%;
+					justify-content:space-between;
+					padding-left:5%;
+					padding-right:5%;
+					li{
+						margin:0px;
+					}
+				}
+			}
+		}
+	}
+}
 @media only screen and (max-width: 480px){
 	header{
 		.wrapper{
@@ -390,9 +483,25 @@
 		}
 	}
 }
-
+@media only screen and (max-width: 425px){
+	header.userheader{
+		.right{
+			.user{
+				padding:0 20px;
+				padding-right:15px;
+			}
+			.logout{
+				padding-left:15px;
+				width:unset;
+				padding-right:10%;
+			}
+		}
+	}
+}
 @media only screen and (max-width: 400px){}
 
+@media only screen and (max-width: 375px){
+}
 @media only screen and (max-width: 360px){
 	header{
 		.wrapper{
@@ -401,6 +510,22 @@
 					width: 150px;
 				}
 			}
+		}
+	}
+	header.userheader{
+		.right{
+			.user{
+				padding-right:7px;
+			}
+		}
+		.bottom{
+			.left{
+				ul{
+					li{
+						font-size:11px;
+					}
+				}
+			}	
 		}
 	}
 }
