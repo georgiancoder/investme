@@ -5,7 +5,7 @@ import { LangsService } from '../services/langs.service';
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
-  styleUrls: ['./rules.component.scss']
+  styleUrls: ['./rules.component.scss','./rules.responsive.scss']
 })
 export class RulesComponent implements OnInit {
 

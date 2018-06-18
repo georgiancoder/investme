@@ -5,7 +5,7 @@ import { LangsService } from '../services/langs.service';
 @Component({
   selector: 'app-privacy',
   templateUrl: './privacy.component.html',
-  styleUrls: ['./privacy.component.scss']
+  styleUrls: ['./privacy.component.scss','./privacy.responsive.scss']
 })
 export class PrivacyComponent implements OnInit {
 
