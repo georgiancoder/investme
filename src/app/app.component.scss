@@ -399,10 +399,23 @@ header{
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          &:hover{
+            svg{
+              .cls-1{
+                fill:#74BA43;
+              }
+            }
+          }
           img{
             display: block;
             margin: auto;
             margin-bottom: 10px;
+          }
+          svg{
+            display:flex;
+            margin:auto;
+            height:24px;
+            margin-bottom:10px;
           }
         }
       }
@@ -458,7 +471,15 @@ header{
         width: 160px;
         padding-left: 35px;
         cursor: pointer;
-        img{
+        .cls-1{
+          fill:#B2B2B2;
+        }
+        &:hover{
+          .cls-1{
+            fill:#74BA43;
+          }
+        }
+        svg{
           width: 23px;
         }
       }

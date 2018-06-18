@@ -26,7 +26,7 @@
 	header{
 		.wrapper{
 			width: 90%;
-			ul{
+			ul.l{
 				display: flex;
 			}
 			.l{
@@ -148,6 +148,11 @@
 			height:50%;
 			ul{
 				display:none;
+			}
+		}
+		.right{
+			.logout{
+				width:90px;
 			}
 		}
 		.bottom{
@@ -440,6 +445,7 @@
 		.wrapper{
 			.r{
 				.auth{
+					margin-right:18.5px;
 					.dropdownContainer{
 						.dropdown{
 							div:first-child{
@@ -500,6 +506,17 @@
 }
 @media only screen and (max-width: 400px){}
 
+@media only screen and (max-width: 380px){
+	header.userheader{
+		.right{
+			.user{
+				.usermenu{
+					left:45%;
+				}
+			}
+		}
+	}
+}
 @media only screen and (max-width: 375px){
 }
 @media only screen and (max-width: 360px){

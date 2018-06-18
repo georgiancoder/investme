@@ -140,7 +140,7 @@
           <button type="button" [class]="'more'" (click)="addVideos()"><i class="fa fa-plus"></i> {{projectData.translations.moreVideo}}</button>
         </section>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1"><i class="fa fa-angle-left"></i> {{projectData.translations.previousStep}}</button>
-        <button type="button" [class]="'nextstep'" (click)="addDocuments()">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+        <button type="button" [class]="'nextstep'" (click)="addDocuments();stepIndex=2;">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
       </div>
     </div>
     <div class="step" *ngIf="stepIndex == 2">
@@ -198,7 +198,7 @@
         <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
       </div>
       <button type="button" [class]="'prevstep'" (click)="stepIndex = 1"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-      <button type="button" [class]="'nextstep'" (click)="addAwards()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+      <button type="button" [class]="'nextstep'" (click)="addAwards();stepIndex=3;">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
     </div>
     <div class="step" *ngIf="stepIndex == 3">
       <div class="team">
@@ -244,7 +244,7 @@
           <button type="button" class="more" (click)="moreMember()">მეტი გუნდის წევრი</button>
         </ul>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        <button type="button" [class]="'nextstep'" (click)="addMember();stepIndex=4;">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
       </div>
     </div>
     <div class="step" *ngIf="stepIndex == 4">
@@ -275,7 +275,7 @@
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
         </div>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="addFinances()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        <button type="button" [class]="'nextstep'" (click)="addFinances();stepIndex=5;">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
       </div>
 
     </div>
