@@ -9,22 +9,22 @@ import { LangsService } from '../services/langs.service';
 })
 export class InvestProjectComponent implements OnInit {
   breadcrumbs: object;
-  lang:string;
+  lang: string;
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
-  pageData:any;
-  pageCont(){
-    this.textPagesService.getPageData('supportproject',this.lang).subscribe(data=>{
-      this.pageData = data;
-      console.log(data);
-    });
-  }
+  pageData: any;
+  // pageCont(){
+  //   this.textPagesService.getPageData('supportproject', this.lang).subscribe(data=>{
+  //     this.pageData = data;
+  //     console.log(data);
+  //   });
+  // }
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();
-    this.pageCont();
-    document.addEventListener('langchanged',(e)=>{
+    // this.pageCont();
+    document.addEventListener('langchanged', (e) => {
       this.lang = this.langsservice.getLang();
-      this.pageCont();
+      // this.pageCont();
     });
 
     this.breadcrumbs = {
