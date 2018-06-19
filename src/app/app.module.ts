@@ -18,6 +18,7 @@ import {PaginatorModule} from 'primeng/paginator';
 import {ShareButtonModule} from '@ngx-share/button';
 import {YoutubeModule} from 'angularx-youtube';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ClipboardModule } from 'ngx-clipboard';
 
 
 import {AppComponent} from './app.component';
@@ -143,6 +144,11 @@ const routes: Routes = [
   {
     path: 'blog/:id',
     component: BloginnerComponent
+  },
+  {
+    path: 'p/:id',
+    redirectTo: 'project/:id',
+    pathMatch: 'full'
   }
 ];
 
@@ -200,7 +206,8 @@ const routes: Routes = [
     PaginatorModule,
     ShareButtonModule.forRoot(),
     YoutubeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ClipboardModule
   ],
   providers: [
     ProjectService,

@@ -44,11 +44,11 @@
           </div>
         </div>
         <div class="copyLink">
-          <input type="text" value="ramelinki" name="">
-          <div class="copyBtn" name="Click to copy link">კოპირება</div>
+          <input type="text" id="copto" value="{{shortUrl}}" name="">
+          <button class="copyBtn" type="button" ngxClipboard [cbContent]="shortUrl">კოპირება</button>
         </div>
       </footer>
-      
+
     </div>
     <div class="infotabs">
       <ul class="tabs">

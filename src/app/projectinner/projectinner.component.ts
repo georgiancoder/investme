@@ -27,6 +27,8 @@ export class ProjectinnerComponent implements OnInit {
 
   media = [];
 
+  shortUrl: string;
+
   siteLang: string;
 
   project: any;
@@ -113,13 +115,17 @@ export class ProjectinnerComponent implements OnInit {
     });
   }
 
+
   constructor(private auth: AuthService, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.isAuthenticated = this.auth.isAuthenticated();
     this.activatedRoute.params.subscribe((params: Params) => {
         this.projectId = params["id"];
       });
+
+    this.shortUrl = window.location.protocol + '//' + window.location.host + '/#/p/' + this.projectId;
 
 
       this.siteLang = this.langservice.getLang();
