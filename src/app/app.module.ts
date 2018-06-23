@@ -70,6 +70,7 @@ import {BlogwidgetComponent} from './widgets/blogwidget/blogwidget.component';
 import {BlogwidgetinnerComponent} from './widgets/blogwidgetinner/blogwidgetinner.component';
 import {BlogComponent} from "./blog/blog.component";
 import {BloginnerComponent} from './bloginner/bloginner.component';
+import { FbauthComponent } from './fbauth/fbauth.component';
 
 const routes: Routes = [
   {
@@ -149,6 +150,10 @@ const routes: Routes = [
     path: 'p/:id',
     redirectTo: 'project/:id',
     pathMatch: 'full'
+  },
+  {
+    path: 'fb',
+    component: FbauthComponent
   }
 ];
 
@@ -183,7 +188,8 @@ const routes: Routes = [
     BlogwidgetComponent,
     BlogwidgetinnerComponent,
     BlogComponent,
-    BloginnerComponent
+    BloginnerComponent,
+    FbauthComponent
   ],
   imports: [
     BrowserModule,

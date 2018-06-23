@@ -104,6 +104,7 @@ export class AppComponent  {
     post.client_secret = 'lHYhuPulH7RKiczYeIjzh8xqvV6JrOX7RnpBryMK';
     post.grant_type = 'password';
     this.authservice.logIn(post).subscribe(res => {
+      console.log(res);
       this.authservice.setToken(res.access_token,res.expires_in + Date.now());
       this.authorized = this.authservice.isAuthenticated();
       this.authservice.setAuthenticatedUser(()=>{
