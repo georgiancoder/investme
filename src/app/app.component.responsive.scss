@@ -495,11 +495,14 @@
 			.user{
 				padding:0 20px;
 				padding-right:15px;
+				.usermenu{
+					left: calc(50% - 10px);
+				}
 			}
 			.logout{
-				padding-left:15px;
+				padding-left:10px;
 				width:unset;
-				padding-right:10%;
+				padding-right:10px;
 			}
 		}
 	}
@@ -511,7 +514,7 @@
 		.right{
 			.user{
 				.usermenu{
-					left:45%;
+					left: calc(50% - 13px);
 				}
 			}
 		}
