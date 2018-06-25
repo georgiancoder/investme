@@ -193,7 +193,7 @@
 					display: inline-block;
 					float: left;
 				    position: unset;
-				    margin-top: 15%;
+				    margin-top: 20%;
 				}
 			}
 		}	
@@ -310,9 +310,25 @@
 		.slider{
 			.wrapper{
 				.text{
+					display:flex;
+					justify-content:space-around;
+					height:100%;
 					footer{
 						span.targetCapital{
 							left: -3%;
+						}
+					}
+					.rgoli-responsive{
+						display:none;
+					}
+					p{
+						display:block;
+						margin-top:0px;
+					}
+					h2{
+						font-size:13px;
+						&::after{
+							margin-top:0px;
 						}
 					}
 				}

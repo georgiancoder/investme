@@ -161,12 +161,18 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: scroll;
+            & > div{
+              height:100%;
+              // display:flex;
+            }
             form{
               overflow: hidden;
               &.authorizationForm, &.registrationForm{
                 width: 1087px;
                 display: flex;
                 justify-content: center;
+                margin-top:40px;
                 .art{
                   display: none;
                   width: 550px;
@@ -276,7 +282,8 @@ header{
                     }
                   }
                   .footer{
-                    margin-top: 50px;
+                    margin-bottom:50px;
+                    margin-top:50px;
                     @include textStyle(12px,16px,#2F3748,normal);
                     a{
                       color: #02748D;

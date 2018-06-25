@@ -160,7 +160,7 @@
 		    border-top: 1px solid #F2F2F2;
 		    height: 50%;
 		    display: flex;
-		    justify-content: center;
+		    justify-content: space-between;
 		    .right{
 		    	a{
 		    		display:block;
@@ -452,7 +452,7 @@
 								width:90%;
 								form.authorizationForm,
 								form.registrationForm{
-								width: 100%;
+									width: 100%;
 								}
 							}
 						}
