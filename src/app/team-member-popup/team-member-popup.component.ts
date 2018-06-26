@@ -3,7 +3,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-team-member-popup',
   templateUrl: './team-member-popup.component.html',
-  styleUrls: ['./team-member-popup.component.scss']
+  styleUrls: ['./team-member-popup.component.scss','./team-member-popup.responsive.scss']
 })
 export class TeamMemberPopupComponent implements OnInit {
 

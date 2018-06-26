@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   .popup{
+    height:400px;
     width: 620px;
     padding: 30px 20px;
     background-color: #FFF;
@@ -53,6 +54,34 @@
       font-size: 12px;
       color: #707070;
       font-family: "BPG Mrgvlovani";
+      overflow-y: scroll;
+      overflow-wrap: break-word;
+      padding-bottom: 100px;
+      &:after{
+        content: " ";
+        position: absolute;
+        width: calc(100% - 255px);
+        height: 100px;
+        background: linear-gradient(to bottom, #ffffff57, white);
+        bottom: 30px;
+        right: 25px;
+      }
+      /* width */
+      &::-webkit-scrollbar {
+          width: 1px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+
+      }       
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+          background: #707070; 
+      }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+      }
     }
   }
 }
