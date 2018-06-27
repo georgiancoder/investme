@@ -1,26 +1,28 @@
-.cont{
-  width: 1270px;
-  margin: auto;
-  padding: 80px 0;
-  font-family:"BPG Mrgvlovani";
-  font-size:12px;
-  color:#707070;
-  line-height:18px;
-  img{
-    min-width: 250px;
-    max-width: 500px;
-    float: right;
-    margin: 0px 0px 60px 60px;
-    box-shadow: 0px 9px 50px 5px rgba(128, 128, 128, 0.368);
-    clear:both;
-    &:nth-of-type(2n){
-      margin: 60px 60px 60px 0px;
-      float: left;
+.about{
+    .cont{
+    width: 1270px;
+    margin: auto;
+    padding: 80px 0;
+    font-family:"BPG Mrgvlovani";
+    font-size:12px;
+    color:#707070;
+    line-height:18px;
+    img{
+      min-width: 250px;
+      max-width: 500px;
+      float: right;
+      margin: 0px 0px 60px 60px;
+      box-shadow: 0px 9px 50px 5px rgba(128, 128, 128, 0.368);
+      clear:both;
+      &:nth-of-type(2n){
+        margin: 60px 60px 60px 0px;
+        float: left;
+      }
     }
   }
-}
 
-.clear{
-  margin-bottom: 80px;
-  clear: both;
+  .clear{
+    margin-bottom: 80px;
+    clear: both;
+  }
 }

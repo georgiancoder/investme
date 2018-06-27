@@ -11,15 +11,19 @@
 @media only screen and (max-width: 1366px){}
 
 @media only screen and (max-width: 1280px){
-    .cont{
-        width:90%;
+    .about{
+        .cont{
+            width:90%;
+        }
     }
 }
 
 @media only screen and (max-width: 1140px){
-	.cont{
-        img{
-            max-width:400px;
+	.about{
+        .cont{
+            img{
+                max-width:400px;
+            }
         }
     }
 }
@@ -27,25 +31,29 @@
 @media only screen and (max-width: 960px){}
 
 @media only screen and (max-width: 840px){
-	.cont{
-        img{
-            max-width:300px;
+	.about{
+        .cont{
+            img{
+                max-width:300px;
+            }
         }
     }
 }
 
 @media only screen and (max-width: 720px){
-    .cont{
+    .about{
+        .cont{
         display:flex;
         flex-direction:column;
-        img{
-            max-width:100%;
-            float: unset;
-            margin: 25px 0px 25px 0px;
-            &:nth-of-type(2n){
-		      margin: 25px 0px 25px 0px;
-		      float: unset;
-		    }
+            img{
+                max-width:100%;
+                float: unset;
+                margin: 25px 0px 25px 0px;
+                &:nth-of-type(2n){
+    		      margin: 25px 0px 25px 0px;
+    		      float: unset;
+    		    }
+            }
         }
     }
 }
