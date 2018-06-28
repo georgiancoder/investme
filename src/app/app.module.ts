@@ -37,6 +37,8 @@ import {NgxCarouselModule} from 'ngx-carousel';
 import 'hammerjs';
 
 //services
+
+import {EventsService} from "./services/events.service";
 import {BlogService} from "./services/blog.service";
 import {AskService} from "./services/ask.service";
 import {ProjectService} from './services/project.service';
@@ -71,6 +73,9 @@ import {BlogwidgetinnerComponent} from './widgets/blogwidgetinner/blogwidgetinne
 import {BlogComponent} from "./blog/blog.component";
 import {BloginnerComponent} from './bloginner/bloginner.component';
 import { FbauthComponent } from './fbauth/fbauth.component';
+import { AddProjectPageComponent } from './add-project-page/add-project-page.component';
+import { InvestProjectComponent } from './invest-project/invest-project.component';
+import { EventsComponent } from './events/events.component';
 
 const routes: Routes = [
   {
@@ -81,6 +86,14 @@ const routes: Routes = [
     path: 'addProject',
     component: AddProjectComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'addProjectPage',
+    component: AddProjectPageComponent
+  },
+  {
+    path: 'investproject',
+    component: InvestProjectComponent
   },
   {
     path: 'myprojects',
@@ -154,6 +167,10 @@ const routes: Routes = [
   {
     path: 'fb',
     component: FbauthComponent
+  },
+  {
+    path: 'events',
+    component: EventsComponent
   }
 ];
 
@@ -189,7 +206,10 @@ const routes: Routes = [
     BlogwidgetinnerComponent,
     BlogComponent,
     BloginnerComponent,
-    FbauthComponent
+    FbauthComponent,
+    AddProjectPageComponent,
+    InvestProjectComponent,
+    EventsComponent
   ],
   imports: [
     BrowserModule,
@@ -229,7 +249,8 @@ const routes: Routes = [
     MediaService,
     AddProjectService,
     AskService,
-    BlogService
+    BlogService,
+    EventsService
   ],
   bootstrap: [AppComponent]
 })

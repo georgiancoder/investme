@@ -1,8 +1,8 @@
 <header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <ul class="l">
-      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="addProject">{{header.translations.add_project}}</a></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="addProjectPage">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="investproject">{{header.translations.finans_project}}</a></li>
     </ul>
     <a routerLink="/" class="logo"><img src="../assets/logo.svg"></a>
     <div class="r">

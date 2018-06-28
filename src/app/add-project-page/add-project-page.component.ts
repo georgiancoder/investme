@@ -13,10 +13,9 @@ export class AddProjectPageComponent implements OnInit {
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageData:any;
   pageCont(){
-    // this.textPagesService.getPageData('addprojects',this.lang).subscribe(data=>{
-    //   this.pageData = data;
-    //   console.log(data);
-    // });
+    this.textPagesService.addProject(this.lang).subscribe(data=>{
+      this.pageData = data;
+    });
   }
 
   ngOnInit() {

@@ -12,19 +12,19 @@ export class InvestProjectComponent implements OnInit {
   lang: string;
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageData: any;
-  // pageCont(){
-  //   this.textPagesService.getPageData('supportproject', this.lang).subscribe(data=>{
-  //     this.pageData = data;
-  //     console.log(data);
-  //   });
-  // }
+  pageCont(){
+    this.textPagesService.investPorject(this.lang).subscribe(data=>{
+      this.pageData = data;
+      console.log(data);
+    });
+  }
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();
-    // this.pageCont();
+    this.pageCont();
     document.addEventListener('langchanged', (e) => {
       this.lang = this.langsservice.getLang();
-      // this.pageCont();
+      this.pageCont();
     });
 
     this.breadcrumbs = {

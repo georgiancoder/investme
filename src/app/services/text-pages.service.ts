@@ -43,6 +43,20 @@ export class TextPagesService {
     });
   }
 
+  addProject(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/addprojects",{
+      headers: headers
+    });
+  }
+
+  investPorject(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/supportproject",{
+      headers: headers
+    });
+  }
+
 
 
 

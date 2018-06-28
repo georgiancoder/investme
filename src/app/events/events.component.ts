@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LangsService} from '../services/langs.service';
+import { EventsService } from '../services/events.service';
 
 @Component({
   selector: 'app-events',
@@ -15,9 +16,24 @@ export class EventsComponent implements OnInit {
   breadcrumbs: object;
 
   events:any;
-  constructor(private langsservice: LangsService) { }
+
+  getEventList():void{
+    this.eventsService.getEventList(this.lang).subscribe(events=>{
+        this.events = events;
+        console.log(this.events);
+    });
+  }
+
+  constructor(private eventsService: EventsService, private langsservice: LangsService) { }
 
   ngOnInit() {
+    this.lang = this.langsservice.getLang();
+    this.getEventList();
+    document.addEventListener('langchanged',(e)=>{
+      this.lang = this.langsservice.getLang();
+      this.getEventList();
+    });
+
 
     this.breadcrumbs = {
       page: 'ღონისძიებები',
