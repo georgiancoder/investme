@@ -76,6 +76,7 @@ import { FbauthComponent } from './fbauth/fbauth.component';
 import { AddProjectPageComponent } from './add-project-page/add-project-page.component';
 import { InvestProjectComponent } from './invest-project/invest-project.component';
 import { EventsComponent } from './events/events.component';
+import {EventsInnnerComponent} from './events-innner/events-innner.component';
 
 const routes: Routes = [
   {
@@ -171,6 +172,10 @@ const routes: Routes = [
   {
     path: 'events',
     component: EventsComponent
+  },
+  {
+    path: 'events/:id',
+    component: EventsInnnerComponent
   }
 ];
 
@@ -209,7 +214,8 @@ const routes: Routes = [
     FbauthComponent,
     AddProjectPageComponent,
     InvestProjectComponent,
-    EventsComponent
+    EventsComponent,
+    EventsInnnerComponent
   ],
   imports: [
     BrowserModule,

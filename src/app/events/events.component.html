@@ -1,6 +1,8 @@
 <div class="events" *ngIf="events">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="content">
-    <app-blogwidget [data]="events" [totalItems]="medias.count" type="media"></app-blogwidget>
+    <div class="event" *ngFor="let event of events.measure">
+      <a routerLink="/events/{{event.detail.measure_id}}">more</a>
+    </div>
   </div>
 </div>

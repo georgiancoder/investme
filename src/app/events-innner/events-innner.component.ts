@@ -15,6 +15,12 @@ export class EventsInnnerComponent implements OnInit {
   lang:string;
   event: any;
 
+  getEvent(){
+    this.eventService.getEvent(this.lang, this.id).subscribe(event=>{
+      this.event = event;
+    });
+  }
+
   breadcrumbs: object;
 
   constructor(private langsservice: LangsService, private eventService: EventsService, private activatedRoute: ActivatedRoute) { }
@@ -24,11 +30,16 @@ export class EventsInnnerComponent implements OnInit {
       this.id = params["id"];
     });
     this.lang = this.langsservice.getLang();
+    this.getEvent();
     this.breadcrumbs = {
       page: 'ღონისძიებები',
       home: 'მთავარი'
-    }
+    };
 
+    document.addEventListener('langchanged', (e) => {
+      this.lang = this.langsservice.getLang();
+      this.getEvent();
+    });
   }
 
 }

@@ -9,14 +9,14 @@ export class EventsService {
 
   getEventList(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("https://back.investme.ge/api/medias",{
+    return this.http.get<any>("https://back.investme.ge/api/measures",{
       headers: headers
     });
   }
 
   getEvent(lng, id){
     const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("https://back.investme.ge/api/medias/"+id,{
+    return this.http.get<any>("https://back.investme.ge/api/measures/"+id,{
       headers: headers
     });
   }

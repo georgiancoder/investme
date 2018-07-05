@@ -20,7 +20,6 @@ export class EventsComponent implements OnInit {
   getEventList():void{
     this.eventsService.getEventList(this.lang).subscribe(events=>{
         this.events = events;
-        console.log(this.events);
     });
   }
 
