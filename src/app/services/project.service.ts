@@ -16,6 +16,14 @@ export class ProjectService {
     });
   }
 
+  inverstProject(awardId){
+    let authToken = this.auth.getToken();
+    const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
+    return this.http.post<any>("https://back.investme.ge/api/pay",{id: awardId},{
+      headers: headers
+    });
+  }
+
   getFavoriteProjects(lng){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});

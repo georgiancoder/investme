@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { Router, ActivatedRoute, Params} from "@angular/router";
 import { LangsService } from '../services/langs.service';
 import { ProjectService } from '../services/project.service';
 import { AuthService } from '../services/auth.service';
 import  * as $  from 'jquery';
+import { ModalDialogService} from 'ngx-modal-dialog';
+import { InvestProjectPopupComponent } from '../widgets/invest-project-popup/invest-project-popup.component';
 
 @Component({
   selector: 'app-projectinner',
@@ -115,8 +117,16 @@ export class ProjectinnerComponent implements OnInit {
     });
   }
 
+  openNewDialog(award) {
+    this.modalService.openDialog(this.viewRef, {
+      title: 'Some modal title',
+      childComponent: InvestProjectPopupComponent,
+      data: award.id
+    });
+  }
 
-  constructor(private auth: AuthService, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { }
+
+  constructor(private auth: AuthService, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute, private modalService: ModalDialogService, private viewRef: ViewContainerRef) { }
 
   ngOnInit() {
 

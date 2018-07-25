@@ -471,7 +471,9 @@
         <li><a routerLink="rules">{{footer.translations.rules}}</a></li>
       </ul>
       <ul>
-        <li *ngFor="let cat of footer.categories">{{cat.title}}</li>
+        <li *ngFor="let cat of footer.categories">
+          <a routerLink="categorypage/{{cat.id}}">{{cat.title}}</a>
+        </li>
       </ul>
     </section>
   </div>

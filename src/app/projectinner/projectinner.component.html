@@ -113,7 +113,7 @@
                   <span>{{award.deliver_date}}</span>
                 </div>
                 <div *ngIf="isAuthenticated">
-                  <button type="button">მხარდაჭერა</button>
+                  <button type="button" (click)="openNewDialog(award)">მხარდაჭერა</button>
                 </div>
               </div>
             </li>

@@ -22,6 +22,13 @@ export class TextPagesService {
     });
   }
 
+  getCategoryPage(id, lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/category/" + id,{
+      headers: headers
+    });
+  }
+
   rules(lng){
     const headers = new HttpHeaders({'X-App-Locale': lng});
     return this.http.get<any>("https://back.investme.ge/api/rule",{

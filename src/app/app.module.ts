@@ -19,6 +19,7 @@ import {ShareButtonModule} from '@ngx-share/button';
 import {YoutubeModule} from 'angularx-youtube';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ClipboardModule } from 'ngx-clipboard';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 
 import {AppComponent} from './app.component';
@@ -33,7 +34,6 @@ import {EditprojectComponent} from './editproject/editproject.component';
 import {FavoriteprojectsComponent} from './favoriteprojects/favoriteprojects.component';
 import {ProjectinnerComponent} from './projectinner/projectinner.component';
 import {NgxCarouselModule} from 'ngx-carousel';
-
 import 'hammerjs';
 
 //services
@@ -77,6 +77,8 @@ import { AddProjectPageComponent } from './add-project-page/add-project-page.com
 import { InvestProjectComponent } from './invest-project/invest-project.component';
 import { EventsComponent } from './events/events.component';
 import {EventsInnnerComponent} from './events-innner/events-innner.component';
+import { InvestProjectPopupComponent } from './widgets/invest-project-popup/invest-project-popup.component';
+import { CategoryPageComponent } from './category-page/category-page.component';
 
 const routes: Routes = [
   {
@@ -176,6 +178,10 @@ const routes: Routes = [
   {
     path: 'events/:id',
     component: EventsInnnerComponent
+  },
+  {
+    path: 'categorypage/:id',
+    component: CategoryPageComponent
   }
 ];
 
@@ -215,7 +221,9 @@ const routes: Routes = [
     AddProjectPageComponent,
     InvestProjectComponent,
     EventsComponent,
-    EventsInnnerComponent
+    EventsInnnerComponent,
+    InvestProjectPopupComponent,
+    CategoryPageComponent
   ],
   imports: [
     BrowserModule,
@@ -239,7 +247,8 @@ const routes: Routes = [
     ShareButtonModule.forRoot(),
     YoutubeModule,
     NgxPaginationModule,
-    ClipboardModule
+    ClipboardModule,
+    ModalDialogModule.forRoot()
   ],
   providers: [
     ProjectService,
@@ -258,7 +267,10 @@ const routes: Routes = [
     BlogService,
     EventsService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    InvestProjectPopupComponent
+  ]
 })
 export class AppModule {
 }
