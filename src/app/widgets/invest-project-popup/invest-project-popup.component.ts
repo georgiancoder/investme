@@ -28,7 +28,10 @@ export class InvestProjectPopupComponent implements OnInit, IModalDialog {
   submit(){
     this.projectService.inverstProject(this.awardId).subscribe(transid=>{
       this.transid = transid["TRANSACTION_ID"];
-      this.transForm.nativeElement.submit();
+      let cv = this.transForm.nativeElement;
+      setTimeout(function () {
+        cv.submit();
+      }, 300);
     });
   }
 
