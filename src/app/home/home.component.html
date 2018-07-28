@@ -5,8 +5,10 @@
 <div class="categories" *ngIf="mainpagecontent">
     <ul>
       <li *ngFor="let categorie of mainpagecontent.categories">
-        <img src="https://back.investme.ge{{categorie.image}}" alt="{{categorie.title}}">
-        {{categorie.title}}
+        <a routerLink="categorypage/{{categorie.id}}">
+          <img src="https://back.investme.ge{{categorie.image}}" alt="{{categorie.title}}">
+          {{categorie.title}}
+        </a>
       </li>
     </ul>
 </div>

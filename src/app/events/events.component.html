@@ -1,8 +1,21 @@
 <div class="events" *ngIf="events">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="content">
-    <div class="event" *ngFor="let event of events.measure">
-      <a routerLink="/events/{{event.detail.measure_id}}">more</a>
+    <div class="event" *ngFor="let event of events.measure | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalItems }">
+        <div class="img" [style.background-image]="'url(' + siteUrl + event['measure'].image + ')'"></div>
+        <div class="">
+          <h2>{{event.detail.title}}</h2>
+          <div class="desc">
+            {{event.detail.min_description}}
+          </div>
+        </div>
+        <footer>
+          <time><img src="/assets/calendar.png" width="15" alt=""> {{event.date}}</time>
+          <a routerLink="/events/{{event.detail.measure_id}}">დეტალურად <i class="fa fa-angle-right"></i></a>
+        </footer>
+      </div>
+    <div class="pagination">
+      <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
     </div>
   </div>
 </div>

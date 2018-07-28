@@ -9,11 +9,14 @@ import { EventsService } from '../services/events.service';
 })
 export class EventsComponent implements OnInit {
 
+  p: number = 1;
   siteUrl: string = "https://back.investme.ge";
 
   lang: string;
 
   breadcrumbs: object;
+
+  totalItems: number;
 
   events:any;
 

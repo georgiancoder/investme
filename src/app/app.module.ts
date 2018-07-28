@@ -79,6 +79,10 @@ import { EventsComponent } from './events/events.component';
 import {EventsInnnerComponent} from './events-innner/events-innner.component';
 import { InvestProjectPopupComponent } from './widgets/invest-project-popup/invest-project-popup.component';
 import { CategoryPageComponent } from './category-page/category-page.component';
+import { SuccessPayComponent } from './success-pay/success-pay.component';
+import { ErrorPayComponent } from './error-pay/error-pay.component';
+import { ErrorCallbackComponent } from './error-callback/error-callback.component';
+import { CharityComponent } from './widgets/charity/charity.component';
 
 const routes: Routes = [
   {
@@ -182,6 +186,18 @@ const routes: Routes = [
   {
     path: 'categorypage/:id',
     component: CategoryPageComponent
+  },
+  {
+    path: 'successPay',
+    component: SuccessPayComponent
+  },
+  {
+    path: 'errorPay',
+    component: ErrorPayComponent
+  },
+  {
+    path: 'errorCallback',
+    component: ErrorCallbackComponent
   }
 ];
 
@@ -223,7 +239,11 @@ const routes: Routes = [
     EventsComponent,
     EventsInnnerComponent,
     InvestProjectPopupComponent,
-    CategoryPageComponent
+    CategoryPageComponent,
+    SuccessPayComponent,
+    ErrorPayComponent,
+    ErrorCallbackComponent,
+    CharityComponent
   ],
   imports: [
     BrowserModule,
@@ -269,7 +289,8 @@ const routes: Routes = [
   ],
   bootstrap: [AppComponent],
   entryComponents: [
-    InvestProjectPopupComponent
+    InvestProjectPopupComponent,
+    CharityComponent
   ]
 })
 export class AppModule {

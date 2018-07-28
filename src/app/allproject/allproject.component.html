@@ -51,7 +51,7 @@
             </div>
           </footer>
         </article>
-
+{{totalPages}}
         <ul class="pagination" *ngIf="paginate.length > 1">
           <li class="prev" (click)="prevPage()"><i class="fa fa-angle-left"></i></li>
           <li *ngFor="let p of paginate" [class]="this.filters.page == p ? 'active' : ''" (click)="getPage(p)">{{p}}</li>

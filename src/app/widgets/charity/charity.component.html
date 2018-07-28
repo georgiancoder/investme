@@ -1,7 +1,5 @@
-<a href="">linki</a>
-<input type="checkbox" (change)="activateBtn = !activateBtn">
-<button [disabled]="!activateBtn" (click)="submit()">submit</button>
-
+<input type="number" [(ngModel)]="amount">
+<button (click)="submit()">submit</button>
 <form #transForm name="returnform" action="https://ecommerce.ufc.ge/ecomm2/ClientHandler" method="POST">
   <input type="hidden" name="trans_id" value="{{transid}}">
 </form>

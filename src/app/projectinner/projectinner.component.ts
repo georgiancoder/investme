@@ -6,6 +6,7 @@ import { AuthService } from '../services/auth.service';
 import  * as $  from 'jquery';
 import { ModalDialogService} from 'ngx-modal-dialog';
 import { InvestProjectPopupComponent } from '../widgets/invest-project-popup/invest-project-popup.component';
+import { CharityComponent } from '../widgets/charity/charity.component';
 
 @Component({
   selector: 'app-projectinner',
@@ -125,6 +126,13 @@ export class ProjectinnerComponent implements OnInit {
     });
   }
 
+  openNewDialog2() {
+    this.modalService.openDialog(this.viewRef, {
+      title: 'Some modal title',
+      childComponent: CharityComponent,
+      data: this.projectId
+    });
+  }
 
   constructor(private auth: AuthService, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute, private modalService: ModalDialogService, private viewRef: ViewContainerRef) { }
 

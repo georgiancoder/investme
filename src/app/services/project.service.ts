@@ -16,6 +16,15 @@ export class ProjectService {
     });
   }
 
+  charity(projectId, amount){
+    console.log(amount)
+    let authToken = this.auth.getToken();
+    const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
+    return this.http.post<any>("https://back.investme.ge/api/pay/charity",{id: projectId, amount: amount},{
+      headers: headers
+    });
+  }
+
   inverstProject(awardId){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken});
