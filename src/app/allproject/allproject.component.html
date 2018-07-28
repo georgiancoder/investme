@@ -28,7 +28,7 @@
         </button>
       </div>
       <div class="projects">
-        <article class="project"  *ngFor="let project of projects">
+        <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 1, currentPage: p, totalItems: totalPages }">
           <header>
             <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
               <div class="daysleft">
@@ -51,12 +51,12 @@
             </div>
           </footer>
         </article>
-{{totalPages}}
-        <ul class="pagination" *ngIf="paginate.length > 1">
-          <li class="prev" (click)="prevPage()"><i class="fa fa-angle-left"></i></li>
-          <li *ngFor="let p of paginate" [class]="this.filters.page == p ? 'active' : ''" (click)="getPage(p)">{{p}}</li>
-          <li class="next" (click)="nextPage()"><i class="fa fa-angle-right"></i></li>
-        </ul>
+        <!--<ul class="pagination" *ngIf="paginate.length > 1">-->
+          <!--<li class="prev" (click)="prevPage()"><i class="fa fa-angle-left"></i></li>-->
+          <!--<li *ngFor="let p of paginate" [class]="this.filters.page == p ? 'active' : ''" (click)="getPage(p)">{{p}}</li>-->
+          <!--<li class="next" (click)="nextPage()"><i class="fa fa-angle-right"></i></li>-->
+        <!--</ul>-->
+        <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
       </div>
     </div>
   </div>

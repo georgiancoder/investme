@@ -19,20 +19,30 @@ export class AllprojectComponent implements OnInit {
 
   hasquery: boolean;
 
-  paginate = [];
+  p:number = 1;
 
   categories: any;
   projects: any;
   interests = [];
   totalPages: number;
-  startPage: number;
-  endPage: number;
 
   filters: object = {
     category: null,
     interests: [],
     page: 1,
     sort: "publish_date-desc"
+  };
+
+  pageChanged(event) {
+    this.p = event;
+    this.router.navigate(['allproject'],{queryParams:
+        {
+          page: this.p,
+          category: this.filters["category"],
+          interests: this.filters["interests"].toString(),
+          sort: this.filters["sort"]
+        }
+    });
   }
 
   changeFilterClass(){
@@ -53,7 +63,6 @@ export class AllprojectComponent implements OnInit {
 
   getAllProject(){
     this.ProjectService.getAllProject(this.siteLang, this.filters["page"]).subscribe(res=>{
-      console.log(res);
       this.categories = res.categories;
       if(!this.hasquery){
         this.projects = res.projects.data;
@@ -62,11 +71,6 @@ export class AllprojectComponent implements OnInit {
       this.interests = res.interests;
 
       this.totalPages = res.projects.total;
-      this.endPage = res.projects.last_page;
-      // this.startPage = res.projects.
-
-
-      this.pagination();
 
       this.interests.forEach(i=>{
         this.filters["interests"].forEach(j=>{
@@ -78,33 +82,14 @@ export class AllprojectComponent implements OnInit {
     });
   }
 
-
-  prevPage(){
-    if(this.filters["page"] > 1){
-      this.filters["page"]--;
-    }
-
-    this.navigate();
-  }
-
-  nextPage(){
-    if(this.filters["page"] < this.paginate.length){
-      this.filters["page"]++;
-    }
-
-    this.navigate();
-  }
-
   filterProjects(){
     this.ProjectService.filterProjects(this.siteLang, this.filters).subscribe(res=>{
       var data = [];
       this.totalPages = res.projects.last_page;
-      this.endPage = res.projects.last_page;
       for(var i in res.projects.data){
         data.push(res.projects.data[i]);
       }
       this.projects = data;
-      this.pagination();
     });
   }
 
@@ -141,7 +126,6 @@ export class AllprojectComponent implements OnInit {
           page: this.filters["page"]
         }
     });
-    console.log(this.filters);
     this.filterProjects();
   }
 
@@ -158,36 +142,6 @@ export class AllprojectComponent implements OnInit {
       }
     }
     this.navigate();
-  }
-
-  getPage(page){
-    this.filters["page"] = page;
-    this.navigate();
-  }
-
-  pagination(){
-    if (this.totalPages <= 10) {
-            // less than 10 total pages so show all
-            this.startPage = 1;
-            this.endPage = this.totalPages;
-
-      }else{
-        if (this.filters["page"] <= 6) {
-              this.startPage = 1;
-              this.endPage = 10;
-          } else if (this.filters["page"] + 4 >= this.totalPages) {
-              this.startPage = this.totalPages - 9;
-              this.endPage = this.totalPages;
-          } else {
-              this.startPage = this.filters["page"] - 5;
-              this.endPage = this.filters["page"] + 4;
-          }
-      }
-
-      this.paginate = [];
-      for(var i = this.startPage; i <= this.endPage; i++){
-        this.paginate.push(i);
-      }
   }
 
 

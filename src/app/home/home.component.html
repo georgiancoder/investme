@@ -14,15 +14,15 @@
 </div>
 
 
-<section class="projectinfo">
+<section class="projectinfo" *ngIf="mainpagecontent">
   <ul>
     <li>
       <h4>მხარდამჭერები</h4>
-      <h3>0</h3>
+      <h3>{{mainpagecontent.user_count}}</h3>
     </li>
     <li>
       <h4>სულ პროექტები</h4>
-      <h3>0</h3>
+      <h3>{{mainpagecontent.projects_count}}</h3>
     </li>
     <li>
       <h4>წარმატებული პროექტები</h4>
@@ -30,7 +30,7 @@
     </li>
     <li>
       <h4>გადარიცხული თანხა</h4>
-      <h3>0</h3>
+      <h3>{{mainpagecontent.total_invest}}</h3>
     </li>
   </ul>
 </section>
