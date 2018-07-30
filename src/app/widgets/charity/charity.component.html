@@ -1,5 +1,8 @@
 <input type="number" [(ngModel)]="amount">
-<button (click)="submit()">submit</button>
+<div class="btn-container">
+	<button (click)="submit()">submit</button>
+</div>
+
 <form #transForm name="returnform" action="https://ecommerce.ufc.ge/ecomm2/ClientHandler" method="POST">
   <input type="hidden" name="trans_id" value="{{transid}}">
 </form>

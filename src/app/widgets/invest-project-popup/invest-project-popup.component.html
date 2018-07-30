@@ -1,6 +1,17 @@
-<a href="">linki</a>
-<input type="checkbox" (change)="activateBtn = !activateBtn">
-<button [disabled]="!activateBtn" (click)="submit()">submit</button>
+<a href="">linki
+<img src="/assets/file.png">
+</a>
+<div class="checkB">
+	<label class="container">	
+	  <input type="checkbox" (change)="activateBtn = !activateBtn">
+	  <span class="checkmark"></span>
+	</label>
+</div>
+
+<div class="btn-container">
+	<button [disabled]="!activateBtn" (click)="submit()">submit</button>
+</div>
+
 
 <form #transForm name="returnform" action="https://ecommerce.ufc.ge/ecomm2/ClientHandler" method="POST">
   <input type="hidden" name="trans_id" value="{{transid}}">

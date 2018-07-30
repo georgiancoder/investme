@@ -1,0 +1,30 @@
+input{
+	margin-bottom:40px;
+    border-bottom:1px solid #14547E;
+    opacity:0.4;
+    // &::-webkit-outer-spin-button,
+    // &::-webkit-inner-spin-button{
+    //     -webkit-appearance: none;
+    // }
+    &:focus{
+        opacity:1;
+    }
+    
+}
+.btn-container{
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+.btn-container button{
+	width: 230px;	
+    height: 60px;
+    color: #FFF;
+    background-color: #14547E;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    margin-top: 20px;
+    cursor: pointer;
+}
