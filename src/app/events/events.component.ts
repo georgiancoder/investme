@@ -5,7 +5,7 @@ import { EventsService } from '../services/events.service';
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
-  styleUrls: ['./events.component.scss']
+  styleUrls: ['./events.component.scss','./events.responsive.scss']
 })
 export class EventsComponent implements OnInit {
 
