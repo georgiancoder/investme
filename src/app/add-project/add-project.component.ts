@@ -120,6 +120,11 @@ export class AddProjectComponent implements OnInit {
     hash: null,
     project_id: null,
     money: '',
+    pdfs: [{
+      file_type: '',
+      awardPdf: '',
+      name: ''
+    }],
     date: [{
       month: '',
       year: ''
@@ -264,6 +269,17 @@ export class AddProjectComponent implements OnInit {
     }
   }
 
+  jildoPdf(event, i){
+    var reader = new FileReader();
+    reader.readAsDataURL(event.srcElement.files[0]);
+    if(reader){
+      reader.onload = () => {
+        this.jildoebi.pdfs[i].awardPdf = reader.result;
+        this.jildoebi.pdfs[i].name = event.srcElement.files[0].name;
+      }
+    }
+  }
+
   addDocuments(){
     var ki = 0;
     var ei = 0;
@@ -359,6 +375,11 @@ export class AddProjectComponent implements OnInit {
   }
 
   moreAward(){
+    this.jildoebi.pdfs.push({
+      file_type: '',
+      awardPdf: '',
+      name: ''
+  });
     this.jildoebi['ka'].push({
       title: '',
       desc: '',

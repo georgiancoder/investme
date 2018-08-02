@@ -193,7 +193,14 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <input type="radio" [value]="0"  [(ngModel)]="jildoebi.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
+              <input type="radio" [value]="1" [(ngModel)]="jildoebi.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
+              <input type="file" [(ngModel)]="jildoebi.pdfs.file" (change)="jildoPdf($event, i)">
+              {{this.jildoebi.pdfs[i].name}}
+            </div>
           </li>
+
         </ul>
         <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
       </div>
