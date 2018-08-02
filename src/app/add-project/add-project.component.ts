@@ -274,8 +274,8 @@ export class AddProjectComponent implements OnInit {
     reader.readAsDataURL(event.srcElement.files[0]);
     if(reader){
       reader.onload = () => {
-        this.jildoebi.pdfs[i].awardPdf = reader.result;
-        this.jildoebi.pdfs[i].name = event.srcElement.files[0].name;
+        this.jildoebi["pdfs"][i].awardPdf = reader.result;
+        this.jildoebi["pdfs"][i].name = event.srcElement.files[0].name;
       }
     }
   }
@@ -375,7 +375,7 @@ export class AddProjectComponent implements OnInit {
   }
 
   moreAward(){
-    this.jildoebi.pdfs.push({
+    this.jildoebi["pdfs"].push({
       file_type: '',
       awardPdf: '',
       name: ''
