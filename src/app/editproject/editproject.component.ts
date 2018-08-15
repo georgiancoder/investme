@@ -52,6 +52,11 @@ export class EditprojectComponent implements OnInit {
     }
   };
   thirdStep: object = {
+    pdfs: [{
+      file_type: '',
+      awardPdf: '',
+      name: ''
+    }],
     ka: [],
     en: [],
     ru: [],
@@ -72,6 +77,22 @@ export class EditprojectComponent implements OnInit {
     project_id: ''
   };
 
+
+
+
+  jildoPdf2(event, i){
+    var reader = new FileReader();
+    reader.readAsDataURL(event.srcElement.files[0]);
+    if(reader){
+      reader.onload = () => {
+        this.thirdStep["pdfs"][i].awardPdf = reader.result;
+        console.log(this.thirdStep);
+        this.thirdStep["pdfs"][i].name = event.srcElement.files[0].name;
+      }
+    }
+
+
+  }
   getProjectData(){
     this.ProjectService.getProjectData(this.projectId).subscribe(res=>{
       console.log(res);
@@ -184,8 +205,8 @@ export class EditprojectComponent implements OnInit {
   }
   getFifthStepData(){
     this.fifthStep["targetCapital"] = this.projectData.project.capital;
+    this.fifthStep["prognos"] = (this.fifthStep["targetCapital"] - (this.fifthStep["targetCapital"] * 0.07)) - (this.fifthStep["targetCapital"] * 0.14);
     // this.fifthStep["prognos"] = this.projectData.finance[0].prognos;
-    // this.fifthStep["amount"] = this.projectData.finance[0].amount;
     // this.fifthStep["acountNumber"] = this.projectData.finance[0].bank_number;
     this.fifthStep["project_id"] = this.projectId;
   }
@@ -480,6 +501,12 @@ export class EditprojectComponent implements OnInit {
   }
 
   moreAward(){
+    console.log(this.thirdStep);
+    this.thirdStep["pdfs"].push({
+      file_type: '',
+      awardPdf: '',
+      name: ''
+    });
     this.thirdStep["ka"].push({title: '', amout: '', month: '', year: '', description: ''});
     this.thirdStep["en"].push({title: '', amout: '', month: '', year: '', description: ''});
     this.thirdStep["ru"].push({title: '', amout: '', month: '', year: '', description: ''});
@@ -520,11 +547,13 @@ export class EditprojectComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.activatedRoute.params.subscribe((params: Params) => {
         this.projectId = params["id"];
       });
       this.siteLang = this.langservice.getLang();
       this.getProjectData();
+  
       document.addEventListener('langchanged',()=>{
         this.siteLang = this.langservice.getLang();
       });

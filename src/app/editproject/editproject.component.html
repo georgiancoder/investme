@@ -190,6 +190,11 @@
                 </div>
               </div>
             </div>
+            <div class="row">
+              <input type="radio" [value]="0" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
+              <input type="radio" [value]="1" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
+              <input type="file" (change)="jildoPdf2($event, i)">
+            </div>
           </li>
         </ul>
         <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
@@ -251,10 +256,6 @@
               <td>პროგნოზი</td>
               <td>{{fifthStep.prognos}}</td>
             </tr>
-            <tr>
-              <td>თანხა</td>
-              <td>{{fifthStep.amount}}</td>
-            </tr>
           </table>
           <input type="text" placeholder="ჩაწერეთ ანგარიშის ნომერი" [(ngModel)]="fifthStep.acountNumber">
         </div>
@@ -270,6 +271,9 @@
       <div class="pay">
         <input type="radio" name="pay" id="onlinepayment" ><label for="onlinepayment">ონლაინ გადახდა</label>
         <input type="radio" name="pay" id="paybybank"><label for="paybybank">საბანკო გადარიცხვა</label>
+
+        
+
       </div>
     </div>
   </div>

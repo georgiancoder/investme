@@ -122,7 +122,6 @@
           </ul>
           <ul class="fotosUploadForm">
             <li *ngFor="let foto of secondStep.fotos; let i = index" [style.backgroundImage]="'url('+foto.file+')'">
-
             </li>
           </ul>
         </section>
@@ -166,7 +165,7 @@
               <label>თანხა</label>
               <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
-                <input type="text" [(ngModel)]="jildoebi.money">
+                <input type="text" [(ngModel)]="jildoebi.money[i]">
               </div>
             </div>
             <div class="row">
@@ -194,10 +193,9 @@
               </div>
             </div>
             <div class="row">
-              <input type="radio" [value]="0"  [(ngModel)]="jildoebi.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
-              <input type="radio" [value]="1" [(ngModel)]="jildoebi.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
-              <input type="file" [(ngModel)]="jildoebi.pdfs.file" (change)="jildoPdf($event, i)">
-              {{this.jildoebi.pdfs[i].name}}
+              <input type="radio" [value]="0" name="asd{{i}}"  [(ngModel)]="jildoebi.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
+              <input type="radio" [value]="1" name="asd{{i}}" [(ngModel)]="jildoebi.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
+              <input type="file" (change)="jildoPdf($event, i)">
             </div>
           </li>
 
@@ -279,7 +277,7 @@
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
         <button type="button" [class]="'nextstep'" (click)="addFinances();stepIndex=5;">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
@@ -313,9 +311,11 @@
           cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
           proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
         </div>
-
+        <form #transForm name="returnform" action="https://ecommerce.ufc.ge/ecomm2/ClientHandler" method="POST">
+  <input type="hidden" name="trans_id" value="{{transid}}">
+</form>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>  
+        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
       </div>
     </div>
   </div>

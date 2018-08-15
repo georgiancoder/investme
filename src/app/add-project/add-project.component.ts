@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,  ViewChild, ElementRef } from '@angular/core';
 import { AddProjectService } from '../services/add-project.service';
 import { SelectItem } from 'primeng/api';
 import { LangsService } from '../services/langs.service';
@@ -10,7 +10,8 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractC
   styleUrls: ['./add-project.component.scss','./add-project.responsive.scss']
 })
 export class AddProjectComponent implements OnInit {
-
+  @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
+  transid: string;
   siteUrl: string = "https://back.investme.ge";
 
   siteLang: string;
@@ -119,7 +120,8 @@ export class AddProjectComponent implements OnInit {
   jildoebi: object = {
     hash: null,
     project_id: null,
-    money: '',
+    money: [""],
+    doc: [''],
     pdfs: [{
       file_type: '',
       awardPdf: '',
@@ -275,9 +277,12 @@ export class AddProjectComponent implements OnInit {
     if(reader){
       reader.onload = () => {
         this.jildoebi["pdfs"][i].awardPdf = reader.result;
+        console.log(this.jildoebi);
         this.jildoebi["pdfs"][i].name = event.srcElement.files[0].name;
       }
     }
+
+
   }
 
   addDocuments(){
@@ -338,7 +343,6 @@ export class AddProjectComponent implements OnInit {
 
 
         this.addprojectservice.saveProjectStep('failebi',newSecondStep);
-        this.stepIndex++;
       }
     });
   }
@@ -352,6 +356,7 @@ export class AddProjectComponent implements OnInit {
   // third step functions
 
   addAwards(){
+
     let haserrors = false;
     this.jildoebi['date'].forEach((d)=>{
       if(d.month.length == 0 || d.year.length == 0){
@@ -375,6 +380,12 @@ export class AddProjectComponent implements OnInit {
   }
 
   moreAward(){
+    this.jildoebi["doc"].push('');
+    this.jildoebi["date"].push({
+      month: '',
+      year: ''
+    })
+    this.jildoebi["money"].push('');
     this.jildoebi["pdfs"].push({
       file_type: '',
       awardPdf: '',
@@ -382,30 +393,15 @@ export class AddProjectComponent implements OnInit {
   });
     this.jildoebi['ka'].push({
       title: '',
-      desc: '',
-      money: '',
-      date: {
-        month: '',
-        year: ''
-      }
+      desc: ''
     });
     this.jildoebi['en'].push({
       title: '',
-      desc: '',
-      money: '',
-      date: {
-        month: '',
-        year: ''
-      }
+      desc: ''
     });
     this.jildoebi['ru'].push({
       title: '',
-      desc: '',
-      money: '',
-      date: {
-        month: '',
-        year: ''
-      }
+      desc: ''
     });
   }
 
@@ -487,9 +483,15 @@ export class AddProjectComponent implements OnInit {
       hash: this.hash
     }
 
-    console.log(json);
     this.addprojectservice.sendPayment(json).subscribe(res=>{
-      console.log(res);
+      if(post == 'online'){
+        this.transid = res["TRANSACTION_ID"];
+        let cv = this.transForm.nativeElement;
+        setTimeout(function () {
+          cv.submit();
+        }, 300);
+      }
+      
       this.addprojectservice.removeProjectStep('mainInfo');
       this.addprojectservice.removeProjectStep('failebi');
       this.addprojectservice.removeProjectStep('jildoebi');
@@ -497,7 +499,7 @@ export class AddProjectComponent implements OnInit {
       this.addprojectservice.removeProjectStep('finances');
     });
   }
-  
+
   getData(){
 
     this.addprojectservice.getData(this.siteLang).subscribe(data => {
