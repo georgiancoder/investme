@@ -451,6 +451,18 @@ body{
     top: -35px;
     right: 0px;
 }
+.ngx-modal .modal-dialog .modal-content .modal-footer button{
+  display: none;
+}
+.ngx-modal .modal-dialog .modal-content .modal-footer button:first-child{
+    display: block;
+    background: transparent;
+    color: white;
+    text-shadow: 0 0 5px #e8e4e4;
+    font-size: 25px;
+    padding-right: 5px;
+}
+
 app-invest-project-popup{
     display: flex;
     flex-wrap: wrap;
