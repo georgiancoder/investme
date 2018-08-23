@@ -444,10 +444,12 @@
 <router-outlet></router-outlet>
 
 <section class="partners" *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
-  <a href="{{footer.partners[0].link}}">
-    <img src="https://back.investme.ge/{{footer.partners[0].image}}">
-    <h2>{{footer.partners[0].title}}</h2>
-  </a>
+  <div class="wrapper">
+    <a href="{{footer.partners[0].link}}">
+      <img src="https://back.investme.ge/{{footer.partners[0].image}}">
+      <h2>{{footer.partners[0].title}}</h2>
+    </a>
+  </div>
 </section>
 <footer *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">

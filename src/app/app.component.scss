@@ -597,6 +597,31 @@ header{
   height: 130px;
   background-color: #0A3E60;
   box-shadow: 0 -10px 36px rgba(0,0,0,0.2);
+  .wrapper{
+    width: 1280px;  
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    a{
+      width: 160px;
+      max-height:110px;
+      overflow:hidden;
+      img{
+        width:100%;
+        height: 60px;
+        margin-bottom:5px;
+      }
+      h2{
+        font-size: 13px;
+        line-height: 18px;
+        color: white;
+        font-weight: normal;
+        text-align: center;
+        font-family: "BPG Mrgvlovani";
+      }
+    }
+  }
 }
 footer{
   background-color: #FFF;
