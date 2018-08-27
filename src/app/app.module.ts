@@ -83,6 +83,11 @@ import { SuccessPayComponent } from './success-pay/success-pay.component';
 import { ErrorPayComponent } from './error-pay/error-pay.component';
 import { ErrorCallbackComponent } from './error-callback/error-callback.component';
 import { CharityComponent } from './widgets/charity/charity.component';
+import { BusinesPageComponent } from './busines-page/busines-page.component';
+import { EntrepreneurshipPageComponent } from './entrepreneurship-page/entrepreneurship-page.component';
+import { SocialActicityPageComponent } from './social-acticity-page/social-acticity-page.component';
+import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-page/social-entrepreneurship-page.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 const routes: Routes = [
   {
@@ -243,7 +248,12 @@ const routes: Routes = [
     SuccessPayComponent,
     ErrorPayComponent,
     ErrorCallbackComponent,
-    CharityComponent
+    CharityComponent,
+    BusinesPageComponent,
+    EntrepreneurshipPageComponent,
+    SocialActicityPageComponent,
+    SocialEntrepreneurshipPageComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,
