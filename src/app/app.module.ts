@@ -88,11 +88,16 @@ import { EntrepreneurshipPageComponent } from './entrepreneurship-page/entrepren
 import { SocialActicityPageComponent } from './social-acticity-page/social-acticity-page.component';
 import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-page/social-entrepreneurship-page.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { SupportersComponent } from './supporters/supporters.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'myprojects/projectId/supporters',
+    component: SupportersComponent
   },
   {
     path: 'addProject',
@@ -253,7 +258,8 @@ const routes: Routes = [
     EntrepreneurshipPageComponent,
     SocialActicityPageComponent,
     SocialEntrepreneurshipPageComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    SupportersComponent
   ],
   imports: [
     BrowserModule,
