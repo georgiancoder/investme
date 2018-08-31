@@ -13,19 +13,83 @@
 @media only screen and (max-width: 1280px){
   .myprojectSupporters{
      width:90%;
-     .content{
-    } 
   }
 }
 
 @media only screen and (max-width: 1140px){
 }
 
-@media only screen and (max-width: 960px){}
+@media only screen and (max-width: 960px){
+	.myprojectSupporters{
+     	width:90%;
+     	.content{
+     		flex-direction:column;
+     		justify-content:flex-start;
+ 		    padding: 20px;
+     		h1{
+     			max-width:100%;
+     			margin-bottom:10px;
+     		}
+     		.sum{
+ 			    margin-bottom: 40px;
+     		}
+     		.heading{
+     			display:none;
+     		}
+     		.supporterListing{
+	     		flex-direction: unset;
+			    justify-content: space-between;
+			    flex-wrap: wrap;
+			    .supporter{
+			    	width:47.5%;
+			    	height: unset;
+				    padding-top: 17px;
+				    padding-bottom: 17px;
+				    ul{
+				    	flex-direction:column;
+				    	justify-content:flex-start;
+				    	li{
+				    		width:100%;
+				    		margin-bottom:21px;
+				    		&:first-of-type{
+				    			padding-right:0;
+				    		}
+				    		&:last-of-type{
+				    			margin-bottom:0;
+				    		}
+				    		&:after{
+				    			width:44px;
+				    			height:1px;
+				    			right:unset;
+				    			left: 0;
+    							bottom: -10.5px;
+				    		}
+				    		.moreInfo{
+				    			right: -5px;
+				    		}
+				    	}
+				    }
+			    }
+     		}
+     	}
+  	}
+}
 @media only screen and (max-width: 880px){
 }
 @media only screen and (max-width: 840px){}
 @media only screen and (max-width: 780px){
+	.myprojectSupporters{
+     	.content{
+     		h1{
+     			font-size: 15px;
+     		}
+     		.supporterListing{
+			    .supporter{
+			    	width:100%;
+			    }
+     		}
+     	}
+  	}
 }
 @media only screen and (max-width: 768px){}
 
