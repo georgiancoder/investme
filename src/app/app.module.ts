@@ -90,13 +90,15 @@ import { SocialEntrepreneurshipPageComponent } from './social-entrepreneurship-p
 import { SafeHtmlPipe } from './safe-html.pipe';
 import { SupportersComponent } from './supporters/supporters.component';
 
+import { SupportersService } from './services/supporters.service';
+
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
   },
   {
-    path: 'myprojects/projectId/supporters',
+    path: 'myprojects/:projectId/supporters',
     component: SupportersComponent
   },
   {
@@ -301,7 +303,8 @@ const routes: Routes = [
     AddProjectService,
     AskService,
     BlogService,
-    EventsService
+    EventsService,
+    SupportersService
   ],
   bootstrap: [AppComponent],
   entryComponents: [

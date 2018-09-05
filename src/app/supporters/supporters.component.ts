@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { SupportersService } from '../services/supporters.service';
+
 @Component({
   selector: 'app-supporters',
   templateUrl: './supporters.component.html',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SupportersComponent implements OnInit {
 	flag=false;
-  constructor() { }
+
+	supporters: any;
+  constructor(private supportersService: SupportersService) { }
+
+  getSupporters(){
+    this.supportersService.getSupporters('3', 'ka').subscribe(supporters=>{
+      this.supporters = supporters;
+      console.log(this.supporters)
+    });
+  }
 
   ngOnInit() {
+    this.getSupporters();
   }
   activeMoreinfp(){
   	this.flag=!this.flag;

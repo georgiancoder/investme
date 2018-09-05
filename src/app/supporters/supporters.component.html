@@ -1,11 +1,11 @@
-<div class="myprojectSupporters">
+<div class="myprojectSupporters" *ngIf="supporters">
 	<h2>
-		ჩემი მხარდამჭერები <span class="badge">1</span>
+		ჩემი მხარდამჭერები <span class="badge">{{supporters.result.length}}</span>
 	</h2>
 	<section class="content">
 		<h1>ყალ თვალაუღებლად დაიხუთა იკლებს გადაეთქვა სამართალიც ურიგოდ წინააღმდეგობებს </h1>
 		<div class="sum">
-			ჯამი: <span>820</span> ₾
+			ჯამი: <span>{{supporters.totalMoney}}</span> ₾
 		</div>
 		<ul class="heading">
 			<li>სახელი და გვარი:</li>
@@ -14,10 +14,10 @@
 			<li>ხელშეკრულების ტიპი:</li>
 		</ul>
 		<ul class="supporterListing">
-			<li class="supporter">
+			<li class="supporter" *ngFor="let supporter of supporters.result">
 				<ul>
 					<li>
-						ალექსანდრე კოღუაშვილი
+            {{supporter.user.name}} {{supporter.user.lastname}}
 						<button (click)="activeMoreinfp()">
 							<img _ngcontent-c9="" alt="" src="assets/info.png">
 						</button>
@@ -34,58 +34,60 @@
 										<span class="index">+995</span>
 										<span class="TelNum">499969</span>
 									</a>
-									
+
 								</div>
 							</li>
 						</ul>
 					</li>
 					<li>
-						უმაღლესი ჯილდო
+            <div *ngIf="supporter.award">
+              {{supporter.award.title}}
+            </div>
 					</li>
 					<li>
-						<span>300.0</span> ₾
+						<span>{{supporter.money}}</span> ₾
 					</li>
 					<li>
-						ქველმოქმედება
+						{{supporter.type}}
 					</li>
 				</ul>
 			</li>
-			<li class="supporter">
-				<ul>
-					<li>
-						ალექსანდრე კოღუაშვილი
-						<button (click)="activeMoreinfp()">
-							<img _ngcontent-c9="" alt="" src="assets/info.png">
-						</button>
-						<ul class="moreInfo" *ngIf="flag">
-							<li>
-								ელ.ფოსტა
-								<span>seven777six@gmail.com</span>
-							</li>
-							<li>
-								ტელეფონის ნომერი
-								<div>
-									<img src="../assets/+995.png">
-									<a href="">
-										<span class="index">+995</span>
-										<span class="TelNum">499969</span>
-									</a>
-									
-								</div>
-							</li>
-						</ul>
-					</li>
-					<li>
-						უმაღლესი ჯილდო
-					</li>
-					<li>
-						<span>300.0</span> ₾
-					</li>
-					<li>
-						ქველმოქმედება
-					</li>
-				</ul>
-			</li>
+			<!--<li class="supporter">-->
+				<!--<ul>-->
+					<!--<li>-->
+						<!--ალექსანდრე კოღუაშვილი-->
+						<!--<button (click)="activeMoreinfp()">-->
+							<!--<img _ngcontent-c9="" alt="" src="assets/info.png">-->
+						<!--</button>-->
+						<!--<ul class="moreInfo" *ngIf="flag">-->
+							<!--<li>-->
+								<!--ელ.ფოსტა-->
+								<!--<span>seven777six@gmail.com</span>-->
+							<!--</li>-->
+							<!--<li>-->
+								<!--ტელეფონის ნომერი-->
+								<!--<div>-->
+									<!--<img src="../assets/+995.png">-->
+									<!--<a href="">-->
+										<!--<span class="index">+995</span>-->
+										<!--<span class="TelNum">499969</span>-->
+									<!--</a>-->
+
+								<!--</div>-->
+							<!--</li>-->
+						<!--</ul>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--უმაღლესი ჯილდო-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<span>300.0</span> ₾-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--ქველმოქმედება-->
+					<!--</li>-->
+				<!--</ul>-->
+			<!--</li>-->
 		</ul>
 	</section>
 </div>
