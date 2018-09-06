@@ -14,14 +14,14 @@
 			<li>ხელშეკრულების ტიპი:</li>
 		</ul>
 		<ul class="supporterListing">
-			<li class="supporter" *ngFor="let supporter of supporters.result">
+			<li class="supporter" *ngFor="let supporter of supporters.result;let i = index">
 				<ul>
 					<li>
             {{supporter.user.name}} {{supporter.user.lastname}}
-						<button (click)="activeMoreinfp()">
+						<button (click)="activeMoreinfo(b)" #b>
 							<img _ngcontent-c9="" alt="" src="assets/info.png">
 						</button>
-						<ul class="moreInfo" *ngIf="flag">
+						<ul class="moreInfo">
 							<li>
 								ელ.ფოსტა
 								<span>seven777six@gmail.com</span>

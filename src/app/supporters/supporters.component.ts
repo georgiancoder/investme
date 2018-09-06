@@ -8,7 +8,6 @@ import { SupportersService } from '../services/supporters.service';
   styleUrls: ['./supporters.component.scss','./supporters.responsive.component.scss']
 })
 export class SupportersComponent implements OnInit {
-	flag=false;
 
 	supporters: any;
   constructor(private supportersService: SupportersService, private routerPath: RouterModule, private acrR: ActivatedRoute) { }
@@ -28,7 +27,7 @@ export class SupportersComponent implements OnInit {
     });
     
   }
-  activeMoreinfp(){
-  	this.flag=!this.flag;
+  activeMoreinfo(i){
+     i.classList.toggle('show');
   }
 }
