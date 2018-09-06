@@ -91,11 +91,21 @@ import { SafeHtmlPipe } from './safe-html.pipe';
 import { SupportersComponent } from './supporters/supporters.component';
 
 import { SupportersService } from './services/supporters.service';
+import { HowaddComponent } from './howadd/howadd.component';
+import { HowsupportComponent } from './howsupport/howsupport.component';
 
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'howadd',
+    component: HowaddComponent
+  },
+  {
+    path: 'howsupport',
+    component: HowsupportComponent
   },
   {
     path: 'myprojects/:projectId/supporters',
@@ -261,7 +271,9 @@ const routes: Routes = [
     SocialActicityPageComponent,
     SocialEntrepreneurshipPageComponent,
     SafeHtmlPipe,
-    SupportersComponent
+    SupportersComponent,
+    HowaddComponent,
+    HowsupportComponent
   ],
   imports: [
     BrowserModule,

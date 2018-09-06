@@ -64,6 +64,20 @@ export class TextPagesService {
     });
   }
 
+  howadd(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/howadd",{
+      headers: headers
+    });
+  }
+
+  howsupport(lng){
+    const headers = new HttpHeaders({'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/howsupport",{
+      headers: headers
+    });
+  }
+
 
 
 
