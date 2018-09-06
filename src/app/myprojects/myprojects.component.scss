@@ -32,7 +32,8 @@
     flex-wrap: wrap;
 		@include project(1180px,4);
     .share,
-    .viewDetails{
+    .viewDetails,
+    .edit{
       width:18.41px;
       height:18.41px;
       border-radius:100%;
@@ -58,6 +59,24 @@
     }
     .viewDetails{
       top:50px;
+    }
+    .edit{
+      top: 73px;
+      right: unset; 
+      left: calc(100% - 18.41px - 20px);
+      margin: 0!important;
+      overflow: hidden;
+      z-index:10;
+      i{
+        color: #A1A6A4;
+        font-size: 13px;
+      }
+      input{
+        opacity:0;
+        position:absolute;
+        width:100%;
+        height:100%;
+      }
     }
 	}
   .noProject{

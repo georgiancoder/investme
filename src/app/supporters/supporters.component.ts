@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RouterModule, ActivatedRoute } from "@angular/router";
 import { SupportersService } from '../services/supporters.service';
 
 @Component({
@@ -11,17 +11,22 @@ export class SupportersComponent implements OnInit {
 	flag=false;
 
 	supporters: any;
-  constructor(private supportersService: SupportersService) { }
+  constructor(private supportersService: SupportersService, private routerPath: RouterModule, private acrR: ActivatedRoute) { }
 
-  getSupporters(){
-    this.supportersService.getSupporters('3', 'ka').subscribe(supporters=>{
-      this.supporters = supporters;
-      console.log(this.supporters)
-    });
-  }
+  // getSupporters(){
+  //   this.supportersService.getSupporters('3', 'ka').subscribe(supporters=>{
+  //     this.supporters = supporters;
+  //     console.log(this.supporters)
+  //   });
+  // }
 
   ngOnInit() {
-    this.getSupporters();
+    this.acrR.params.subscribe((router)=>{
+      this.supportersService.getSupporters(router.projectId, 'ka').subscribe(supporters=>{
+        this.supporters = supporters;
+      });
+    });
+    
   }
   activeMoreinfp(){
   	this.flag=!this.flag;

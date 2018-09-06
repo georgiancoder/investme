@@ -13,7 +13,7 @@ export class MyprojectsComponent implements OnInit {
   siteUrl = "https://back.investme.ge";
 
   siteLang: string;
-
+  id: any;
   translation: any;
   myprojects: any;
 
@@ -27,6 +27,10 @@ export class MyprojectsComponent implements OnInit {
 
   editProject(id){
     this.router.navigate(['/editproject/' + id]);
+  }
+
+  supporter(id){
+    this.router.navigate(['/myprojects/' + id + '/supporters']);
   }
 
   constructor(private projectServce: ProjectService, private langservice: LangsService, private router: Router, private activatedRoute: ActivatedRoute) { }
