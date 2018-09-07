@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'breadcrumbs',
@@ -6,10 +6,14 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['breadcrumbs.component.scss','breadcrumbs.responsive.scss']
 })
 
-export class BreadCrumbsComponent{
+export class BreadCrumbsComponent implements OnInit{
 
 @Input() data;
 
 constructor(){}
+
+ngOnInit() {
+	console.log(this.data);
+}
 
 }

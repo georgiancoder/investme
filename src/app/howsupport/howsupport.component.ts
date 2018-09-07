@@ -9,7 +9,11 @@ import { LangsService } from '../services/langs.service';
 })
 export class HowsupportComponent implements OnInit {
 
-  breadcrumbs: object;
+  // breadcrumbs: object;
+  breadcrumbs = {
+    page: '',
+    home: ''
+  };
   lang: string;
   pageData: any;
   title: string;
@@ -30,11 +34,11 @@ export class HowsupportComponent implements OnInit {
       this.pageCont();
     });
 
-    this.breadcrumbs = {
-      page: this.title,
-      home: 'მთავარი'
-    };
-    setInterval(()=>{this.breadcrumbs.page = this.title;},200);
+    
+    setInterval(()=>{
+      this.breadcrumbs.page = this.title;
+      this.breadcrumbs.home = 'მთავარი';
+    },500);
   }
 
 }

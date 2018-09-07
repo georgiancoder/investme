@@ -8,7 +8,10 @@ import { LangsService } from '../services/langs.service';
   styleUrls: ['./invest-project.component.scss']
 })
 export class InvestProjectComponent implements OnInit {
-  breadcrumbs: object;
+  breadcrumbs = {
+    page: '',
+    home: ''
+  };
   lang: string;
   pageData: any;
   title: string;
@@ -30,10 +33,8 @@ export class InvestProjectComponent implements OnInit {
       this.pageCont();
     });
 
-    this.breadcrumbs = {
-      page: this.title,
-      home: 'მთავარი'
-    };
+    this.breadcrumbs.page = this.title;
+    this.breadcrumbs.home = 'მთავარი';
     setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
   }
 

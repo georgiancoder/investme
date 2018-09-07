@@ -8,11 +8,15 @@ import { LangsService } from '../services/langs.service';
   styleUrls: ['./howadd.component.scss']
 })
 export class HowaddComponent implements OnInit {
-  breadcrumbs: object;
+  // breadcrumbs: object;
   lang: string;
   pageData: any;
   title: string;
   description: string;
+  breadcrumbs = {
+    page: '',
+    home: ''
+  };
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   pageCont(){
@@ -31,10 +35,8 @@ export class HowaddComponent implements OnInit {
       this.pageCont();
     });
 
-    this.breadcrumbs = {
-      page: this.title,
-      home: 'მთავარი'
-    };
+    this.breadcrumbs.page = this.title;
+    this.breadcrumbs.home = 'მთავარი';
     setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
   }
 

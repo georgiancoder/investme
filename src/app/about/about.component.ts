@@ -38,7 +38,7 @@ export class AboutComponent implements OnInit {
       page: this.title,
       home: 'მთავარი'
     };
-    setInterval(()=>{this.breadcrumbs.page = this.title;},200);
+    setInterval(()=>{this.breadcrumbs['page'] = this.title;},500);
   }
 
 }

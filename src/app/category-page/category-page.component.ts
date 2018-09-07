@@ -14,10 +14,13 @@ export class CategoryPageComponent implements OnInit {
   
   lang: string;
   catId: number;
-  textCont: string;
+  textCont: any;
   title: string;
   description: string;
-
+  breadcrumbs = {
+    page: '',
+    home: ''
+  };
   constructor(private textPageService: TextPagesService, private route: ActivatedRoute, private langService: LangsService) { }
 
   getPage(){
@@ -39,10 +42,8 @@ export class CategoryPageComponent implements OnInit {
       this.lang = this.langService.getLang();
       this.getPage();
     });
-    this.breadcrumbs = {
-      page: this.title,
-      home: 'მთავარი'
-    };
+    this.breadcrumbs.page = this.title;
+    this.breadcrumbs.home = 'მთავარი';
     setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
 
   }

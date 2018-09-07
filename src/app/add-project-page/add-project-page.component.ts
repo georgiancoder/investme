@@ -35,7 +35,7 @@ export class AddProjectPageComponent implements OnInit {
       page: this.title,
       home: 'მთავარი'
     };
-    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
+    setTimeout(()=>{this.breadcrumbs['page'] = this.title;},500);
   }
 
 }
