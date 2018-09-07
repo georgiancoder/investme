@@ -10,12 +10,15 @@ import { LangsService } from '../services/langs.service';
 export class InvestProjectComponent implements OnInit {
   breadcrumbs: object;
   lang: string;
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageData: any;
+  title: string;
+  description: string;
+  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageCont(){
     this.textPagesService.investPorject(this.lang).subscribe(data=>{
       this.pageData = data;
-      console.log(data);
+      this.title = this.pageData.supportproject.title;
+      this.description = this.pageData.supportproject.description;
     });
   }
 
@@ -28,9 +31,10 @@ export class InvestProjectComponent implements OnInit {
     });
 
     this.breadcrumbs = {
-      page: 'პროექტის დაფინანსება',
+      page: this.title,
       home: 'მთავარი'
     };
+    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
   }
 
 

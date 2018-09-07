@@ -11,16 +11,18 @@ import { LangsService } from '../services/langs.service';
 export class AboutComponent implements OnInit {
   aboutContent:any;
   lang: string;
-
-
   breadcrumbs: object;
+  title: string;
+  description: string;
 
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   about(){
     this.textPagesService.about(this.lang).subscribe(content=>{
       this.aboutContent = content;
-      this.aboutContent.about = String(this.aboutContent.about).replace(/<\/?p[^>]*>/g, '');
+      // this.aboutContent.about = String(this.aboutContent.about).replace(/<\/?p[^>]*>/g, '');
+      this.title = this.aboutContent.about.title;
+      this.description = this.aboutContent.about.description;
     });
   }
 
@@ -33,9 +35,10 @@ export class AboutComponent implements OnInit {
     });
 
     this.breadcrumbs = {
-      page: 'ჩვენს შესახებ',
+      page: this.title,
       home: 'მთავარი'
-    }
+    };
+    setInterval(()=>{this.breadcrumbs.page = this.title;},200);
   }
 
 }

@@ -12,10 +12,14 @@ export class HowsupportComponent implements OnInit {
   breadcrumbs: object;
   lang: string;
   pageData: any;
+  title: string;
+  description: string;
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageCont(){
     this.textPagesService.howsupport(this.lang).subscribe(data=>{
       this.pageData = data;
+      this.title = this.pageData.howsupport.title;
+      this.description = this.pageData.howsupport.description;
     });
   }
   ngOnInit() {
@@ -27,9 +31,10 @@ export class HowsupportComponent implements OnInit {
     });
 
     this.breadcrumbs = {
-      page: 'page title',
+      page: this.title,
       home: 'მთავარი'
     };
+    setInterval(()=>{this.breadcrumbs.page = this.title;},200);
   }
 
 }

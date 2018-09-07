@@ -11,16 +11,21 @@ import { TextPagesService } from '../services/text-pages.service';
   styleUrls: ['./category-page.component.scss']
 })
 export class CategoryPageComponent implements OnInit {
-
+  
   lang: string;
   catId: number;
   textCont: string;
+  title: string;
+  description: string;
 
   constructor(private textPageService: TextPagesService, private route: ActivatedRoute, private langService: LangsService) { }
 
   getPage(){
     this.textPageService.getCategoryPage(this.catId,this.lang).subscribe(cont=>{
         this.textCont = cont;
+        this.title = this.textCont.title;
+        this.description = this.textCont.description;
+        console.log(this.textCont.description);
     });
   }
 
@@ -34,7 +39,11 @@ export class CategoryPageComponent implements OnInit {
       this.lang = this.langService.getLang();
       this.getPage();
     });
-
+    this.breadcrumbs = {
+      page: this.title,
+      home: 'მთავარი'
+    };
+    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
 
   }
 

@@ -10,11 +10,16 @@ import { LangsService } from '../services/langs.service';
 export class AddProjectPageComponent implements OnInit {
   breadcrumbs: object;
   lang:string;
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageData:any;
+  title: string;
+  description: string;
+  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageCont(){
     this.textPagesService.addProject(this.lang).subscribe(data=>{
       this.pageData = data;
+      console.log(this.pageData);
+      this.title = this.pageData.addproject.title;
+      this.description = this.pageData.addproject.description;
     });
   }
 
@@ -27,9 +32,10 @@ export class AddProjectPageComponent implements OnInit {
     });
 
     this.breadcrumbs = {
-      page: 'პროექტის დამატება',
+      page: this.title,
       home: 'მთავარი'
     };
+    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
   }
 
 }

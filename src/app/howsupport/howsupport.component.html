@@ -1,7 +1,10 @@
 <div *ngIf="pageData">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="cont" >
-    <section [innerHTML]="pageData.howsupport">
+  	<div class="sidebar">
+      <sidemenu [data]="sidemenu"></sidemenu>
+    </div>
+    <section [innerHTML]="description">
     </section>
   </div>
 </div>

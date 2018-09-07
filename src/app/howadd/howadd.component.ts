@@ -11,10 +11,16 @@ export class HowaddComponent implements OnInit {
   breadcrumbs: object;
   lang: string;
   pageData: any;
+  title: string;
+  description: string;
   constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+
   pageCont(){
     this.textPagesService.howadd(this.lang).subscribe(data=>{
       this.pageData = data;
+      this.title = this.pageData.howadd.title;
+      this.description = this.pageData.howadd.description;
+      // console.log(this.pageData.howadd);
     });
   }
   ngOnInit() {
@@ -26,9 +32,10 @@ export class HowaddComponent implements OnInit {
     });
 
     this.breadcrumbs = {
-      page: 'page title',
+      page: this.title,
       home: 'მთავარი'
     };
+    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
   }
 
 }

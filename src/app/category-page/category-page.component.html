@@ -1,3 +1,10 @@
-<div *ngIf="textCont">
-  <div [innerHTML]="textCont"></div>
+<div >
+  <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
+  <div class="cont" >
+  	<div class="sidebar">
+      <sidemenu [data]="sidemenu"></sidemenu>
+    </div>
+    <section [innerHTML]="description">
+    </section>
+  </div>
 </div>
