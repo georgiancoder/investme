@@ -2,7 +2,7 @@
 .dropActive{
   display:flex!important;
   min-height:70px!important;
-}        
+}
 .projectSlider{
   border-top: 1px solid #DFE4E5;
   .categories{
@@ -109,7 +109,7 @@
       justify-content: flex-start;
 
       .text{
-          max-width: 50%;
+          width: 500px;
           position: relative;
           background: #000000b8;
           padding: 30px;
@@ -134,16 +134,24 @@
           }
           footer{
             margin-top: 60px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            align-items: center;
             .daafinanse{
               display: inline-block;
               height: 60px;
               border-radius: 30px;
               @include textStyle(12px,60px,black,normal);
               padding: 0 30px;
-              border: 1px solid #C6C6C6;
-              margin-right: 30px;
+              border: 3px solid #C6C6C6;
+              margin-right: 10px;
               font-family: "BPG Mrgvlovani Caps 2010";
-              background: #dfb63e;  
+              background: #dfb63e;
+              transition: all 300ms;
+            }
+            .daafinanse:hover{
+              border: 3px solid #A5EB97;
             }
             .targetCapital{
               font-family: "BPG Mrgvlovani";
@@ -239,7 +247,8 @@
             }
             h3{
               position: relative;
-              @include textStyle(13px,21px,#2F3748,normal);
+              font-family: "BPG Mrgvlovani";
+              @include textStyle(12px,21px,#2F3748,normal);
               width: 200px;
               margin-left: auto;
               top: 10px;

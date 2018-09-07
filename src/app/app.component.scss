@@ -598,7 +598,7 @@ header{
   background-color: #0A3E60;
   box-shadow: 0 -10px 36px rgba(0,0,0,0.2);
   .wrapper{
-    width: 1280px;  
+    width: 1280px;
     height: 100%;
     margin: auto;
     display: flex;
@@ -620,7 +620,8 @@ header{
         font-weight: normal;
         text-align: center;
         font-family: "BPG Mrgvlovani Caps 2010";
-        max-width:200px;
+        padding-left: 20px;
+        // max-width:200px;
       }
     }
   }

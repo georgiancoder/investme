@@ -58,6 +58,7 @@
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
     padding-bottom: 60px;
 		.filter {
       width: 330px;
@@ -107,13 +108,15 @@
 			.intetests {
         display: flex;
         flex-wrap: wrap;
+        max-height: 600px;
+        overflow: auto;
 				li {
-          height: 40px;
+          height: 30px;
           border: 1px solid #D0D0D0;
           border-radius: 4px;
           display: flex;
           align-items: center;
-          padding: 0 25px;
+          padding: 0 10px;
           margin-right: 10px;
           margin-bottom: 10px;
           font-size: 12px;
@@ -186,4 +189,9 @@
       }
 		}
 	}
+}
+
+.allprojectLink{
+  display: inline-block;
+  
 }

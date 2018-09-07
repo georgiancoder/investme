@@ -16,11 +16,16 @@
       <button type="button">გაგზავნა</button>
     </form>
     <div class="info">
-      <p>{{contactContent.detail.address}}</p>
       <ul>
         <li>
           <div class="ico">
-            <img src="/assets/mail.png" width="20" alt="">
+            <img src="/assets/location.png" width="16" alt="">
+          </div>
+          {{contactContent.detail.address}}
+        </li>
+        <li>
+          <div class="ico">
+            <img src="/assets/mail.png" width="16" alt="">
           </div>
           {{contactContent.contact.email}}
         </li>
@@ -29,6 +34,12 @@
             <img src="/assets/phone.png" width="16" alt="">
           </div>
           {{contactContent.contact.phone}}
+        </li>
+        <li>
+          <div class="ico">
+            <img src="/assets/time.png" width="16" alt="">
+          </div>
+          {{contactContent.detail.time}}
         </li>
       </ul>
     </div>

@@ -184,7 +184,7 @@
         </div>
       </div>
       <div class="lang">
-        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a> / <a (click)="changeLang('ru')" [class]="(lang == 'ru') ? 'active' : ''">Rus</a>
+        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a>
       </div>
       <div (click)="respoMenu()" class="responsiveMenu-container">
         <div class="menuSlide"></div>
@@ -196,7 +196,7 @@
   <div class="respoMenu-container">
     <div class="respLang">
         <div class="respLangContent">
-        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a> / <a (click)="changeLang('ru')" [class]="(lang == 'ru') ? 'active' : ''">Rus</a>
+        <a [class]="(lang == 'ka') ? 'active' : ''" (click)="changeLang('ka')">ქარ</a> / <a (click)="changeLang('en')" [class]="(lang == 'en') ? 'active' : ''">Eng</a>
         </div>
         <div (click)="closeRespoMenu()" class="CloseBtn">
           <div></div>
@@ -477,11 +477,11 @@
         <li><a routerLink="howadd">{{footer.translations.howtoadd}}</a></li>
         <li><a routerLink="howsupport">{{footer.translations.howtofin}}</a></li>
       </ul>
-      <ul>
+      <!-- <ul>
         <li *ngFor="let cat of footer.categories">
           <a routerLink="categorypage/{{cat.id}}">{{cat.title}}</a>
         </li>
-      </ul>
+      </ul> -->
     </section>
   </div>
   <div class="copy">

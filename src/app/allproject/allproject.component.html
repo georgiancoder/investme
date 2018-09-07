@@ -15,6 +15,9 @@
       <div class="filter">
         <h2>კატეგორიები</h2>
         <ul class="categories">
+          <li>
+            <a href="#" class="allprojectLink">ყველა</a>
+          </li>
           <li *ngFor="let c of categories" [class]="(filters.category == c.id) ? 'active' : ''" (click)="selectCategory(c)">{{c.title}} <span class="badge">{{c.count}}</span> </li>
         </ul>
         <h2>ინტერესები</h2>
