@@ -1,6 +1,4 @@
 <div class="events" *ngIf="event">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
-  <div class="content">
-  {{event | json}}
-  </div>
+  <app-blogwidgetinner [data]="event" type="measure"></app-blogwidgetinner>
 </div>

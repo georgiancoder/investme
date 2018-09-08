@@ -87,6 +87,7 @@
   .slider{
     width: 100%;
     height: calc(100vh - 288px);
+    min-height: 75vh;
     background-color: #567556;
     position: relative;
     .sliderBackground{

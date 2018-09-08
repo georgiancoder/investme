@@ -359,6 +359,7 @@
           </g>
         </g>
       </svg>
+      <span class="logouttitle" >გასვლა</span>
 </div>
   </div>
   <div class="bottom">
@@ -457,9 +458,9 @@
       <a routerLink="/" class="logo"><img src="../assets/logo.svg"></a>
       <ul>
         <li><a href="{{footer.contact.facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-        <li><a href="{{footer.contact.twitter}}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li *ngIf="footer.contact.youtube"><a href="{{footer.contact.youtube}}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
         <li><a href="{{footer.contact.linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-        <li><a href="{{footer.contact.google}}" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+        <li *ngIf="footer.contact.instagram"><a href="{{footer.contact.instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       </ul>
     </section>
     <section class="menu">

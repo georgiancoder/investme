@@ -25,11 +25,11 @@
             <label>{{profileTranslations.name}}</label>
             <input type="text" formControlName="name" value="{{name}}">
             <div *ngIf="!profileData.controls['name'].valid && (profileData.controls['name'].dirty || profileData.controls['name'].touched)">
-              <div *ngIf="profileData.controls['name'].errors.required">
-                name is required
+              <div *ngIf="profileData.controls['name'].errors.required" class="validmes" >
+                სავალდებულო ველი
               </div>
-              <div *ngIf="profileData.controls['name'].errors.maxlength">
-                name must be maximum 20 characters length
+              <div *ngIf="profileData.controls['name'].errors.maxlength" class="validmes">
+                  სახელი უნდა შედგებოდეს მაქსიმუმ 20 სიმბოლოსგან
               </div>
             </div>
           </div>
@@ -37,11 +37,11 @@
             <label>{{profileTranslations.lastname}}</label>
             <input type="text" formControlName="lastname" value="{{lastname}}">
             <div *ngIf="!profileData.controls['lastname'].valid && (profileData.controls['lastname'].dirty || profileData.controls['lastname'].touched)">
-              <div *ngIf="profileData.controls['lastname'].errors.required">
-                lastname is required
+              <div *ngIf="profileData.controls['lastname'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="profileData.controls['lastname'].errors.maxlength">
-                lastname must be maximum 20 characters length
+              <div *ngIf="profileData.controls['lastname'].errors.maxlength" class="validmes">
+                გვარი უნდა შედგებოდეს მაქსიმუმ 20 სიმბოლოსგან
               </div>
             </div>
           </div>
@@ -49,8 +49,8 @@
             <label>{{profileTranslations.livingCity}}</label>
             <input type="text" formControlName="livingPlace" value="{{livingPlace}}">
             <div *ngIf="!profileData.controls['livingPlace'].valid && (profileData.controls['livingPlace'].dirty || profileData.controls['livingPlace'].touched)">
-              <div *ngIf="profileData.controls['livingPlace'].errors.required">
-                livingPlace is required
+              <div *ngIf="profileData.controls['livingPlace'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
             </div>
           </div>
@@ -90,11 +90,11 @@
             <label>{{profileTranslations.email}}</label>
             <input type="text" formControlName="email" value="{{email}}">
             <div *ngIf="!profileData.controls['email'].valid && (profileData.controls['email'].dirty || profileData.controls['email'].touched)">
-              <div *ngIf="profileData.controls['email'].errors.required">
-                email is required
+              <div *ngIf="profileData.controls['email'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="profileData.controls['email'].errors.pattern">
-                email is not correct
+              <div *ngIf="profileData.controls['email'].errors.pattern" class="validmes">
+                ელფოსტა არასწორია
               </div>
             </div>
           </div>
@@ -113,11 +113,11 @@
             </p-dropdown>
             <input type="text" class="tell" formControlName="tell" value="tell">
             <div *ngIf="!profileData.controls['tell'].valid && (profileData.controls['tell'].dirty || profileData.controls['tell'].touched)">
-              <div *ngIf="profileData.controls['tell'].errors.required">
-                phone number is required
+              <div *ngIf="profileData.controls['tell'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="profileData.controls['tell'].errors.maxlength">
-                phone number must be maximum 9 characters length
+              <div *ngIf="profileData.controls['tell'].errors.maxlength" class="validmes">
+                ნომერი უნდა შედგებოდეს მინიმუმ 9 სიმბოლოსგან
               </div>
             </div>
           </div>
@@ -125,11 +125,11 @@
             <label>{{profileTranslations.personalId}}</label>
             <input type="text" formControlName="piradiN" value="{{piradiN}}">
             <div *ngIf="!profileData.controls['piradiN'].valid && (profileData.controls['piradiN'].dirty || profileData.controls['piradiN'].touched)">
-              <div *ngIf="profileData.controls['piradiN'].errors.required">
-                private number is required
+              <div *ngIf="profileData.controls['piradiN'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="profileData.controls['piradiN'].errors.pattern">
-                private number is not correct
+              <div *ngIf="profileData.controls['piradiN'].errors.pattern" class="validmes">
+                ნომერია არასწორია
               </div>
             </div>
           </div>
@@ -143,8 +143,8 @@
             <label>{{profileTranslations.old_pass}}</label>
             <input type="password" formControlName="old_password">
             <div *ngIf="!changePass.controls['old_password'].valid && (changePass.controls['old_password'].dirty || changePass.controls['old_password'].touched)">
-              <div *ngIf="changePass.controls['old_password'].errors.required">
-                oldpassword is required
+              <div *ngIf="changePass.controls['old_password'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
             </div>
           </div>
@@ -152,11 +152,11 @@
             <label>{{profileTranslations.new_pass}}</label>
             <input type="password" formControlName="password">
             <div *ngIf="!changePass.controls['password'].valid && (changePass.controls['password'].dirty || changePass.controls['password'].touched)">
-              <div *ngIf="changePass.controls['password'].errors.required">
-                password is required
+              <div *ngIf="changePass.controls['password'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="changePass.controls['password'].errors.minlength">
-                password must be at least 5 characters length
+              <div *ngIf="changePass.controls['password'].errors.minlength" class="validmes">
+                პაროლი უნდა შედგებოდეს მინიმუმ 5 სიმბოლოსგან
               </div>
             </div>
           </div>
@@ -164,14 +164,14 @@
             <label>{{profileTranslations.repeat_pass}}</label>
             <input type="password" formControlName="password_confirmation">
             <div *ngIf="!changePass.controls['password_confirmation'].valid && (changePass.controls['password_confirmation'].dirty || changePass.controls['password_confirmation'].touched)">
-              <div *ngIf="changePass.controls['password_confirmation'].errors.required">
-                password is required
+              <div *ngIf="changePass.controls['password_confirmation'].errors.required" class="validmes">
+                სავალდებულო ველი
               </div>
-              <div *ngIf="changePass.controls['password_confirmation'].errors.minlength">
-                password must be at least 5 characters length
+              <div *ngIf="changePass.controls['password_confirmation'].errors.minlength" class="validmes">
+                პაროლი უნდა შედგებოდეს მინიმუმ 5 სიმბოლოსგან
               </div>
-              <div *ngIf="changePass.controls['password_confirmation'].errors.notEquivalent">
-                Password Mismatch
+              <div *ngIf="changePass.controls['password_confirmation'].errors.notEquivalent" class="validmes">
+                პაროლი არასწორია
               </div>
             </div>
           </div>

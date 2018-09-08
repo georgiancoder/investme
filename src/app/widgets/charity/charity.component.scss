@@ -9,7 +9,7 @@ input{
     &:focus{
         opacity:1;
     }
-    
+
 }
 .btn-container{
 	width:100%;
@@ -18,7 +18,7 @@ input{
 	align-items:center;
 }
 .btn-container button{
-	width: 230px;	
+	width: 230px;
     height: 60px;
     color: #FFF;
     background-color: #14547E;
@@ -27,4 +27,11 @@ input{
     font-family: "BPG Mrgvlovani Caps 2010";
     margin-top: 20px;
     cursor: pointer;
+}
+
+.input__lari{
+}
+
+.input__lari span{
+	margin-left: 5px;
 }

@@ -196,7 +196,7 @@
             </div>
             <div class="row">
               <label class="container">
-                  მომსახურების ნასყიდობის ხელშეკრულება
+                  ნივთის ნასყიდობის ხელშეკრულება
                   <input type="radio"  data-check="1" class="sts" [value]="0" name="asd{{i}}"  [(ngModel)]="jildoebi.pdfs[i].file_type">
                   <span class="checkmark"></span>
               </label>
@@ -206,16 +206,16 @@
                   <span class="checkmark"></span>
               </label>
 
-              
+
 
               <input type="file" id="document1" (change)="jildoPdf($event, i)">
-              
+
               <label _ngcontent-c2="" class="document1" for="document1">
                 აირჩიეთ ფაილი
-                 <img _ngcontent-c2="" alt="" src="/assets/upload-to-cloud.png"> 
+                 <img _ngcontent-c2="" alt="" src="/assets/upload-to-cloud.png">
 
               </label>
-              
+
             </div>
           </li>
 
@@ -335,7 +335,7 @@
   <input type="hidden" name="trans_id" value="{{transid}}">
 </form>
         <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="addMember()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        <button type="button" [class]="'nextstep'" (click)="addMember()"> დასრულება <i class="fa fa-angle-right"></i></button>
       </div>
     </div>
   </div>
