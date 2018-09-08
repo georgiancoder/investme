@@ -44,7 +44,6 @@ export class ProjectinnerComponent implements OnInit {
 
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{
-      console.log(res);
       this.project = res;
       this.getMedia();
       this.getDocuments();
