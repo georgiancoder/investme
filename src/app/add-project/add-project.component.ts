@@ -491,7 +491,7 @@ export class AddProjectComponent implements OnInit {
           cv.submit();
         }, 300);
       }
-      
+
       this.addprojectservice.removeProjectStep('mainInfo');
       this.addprojectservice.removeProjectStep('failebi');
       this.addprojectservice.removeProjectStep('jildoebi');
@@ -569,7 +569,7 @@ export class AddProjectComponent implements OnInit {
       this.years.push(i);
     }
 
-    for(var i = 30; i < 360; i+=10){
+    for(var i = 30; i < 100; i+=10){
       this.firstStep['ka'].campainTimes.push({label: i + ' დღე', value: i});
       this.firstStep['en'].campainTimes.push({label: i + ' day', value: i});
       this.firstStep['ru'].campainTimes.push({label: i + ' день', value: i});

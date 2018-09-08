@@ -35,8 +35,8 @@
           <header>
             <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
               <div class="daysleft">
-                {{project.project.company_time - project.interval}}
-                <span *ngIf="translations">{{translations.day}}</span>
+                {{project.project.company_time - project.interval > 0 ? project.project.company_time - project.interval : 'დასრულებული' }}
+                <span *ngIf="translations && project.project.company_time - project.interval > 0">{{translations.day}}</span>
               </div>
               <img src="/assets/{{(project.check_for_fav != undefined && project.check_for_fav) ? 'heart-red.png' : 'heart-black.png'}}" *ngIf="project.check_for_fav != undefined" alt="add to favorite" class="favorite" (click)="toggleFavorite(project)">
             </div>

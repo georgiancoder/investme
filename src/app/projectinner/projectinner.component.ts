@@ -36,6 +36,8 @@ export class ProjectinnerComponent implements OnInit {
 
   project: any;
 
+  pdf: any;
+
   tabindex = 0;
 
 
@@ -119,15 +121,16 @@ export class ProjectinnerComponent implements OnInit {
 
   openNewDialog(award) {
     this.modalService.openDialog(this.viewRef, {
-      title: 'Some modal title',
+      // title: 'Some modal title',
       childComponent: InvestProjectPopupComponent,
-      data: award.id
+      data: award.id,
     });
+    this.pdf = award.pdf;
   }
 
   openNewDialog2() {
     this.modalService.openDialog(this.viewRef, {
-      title: 'Some modal title',
+      // title: 'Some modal title',
       childComponent: CharityComponent,
       data: this.projectId
     });

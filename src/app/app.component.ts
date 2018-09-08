@@ -118,7 +118,7 @@ export class AppComponent  {
   }
 
   getFooter(){
-    this.footerservice.getFooter(this.lang).subscribe(f => { this.footer = f; console.log(f) });
+    this.footerservice.getFooter(this.lang).subscribe(f => { this.footer = f; console.log(f);console.log("giorgi") });
   }
 
   usermenuDropDown(): void{
