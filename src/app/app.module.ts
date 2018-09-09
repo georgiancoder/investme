@@ -20,6 +20,7 @@ import {YoutubeModule} from 'angularx-youtube';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ModalDialogModule } from 'ngx-modal-dialog';
+import { AgmCoreModule } from '@agm/core';
 
 
 import {AppComponent} from './app.component';
@@ -300,7 +301,10 @@ const routes: Routes = [
     YoutubeModule,
     NgxPaginationModule,
     ClipboardModule,
-    ModalDialogModule.forRoot()
+    ModalDialogModule.forRoot(),
+    // AgmCoreModule.forRoot({
+    //   apiKey: ''
+    // })
   ],
   providers: [
     ProjectService,
