@@ -39,10 +39,20 @@ export class ProjectinnerComponent implements OnInit {
   pdf: any;
 
   tabindex = 0;
+  cpd: boolean = false;
 
 
 
   documents = [];
+
+  copied(event){
+    this.cpd = true;
+  }
+
+  openawardstab(){
+    this.tabindex = 3;
+    $("html,body").animate({scrollTop: '900px'});
+  }
 
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{

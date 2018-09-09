@@ -33,7 +33,7 @@
         </div>
         <div class="support">
           დარჩენილი თანხა: {{project.project.capital - project.money}}
-          <button type="button" *ngIf="isAuthenticated" name="button">მხარდაჭერა</button>
+          <button type="button" *ngIf="isAuthenticated" (click)="openawardstab()" name="button">მხარდაჭერა</button>
         </div>
         <div class="Soc">
           <div class="fbLike">
@@ -45,7 +45,7 @@
         </div>
         <div class="copyLink">
           <input type="text" id="copto" value="{{shortUrl}}" name="">
-          <button class="copyBtn" type="button" ngxClipboard [cbContent]="shortUrl">კოპირება</button>
+          <button class="copyBtn" type="button" ngxClipboard [cbContent]="shortUrl" (cbOnSuccess) = "copied($event)"><span *ngIf="!cpd">კოპირება</span><span *ngIf="cpd">კოპირებულია</span></button>
         </div>
       </footer>
 
