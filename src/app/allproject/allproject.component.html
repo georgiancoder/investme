@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="projects">
-        <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 1, currentPage: p, totalItems: totalPages }">
+        <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalPages }">
           <header>
             <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
               <div class="daysleft">

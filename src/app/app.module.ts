@@ -93,6 +93,7 @@ import { SupportersComponent } from './supporters/supporters.component';
 import { SupportersService } from './services/supporters.service';
 import { HowaddComponent } from './howadd/howadd.component';
 import { HowsupportComponent } from './howsupport/howsupport.component';
+import { SplitnumberPipe } from './splitnumber.pipe';
 
 const routes: Routes = [
   {
@@ -273,7 +274,8 @@ const routes: Routes = [
     SafeHtmlPipe,
     SupportersComponent,
     HowaddComponent,
-    HowsupportComponent
+    HowsupportComponent,
+    SplitnumberPipe
   ],
   imports: [
     BrowserModule,

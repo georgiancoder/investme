@@ -1,6 +1,10 @@
+import { Router } from '@angular/router';
+import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import {AppComponent} from '../app.component';
+
 
 @Component({
   selector: 'app-add-project-page',
@@ -13,7 +17,7 @@ export class AddProjectPageComponent implements OnInit {
   pageData:any;
   title: string;
   description: string;
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  constructor(private langsservice: LangsService, private textPagesService: TextPagesService, private authService: AuthService, private router: Router, public myapp: AppComponent) { }
   pageCont(){
     this.textPagesService.addProject(this.lang).subscribe(data=>{
       this.pageData = data;
@@ -22,6 +26,15 @@ export class AddProjectPageComponent implements OnInit {
       this.description = this.pageData.addproject.description;
     });
   }
+
+  addProject(){
+   if(this.authService.isAuthenticated()){
+     this.router.navigate(['/addProject']);
+   }else{
+     this.myapp.regDropdown();
+   }
+  }
+
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();

@@ -14,10 +14,10 @@
         <div *ngIf="authorized && user" class="usermenuwrapper">
           <div class="usermenu" [style.height]="dropDownHeight + 'px'">
             <ul>
-              <li routerLink="profile"><a>{{header.translations.profile}}</a></li>
-              <li routerLink="/favorite">{{header.translations.favorite}}</li>
-              <li routerLink="/addProject">{{header.translations.add_project}}</li>
-              <li (click)="logOut()" class="logout"><img src="/assets/logout.png" alt=""> {{header.translations.logout}}</li>
+              <li routerLink="profile" (click)="dropDownHeight = 0"><a>{{header.translations.profile}}</a></li>
+              <li routerLink="/favorite" (click)="dropDownHeight = 0">{{header.translations.favorite}}</li>
+              <li routerLink="addProjectPage" (click)="dropDownHeight = 0">{{header.translations.add_project}}</li>
+              <li (click)="logOut()" (click)="dropDownHeight = 0" class="logout"><img src="/assets/logout.png" alt=""> {{header.translations.logout}}</li>
             </ul>
           </div>
         </div>
@@ -337,9 +337,9 @@
       <h4>{{user.name}} <i class="fa fa-angle-down"></i></h4>
       <div class="usermenu" [style.height]="dropDownHeight + 'px'">
         <ul>
-          <li routerLink="profile"><a >{{header.translations.profile}}</a></li>
-          <li routerLink="/favorite">{{header.translations.favorite}}</li>
-          <li routerLink="addProject"><a >{{header.translations.add_project}}</a></li>
+          <li routerLink="profile" (click)="dropDownHeight = 0"><a >{{header.translations.profile}}</a></li>
+          <li routerLink="/favorite" (click)="dropDownHeight = 0">{{header.translations.favorite}}</li>
+          <li routerLink="addProjectPage" (click)="dropDownHeight = 0"><a >{{header.translations.add_project}}</a></li>
         </ul>
       </div>
     </div>
@@ -443,8 +443,7 @@
   </div>
 </header>
 <router-outlet></router-outlet>
-
-<section class="partners" *ngIf="footer && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage.search('editproject') == -1)">
+<section class="partners" *ngIf="footer && (currentPage == '/')">
   <div class="wrapper">
     <a href="{{footer.partners[0].link}}">
       <img src="https://back.investme.ge/{{footer.partners[0].image}}">

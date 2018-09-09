@@ -63,10 +63,9 @@ export class AllprojectComponent implements OnInit {
 
   getAllProject(){
     this.ProjectService.getAllProject(this.siteLang, this.filters["page"]).subscribe(res=>{
+      console.log(res);
       this.categories = res.categories;
-      if(!this.hasquery){
         this.projects = res.projects.data;
-      }
       this.translations = res.translations;
       this.interests = res.interests;
 
