@@ -6,8 +6,8 @@
         <header>
           <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
             <div class="daysleft">
-              {{project.project.company_time - project.interval}}
-              <span>{{translation.day}}</span>
+              {{project.project.company_time - project.interval > 0 ? project.project.company_time - project.interval : 'დასრულებული' }}
+              <span *ngIf="translations && project.project.company_time - project.interval > 0">{{translations.day}}</span>
             </div>
           </div>
           <h3>{{project.title}}</h3>

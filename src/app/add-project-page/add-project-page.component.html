@@ -4,8 +4,9 @@
     <div class="sidebar">
       <sidemenu [data]="sidemenu"></sidemenu>
     </div>
-    <section [innerHTML]="description">
-    </section>
+    <section class="addProject__sec" [innerHTML]="description"></section>
+  </div>
+  <div class="addprojectbtn__wr" >
+    <button (click)="addProject()" class="addprojectbtn" >პროექტის დამატება</button>
   </div>
 </div>
-<button (click)="addProject()">add project</button>

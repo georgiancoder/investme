@@ -59,6 +59,12 @@
           <!--<li *ngFor="let p of paginate" [class]="this.filters.page == p ? 'active' : ''" (click)="getPage(p)">{{p}}</li>-->
           <!--<li class="next" (click)="nextPage()"><i class="fa fa-angle-right"></i></li>-->
         <!--</ul>-->
+      </div>
+    </div>
+    <div class="cont">
+      <div class="filter">
+      </div>
+      <div class="projects projects__two">
         <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
       </div>
     </div>

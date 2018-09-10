@@ -1,7 +1,7 @@
 .cont{
   max-width: 1270px;
   margin: auto;
-  padding: 80px 0;
+  padding: 80px 0 30px 0;
   display: flex;
   align-items: flex-start;
   .sidebar{
@@ -15,4 +15,26 @@
     color: #707070;
     font-family: "BPG Mrgvlovani";
   }
+}
+.addprojectbtn__wr{
+  max-width: 1270px;
+  margin: auto;
+}
+
+.addprojectbtn{
+    height: 50px;
+    background-color: #14547E;
+    color: #FFF;
+    font-size: 13px;
+    font-family: "BPG Mrgvlovani Caps 2010";
+    border-radius: 4px;
+    border-bottom: 2px solid #0A3E60;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.addProject__sec  a{
+  color: #14547E;
+  text-decoration: underline;
 }

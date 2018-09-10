@@ -10,7 +10,7 @@
     <ul class="projectlangs" *ngIf="stepIndex != 4 && stepIndex != 5">
       <li [class]="projectLang=='ka' ? 'active' : ''" (click)="projectLang='ka'">ka</li>
       <li [class]="projectLang=='en' ? 'active' : ''" (click)="projectLang='en'">en</li>
-      <li [class]="projectLang=='ru' ? 'active' : ''" (click)="projectLang='ru'">ru</li>
+      <!-- <li [class]="projectLang=='ru' ? 'active' : ''" (click)="projectLang='ru'">ru</li> -->
     </ul>
     <div class="step" *ngIf="stepIndex == 0">
       <form class="about">
@@ -78,7 +78,7 @@
               <p-multiSelect [options]="firstStep[projectLang].interests" [(ngModel)]="firstStep.interest" name="firstStep.interest" [panelStyle]="{minWidth:'12em'}">
                   <ng-template let-interesi let-i="index" pTemplate="item">
                       {{i}}
-                      <div style="font-size:14px;float:right;margin-top:4px">{{interesi.label}}</div>
+                      <div style="font-size:12px;float:right;margin-top:4px; color: #798088; font-family: 'BPG Mrgvlovani'">{{interesi.label}}</div>
                   </ng-template>
               </p-multiSelect>
             </div>

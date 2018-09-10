@@ -59,7 +59,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 60px;
+    padding-bottom: 10px;
 		.filter {
       width: 330px;
       padding-right: 60px;
@@ -193,5 +193,8 @@
 
 .allprojectLink{
   display: inline-block;
-  
+}
+
+.projects__two{
+  justify-content: center;
 }

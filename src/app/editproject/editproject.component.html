@@ -10,7 +10,7 @@
     <ul class="projectlangs" *ngIf="stepIndex != 4 && stepIndex != 5">
       <li [class]="projectLang=='ka' ? 'active' : ''" (click)="projectLang='ka'">ka</li>
       <li [class]="projectLang=='en' ? 'active' : ''" (click)="projectLang='en'">en</li>
-      <li [class]="projectLang=='ru' ? 'active' : ''" (click)="projectLang='ru'">ru</li>
+      <!-- <li [class]="projectLang=='ru' ? 'active' : ''" (click)="projectLang='ru'">ru</li> -->
     </ul>
     <div class="step" *ngIf="stepIndex == 0">
       <form class="about">
@@ -272,7 +272,7 @@
         <input type="radio" name="pay" id="onlinepayment" ><label for="onlinepayment">ონლაინ გადახდა</label>
         <input type="radio" name="pay" id="paybybank"><label for="paybybank">საბანკო გადარიცხვა</label>
 
-        
+
 
       </div>
     </div>
