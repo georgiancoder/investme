@@ -301,6 +301,9 @@ const routes: Routes = [
     YoutubeModule,
     NgxPaginationModule,
     ClipboardModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4'
+    }),
     ModalDialogModule.forRoot(),
     // AgmCoreModule.forRoot({
     //   apiKey: ''
