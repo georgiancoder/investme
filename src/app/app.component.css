@@ -640,7 +640,7 @@ header {
                   transition: 0.1s;
                   color: white; }
               header footer .wrapper section.soc ul li:hover:nth-child(2) {
-                background-color: #55acee;
+                background-color: #cd201f;
                 -webkit-transition: 0.7s;
                 -o-transition: 0.7s;
                 transition: 0.7s; }
@@ -660,7 +660,7 @@ header {
                   transition: 0.1s;
                   color: white; }
               header footer .wrapper section.soc ul li:hover:nth-child(4) {
-                background-color: #dd4b39;
+                background-color: #e4405f;
                 -webkit-transition: 0.7s;
                 -o-transition: 0.7s;
                 transition: 0.7s; }

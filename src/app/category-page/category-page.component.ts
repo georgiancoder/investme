@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 import { TextPagesService } from '../services/text-pages.service';
 
@@ -8,26 +9,27 @@ import { TextPagesService } from '../services/text-pages.service';
 @Component({
   selector: 'app-category-page',
   templateUrl: './category-page.component.html',
-  styleUrls: ['./category-page.component.scss']
+  styleUrls: ['./category-page.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class CategoryPageComponent implements OnInit {
-  
+
   lang: string;
   catId: number;
   textCont: any;
   title: string;
-  description: string;
+  description: any;
   breadcrumbs = {
     page: '',
     home: ''
   };
-  constructor(private textPageService: TextPagesService, private route: ActivatedRoute, private langService: LangsService) { }
+  constructor(private sanitizer:DomSanitizer,private textPageService: TextPagesService, private route: ActivatedRoute, private langService: LangsService) { }
 
   getPage(){
     this.textPageService.getCategoryPage(this.catId,this.lang).subscribe(cont=>{
         this.textCont = cont;
         this.title = this.textCont.title;
-        this.description = this.textCont.description;
+        this.description = this.sanitizer.bypassSecurityTrustHtml(this.textCont.description);
         console.log(this.textCont.description);
     });
   }

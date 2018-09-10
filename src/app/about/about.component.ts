@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-about',
@@ -13,16 +14,16 @@ export class AboutComponent implements OnInit {
   lang: string;
   breadcrumbs: object;
   title: string;
-  description: string;
+  description: any;
 
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  constructor(private sanitizer:DomSanitizer,private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   about(){
     this.textPagesService.about(this.lang).subscribe(content=>{
       this.aboutContent = content;
       // this.aboutContent.about = String(this.aboutContent.about).replace(/<\/?p[^>]*>/g, '');
       this.title = this.aboutContent.about.title;
-      this.description = this.aboutContent.about.description;
+      this.description = this.sanitizer.bypassSecurityTrustHtml(this.aboutContent.about.description);
     });
   }
 

@@ -62,6 +62,10 @@ export class ProjectinnerComponent implements OnInit {
     });
   }
 
+  share(){
+    (<any>window).share(this.project);
+  }
+
   getMedia(){
     let mainimg = {
       type: 'image',

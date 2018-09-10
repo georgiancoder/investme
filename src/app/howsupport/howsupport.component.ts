@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-howsupport',
   templateUrl: './howsupport.component.html',
-  styleUrls: ['./howsupport.component.scss']
+  styleUrls: ['./howsupport.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HowsupportComponent implements OnInit {
 
@@ -17,13 +19,13 @@ export class HowsupportComponent implements OnInit {
   lang: string;
   pageData: any;
   title: string;
-  description: string;
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  description: any;
+  constructor(private sanitizer:DomSanitizer,private langsservice: LangsService, private textPagesService: TextPagesService) { }
   pageCont(){
     this.textPagesService.howsupport(this.lang).subscribe(data=>{
       this.pageData = data;
       this.title = this.pageData.howsupport.title;
-      this.description = this.pageData.howsupport.description;
+      this.description = this.sanitizer.bypassSecurityTrustHtml(this.pageData.howsupport.description);
     });
   }
   ngOnInit() {
@@ -34,7 +36,7 @@ export class HowsupportComponent implements OnInit {
       this.pageCont();
     });
 
-    
+
     setInterval(()=>{
       this.breadcrumbs.page = this.title;
       this.breadcrumbs.home = 'მთავარი';

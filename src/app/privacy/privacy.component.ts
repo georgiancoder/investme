@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-privacy',
   templateUrl: './privacy.component.html',
-  styleUrls: ['./privacy.component.scss','./privacy.responsive.scss']
+  styleUrls: ['./privacy.component.scss','./privacy.responsive.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class PrivacyComponent implements OnInit {
 
@@ -17,13 +19,16 @@ export class PrivacyComponent implements OnInit {
 
   sidemenu: any;
 
+  description: any;
+
   privacy(){
     this.textPagesService.privacy(this.lang).subscribe(content=>{
       this.privacyContent = content;
+      this.description = this.sanitizer.bypassSecurityTrustHtml(content.policy.description);
     });
   }
 
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  constructor(private sanitizer:DomSanitizer,private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();

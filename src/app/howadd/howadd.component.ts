@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-howadd',
   templateUrl: './howadd.component.html',
-  styleUrls: ['./howadd.component.scss']
+  styleUrls: ['./howadd.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HowaddComponent implements OnInit {
   // breadcrumbs: object;
   lang: string;
   pageData: any;
   title: string;
-  description: string;
+  description: any;
   breadcrumbs = {
     page: '',
     home: ''
   };
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  constructor(private sanitizer:DomSanitizer,private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   pageCont(){
     this.textPagesService.howadd(this.lang).subscribe(data=>{
       this.pageData = data;
       this.title = this.pageData.howadd.title;
-      this.description = this.pageData.howadd.description;
+      this.description = this.sanitizer.bypassSecurityTrustHtml(this.pageData.howadd.description);
       // console.log(this.pageData.howadd);
     });
   }

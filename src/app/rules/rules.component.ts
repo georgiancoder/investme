@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
+import { DomSanitizer} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-rules',
   templateUrl: './rules.component.html',
-  styleUrls: ['./rules.component.scss','./rules.responsive.scss']
+  styleUrls: ['./rules.component.scss','./rules.responsive.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class RulesComponent implements OnInit {
 
@@ -17,13 +19,16 @@ export class RulesComponent implements OnInit {
 
   sidemenu: any;
 
+  description: any;
+
   rules(){
     this.textPagesService.rules(this.lang).subscribe(content=>{
       this.rulesContent = content;
+      this.description = this.sanitizer.bypassSecurityTrustHtml(content.rule.description);
     });
   }
 
-  constructor(private langsservice: LangsService, private textPagesService: TextPagesService) { }
+  constructor(private sanitizer:DomSanitizer,private langsservice: LangsService, private textPagesService: TextPagesService) { }
 
   ngOnInit() {
     this.lang = this.langsservice.getLang();

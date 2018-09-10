@@ -6,14 +6,14 @@
       <div class="profilepic" [style.backgroundImage]="'url(https://back.investme.ge' + avatar + ')'" ></div>
       <span class="info">JPG pr PNG. Max size 800K</span>
       <p-fileUpload mode="basic" name="profilePic" customUpload="true" accept="image/*" auto="auto" (uploadHandler)="uploadProfilePic($event)" maxFileSize="1000000" chooseLabel="ატვირთე ახალი" styleClass="uploadProfilePic"></p-fileUpload>
-      <div class="socprofiles">
+      <div class="socprofiles" *ngIf="facebook || twitter || instagram || youtube || vkontakte">
         <h3>{{profileTranslations.social_profile}}</h3>
         <ul>
-          <li><a href="{{facebook}}" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
-          <li><a href="{{twitter}}" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
-          <li><a href="{{instagram}}" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
-          <li><a href="{{youtube}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a></li>
-          <li><a href="{{vkontakte}}" target="_blank"><i class="fa fa-vk"></i> Vkontakte</a></li>
+          <li *ngIf="facebook"><a href="{{facebook}}" target="_blank"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+          <li *ngIf="twitter"><a href="{{twitter}}" target="_blank"><i class="fa fa-twitter-square"></i> Twitter</a></li>
+          <li *ngIf="instagram"><a href="{{instagram}}" target="_blank"><i class="fa fa-instagram"></i> Instagram</a></li>
+          <li *ngIf="youtube"><a href="{{youtube}}" target="_blank"><i class="fa fa-youtube"></i> Youtube</a></li>
+          <li *ngIf="vkontakte"><a href="{{vkontakte}}" target="_blank"><i class="fa fa-vk"></i> Vkontakte</a></li>
         </ul>
       </div>
     </div>
