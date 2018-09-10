@@ -36,8 +36,8 @@
          action_properties: JSON.stringify({
            object : {
              'og:url': 'https://investme.ge/#/project/'+project.project.id,
-             'og:title': project.detail.title,
-             'og:description': project.detail.min_description,
+             'og:title': project.detail[0].title,
+             'og:description': project.detail[0].min_description,
              'og:og:image:width': '400',
              'og:image:height': '400',
              'og:image': 'http://back.investme.ge'+project.project.image,
