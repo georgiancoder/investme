@@ -201,6 +201,7 @@ export class AddProjectComponent implements OnInit {
         this.hash = res.hash;
         newMainInfo["projectMainPic"] = this.siteUrl + res.main_image;
         this.addprojectservice.saveProjectStep('mainInfo',newMainInfo);
+        this.stepIndex = 1;
       }
     });
   }
@@ -343,6 +344,8 @@ export class AddProjectComponent implements OnInit {
 
 
         this.addprojectservice.saveProjectStep('failebi',newSecondStep);
+
+        this.stepIndex = 2;
       }
     });
   }
@@ -370,7 +373,7 @@ export class AddProjectComponent implements OnInit {
         console.log(res);
         if(res && res.status){
           this.addprojectservice.saveProjectStep('jildoebi',this.jildoebi);
-          this.stepIndex++;
+          this.stepIndex = 3;
         }
       });
     } else {
@@ -443,7 +446,6 @@ export class AddProjectComponent implements OnInit {
   addMember(){
     this.team.hash = this.hash;
     this.team.project_id = this.projectId;
-    console.log(this.team);
     this.addprojectservice.addMember(this.team).subscribe(res=>{
       console.log(res);
       if(res && res.status){
@@ -455,7 +457,7 @@ export class AddProjectComponent implements OnInit {
         // this.team["photoes"].
 
         this.addprojectservice.saveProjectStep('members',this.team);
-        this.stepIndex++;
+        this.stepIndex = 4;
       }
     });
   }
@@ -470,7 +472,7 @@ export class AddProjectComponent implements OnInit {
       console.log(res);
       if(res && res.status){
         this.addprojectservice.saveProjectStep('finances',this.finansebi);
-        this.stepIndex++;
+        this.stepIndex = 5;
       }
     });
   }
