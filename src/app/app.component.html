@@ -456,9 +456,9 @@
     <section class="soc">
       <a routerLink="/" class="logo"><img src="../assets/logo.svg"></a>
       <ul>
-        <li><a href="{{footer.contact.facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li *ngIf="footer.contact.facebook"><a href="{{footer.contact.facebook}}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
         <li *ngIf="footer.contact.youtube"><a href="{{footer.contact.youtube}}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
-        <li><a href="{{footer.contact.linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        <li *ngIf="footer.contact.linkedin"><a href="{{footer.contact.linkedin}}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
         <li *ngIf="footer.contact.instagram"><a href="{{footer.contact.instagram}}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
       </ul>
     </section>
