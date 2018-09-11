@@ -63,7 +63,7 @@ export class AllprojectComponent implements OnInit {
 
   getAllProject(){
     this.ProjectService.getAllProject(this.siteLang, this.filters["page"]).subscribe(res=>{
-      console.log(res);
+      console.log(res);console.log("asdasda");
       this.categories = res.categories;
         this.projects = res.projects.data;
       this.translations = res.translations;

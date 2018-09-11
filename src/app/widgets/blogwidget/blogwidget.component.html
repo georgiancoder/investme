@@ -1,8 +1,11 @@
 <div class="media"
      *ngFor="let item of data | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalItems }">
-  <div class="img" [style.background-image]="'url(' + siteUrl + item[type].image + ')'"></div>
+     <div class="">
+       <div class="img" [style.background-image]="'url(' + siteUrl + item[type].image + ')'"></div>
+       <h2>{{item.detail.title}}</h2>
+
+     </div>
   <div class="">
-    <h2>{{item.detail.title}}</h2>
     <div class="desc">
       {{item.detail.min_description}}
     </div>
@@ -15,4 +18,3 @@
 <div class="pagination">
   <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
 </div>
-

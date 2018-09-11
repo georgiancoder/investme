@@ -111,7 +111,7 @@
                     <div style="font-size:14px;float:right;margin-top:4px">{{prefix.label}}</div> </div>
                 </ng-template>
             </p-dropdown>
-            <input type="text" class="tell" formControlName="tell" value="tell">
+            <input type="number" class="tell" formControlName="tell" value="tell">
             <div *ngIf="!profileData.controls['tell'].valid && (profileData.controls['tell'].dirty || profileData.controls['tell'].touched)">
               <div *ngIf="profileData.controls['tell'].errors.required" class="validmes">
                 სავალდებულო ველი

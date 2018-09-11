@@ -86,10 +86,19 @@ export class ProjectService {
   }
 
   getProject(id,lng){
-    const headers = new HttpHeaders({'X-App-Locale': lng});
-    return this.http.get<any>("https://back.investme.ge/api/projects/"+ id,{
-      headers: headers
-    });
+    if(this.auth.isAuthenticated()){
+      let authToken = this.auth.getToken();
+      const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
+      return this.http.get<any>("https://back.investme.ge/api/projects/"+ id,{
+        headers: headers
+      });
+    }else{
+      const headers = new HttpHeaders({'X-App-Locale': lng});
+      return this.http.get<any>("https://back.investme.ge/api/projects/"+ id,{
+        headers: headers
+      });
+    }
+
   }
 
   getProjectData(id){

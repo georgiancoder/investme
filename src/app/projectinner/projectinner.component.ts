@@ -7,6 +7,7 @@ import  * as $  from 'jquery';
 import { ModalDialogService} from 'ngx-modal-dialog';
 import { InvestProjectPopupComponent } from '../widgets/invest-project-popup/invest-project-popup.component';
 import { CharityComponent } from '../widgets/charity/charity.component';
+import { Lightbox } from 'angular2-lightbox';
 
 @Component({
   selector: 'app-projectinner',
@@ -30,6 +31,8 @@ export class ProjectinnerComponent implements OnInit {
 
   media = [];
 
+  media_in = [];
+
   shortUrl: string;
 
   siteLang: string;
@@ -49,6 +52,24 @@ export class ProjectinnerComponent implements OnInit {
     this.cpd = true;
   }
 
+  toggleFavorite(project){
+    if(project.check_for_fav){
+      // unfavorite
+      this.ProjectService.removeFromFavorite(project.project.id).subscribe(res=>{
+        if(res && res.status){
+          project.check_for_fav = false;
+        }
+      });
+    }else{
+    // favorite
+      this.ProjectService.addToFavorite(project.project.id).subscribe(res=>{
+        if(res && res.status){
+          project.check_for_fav = true;
+        }
+      });
+    }
+  }
+
   openawardstab(){
     this.tabindex = 3;
     $("html,body").animate({scrollTop: '900px'});
@@ -57,6 +78,9 @@ export class ProjectinnerComponent implements OnInit {
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{
       this.project = res;
+
+      // 
+      this.project.money = this.project.money.toFixed(2);
       this.getMedia();
       this.getDocuments();
     });
@@ -66,19 +90,32 @@ export class ProjectinnerComponent implements OnInit {
     (<any>window).share(this.project);
   }
 
+  open(i){
+    this.lightbox.open(this.media_in, i);
+  }
+
   getMedia(){
     let mainimg = {
       type: 'image',
       image: this.siteUrl + this.project.project.image
     };
+    let for_album = {
+      src: this.siteUrl + this.project.project.image
+    }
     this.media.push(mainimg);
+    this.media_in.push(for_album);
     this.project.imageDetail.forEach(image=>{
       if(image.image && image.image.length > 0){
         image.type = 'image';
         image.image = this.siteUrl + image.image;
         this.media.push(image);
+        let for_album_in = {
+          src: image.image
+        }
+        this.media_in.push(for_album_in);
       }
     });
+    console.log(this.media_in);
     this.project.videoDetail.forEach(video=>{
       if(video.link && video.link.length > 0){
         video.type = 'video';
@@ -134,12 +171,16 @@ export class ProjectinnerComponent implements OnInit {
   }
 
   openNewDialog(award) {
+    let arr = ['ნასყიდობის ხელშეკრულება','მომსახურების ნასყიდობის ხელშეკრულება'];
     this.modalService.openDialog(this.viewRef, {
       // title: 'Some modal title',
       childComponent: InvestProjectPopupComponent,
-      data: award.id,
+      data: {
+        id: award.id,
+        pdf: award.pdf,
+        title: arr[award.file_type],
+      },
     });
-    this.pdf = award.pdf;
   }
 
   openNewDialog2() {
@@ -150,7 +191,7 @@ export class ProjectinnerComponent implements OnInit {
     });
   }
 
-  constructor(private auth: AuthService, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute, private modalService: ModalDialogService, private viewRef: ViewContainerRef) { }
+  constructor(private auth: AuthService, private lightbox: Lightbox, private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute, private modalService: ModalDialogService, private viewRef: ViewContainerRef) { }
 
   ngOnInit() {
 

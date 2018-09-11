@@ -46,7 +46,7 @@
           <footer>
             <h4>{{project.category_title}}</h4>
             <div class="moneyprogress">
-              <span class="currentmoney">{{project.money}} ₾</span>
+              <span class="currentmoney">{{project.money.toFixed(2)}} ₾</span>
               <span class="targetCapital">{{project.project.capital}} ₾</span>
               <div class="bar">
                 <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>

@@ -3,10 +3,11 @@
   <article class="content" *ngIf="project">
     <div class="basicinfo resp">
       <header>
+        <h2>{{project.detail[0].title}}</h2>
+        <br>
         <div class="categorie">
           {{project.category.title}}
         </div>
-        <h2>{{project.detail[0].title}}</h2>
         <div class="author">
           ავტორი: <span>{{project.user[0].name}}</span>
         </div>
@@ -25,7 +26,7 @@
       </header>
       <footer>
         <div class="moneyprogress">
-          <span class="currentmoney">{{project.money}} ₾</span>
+          <span class="currentmoney">{{ project.money}} ₾</span>
           <span class="targetCapital">{{project.project.capital}} ₾</span>
           <div class="bar">
             <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>
@@ -36,8 +37,10 @@
           <button type="button" *ngIf="isAuthenticated" (click)="openawardstab()" name="button">მხარდაჭერა</button>
         </div>
         <div class="Soc">
-          <div class="fbLike">
-            <a href="#"><i class="fas fa-thumbs-up"></i></a>
+          <div class="fbLike" (click)="toggleFavorite(project)">
+            <a>
+              <img src="/assets/{{(project.check_for_fav != undefined && project.check_for_fav) ? 'heart-red.png' : 'heart-black.png'}}" *ngIf="project.check_for_fav != undefined" alt="add to favorite" class="favorite">
+            </a>
           </div>
           <div class="share">
             <a (click)="share()"><i class="fas fa-share-alt"></i></a>
@@ -77,7 +80,7 @@
           </ul>
           <h2>მედია ფაილები</h2>
           <ul class="media">
-            <li *ngFor="let m of media; let i = index;" [style.backgroundImage]="'url('+m.image+')'">
+            <li (click)="open(i)" *ngFor="let m of media_in; let i = index;" [style.backgroundImage]="'url('+m.src+')'">
             </li>
           </ul>
         </div>
@@ -104,9 +107,9 @@
                   {{award.description}}
                 </div>
               </div>
-              <div class="info">
+              <div class="info"> 
                 <div class="amount">
-                  {{award.amount}}
+                  {{award.amount}} ₾
                 </div>
                 <div class="time">
                   მიწოდების დრო

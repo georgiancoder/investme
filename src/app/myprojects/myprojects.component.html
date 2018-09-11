@@ -12,7 +12,7 @@
             <button class="share">
               <i class="fa fa-share-alt"></i>
             </button>
-            <a (click)="supporter(project.project.id)" class="viewDetails" >
+            <a (click)="supporter(project.project.id)" class="viewDetails cursor" >
               <img src="../assets/Subtraction1@2x.png">
             </a>
             <button  (click)="editProject(project.project.id)" class="edit edit__twoicon" >
@@ -25,7 +25,7 @@
         <footer>
           <h4>{{project.category_title}}</h4>
           <div class="moneyprogress">
-            <span class="currentmoney">{{project.money}} ₾</span>
+            <span class="currentmoney">{{project.money}} ₾ </span>
             <span class="targetCapital">{{project.project.capital}} ₾</span>
             <div class="bar">
               <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>

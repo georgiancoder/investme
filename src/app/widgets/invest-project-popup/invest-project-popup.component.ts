@@ -12,6 +12,8 @@ export class InvestProjectPopupComponent implements OnInit, IModalDialog {
   transid: string;
   actionButtons: IModalDialogButton[];
   awardId: number;
+  pdf: string = 'https://back.investme.ge/';
+  title: string;
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
 
   constructor(private projectService: ProjectService) {
@@ -37,6 +39,8 @@ export class InvestProjectPopupComponent implements OnInit, IModalDialog {
 
   dialogInit(reference: ComponentRef<IModalDialog>, options: Partial<IModalDialogOptions<any>>) {
     // no processing needed
-    this.awardId = options.data;
+    this.awardId = options.data.id;
+    this.pdf += options.data.pdf;
+    this.title = options.data.title;
   }
 }

@@ -691,7 +691,7 @@
           font-family: "BPG Mrgvlovani";
         }
         .nextstep{
-          margin-top:0px;
+          margin-top: 10px !important;
         }
       }
       & > .pay{
@@ -768,6 +768,8 @@
           font-family:"BPG Mrgvlovani";
           font-size:12px;
           margin-right:20%;
+          margin-top: 10px;
+          display: block !important;
         }
           .nextstep,.prevstep{
             margin-top:250px;
@@ -830,4 +832,8 @@
 
 .ui-multiselect-panel{
   width: 300px!important;
+}
+
+.nextstep{
+  margin-top: 10px !important;
 }

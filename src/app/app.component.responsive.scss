@@ -57,7 +57,7 @@
 				&:last-child{
 					padding-right: 20px;
 					padding-left: 20px;
-				}	
+				}
 			}
 			.r{
 				.auth,
@@ -84,7 +84,7 @@
 			}
 		}
 		}
-		
+
 	}
 
 }
@@ -94,7 +94,7 @@
 @media only screen and (max-width: 1280px){
 	header{
 		.wrapper{
-			
+
 			.l{
 				li{
 					font-size:12px;
@@ -105,7 +105,7 @@
 				&:last-child{
 					padding-right: 20px;
 					padding-left: 20px;
-				}	
+				}
 			}
 			.r{
 				.auth,
@@ -148,7 +148,7 @@
 				}
 			}
 		}
-		
+
 	}
 }
 
@@ -164,7 +164,7 @@
 		}
 		.right{
 			.logout{
-				width:90px;
+				width: 100px;
 			}
 		}
 		.bottom{
@@ -219,7 +219,7 @@
 				}
 			}
 		}
-		
+
 	}
 }
 
@@ -250,7 +250,7 @@
     			}
     			.lang{
     				padding-left: 0px;
-    				width: 170px;
+    				width: 82px;
     				display: flex;
     				justify-content: space-around;
     				margin-top: 10px;
@@ -400,6 +400,10 @@
 }
 
 @media only screen and (max-width: 640px){
+	.bottom a{
+	  font-size: 10px;
+	}
+
 	header.userheader{
 		.left{
 			.logo{
@@ -410,6 +414,7 @@
 			}
 		}
 		.right{
+			flex-flow: column;
 			.user{
 				border-left:0px;
 				h4{
@@ -417,7 +422,9 @@
 				}
 			}
 			.logout{
-				width:90px;
+				transform: translateY(-5px);
+				width:100px;
+				padding: 0 5px 0 0;
 			}
 		}
 	}
@@ -545,7 +552,7 @@
 				}
 			}
 			.logout{
-				padding-left:10px;
+				padding-left: 0px;
 				width:unset;
 				padding-right:10px;
 			}
@@ -602,7 +609,7 @@
 						font-size:11px;
 					}
 				}
-			}	
+			}
 		}
 	}
 }

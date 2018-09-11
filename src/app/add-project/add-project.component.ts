@@ -13,6 +13,7 @@ export class AddProjectComponent implements OnInit {
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
   transid: string;
   siteUrl: string = "https://back.investme.ge";
+  PayMethod: string = "";
 
   siteLang: string;
 
@@ -443,6 +444,14 @@ export class AddProjectComponent implements OnInit {
     this.team.photoes.push({file: null, type: ''});
   }
 
+  changePayMethod(r: string){
+    this.PayMethod = r;
+  }
+  sendPaymentReq(){
+    if(this.PayMethod != ""){
+      this.sendPayment(this.PayMethod);
+    }
+  }
   addMember(){
     this.team.hash = this.hash;
     this.team.project_id = this.projectId;

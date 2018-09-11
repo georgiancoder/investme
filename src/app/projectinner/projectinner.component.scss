@@ -147,6 +147,7 @@
           width: 25%;
           .fbLike{
             margin-right: 20%;
+            cursor: pointer;
             a{
               display:flex;
               align-items:center;
@@ -155,13 +156,10 @@
               height:55px;
               background-color:#DFE3E9;
               border-radius: 50%;
-              i{
-                font-family: FontAwesome;
-                color: #14547E;
-              }
             }
           }
           .share{
+            cursor: pointer;
             a{
               display:flex;
               align-items:center;
@@ -175,7 +173,7 @@
                 color: #14547E;
               }
             }
-            
+
           }
         }
 				.copyLink {
@@ -372,7 +370,7 @@
                   content:none;
                 }
                 button{
-                width: 100%;      
+                width: 100%;
                 height: 60px;
                 color: #FFF;
                 background-color: #14547E;
@@ -446,4 +444,9 @@
 modal-dialog{
   position:fixed;
   top:0px;
+}
+
+iframe{
+  width: 100%;
+  max-width: 560px;
 }

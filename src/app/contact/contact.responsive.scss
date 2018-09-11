@@ -15,6 +15,9 @@
 		.cont{
 			width: 90%;
 		}
+		.cont__head{
+			text-align: center;
+		}
 	}
 }
 
@@ -29,7 +32,7 @@
 			}
         	form {
         		order: 3;
-        		width: 660px; 
+        		width: 660px;
         	}
         	.info {
         		order: 1;
@@ -52,7 +55,7 @@
 				width: 90%;
 			}
         	form {
-        		width: 90%; 
+        		width: 90%;
         	}
         	.info {
         		width: 75%;

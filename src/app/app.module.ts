@@ -21,6 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { ClipboardModule } from 'ngx-clipboard';
 import { ModalDialogModule } from 'ngx-modal-dialog';
 import { AgmCoreModule } from '@agm/core';
+import { LightboxModule } from 'angular2-lightbox';
 
 
 import {AppComponent} from './app.component';
@@ -302,8 +303,9 @@ const routes: Routes = [
     NgxPaginationModule,
     ClipboardModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4'
+      apiKey: 'AIzaSyAUdI49DeXc_oDo5J2T2Pq1aoVqTCyCQ2Y'
     }),
+    LightboxModule,
     ModalDialogModule.forRoot(),
     // AgmCoreModule.forRoot({
     //   apiKey: ''

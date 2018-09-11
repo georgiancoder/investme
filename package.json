@@ -27,6 +27,7 @@
     "@ngx-share/buttons": "^5.2.0",
     "@ngx-share/core": "^5.2.0",
     "@types/youtube": "0.0.32",
+    "angular2-lightbox": "^1.4.0",
     "angularx-youtube": "^1.0.1",
     "core-js": "^2.4.1",
     "font-awesome": "^4.7.0",

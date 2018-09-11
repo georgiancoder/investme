@@ -132,7 +132,7 @@ export class EditprojectComponent implements OnInit {
     this.firstStep['ka']["campainTimes"] = [];
     this.firstStep['en']["campainTimes"] = [];
     this.firstStep['ru']["campainTimes"] = [];
-    for(var i = 30; i < 360; i+=10){
+    for(var i = 30; i < 100; i+=10){
       this.firstStep['ka'].campainTimes.push({label: i + ' დღე', value: i});
       this.firstStep['en'].campainTimes.push({label: i + ' day', value: i});
       this.firstStep['ru'].campainTimes.push({label: i + ' день', value: i});
@@ -553,7 +553,7 @@ export class EditprojectComponent implements OnInit {
       });
       this.siteLang = this.langservice.getLang();
       this.getProjectData();
-  
+
       document.addEventListener('langchanged',()=>{
         this.siteLang = this.langservice.getLang();
       });

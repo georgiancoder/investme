@@ -102,14 +102,14 @@
           <ul class="documentsUploadforms">
             <li *ngFor="let document of secondStep[projectLang].documents; let i = index;">
               <input type="file" id="document{{i}}" (change)="documentChange($event, i)"> <label for="document{{i}}">{{projectData.translations.chooseFile}} <img src="/assets/upload-to-cloud.png" alt=""> </label>
-              <input type="text" [(ngModel)]="document.text" placeholder="ფაილის დასახელება">
+              <input type="text" [(ngModel)]="document.text" placeholder="ფაილის დასახელება" class="inputcc" >
             </li>
           </ul>
           <button type="button" [class]="'more'" (click)="moreDoc()"><i class="fa fa-plus"></i> {{projectData.translations.moreFile}}</button>
         </section>
         <section>
           <h2>{{projectData.translations.photoes}}</h2>
-          <input type="file" id="foto" (change)="step2PhotoUploadChange($event)"  multiple><label for="foto">
+          <input type="file" id="foto" (change)="step2PhotoUploadChange($event)"  multiple><label for="foto" class="labelt">
             <img src="/assets/upload-to-cloud.png" alt="">
             {{projectData.translations.upload}}
           </label>
@@ -127,7 +127,7 @@
           </ul>
         </section>
         <section>
-          <h2>{{projectData.translations.video}}</h2>
+          <h2 class="videoh" >{{projectData.translations.video}}</h2>
           <ul class="videos">
             <li *ngFor="let video of secondStep[projectLang].videoDetail">
               <img src="https://img.youtube.com/vi/{{video.link}}/1.jpg" alt="">
@@ -148,11 +148,12 @@
         <button type="button" [class]="'nextstep'" (click)="updateSecondStep()" >{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
       </div>
     </div>
+
     <div class="step" *ngIf="stepIndex == 2">
       <div class="jildoebi">
         <ul class="jildo" *ngFor="let award of thirdStep[projectLang]; let i = index;">
           <li>
-            <h3>ჯილდო {{i + 1}} <span class="delete" (click)="deleteAward(award, i)">წაშლა</span> </h3>
+            <h3 class="jilhead" >ჯილდო {{i + 1}} <span class="delete" (click)="deleteAward(award, i)">წაშლა</span> </h3>
             <div class="row">
               <label>სათაური</label>
               <div class="inputwrapper">
@@ -174,26 +175,35 @@
             <div class="row">
               <label>მიწოდების თარიღი</label>
               <div class="inputwrapper">
-                <div>
+                <div class="marr" >
                   <select [(ngModel)]="thirdStep.deliver_date[i].month">
                     <option value="">აირჩიეთ თვე</option>
                     <option value="{{m}}" *ngFor="let m of months">{{m}}</option>
                   </select>
-                  <div *ngIf="thirdStep.deliver_date[i].month.length == 0">თვის არჩევა სავალდებულოა</div>
+                  <div *ngIf="thirdStep.deliver_date[i].month.length == 0" class="warni" >თვის არჩევა სავალდებულოა</div>
                 </div>
                 <div>
                   <select [(ngModel)]="thirdStep.deliver_date[i].year">
                     <option value="">აირჩიეთ წელი</option>
                     <option value="{{y}}" *ngFor="let y of years">{{y}}</option>
                   </select>
-                  <div *ngIf="thirdStep.deliver_date[i].year.length == 0">წლის არჩევა სავალდებულოა</div>
+                  <div *ngIf="thirdStep.deliver_date[i].year.length == 0" class="warni">წლის არჩევა სავალდებულოა</div>
                 </div>
               </div>
             </div>
-            <div class="row">
-              <input type="radio" [value]="0" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
-              <input type="radio" [value]="1" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
-              <input type="file" (change)="jildoPdf2($event, i)">
+            <div class="row row__c">
+              <div class="">
+                <label>
+                  <input type="radio" [value]="0" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> მომსახურების ნასყიდობის ხელშეკრულება<br>
+                </label>
+              </div>
+              <div class="">
+                <label>
+                  <input type="radio" [value]="1" name="asd{{i}}" [(ngModel)]="thirdStep.pdfs[i].file_type"> ნასყიდობის ხელშეკრულება<br>
+                </label>
+                <br>
+                <input type="file" (change)="jildoPdf2($event, i)">
+              </div>
             </div>
           </li>
         </ul>
@@ -206,7 +216,7 @@
       <div class="team">
         <ul *ngFor="let member of fourthStep[projectLang]; let i = index;">
           <li>
-            <h3>გუნდის წევრი {{i + 1}} <span (click)="deleteMember(member, i)">წაშლა</span></h3>
+            <h3 class="jilhead">გუნდის წევრი {{i + 1}} <span (click)="deleteMember(member, i)">წაშლა</span></h3>
             <div class="row">
               <label>სახელი, გვარი</label>
               <div class="inputwrapper">
@@ -249,15 +259,15 @@
         <div class="l">
           <table>
             <tr>
-              <td>სასურველი კაპიტალი:</td>
-              <td>{{fifthStep.targetCapital}}</td>
+              <td class="capitaltitle" >სასურველი კაპიტალი: </td>
+              <td class="capitaltitle">{{fifthStep.targetCapital}}</td>
             </tr>
             <tr>
-              <td>პროგნოზი</td>
-              <td>{{fifthStep.prognos}}</td>
+              <td class="capitaltitle">პროგნოზი: </td>
+              <td class="capitaltitle">{{fifthStep.prognos}}</td>
             </tr>
           </table>
-          <input type="text" placeholder="ჩაწერეთ ანგარიშის ნომერი" [(ngModel)]="fifthStep.acountNumber">
+          <input type="text" class="capitaltitle  ang__number" placeholder="ჩაწერეთ ანგარიშის ნომერი" [(ngModel)]="fifthStep.acountNumber">
         </div>
         <div class="desc">
 
@@ -269,11 +279,12 @@
     </div>
     <div class="step" *ngIf="stepIndex == 5">
       <div class="pay">
-        <input type="radio" name="pay" id="onlinepayment" ><label for="onlinepayment">ონლაინ გადახდა</label>
-        <input type="radio" name="pay" id="paybybank"><label for="paybybank">საბანკო გადარიცხვა</label>
-
-
-
+        <div>
+          <input type="radio" name="pay" id="onlinepayment" ><label for="onlinepayment">ონლაინ გადახდა</label>
+        </div>
+        <div>
+          <input type="radio" name="pay" id="paybybank"><label for="paybybank">საბანკო გადარიცხვა</label>
+        </div>
       </div>
     </div>
   </div>

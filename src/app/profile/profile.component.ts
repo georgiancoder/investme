@@ -68,6 +68,11 @@ export class ProfileComponent implements OnInit {
     }
     if(this.profileData.valid){
       this.profileservice.editProfile(post).subscribe(data => {
+        if(data.status){
+          this.msgs.push({severity:'success',  detail:data.text});
+        }else{
+          this.msgs.push({severity:'error',  detail:data.text});
+        }
         localStorage.removeItem('user');
         localStorage.setItem('user',JSON.stringify(data.user));
         var event = new Event('profileUpdated');

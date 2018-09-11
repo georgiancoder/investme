@@ -394,6 +394,7 @@ header{
           .st0{fill:#FFFFFF;}
           .st1{fill:#DFB63E;}
         }
+
       }
       ul{
         display: flex;
@@ -407,6 +408,7 @@ header{
           display: flex;
           flex-direction: column;
           align-items: flex-end;
+          text-align: center;
           &:hover{
             svg{
               .cls-1{
@@ -447,7 +449,7 @@ header{
         height: 100%;
         border-left: 1px solid #EDEDED;
         border-right: 1px solid #EDEDED;
-        padding: 0 45px;
+        padding: 0 40px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -476,8 +478,9 @@ header{
         @include usermenu(100%, 0);
       }
       .logout{
-        width: 160px;
-        padding-left: 35px;
+        width: 100px;
+        padding: 0 5px 0 10px;
+        transform: translateY(3px);
         cursor: pointer;
         .cls-1{
           fill:#B2B2B2;
@@ -732,11 +735,15 @@ footer{
 }
 
 .logouttitle{
+  // margin-right: 3px;logout
   font-size: 12px;
   display: inline-block;;
   transform: translateY(-2px);
   font-family: "BPG Mrgvlovani Caps 2010";
 }
+
+
+
 
 @media (max-width: 1480px){
   header{
