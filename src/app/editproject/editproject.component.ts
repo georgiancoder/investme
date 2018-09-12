@@ -111,9 +111,11 @@ export class EditprojectComponent implements OnInit {
        {title: this.projectData.translations.files, active: false, selectable: false},
        {title: this.projectData.translations.awards, active: false, selectable: false},
        {title: this.projectData.translations.team, active: false, selectable: false},
-       {title: this.projectData.translations.finance, active: false, selectable: false},
-       {title: this.projectData.translations.pay, active: false, selectable: false}
+       {title: this.projectData.translations.finance, active: false, selectable: false}
      ];
+     if(this.projectData.project.payed != 1){
+       this.steps.push({title: this.projectData.translations.pay, active: false, selectable: false});
+     }
      this.warningInfo.capital_info = this.projectData.translations.capital_info;
      this.warningInfo.description_info = this.projectData.translations.description_info;
      this.warningInfo.interests_info = this.projectData.translations.interests_info;

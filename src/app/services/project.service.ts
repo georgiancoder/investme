@@ -41,7 +41,7 @@ export class ProjectService {
     });
   }
 
-  getFavoriteProjects(lng){
+  getSupportedProjects(lng){
     let authToken = this.auth.getToken();
     const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
     return this.http.get<any>("https://back.investme.ge/api/projects-supporters",{

@@ -36,6 +36,7 @@ export class AllprojectComponent implements OnInit {
 
   pageChanged(event) {
     this.p = event;
+    console.log(this.p);
     this.router.navigate(['allproject'],{queryParams:
         {
           page: this.p,
@@ -70,7 +71,8 @@ export class AllprojectComponent implements OnInit {
       this.translations = res.translations;
       this.interests = res.interests;
 
-      this.totalPages = res.projects.total;
+      // this.totalPages = res.projects.total;
+
 
       this.interests.forEach(i=>{
         this.filters["interests"].forEach(j=>{
@@ -84,12 +86,13 @@ export class AllprojectComponent implements OnInit {
 
   filterProjects(){
     this.ProjectService.filterProjects(this.siteLang, this.filters).subscribe(res=>{
-      var data = [];
-      this.totalPages = res.projects.last_page;
-      for(var i in res.projects.data){
-        data.push(res.projects.data[i]);
-      }
-      this.projects = data;
+      console.log(res);
+      this.totalPages = res.projects.length;
+      // var data = [];
+      // for(var i in res.projects){
+      //   data.push(res.projects[i]);
+      // }
+      this.projects = res.projects;
     });
   }
 

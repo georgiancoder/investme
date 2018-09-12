@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild, QueryList, ViewChildren, OnInit } from '@angular/core';
 import { FooterService } from './services/footer.service';
 import { HeaderService } from './services/header.service';
 import { AuthService } from './services/auth.service';
@@ -13,7 +13,7 @@ import  * as $  from 'jquery';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss','./app.component.responsive.scss']
 })
-export class AppComponent  {
+export class AppComponent implements OnInit {
 
   @ViewChild('regforma') regforma: ElementRef;
   @ViewChild('logforma') logforma: ElementRef;
@@ -194,6 +194,8 @@ export class AppComponent  {
     document.addEventListener('profileUpdated',(e)=>{
       this.user = this.authservice.getAuthenticatedUser();
     })
+
+
 
   }
 

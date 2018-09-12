@@ -1,4 +1,4 @@
-import { Component, OnInit,  ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit,  ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { AddProjectService } from '../services/add-project.service';
 import { SelectItem } from 'primeng/api';
 import { LangsService } from '../services/langs.service';
@@ -7,7 +7,8 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractC
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
-  styleUrls: ['./add-project.component.scss','./add-project.responsive.scss']
+  styleUrls: ['./add-project.component.scss','./add-project.responsive.scss'],
+  encapsulation: ViewEncapsulation.Native 
 })
 export class AddProjectComponent implements OnInit {
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
@@ -378,6 +379,7 @@ export class AddProjectComponent implements OnInit {
     this.jildoebi["hash"] = this.hash;
     if(!haserrors){
       this.addprojectservice.addAwards(this.jildoebi).subscribe(res=>{
+        console.log(this.jildoebi);
         console.log(res);
         if(res && res.status){
           this.addprojectservice.saveProjectStep('jildoebi',this.jildoebi);

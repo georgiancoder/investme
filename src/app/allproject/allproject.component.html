@@ -6,7 +6,6 @@
       <select [(ngModel)]="filters['sort']" (change)="navigate()">
         <option value="publish_date-desc">თარიღით კლებით</option>
         <option value="publish_date-asc">თარიღით ზრდადობით</option>
-
         <!-- <option value="raiting-desc">პოპულარობით კლებით</option>
         <option value="raiting-asc">პოპულარობით ზრდადობით</option> -->
       </select>
@@ -15,7 +14,7 @@
       <div class="filter">
         <h2>კატეგორიები</h2>
         <ul class="categories">
-          <li [class]="(filters.category == null) ? 'active' : ''" (click)="selectCategory('')">
+          <li [class]="(filters['category'] == null) ? 'active' : ''" (click)="selectCategory('')">
             ყველა
             <span class="badge">{{totalCount}}</span>
           </li>
@@ -32,7 +31,7 @@
         </button>
       </div>
       <div class="projects">
-        <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalPages }">
+        <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 6, currentPage: p, totalItems: totalPages }">
           <header>
             <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'" (click)="getInnerProject(project.project.id,$event)">
               <div class="daysleft">
@@ -67,6 +66,9 @@
       </div>
       <div class="projects projects__two">
         <pagination-controls (pageChange)="pageChanged($event)" previousLabel="" nextLabel=""></pagination-controls>
+        <!-- <ul>
+          <li *ngFor="let page of projects; let i = index">{{i + 1}}</li>
+        </ul> -->
       </div>
     </div>
   </div>

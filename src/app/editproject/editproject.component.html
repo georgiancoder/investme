@@ -2,7 +2,7 @@
   <h2>პროექტის რედაქტირება</h2>
   <div class="steps">
     <ul class="tabs">
-      <li [class]="stepIndex == i ? 'tab active' : 'tab'" *ngFor="let tab of steps; let i = index" (click)="stepIndex = i">
+      <li [class]="stepIndex == i ? 'tab active' : 'tab'" *ngFor="let tab of steps; let i = index" (click)="stepIndex = i" >
         <div class="checker"></div>
         <span>{{tab.title}}</span>
       </li>
@@ -315,7 +315,7 @@
       </div>
 
     </div>
-    <div class="step" *ngIf="stepIndex == 5">
+    <div class="step" *ngIf="stepIndex == 5 && projectData.project.payed != 1">
       <div class="pay">
         <div>
           <input type="radio" name="pay" id="onlinepayment" ><label for="onlinepayment">ონლაინ გადახდა</label>

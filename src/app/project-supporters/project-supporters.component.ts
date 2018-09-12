@@ -17,8 +17,8 @@ export class ProjectSupportersComponent implements OnInit {
   translation: any;
   supportProjects: any;
 
-  getFavoriteProjects(){
-    this.projectServce.getFavoriteProjects(this.siteLang).subscribe(res=>{
+  getSupportedProjects(){
+    this.projectServce.getSupportedProjects(this.siteLang).subscribe(res=>{
       this.supportProjects = res.projects;
       this.translation = res.translation;
     });
@@ -31,6 +31,6 @@ export class ProjectSupportersComponent implements OnInit {
     document.addEventListener('langchanged',()=>{
       this.siteLang = this.langservice.getLang();
     });
-    this.getFavoriteProjects();
+    this.getSupportedProjects();
   }
 }
