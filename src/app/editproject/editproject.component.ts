@@ -17,6 +17,14 @@ export class EditprojectComponent implements OnInit {
 
   siteLang: string;
 
+  warningInfo = {
+    capital_info:'',
+    description_info:'',
+    interests_info:'',
+    time_info:'',
+    title_info:'',
+  };
+
   months: number[] = [1,2,3,4,5,6,7,8,9,10,11,12];
   years: number[] = [];
 
@@ -106,6 +114,11 @@ export class EditprojectComponent implements OnInit {
        {title: this.projectData.translations.finance, active: false, selectable: false},
        {title: this.projectData.translations.pay, active: false, selectable: false}
      ];
+     this.warningInfo.capital_info = this.projectData.translations.capital_info;
+     this.warningInfo.description_info = this.projectData.translations.description_info;
+     this.warningInfo.interests_info = this.projectData.translations.interests_info;
+     this.warningInfo.time_info = this.projectData.translations.time_info;
+     this.warningInfo.title_info = this.projectData.translations.title_info;
      this.getFirstStepData();
      this.getSecondStepData();
      this.getThirdStepData();

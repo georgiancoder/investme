@@ -1,8 +1,8 @@
-<div class="myprojects" *ngIf="translation && myprojects">
-  <h2>ფავორიტები <span class="badge">{{myprojects.length}}</span> </h2>
+<div class="myprojects" *ngIf="translation && supportProjects">
+  <h2>მხარდაჭერილი პროექტები <span class="badge">{{supportProjects.length}}</span> </h2>
 
-  <section class="content" *ngIf="myprojects.length > 0">
-      <article class="project" *ngFor="let project of myprojects">
+  <section class="content" *ngIf="supportProjects.length > 0">
+      <article class="project" *ngFor="let project of supportProjects">
         <header routerLink="/project/{{project.project.id}}">
           <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
             <div class="daysleft">
@@ -16,7 +16,7 @@
         <footer>
           <h4>{{project.category_title}}</h4>
           <div class="moneyprogress">
-            <span class="currentmoney">{{project.money}} ₾</span>
+            <span class="currentmoney">{{project.money.toFixed(2)}} ₾</span>
             <span class="targetCapital">{{project.project.capital}} ₾</span>
             <div class="bar">
               <div class="progress" [style.width]="project.money / project.project.capital * 100 + '%'"></div>
@@ -25,7 +25,7 @@
         </footer>
       </article>
   </section>
-  <section class="content noProject" *ngIf="myprojects.length == 0">
+  <section class="content noProject" *ngIf="supportProjects.length == 0">
     <span id="smile">;(</span>
     <span id="noProjectText">თქვენ არ გაქვთ პროექტები</span>
     <a routerLink="/addProject" href="#/addProject">დაამატე პროექტი</a>

@@ -18,16 +18,30 @@
           <div class="fgroup">
             <div class="row">
               <label>{{projectData.translations.title}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt="">
+                  <p class="info__text" >
+                    {{warningInfo.title_info}}
+                  </p>
+              </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="firstStep[projectLang].title" name="title">
-                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="info"><img src="assets/info.png" alt="">
+                  <p class="info__text" >
+                    {{warningInfo.title_info}}
+                  </p>
+                </span>
               </div>
             </div>
             <div class="row">
               <label>{{projectData.translations.minDescription}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt="">
+                <p class="info__text" > {{warningInfo.description_info}}</p>
+              </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="firstStep[projectLang].min_description" name="smalldesc">
-                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="info"><img src="assets/info.png" alt="">
+                    <p class="info__text" > {{warningInfo.description_info}}</p>
+                </span>
               </div>
             </div>
             <div class="row">
@@ -40,20 +54,30 @@
           <div class="fgroup">
             <div class="row">
               <label>{{projectData.translations.capital}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt="">
+                <p class="info__text" > {{warningInfo.capital_info}}</p>
+              </span>
               <div class="inputwrapper">
                 <div class="innerGroup">
                   <input type="text" [(ngModel)]="firstStep.capital" name="capital">
                 </div>
-                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="info"><img src="assets/info.png" alt="">
+                  <p class="info__text" > {{warningInfo.capital_info}}</p>
+                </span>
               </div>
             </div>
             <div class="row">
               <label>{{projectData.translations.companyTime}}</label>
+              <span class="infoResp"><img src="assets/info.png" alt="">
+                <p class="info__text" > {{warningInfo.time_info}}</p>
+              </span>
               <div class="inputwrapper">
                 <select  name="campainTime" [(ngModel)]="firstStep.company_time">
                   <option value="{{ct.value}}" *ngFor="let ct of firstStep[projectLang].campainTimes">{{ct.label}}</option>
                 </select>
-                <span class="info"><img src="assets/info.png" alt=""> </span>
+                <span class="info"><img src="assets/info.png" alt="">
+                   <p class="info__text" > {{warningInfo.time_info}}</p>
+                </span>
               </div>
             </div>
             <div class="row checkbox">
@@ -68,17 +92,23 @@
           </div>
           <div class="interests">
             <label>{{projectData.translations.interests}}</label>
+            <span class="infoResp infoResp_temp"><img src="assets/info.png" alt="">
+              <p class="info__text info__text__last" >{{warningInfo.interests_info}}</p>
+            </span>
             <div class="inputwrapper">
-              <p-multiSelect [options]="firstStep[projectLang].interests" [(ngModel)]="firstStep.interest"  name="firstStep.interest" [panelStyle]="{minWidth:'12em'}">
+              <p-multiSelect [options]="firstStep[projectLang].interests" [(ngModel)]="firstStep.interest" name="firstStep.interest" [panelStyle]="{minWidth:'12em'}">
                   <ng-template let-interesi let-i="index" pTemplate="item">
                       {{i}}
-                      <div style="font-size:14px;float:right;margin-top:4px">{{interesi.label}}</div>
+                      <div style="font-size:12px;float:right;margin-top:4px; color: #798088; font-family: 'BPG Mrgvlovani'">{{interesi.label}}</div>
                   </ng-template>
               </p-multiSelect>
             </div>
           </div>
-          <button type="submit" [class]="'save'" (click)="updateFirstStep()">{{projectData.translations.save}}</button>
-          <button type="submit" [class]="'nextstep'" (click)="stepIndex=1;">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+
+          <div>
+            <button type="submit" [class]="'save'" (click)="updateFirstStep()">{{projectData.translations.save}}</button>
+            <button type="submit" [class]="'nextstep'" (click)="stepIndex=1;">{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+          </div>
         </div>
         <div class="mainFoto" [style.backgroundImage]="(projectData.project.image.length > 0) ? 'url('+siteUrl + projectData.project.image+')' : ''">
           <div *ngIf="projectData.project.image.length > 0" class="delete" (click)="deleteMainPic()">
@@ -144,8 +174,10 @@
           </ul>
           <button type="button" [class]="'more'" (click)="moreVieo()"><i class="fa fa-plus"></i> {{projectData.translations.moreVideo}}</button>
         </section>
-        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1"><i class="fa fa-angle-left"></i> {{projectData.translations.previousStep}}</button>
-        <button type="button" [class]="'nextstep'" (click)="updateSecondStep()" >{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+        <div>
+          <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1"><i class="fa fa-angle-left"></i> {{projectData.translations.previousStep}}</button>
+          <button type="button" [class]="'nextstep'" (click)="updateSecondStep()" >{{projectData.translations.nextStep}} <i class="fa fa-angle-right"></i></button>
+        </div>
       </div>
     </div>
 
@@ -209,8 +241,10 @@
         </ul>
         <button type="button" [class]="'more'" (click)="moreAward()">მეტი ჯილდო</button>
       </div>
-      <button type="button" [class]="'prevstep'" (click)="stepIndex = 1"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-      <button type="button" [class]="'nextstep'" (click)="updateThirdStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+      <div>
+        <button type="button" [class]="'prevstep'" (click)="stepIndex = 1"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+        <button type="button" [class]="'nextstep'" (click)="updateThirdStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+      </div>
     </div>
     <div class="step" *ngIf="stepIndex == 3">
       <div class="team">
@@ -250,8 +284,10 @@
           </li>
         </ul>
         <button type="button" class="more" (click)="moreMemeber()">მეტი გუნდის წევრი</button>
-        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="updateFourthStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        <div>
+          <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+          <button type="button" [class]="'nextstep'" (click)="updateFourthStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        </div>
       </div>
     </div>
     <div class="step" *ngIf="stepIndex == 4">
@@ -272,8 +308,10 @@
         <div class="desc">
 
         </div>
-        <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
-        <button type="button" [class]="'nextstep'" (click)="updateFifthStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        <div>
+          <button type="button" [class]="'prevstep'" (click)="stepIndex = stepIndex - 1;"><i class="fa fa-angle-left"></i> წინა ნაბიჯი</button>
+          <button type="button" [class]="'nextstep'" (click)="updateFifthStep()">შემდეგი ნაბიჯი <i class="fa fa-angle-right"></i></button>
+        </div>
       </div>
 
     </div>

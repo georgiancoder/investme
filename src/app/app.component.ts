@@ -94,7 +94,8 @@ export class AppComponent  {
         this.authorized = false;
         this.user = null;
         this.dropDownHeight = 0;
-        this.router.navigate(['/']);
+        window.location.href = "https://investme.ge/";
+        // this.router.navigate(['/']);
       }
     });
   }

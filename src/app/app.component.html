@@ -1,4 +1,4 @@
-<header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
+<header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/projects-supporters' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <ul class="l">
       <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="addProjectPage">{{header.translations.add_project}}</a></li>
@@ -16,7 +16,7 @@
             <ul>
               <li routerLink="profile" (click)="dropDownHeight = 0"><a>{{header.translations.profile}}</a></li>
               <li routerLink="/favorite" (click)="dropDownHeight = 0">{{header.translations.favorite}}</li>
-              <li routerLink="addProjectPage" (click)="dropDownHeight = 0">{{header.translations.add_project}}</li>
+              <li routerLink="addProject" (click)="dropDownHeight = 0">{{header.translations.add_project}}</li>
               <li (click)="logOut()" (click)="dropDownHeight = 0" class="logout"><img src="/assets/logout.png" alt=""> {{header.translations.logout}}</li>
             </ul>
           </div>
@@ -40,7 +40,7 @@
                       <input type="password" placeholder="{{header.translations.password}}" formControlName="password">
                     </div>
                     <div class="lgnbtn">
-                      <span class="restore">{{header.translations.recover_pass}}</span>
+                      <!-- <span class="restore">{{header.translations.recover_pass}}</span> -->
                       <input type="submit" value="შესვლა">
                     </div>
                     <div class="footer">
@@ -217,7 +217,7 @@
     </div>
   </div>
 </header>
-<header class="userheader" *ngIf="header && authorized && user && (currentPage == '/profile' || currentPage == '/favorite' || currentPage == '/supported' || currentPage == '/myprojects' || currentPage == '/addProject' || currentPage.search('editproject') > -1)">
+<header class="userheader" *ngIf="header && authorized && user && (currentPage == '/profile' || currentPage == '/projects-supporters' || currentPage == '/favorite' || currentPage == '/supported' || currentPage == '/myprojects' || currentPage == '/addProject' || currentPage.search('editproject') > -1)">
   <div class="left">
     <a routerLink="/" class="logo">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -259,7 +259,7 @@
     </a>
     <ul>
       <li>
-        <a href="#">
+        <a routerLink="/projects-supporters">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.017 23.146">
             <defs>
               <style>
@@ -333,13 +333,15 @@
   <div class="right">
     <a routerLink="/addProject" class="addProject">{{header.translations.add_project}}</a>
     <div class="user" (click)="usermenuDropDown()">
-      <div class="profilepic" [style.backgroundImage]="'url(https://back.investme.ge' + user.avatar + ')'"></div>
+      <div class="profilepic" [style.backgroundImage]="'url(https://back.investme.ge' + user.avatar + ')'">
+        <i class="fa fa-angle-down faangletwo"></i>
+      </div>
       <h4>{{user.name}} <i class="fa fa-angle-down"></i></h4>
       <div class="usermenu" [style.height]="dropDownHeight + 'px'">
         <ul>
           <li routerLink="profile" (click)="dropDownHeight = 0"><a >{{header.translations.profile}}</a></li>
           <li routerLink="/favorite" (click)="dropDownHeight = 0">{{header.translations.favorite}}</li>
-          <li routerLink="addProjectPage" (click)="dropDownHeight = 0"><a >{{header.translations.add_project}}</a></li>
+          <li routerLink="addProject" (click)="dropDownHeight = 0"><a >{{header.translations.add_project}}</a></li>
         </ul>
       </div>
     </div>
@@ -366,7 +368,7 @@
     <div class="left">
       <ul>
       <li>
-        <a href="">
+        <a routerLink="/projects-supporters">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.017 23.146">
             <defs>
               <style>

@@ -16,10 +16,11 @@
     <app-thumbs-slider [media]="media"></app-thumbs-slider>
     <div class="basicinfo">
       <header class="main-header">
-        <div class="categorie">
+        <h2>{{project.detail[0].title}}</h2>
+        <br>
+        <div class="categorie" (click)="changeCategory(project.category.category_id)" >
           {{project.category.title}}
         </div>
-        <h2>{{project.detail[0].title}}</h2>
         <div class="author">
           ავტორი: <span>{{project.user[0].name}}</span>
         </div>
@@ -80,7 +81,7 @@
           </ul>
           <h2>მედია ფაილები</h2>
           <ul class="media">
-            <li (click)="open(i)" *ngFor="let m of media_in; let i = index;" [style.backgroundImage]="'url('+m.src+')'">
+            <li (click)="open(i)" *ngFor="let m of media; let i = index;" [style.backgroundImage]="'url('+m.image+')'">
             </li>
           </ul>
         </div>
@@ -107,7 +108,7 @@
                   {{award.description}}
                 </div>
               </div>
-              <div class="info"> 
+              <div class="info">
                 <div class="amount">
                   {{award.amount}} ₾
                 </div>

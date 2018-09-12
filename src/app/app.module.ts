@@ -96,6 +96,7 @@ import { SupportersService } from './services/supporters.service';
 import { HowaddComponent } from './howadd/howadd.component';
 import { HowsupportComponent } from './howsupport/howsupport.component';
 import { SplitnumberPipe } from './splitnumber.pipe';
+import { ProjectSupportersComponent } from './project-supporters/project-supporters.component';
 
 const routes: Routes = [
   {
@@ -223,7 +224,12 @@ const routes: Routes = [
   {
     path: 'errorCallback',
     component: ErrorCallbackComponent
-  }
+  },
+  {
+    path: 'projects-supporters',
+    component: ProjectSupportersComponent,
+    canActivate: [AuthGuard]
+  },
 ];
 
 @NgModule({
@@ -277,7 +283,8 @@ const routes: Routes = [
     SupportersComponent,
     HowaddComponent,
     HowsupportComponent,
-    SplitnumberPipe
+    SplitnumberPipe,
+    ProjectSupportersComponent
   ],
   imports: [
     BrowserModule,
@@ -303,7 +310,7 @@ const routes: Routes = [
     NgxPaginationModule,
     ClipboardModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAUdI49DeXc_oDo5J2T2Pq1aoVqTCyCQ2Y'
+      apiKey: 'AIzaSyC4qXcpIcY9F-0osv8rC6voWz1fBtk06P4'
     }),
     LightboxModule,
     ModalDialogModule.forRoot(),

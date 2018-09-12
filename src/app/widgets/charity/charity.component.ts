@@ -15,7 +15,7 @@ export class CharityComponent implements OnInit {
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
   constructor(private projectService: ProjectService) {
     this.actionButtons = [
-      { text: 'Close' }, // no special processing here
+      { text: 'X' }, // no special processing here
       { text: 'I will always close', onAction: () => true },
       { text: 'I never close', onAction: () => false }
     ];

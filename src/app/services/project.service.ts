@@ -41,6 +41,14 @@ export class ProjectService {
     });
   }
 
+  getFavoriteProjects(lng){
+    let authToken = this.auth.getToken();
+    const headers = new HttpHeaders({'Authorization': 'Bearer '+ authToken, 'X-App-Locale': lng});
+    return this.http.get<any>("https://back.investme.ge/api/projects-supporters",{
+      headers: headers
+    });
+  }
+
   getAllProject(lng, page){
     if(this.auth.isAuthenticated()){
       let authToken = this.auth.getToken();

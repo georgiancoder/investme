@@ -15,8 +15,9 @@
       <div class="filter">
         <h2>კატეგორიები</h2>
         <ul class="categories">
-          <li>
-            <a href="#" class="allprojectLink">ყველა</a>
+          <li [class]="(filters.category == null) ? 'active' : ''" (click)="selectCategory('')">
+            ყველა
+            <span class="badge">{{totalCount}}</span>
           </li>
           <li *ngFor="let c of categories" [class]="(filters.category == c.id) ? 'active' : ''" (click)="selectCategory(c)">{{c.title}} <span class="badge">{{c.count}}</span> </li>
         </ul>
@@ -33,7 +34,7 @@
       <div class="projects">
         <article class="project"  *ngFor="let project of projects | paginate: { itemsPerPage: 10, currentPage: p, totalItems: totalPages }">
           <header>
-            <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'">
+            <div class="mainpic" [style.backgroundImage]="'url('+siteUrl + project.project.image+')'" (click)="getInnerProject(project.project.id,$event)">
               <div class="daysleft">
                 {{project.project.company_time - project.interval > 0 ? project.project.company_time - project.interval : 'დასრულებული' }}
                 <span *ngIf="translations && project.project.company_time - project.interval > 0">{{translations.day}}</span>

@@ -466,6 +466,7 @@ header{
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
+          position: relative;
         }
         h4{
           font-size: 13px;
@@ -742,6 +743,14 @@ footer{
   font-family: "BPG Mrgvlovani Caps 2010";
 }
 
+
+.faangletwo{
+  display: none;
+  position: absolute;
+  right: -20px;
+  top: 13px;
+  color: #B2B2B2;
+}
 
 
 

@@ -42,6 +42,9 @@ export class ProjectinnerComponent implements OnInit {
   pdf: any;
 
   tabindex = 0;
+
+  interests = [];
+
   cpd: boolean = false;
 
 
@@ -50,6 +53,14 @@ export class ProjectinnerComponent implements OnInit {
 
   copied(event){
     this.cpd = true;
+  }
+
+  changeCategory(id){
+    this.router.navigate(['allproject'],{queryParams:
+        {
+          category: id,
+        }
+    });
   }
 
   toggleFavorite(project){
@@ -78,11 +89,10 @@ export class ProjectinnerComponent implements OnInit {
   getProject(){
     this.ProjectService.getProject(this.projectId, this.siteLang).subscribe(res=>{
       this.project = res;
-
-      // 
       this.project.money = this.project.money.toFixed(2);
       this.getMedia();
       this.getDocuments();
+      console.log(res.imageDetail);
     });
   }
 
@@ -91,7 +101,7 @@ export class ProjectinnerComponent implements OnInit {
   }
 
   open(i){
-    this.lightbox.open(this.media_in, i);
+    console.log(this.media_in);
   }
 
   getMedia(){
@@ -103,19 +113,15 @@ export class ProjectinnerComponent implements OnInit {
       src: this.siteUrl + this.project.project.image
     }
     this.media.push(mainimg);
-    this.media_in.push(for_album);
     this.project.imageDetail.forEach(image=>{
       if(image.image && image.image.length > 0){
         image.type = 'image';
         image.image = this.siteUrl + image.image;
+        image.title = image.title;
         this.media.push(image);
-        let for_album_in = {
-          src: image.image
-        }
-        this.media_in.push(for_album_in);
+        this.media_in.push(image);
       }
     });
-    console.log(this.media_in);
     this.project.videoDetail.forEach(video=>{
       if(video.link && video.link.length > 0){
         video.type = 'video';

@@ -25,6 +25,7 @@ export class AllprojectComponent implements OnInit {
   projects: any;
   interests = [];
   totalPages: number;
+  totalCount: number;
 
   filters: object = {
     category: null,
@@ -63,9 +64,9 @@ export class AllprojectComponent implements OnInit {
 
   getAllProject(){
     this.ProjectService.getAllProject(this.siteLang, this.filters["page"]).subscribe(res=>{
-      console.log(res);console.log("asdasda");
+      this.totalCount = res.projects.total;
       this.categories = res.categories;
-        this.projects = res.projects.data;
+      // this.projects = res.projects.data;
       this.translations = res.translations;
       this.interests = res.interests;
 
@@ -93,9 +94,15 @@ export class AllprojectComponent implements OnInit {
   }
 
   selectCategory(category){
-    this.filters["category"] = category.id;
-    this.filters["page"]= 1;
-    this.navigate();
+    if(category != ''){
+      this.filters["category"] = category.id;
+      this.filters["page"]= 1;
+      this.navigate();
+    }else{
+      this.filters["category"] = null;
+      this.filterProjects();
+      this.router.navigate(['allproject']);
+    }
   }
 
   toggleFavorite(project){
@@ -143,6 +150,12 @@ export class AllprojectComponent implements OnInit {
     this.navigate();
   }
 
+  getInnerProject(id,event){
+    if(event.target.classList.contains('mainpic')){
+      this.router.navigate(['project/'+id]);
+    }
+  }
+
 
   constructor(private langservice: LangsService, private ProjectService: ProjectService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
@@ -151,6 +164,14 @@ export class AllprojectComponent implements OnInit {
     document.addEventListener('langchanged',()=>{
       this.siteLang = this.langservice.getLang();
     });
+
+    this.activatedRoute.queryParams.subscribe((params)=>{
+      let category = {
+        id:params.category
+      };
+      this.selectCategory(category);
+    });
+
 
 
     this.hasquery = window.location.href.split('?')[1] == undefined ? false : true;
@@ -165,7 +186,6 @@ export class AllprojectComponent implements OnInit {
       });
 
       if(this.hasquery){
-        console.log();
         this.navigate();
       }
 
