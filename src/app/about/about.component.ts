@@ -3,8 +3,6 @@ import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
 import { DomSanitizer} from '@angular/platform-browser';
 
-import * as $ from 'jquery';
-
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -42,10 +40,6 @@ export class AboutComponent implements OnInit {
       home: 'მთავარი'
     };
     setInterval(()=>{this.breadcrumbs['page'] = this.title;},500);
-
-    if($(window).innerWidth() < 768){
-      $("html,body").animate({scrollTop: 0});
-    }
   }
 
 }

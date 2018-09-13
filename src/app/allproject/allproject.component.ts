@@ -29,6 +29,7 @@ export class AllprojectComponent implements OnInit {
 
   filters: object = {
     category: null,
+    search: null,
     interests: [],
     page: 1,
     sort: "publish_date-desc"
@@ -41,6 +42,7 @@ export class AllprojectComponent implements OnInit {
         {
           page: this.p,
           category: this.filters["category"],
+          search: this.filters["search"],
           interests: this.filters["interests"].toString(),
           sort: this.filters["sort"]
         }
@@ -86,7 +88,6 @@ export class AllprojectComponent implements OnInit {
 
   filterProjects(){
     this.ProjectService.filterProjects(this.siteLang, this.filters).subscribe(res=>{
-      console.log(res);
       this.totalPages = res.projects.length;
       // var data = [];
       // for(var i in res.projects){
@@ -130,6 +131,7 @@ export class AllprojectComponent implements OnInit {
     this.router.navigate([], {
         queryParams: {
           category: this.filters["category"],
+          search: this.filters["search"],
           interests: this.filters["interests"].toString(),
           sort: this.filters["sort"],
           page: this.filters["page"]
@@ -168,12 +170,6 @@ export class AllprojectComponent implements OnInit {
       this.siteLang = this.langservice.getLang();
     });
 
-    this.activatedRoute.queryParams.subscribe((params)=>{
-      let category = {
-        id:params.category
-      };
-      this.selectCategory(category);
-    });
 
 
 
@@ -182,15 +178,24 @@ export class AllprojectComponent implements OnInit {
     this.getAllProject();
 
     this.activatedRoute.queryParams.subscribe((params: Params) => {
+        this.filters["search"] = (params['search']) ? params['search'] : null;
         this.filters["category"] = (params['category']) ? params['category'] : null;
         this.filters["page"] = (params['page']) ? params['page'] : 1;
         this.filters["sort"] = (params['sort']) ? params['sort'] : 'publish_date-desc';
         this.filters["interests"] = (params['interests']) ? params['interests'].split(',') : [];
-      });
-
-      if(this.hasquery){
-        this.navigate();
-      }
+        let category = {
+          id:params.category
+        };
+        if(params.category){
+          this.selectCategory(category);
+        }else{
+          this.filterProjects();
+        }
+    });
+      // 
+      // if(this.hasquery){
+      //   this.navigate();
+      // }
 
     this.breadcrumbs = {
       page: 'პროექტები',

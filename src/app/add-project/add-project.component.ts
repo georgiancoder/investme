@@ -8,7 +8,7 @@ import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractC
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.scss','./add-project.responsive.scss'],
-  encapsulation: ViewEncapsulation.Native 
+  encapsulation: ViewEncapsulation.Native
 })
 export class AddProjectComponent implements OnInit {
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
@@ -201,7 +201,7 @@ export class AddProjectComponent implements OnInit {
 
   addMainInfo(){
     this.addprojectservice.addMainInfo(this.firstStep).subscribe(res => {
-      console.log(res);
+      // console.log(res);
       if(res && res.project_id){
         var newMainInfo = Object.assign({},this.firstStep);
         this.firstStep["project_id"] = res.project_id;

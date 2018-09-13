@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { ProjectService } from '../services/project.service';
+import { Router} from "@angular/router";
 import  * as $  from 'jquery';
 import { LangsService } from '../services/langs.service';
 
@@ -35,7 +36,7 @@ export class ProjectSliderComponent implements OnInit {
   progressPrev: number = 0;
   progressInt: any;
 
-  constructor(private projectservice: ProjectService, private langsservice: LangsService) { }
+  constructor(private projectservice: ProjectService, private langsservice: LangsService, private router: Router) { }
 
   nextSlide(): void{
     if( (this.projects.length - Math.abs(this.slideWidth / 300)) > 3 ){
@@ -45,6 +46,14 @@ export class ProjectSliderComponent implements OnInit {
       this.prevBtnShowHide = this.slideWidth < 0 ? 'prev show' : 'prev';
       this.progress = this.activeSlide / (this.projects.length-1) * 100;
     }
+  }
+
+  searchProjects(title){
+    this.router.navigate(['allproject'],{queryParams:
+      {
+        search: title.value,
+      }
+    });
   }
 
   selectProject(project, index) {

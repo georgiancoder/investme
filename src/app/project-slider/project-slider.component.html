@@ -17,8 +17,8 @@
                                                                                           *ngIf="!srchbtntgl"></i> <i
           class="fa fa-times" *ngIf="srchbtntgl"></i></button>
         <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">
-          <input type="text" placeholder="ძიება ...">
-          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <input type="text" placeholder="ძიება ..." #searchTitle>
+          <button (click)="searchProjects(searchTitle)"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </li>
     </ul>

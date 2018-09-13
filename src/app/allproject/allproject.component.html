@@ -14,7 +14,7 @@
       <div class="filter">
         <h2>კატეგორიები</h2>
         <ul class="categories">
-          <li [class]="(filters['category'] == null) ? 'active' : ''" (click)="selectCategory('')">
+          <li [class]="(filters['category'] == null && filters['search'] == null) ? 'active' : ''" (click)="selectCategory('')">
             ყველა
             <span class="badge">{{totalCount}}</span>
           </li>

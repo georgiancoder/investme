@@ -83,13 +83,13 @@
               </div>
             </div>
             <div class="row checkbox">
-              <label>{{projectData.translations.categories}}</label>
+              <label class="interesttt" >{{projectData.translations.categories}}</label>
               <!-- <span class="infoResp"><img src="assets/info.png" alt="">
                 <p class="info__text" > {{warningInfo.interests_info}}</p>
               </span> -->
-              <div class="inputwrapper">
+              <div class="inputwrapper radiobtns">
                 <!-- <p-checkbox name="groupname" name="category" value="{{c.value}}" [(ngModel)]="firstStep[projectLang].category" label="{{c.label}}" *ngFor="let c of firstStep[projectLang].categoriebi" ></p-checkbox> -->
-                <p-radioButton name="groupname" value="{{c.value}}" label="{{c.label}}" [(ngModel)]="firstStep.category" *ngFor="let c of firstStep[projectLang].categoriebi"></p-radioButton>
+                <p-radioButton class="radiobtn" name="groupname" value="{{c.value}}" label="{{c.label}}" [(ngModel)]="firstStep.category" *ngFor="let c of firstStep[projectLang].categoriebi"></p-radioButton>
               </div>
             </div>
           </div>
@@ -176,28 +176,24 @@
             <h3>ჯილდო {{i + 1}}</h3>
             <div class="row">
               <label>სათაური</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="jildo.title">
               </div>
             </div>
             <div class="row">
               <label>ჯილდოს აღწერა</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <textarea [(ngModel)]="jildo.desc"></textarea>
               </div>
             </div>
             <div class="row">
               <label>თანხა</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="jildoebi.money[i]">
               </div>
             </div>
             <div class="row">
               <label>მიწოდების თარიღი</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <div>
                   <select [(ngModel)]="jildoebi.date[i].month">
@@ -263,28 +259,24 @@
             <h3>გუნდის წევრი {{i + 1}}</h3>
             <div class="row">
               <label>სახელი, გვარი</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.fullname">
               </div>
             </div>
             <div class="row">
               <label>ელ.ფოსტა</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.email">
               </div>
             </div>
             <div class="row">
               <label>როლი</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <input type="text" [(ngModel)]="member.role">
               </div>
             </div>
             <div class="row">
               <label>ინფორმაცია</label>
-              <span class="infoResp"><img src="assets/info.png" alt=""> </span>
               <div class="inputwrapper">
                 <textarea [(ngModel)]="member.information"></textarea>
               </div>

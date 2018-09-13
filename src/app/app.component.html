@@ -204,13 +204,13 @@
         </div>
     </div>
     <ul class="respoL">
-      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/">{{header.translations.add_project}}</a></li>
-      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/">{{header.translations.finans_project}}</a></li>
+      <li><i class="fa fa-plus" aria-hidden="true"></i> <a routerLink="/addProjectPage">{{header.translations.add_project}}</a></li>
+      <li><i class="fa fa-heart" aria-hidden="true"></i> <a routerLink="/investproject">{{header.translations.finans_project}}</a></li>
     </ul>
     <div class="sSearch">
       <div>
         <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">
-          <input type="text" placeholder="რას ვეძებთ?">
+          <input type="text" name="search" placeholder="რას ვეძებთ?">
           <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
@@ -466,18 +466,18 @@
     </section>
     <section class="menu">
       <ul>
-        <li><a routerLink="about">{{footer.translations.about}}</a></li>
+        <li><a routerLink="about" (click)="onscrollUp()">{{footer.translations.about}}</a></li>
         <!-- <li><a routerLink="media">{{footer.translations.media_about}}</a></li> -->
-        <li><a routerLink="events">{{footer.translations.events}}</a></li>
-        <li><a routerLink="blog">{{footer.translations.blog}}</a></li>
-        <li><a routerLink="contact">{{footer.translations.contact}}</a></li>
+        <li><a routerLink="events" (click)="onscrollUp()">{{footer.translations.events}}</a></li>
+        <li><a routerLink="blog" (click)="onscrollUp()">{{footer.translations.blog}}</a></li>
+        <li><a routerLink="contact" (click)="onscrollUp()">{{footer.translations.contact}}</a></li>
       </ul>
       <ul>
-        <li><a routerLink="faq">{{footer.translations.faq}}</a></li>
-        <li><a routerLink="privacy">{{footer.translations.policy}}</a></li>
-        <li><a routerLink="rules">{{footer.translations.rules}}</a></li>
-        <li><a routerLink="howadd">{{footer.translations.howtoadd}}</a></li>
-        <li><a routerLink="howsupport">{{footer.translations.howtofin}}</a></li>
+        <li><a routerLink="faq" (click)="onscrollUp()">{{footer.translations.faq}}</a></li>
+        <li><a routerLink="privacy" (click)="onscrollUp()">{{footer.translations.policy}}</a></li>
+        <li><a routerLink="rules" (click)="onscrollUp()">{{footer.translations.rules}}</a></li>
+        <li><a routerLink="howadd" (click)="onscrollUp()">{{footer.translations.howtoadd}}</a></li>
+        <li><a routerLink="howsupport" (click)="onscrollUp()">{{footer.translations.howtofin}}</a></li>
       </ul>
       <!-- <ul>
         <li *ngFor="let cat of footer.categories">

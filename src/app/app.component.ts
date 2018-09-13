@@ -199,6 +199,12 @@ export class AppComponent implements OnInit {
 
   }
 
+  onscrollUp(){
+    if($(window).innerWidth() < 768){
+      $("html,body").animate({scrollTop: 0});
+    }
+  }
+
   respoMenu(){
     var item = $(".respoMenu-container");
     item.addClass("respMenuActive");
