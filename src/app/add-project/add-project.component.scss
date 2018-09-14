@@ -227,7 +227,7 @@
           align-items: center;
 
           justify-content: center;
-          overflow: hidden;
+          // overflow: hidden;
           background-repeat: no-repeat;
           background-position: center;
           background-size: cover;
@@ -236,23 +236,11 @@
           font-family: "BPG Mrgvlovani Caps 2010";
           text-align: center;
 
-          span{
-            display: inline-block;
-            transform: translateY(18px);
-            cursor: pointer;
-          }
-        }
-
-        .mainFoto::before{
-          content: url("../../../assets/upload.png");
-          position: absolute;
-          top: 130px;
-        }
-
-        .mainFoto input{
-          // display:none;
-          opacity: 0;
-          cursor: pointer;
+          // span{
+          //   display: inline-block;
+          //   transform: translateY(18px);
+          //   cursor: pointer;
+          // }
         }
       }
       & > .files{
@@ -937,7 +925,7 @@ button{
 
 
 .ui-multiselect{
-  width: 200px;
+  width: 200px!important;
 }
 
 .radiobtns{
@@ -1010,7 +998,7 @@ input{
 
 
 .ui-widget-header{
-  display: none !important;
+  display: block !important;
 }
 
 p-multiSelect .ui-helper-hidden-accessible{
@@ -1114,4 +1102,24 @@ li.ui-multiselect-item input:checked + .fa-check:before{
 
 .ui-multiselect-trigger{
   display: none;
+}
+
+.img__wra{
+  position: relative;
+  display: inline-block;
+  height: 100px;
+}
+
+.img__remover{
+  position: absolute;
+  left: 97%;
+  bottom:98%;
+  width: 24px;
+  height: 20px;
+  text-align: center;
+  color: #222;
+  line-height: 21px;
+  border-radius: 10px;
+  background: #ccc;
+  font-size: 10px;
 }

@@ -1,15 +1,28 @@
 <div class="translations && projects">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="allproject">
-    <div class="sort">
-      დახარისხება:
-      <select [(ngModel)]="filters['sort']" (change)="navigate()">
-        <option value="publish_date-desc">თარიღით კლებით</option>
-        <option value="publish_date-asc">თარიღით ზრდადობით</option>
-        <!-- <option value="raiting-desc">პოპულარობით კლებით</option>
-        <option value="raiting-asc">პოპულარობით ზრდადობით</option> -->
-      </select>
+    <div class="cont">
+      <div class="filter"></div>
+      <div class="project project__twoc">
+        <div class="sort sort__twoc">
+          <div class="" *ngIf="filters['search']">
+            ძიების შედეგი : {{filters['search']}}
+          </div>
+          <div class="right__side">
+            <p>
+              დახარისხება:
+            </p>
+            <select [(ngModel)]="filters['sort']" (change)="navigate()">
+              <option value="publish_date-desc">თარიღით კლებით</option>
+              <option value="publish_date-asc">თარიღით ზრდადობით</option>
+              <!-- <option value="raiting-desc">პოპულარობით კლებით</option>
+              <option value="raiting-asc">პოპულარობით ზრდადობით</option> -->
+            </select>
+          </div>
+        </div>
+      </div>
     </div>
+
     <div class="cont">
       <div class="filter">
         <h2>კატეგორიები</h2>

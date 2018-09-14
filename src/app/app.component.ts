@@ -53,6 +53,14 @@ export class AppComponent implements OnInit {
   regCurrHeight: number;
   logCurrHeight: number;
 
+  onSideSearch(sideInputValue){
+    this.router.navigate(['allproject'],{queryParams:
+      {
+        search: sideInputValue.value,
+      }
+    });
+  }
+
   getHeader(): void{
     this.headerservice.getHeader(this.lang).subscribe(headers => {this.header = headers; });
   }

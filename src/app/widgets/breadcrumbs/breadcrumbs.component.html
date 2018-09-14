@@ -1,10 +1,13 @@
-<div class="pagination">
+<div class="pagination" *ngIf="data">
   <div class="wrapper">
     <h2>{{data.page}}</h2>
     <ul>
       <li><a routerLink="/">{{data.home}}</a></li>
       <li><i class="fa fa-angle-right"></i></li>
-      <li>{{data.page}}</li>
+      <li routerLink="{{data.link}}" *ngIf="data.lastPage" class="secondPage">{{data.page}}</li>
+      <li *ngIf="!data.lastPage" class="secondPage">{{data.page}}</li>
+      <li *ngIf="data.lastPage"><i class="fa fa-angle-right"></i></li>
+      <li *ngIf="data.lastPage">{{data.lastPage}}</li>
     </ul>
   </div>
 </div>

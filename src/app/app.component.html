@@ -1,3 +1,4 @@
+
 <header *ngIf="header && (currentPage != '/profile' && currentPage != '/favorite' && currentPage != '/projects-supporters' && currentPage != '/supported' && currentPage != '/myprojects' && currentPage != '/addProject' && currentPage != 'editproject' && currentPage.search('editproject') == -1)">
   <div class="wrapper">
     <ul class="l">
@@ -210,8 +211,8 @@
     <div class="sSearch">
       <div>
         <form [class]="srchbtntgl ? 'srchform show' : 'srchform'">
-          <input type="text" name="search" placeholder="რას ვეძებთ?">
-          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <input type="text" name="search" placeholder="რას ვეძებთ?" #sideInputValue>
+          <button type="submit" (click)="onSideSearch(sideInputValue)" ><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
     </div>

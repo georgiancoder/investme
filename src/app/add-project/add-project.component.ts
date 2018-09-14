@@ -4,11 +4,13 @@ import { SelectItem } from 'primeng/api';
 import { LangsService } from '../services/langs.service';
 import { FormBuilder, FormControl, FormGroup, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 
+import  * as $  from 'jquery';
+
 @Component({
   selector: 'app-add-project',
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.scss','./add-project.responsive.scss'],
-  encapsulation: ViewEncapsulation.Native
+  // encapsulation: ViewEncapsulation.Native
 })
 export class AddProjectComponent implements OnInit {
   @ViewChild("transForm", {read: ElementRef}) transForm: ElementRef;
@@ -254,6 +256,7 @@ export class AddProjectComponent implements OnInit {
           var files = {
 
           }
+          console.log(event);
           var newfotoka = {
             title: '',
             file: reader.result,
@@ -390,6 +393,12 @@ export class AddProjectComponent implements OnInit {
       console.log('error while adding award')
     }
 
+  }
+
+  removeSelectedImg(i: number){
+    this.secondStep["ka"].fotos.splice(i, 1);
+    this.secondStep["en"].fotos.splice(i, 1);
+    this.secondStep["ru"].fotos.splice(i, 1);
   }
 
   moreAward(){
@@ -611,6 +620,11 @@ export class AddProjectComponent implements OnInit {
       this.siteLang = this.langservice.getLang();
       this.getData();
     });
+    setTimeout(()=>{
+      $('.ui-multiselect-panel').attr('style','min-width: 20em;z-index: 1002;visibility: visible;top: 0px;left: 0px;opacity: 1.032;');
+      $('.ui-multiselect').attr('style','display: inline-block;position: relative;width: 20em;cursor: pointer;');
+      $('.ui-multiselect-items-wrapper ul li div:nth-child(2)').css('color','');
+    },2000);
   }
 
 }

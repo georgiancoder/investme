@@ -139,8 +139,11 @@
             {{projectData.translations.upload}}
           </label>
           <ul class="fototitles">
-            <li *ngFor="let foto of secondStep[projectLang].fotos; let i = index">
-              <img src="{{foto.file}}" width="100">
+            <li *ngFor="let foto of secondStep[projectLang].fotos; let i = index" >
+              <span  class="img__wra">
+                <img src="{{foto.file}}" width="100">
+                <span class="img__remover" (click)="removeSelectedImg(i)" >X</span>
+              </span>
               <input type="text" [(ngModel)]="secondStep[projectLang].fotos[i].title">
             </li>
           </ul>

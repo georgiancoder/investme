@@ -56,11 +56,14 @@
   }
 }
 @media only screen and (max-width: 1140px){
+
   .mainFoto{
     padding-top: 82px;
+    margin-bottom: 50px;
   }
   .mainFoto::before{
     top: 53px !important;
+
   }
   .addProject{
     .steps{
@@ -69,7 +72,7 @@
             flex-direction: column-reverse;
             align-items: center;
             .mainFoto{
-              margin-bottom: 50px;
+              // margin-bottom: 50px;
               height: 100px;
               display: flex;
               align-items: center;
@@ -79,6 +82,7 @@
               div{
                 width: 90%;
                 display: flex;
+                margin-top: -50px;
                 justify-content: center;
               }
             }

@@ -41,6 +41,8 @@ export class ProjectinnerComponent implements OnInit {
 
   pdf: any;
 
+  titleBread: string;
+
   tabindex = 0;
 
   interests = [];
@@ -92,7 +94,8 @@ export class ProjectinnerComponent implements OnInit {
       this.project.money = this.project.money.toFixed(2);
       this.getMedia();
       this.getDocuments();
-      console.log(res.imageDetail);
+      this.titleBread = res.detail[0].title;
+      console.log(this.project);
     });
   }
 
@@ -223,11 +226,15 @@ export class ProjectinnerComponent implements OnInit {
         $('html, body').animate({scrollTop: 900},1000);
       }
     });
+    setTimeout(() => {
+      this.breadcrumbs = {
+        lastPage: this.titleBread,
+        page: 'პროექტები',
+        home: 'მთავარი',
+        link: this.titleBread ? '/allproject' : '',
+      }
+    },1000);
 
-    this.breadcrumbs = {
-      page: 'პროექტები',
-      home: 'მთავარი'
-    }
   }
 
 }
