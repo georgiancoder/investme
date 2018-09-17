@@ -1,10 +1,15 @@
-<div *ngIf="pageData">
+<div class="faq">
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
-  <div class="cont" >
-  	<!-- <div class="sidebar">
-      <sidemenu [data]="sidemenu"></sidemenu>
-    </div> -->
-    <section [innerHTML]="description">
-    </section>
+  <div class="cont">
+    <ul *ngIf="pageData">
+      <li *ngFor="let q of pageData.howsupports" (click)="q.opened = !q.opened">
+        <div class="header">
+          {{q.question}}
+          <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="body" [innerHTML]="q.answer" *ngIf="q.opened">
+        </div>
+      </li>
+    </ul>
   </div>
 </div>

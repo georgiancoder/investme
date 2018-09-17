@@ -24,8 +24,6 @@ export class HowsupportComponent implements OnInit {
   pageCont(){
     this.textPagesService.howsupport(this.lang).subscribe(data=>{
       this.pageData = data;
-      this.title = this.pageData.howsupport.title;
-      this.description = this.sanitizer.bypassSecurityTrustHtml(this.pageData.howsupport.description);
     });
   }
   ngOnInit() {
@@ -38,7 +36,7 @@ export class HowsupportComponent implements OnInit {
 
 
     setInterval(()=>{
-      this.breadcrumbs.page = this.title;
+      this.breadcrumbs.page = 'როგორ დავაფინანასო';
       this.breadcrumbs.home = 'მთავარი';
     },500);
   }

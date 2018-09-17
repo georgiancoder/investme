@@ -13,8 +13,6 @@ export class HowaddComponent implements OnInit {
   // breadcrumbs: object;
   lang: string;
   pageData: any;
-  title: string;
-  description: any;
   breadcrumbs = {
     page: '',
     home: ''
@@ -24,8 +22,7 @@ export class HowaddComponent implements OnInit {
   pageCont(){
     this.textPagesService.howadd(this.lang).subscribe(data=>{
       this.pageData = data;
-      this.title = this.pageData.howadd.title;
-      this.description = this.sanitizer.bypassSecurityTrustHtml(this.pageData.howadd.description);
+      console.log(this.pageData.howadds);
       // console.log(this.pageData.howadd);
     });
   }
@@ -36,10 +33,10 @@ export class HowaddComponent implements OnInit {
       this.lang = this.langsservice.getLang();
       this.pageCont();
     });
-
-    this.breadcrumbs.page = this.title;
-    this.breadcrumbs.home = 'მთავარი';
-    setTimeout(()=>{this.breadcrumbs.page = this.title;},500);
+    setInterval(()=>{
+      this.breadcrumbs.page = 'როგორ დავამატო?';
+      this.breadcrumbs.home = 'მთავარი';
+    },500);
   }
 
 }
