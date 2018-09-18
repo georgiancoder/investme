@@ -3,8 +3,8 @@
   <div class="cont">
     <button type="button" class="ask" (click)="openModal()">დასვი კითხვა</button>
     <ul *ngIf="faqContent">
-      <li *ngFor="let q of faqContent.faq" (click)="q.opened = !q.opened">
-        <div class="header">
+      <li *ngFor="let q of faqContent.faq">
+        <div class="header" (click)="q.opened = !q.opened">
           {{q.question}}
           <i class="fa fa-angle-right"></i>
         </div>

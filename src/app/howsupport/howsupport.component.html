@@ -2,8 +2,8 @@
   <breadcrumbs [data]="breadcrumbs"></breadcrumbs>
   <div class="cont">
     <ul *ngIf="pageData">
-      <li *ngFor="let q of pageData.howsupports" (click)="q.opened = !q.opened">
-        <div class="header">
+      <li *ngFor="let q of pageData.howsupports">
+        <div class="header" (click)="q.opened = !q.opened">
           {{q.question}}
           <i class="fa fa-angle-right"></i>
         </div>

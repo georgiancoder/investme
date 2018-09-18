@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild  } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation  } from '@angular/core';
 import { TextPagesService } from '../services/text-pages.service';
 import { LangsService } from '../services/langs.service';
 
@@ -7,7 +7,8 @@ import { AskmodalComponent } from '../widgets/askmodal/askmodal.component';
 @Component({
   selector: 'app-faq',
   templateUrl: './faq.component.html',
-  styleUrls: ['./faq.component.scss','./faq.responsive.scss']
+  styleUrls: ['./faq.component.scss','./faq.responsive.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class FaqComponent implements OnInit {
 
