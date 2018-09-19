@@ -43,14 +43,16 @@ export class PrivacyComponent implements OnInit {
       home: 'მთავარი'
     }
 
-    this.sidemenu = [{
+    this.sidemenu = [
+      {
+        title: 'სარგებლობის წესები და პირობები',
+        link: '/rules',
+        active: false
+      },
+      {
       title: 'უსაფრთხოების პოლიტიკა',
       link: '/privacy',
       active: true
-    },{
-      title: 'სარგებლობის წესები და პირობები',
-      link: '/rules',
-      active: false
     }];
   }
 

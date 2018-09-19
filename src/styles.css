@@ -41,6 +41,10 @@ body{
   background-color: #F8FCFD;
 }
 
+strong,b{
+  font-weight: 700;
+}
+
 
 @font-face {
     font-family: 'BPG WEB 001 Caps';
@@ -428,7 +432,7 @@ body{
   width: 100%;
   height: 100%;
   top: 0;
-  background: #00000085; 
+  background: #00000085;
 }
 .ngx-modal .modal-dialog{
   width: 100%;

@@ -43,15 +43,18 @@ export class RulesComponent implements OnInit {
       home: 'მთავარი'
     }
 
-    this.sidemenu = [{
+    this.sidemenu = [
+      {
+        title: 'სარგებლობის წესები და პირობები',
+        link: '/rules',
+        active: true
+      },
+      {
       title: 'უსაფრთხოების პოლიტიკა',
       link: '/privacy',
       active: false
-    },{
-      title: 'სარგებლობის წესები და პირობები',
-      link: '/rules',
-      active: true
-    }];
+    }
+  ];
   }
 
 }
